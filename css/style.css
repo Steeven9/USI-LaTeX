@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../media/img/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+
+
+main{
+    background-color: rgba(255, 255, 255);
+    width: 70%;
+    margin: auto;
+  }
+
+.text{
+    padding-bottom: 5px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5px;
+    font-size: 1em;
+    text-align: justify;
+  }
+  
+div.text a:link {
+    color: blue;
+    text-decoration: none;
+  }
+  
+div.text a:visited {
+    color: blue;
+    text-decoration: none;
+  }
+  
+div.text a:hover {
+    color: blue;
+    text-decoration: underline;
+  }
+
+div.blackbox{
+  background-color: black;
+  color: black;
+  transition: 0.5s;
+  text-align: center;
+  margin-left: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+div.blackbox:hover{
+  background-color: whitesmoke;
+  transition: 0.5s;
+}
