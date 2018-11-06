@@ -17,15 +17,16 @@ main{
 }
 
 
-/*-------FONT STYLES FOR TEXTS AND TITLES-----------*/
+
+/* FONT STYLES FOR TEXTS AND TITLES */
 div.text{
   font-family: "Quattrocento";
   font-size: 1.2em;
   text-align: justify;
-  padding-bottom: 5px;
+  padding-bottom: 0.5%;
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 5px;
+  padding-top: 0.5%;
 }
 
 div.titles{
@@ -34,10 +35,10 @@ div.titles{
   text-align: justify;
   text-decoration: none;
   font-weight: bold;
-  padding-bottom: 5px;
+  padding-bottom: 1%;
   padding-left: 2.5%;
   padding-right: 2.5%;
-  padding-top: 5px;
+  padding-top: 1%;
 }
 
 div.subtitles{
@@ -46,14 +47,15 @@ div.subtitles{
   text-align: justify;
   text-decoration: none;
   font-weight: bold;
-  padding-bottom: 5px;
+  padding-bottom: 1%;
   padding-left: 4%;
   padding-right: 4%;
-  padding-top: 5px;
+  padding-top: 1%;
 }
 
 
-/*-------------------LINKS----------------------*/
+
+/* LINKS */
 div.text a:link {
   color: blue;
   text-decoration: none;
@@ -70,7 +72,8 @@ div.text a:hover {
 }
 
 
-/*--------------IMAGES STRUCT-------------------*/
+
+/* IMAGES STRUCTURE */
 .images{
   width: 30vw;
   height: auto;
@@ -81,7 +84,8 @@ div.text a:hover {
 }
 
 
-/*--------------BLACKBOX WITH LEFT TEXT-------------------*/
+
+/* BLACKBOX WITH TEXT ON THE LEFT */
 div.exercises{
   width: 100%;
   display: flex;
@@ -120,7 +124,8 @@ div.exercises div.blackbox:hover{
 }
 
 
-/*--------------MATH FORMULAS-------------------*/
+
+/* MATH FORMULA */
 div.formula{
   padding-bottom: 10px;
   padding-left: 5%;
@@ -128,4 +133,16 @@ div.formula{
   padding-top: 10px;
   font-size: 1.5em;
   text-align: center;
+}
+
+
+
+/* ADDRESS */
+address{
+  font-family: "Quattrocento";
+  font-size: 1em;
+  text-align: justify;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 5%;
 }
