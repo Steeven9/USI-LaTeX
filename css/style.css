@@ -6,54 +6,98 @@ body{
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-  }
-
+}
 
 main{
     background-color: rgb(255, 255, 255);
-    width: 70%;
+    width: 65%;
     margin: auto;
-  }
+    padding-left: 10%;
+    padding-top: 25%;
+}
 
+
+/*-------FONT STYLES FOR TEXTS AND TITLES-----------*/
 div.text{
-    padding-bottom: 5px;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 5px;
-  }
+  font-family: "Quattrocento";
+  font-size: 1.2em;
+  text-align: justify;
+  padding-bottom: 5px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5px;
+}
 
+div.titles{
+  font-family: "Quattrocento";
+  font-size: 2em;
+  text-align: justify;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 5px;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  padding-top: 5px;
+}
+
+div.subtitles{
+  font-family: "Quattrocento";
+  font-size: 1.5em;
+  text-align: justify;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 5px;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 5px;
+}
+
+
+/*-------------------LINKS----------------------*/
 div.text a:link {
-    color: blue;
-    text-decoration: none;
-  }
+  color: blue;
+  text-decoration: none;
+}
 
 div.text a:visited {
-    color: blue;
-    text-decoration: none;
-  }
+  color: blue;
+  text-decoration: none;
+}
 
 div.text a:hover {
-    color: blue;
-    text-decoration: underline;
-  }
+  color: blue;
+  text-decoration: underline;
+}
 
+
+/*--------------IMAGES STRUCT-------------------*/
+.images{
+  width: 30vw;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  margin-left: 5%;
+}
+
+
+/*--------------BLACKBOX WITH LEFT TEXT-------------------*/
 div.exercises{
-
   width: 100%;
   display: flex;
   align-self: center;
   justify-content: space-evenly;
   align-items: center;
-  }
+}
 
 div.exercises p{
-    flex-basis: 50%;
-    margin-left: 5%;
-    margin-right: 2.5%;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    font-size: 1em;
-    text-align: justify;
+  flex-basis: 50%;
+  margin-left: 5%;
+  margin-right: 2.5%;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-size: 1.2em;
+  text-align: justify;
 }
 
 div.exercises div.blackbox{
@@ -67,6 +111,7 @@ div.exercises div.blackbox{
   margin-right: 5%;
   padding-top: 10%;
   padding-bottom: 10%;
+  font-size: 1.5em;
 }
 
 div.exercises div.blackbox:hover{
@@ -74,33 +119,13 @@ div.exercises div.blackbox:hover{
   transition: 0.5s;
 }
 
-div.formula{
-    padding-bottom: 10px;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 10px;
-    font-size: 1.5em;
-    text-align: center;
-}
-/*-------FONT STYLES FOR TEXTS AND TITLES-----------*/
-.text{
-  font-family: "Quattrocento";
-  font-size: 20px;
-  text-align: justify;
-}
 
-.titles{
-  font-family: "Quattrocento";
-  font-size: 30px;
-  text-align: justify;
-  text-decoration: none;
-  font-weight: bold;
-}
-/*--------------IMAGES STRUCT-------------------*/
-.images{
-  width: 100px;
-  height: 100px;
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 10px;
+/*--------------MATH FORMULAS-------------------*/
+div.formula{
+  padding-bottom: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 10px;
+  font-size: 1.5em;
+  text-align: center;
 }
