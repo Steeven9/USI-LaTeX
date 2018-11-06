@@ -13,7 +13,15 @@ main{
     width: 65%;
     margin: auto;
     padding-left: 10%;
-    padding-top: 25%;
+    padding-top: 5%;
+}
+
+.logo{
+  width: 75%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
