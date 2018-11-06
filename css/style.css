@@ -33,6 +33,7 @@ main{
   width: 50%;
   display: inherit;
 }
+/* END LOGO */
 
 
 
@@ -70,6 +71,7 @@ div.subtitles{
   padding-right: 4%;
   padding-top: 1%;
 }
+/* END FONT STYLES */
 
 
 
@@ -88,6 +90,7 @@ div.text a:hover {
   color: blue;
   text-decoration: underline;
 }
+/* END LINKS */
 
 
 
@@ -100,6 +103,7 @@ div.text a:hover {
   border-radius: 10px;
   margin-left: 5%;
 }
+/* END IMAGES STRUCTURE */
 
 
 
@@ -140,6 +144,7 @@ div.exercises div.blackbox:hover{
   background-color: whitesmoke;
   transition: 0.5s;
 }
+/* END BLACKBOX WITH TEXT ON THE LEFT */
 
 
 
@@ -152,6 +157,7 @@ div.formula{
   font-size: 1.5em;
   text-align: center;
 }
+/* END MATH FORMULA */
 
 
 
@@ -164,3 +170,4 @@ address{
   padding-right: 1%;
   padding-top: 5%;
 }
+/* END ADDRESS */
