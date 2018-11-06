@@ -10,7 +10,7 @@ body{
 
 
 main{
-    background-color: rgba(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     width: 70%;
     margin: auto;
   }
@@ -20,27 +20,25 @@ div.text{
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 5px;
-    font-size: 1em;
-    text-align: justify;
   }
-  
+
 div.text a:link {
     color: blue;
     text-decoration: none;
   }
-  
+
 div.text a:visited {
     color: blue;
     text-decoration: none;
   }
-  
+
 div.text a:hover {
     color: blue;
     text-decoration: underline;
   }
 
 div.exercises{
-  
+
   width: 100%;
   display: flex;
   align-self: center;
@@ -83,4 +81,26 @@ div.formula{
     padding-top: 10px;
     font-size: 1.5em;
     text-align: center;
+}
+/*-------FONT STYLES FOR TEXTS AND TITLES-----------*/
+.text{
+  font-family: "Quattrocento";
+  font-size: 20px;
+  text-align: justify;
+}
+
+.titles{
+  font-family: "Quattrocento";
+  font-size: 30px;
+  text-align: justify;
+  text-decoration: none;
+  font-weight: bold;
+}
+/*--------------IMAGES STRUCT-------------------*/
+.images{
+  width: 100px;
+  height: 100px;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
 }
