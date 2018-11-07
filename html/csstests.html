@@ -6,19 +6,34 @@
     <title>Tests</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script >
+        let changeNav = function()
+        {
+            // let navs = document.getElementsByTagName('nav');
+            // let xd = navs[0];
+            // console.log(xd);
+            // let links = xd.childNodes;
+            // console.log(links);
+            // for (let i = 1; i < links.length; i++)
+            //     links[i].outerText = 'diocane';
+        }
+
+    </script>
 </head>
 
-<body>
+<body onload="changeNav()">
     <div class="logolink">
             <a href="../index.html"><img src="../media/img/logo.png"></a>
     </div>
+    <nav>
+            <a href="general.html">General Infos</a>
+            <a href="basic.html">Basic Syntax</a>
+            <a href="graphics.html">Graphics</a>
+            <a href="equations.html">Equations</a>
+            <a href="packages.html">Packages</a>
+            <a href="quiz.html">Quiz</a>
+          </nav>
     <main>
-        <img src="../media/img/background.png" class="centerimages">
-        <div class="text">
-            bla bla bla
-            <br>
-            <a href="nonloso.com">Prova</a>
-        </div>
         <div class="titles">
           This should be a title
         </div>
@@ -26,7 +41,7 @@
             And this a subtitle
         </div>
         <div class="text">
-            Let's see how it works.
+            Let's see how it works. <a href="Nonloso.it">Link?</a>
         </div>
         <div class="formula">
             a + b = c
