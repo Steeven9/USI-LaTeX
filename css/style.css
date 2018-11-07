@@ -99,13 +99,21 @@ div.text a:hover {
   margin-left: 5%;
 }
 
-.centerimages{
+.centerimagessmall{
   width: auto;
   height: 3vw;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid white;
+  border: 2px solid black;
+}
+
+.centerimagesbig{
+  width: auto;
+  height: 5vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   border: 2px solid black;
 }
 /* END IMAGES STRUCTURE */
