@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Bibliography management in Latex</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script >
+        let changeNav = function()
+        {
+            // let navs = document.getElementsByTagName('nav');
+            // let xd = navs[0];
+            // console.log(xd);
+            // let links = xd.childNodes;
+            // console.log(links);
+            // for (let i = 1; i < links.length; i++)
+            //     links[i].outerText = 'Our Lord and Savior';
+        }
+
+    </script>
+</head>
+<body onload="changeNav()">
+
+	<div class="logolink">
+            <a href="../index.html"><img src="../media/img/logo.png"></a>
+    </div>
+    <nav>
+            <a href="general.html">General Infos</a>
+            <a href="basic.html">Basic Syntax</a>
+            <a href="graphics.html">Graphics</a>
+            <a href="equations.html">Equations</a>
+            <a href="packages.html">Packages</a>
+            <a href="quiz.html">Quiz</a>
+    </nav>
+
+    <main>
+        
+        <div>
+            <h1>Bibliography management in LaTeX</h1>
+            To construct bibliography for your Latex document, there are several packages that could be deployed and used. Biblatex is one powerful package that can helps you.
+            <hr>
+        </div>
+        
+        <div>
+            <h2>Content</h2>
+            <ol>
+                <li><a href="#BibFile">Bibliography file</a></li>
+                <li><a href="#Introduction">Introduction and the basic</a></li>
+                <li><a href="#Customization">Customization</a></li>
+                <li><a href="#TableContent">Adding Bibliography to the table of contents</a></li>
+                <li><a href="#Reference">Reference guide</a></li>
+            </ol>
+            <hr>
+        </div>
+
+        <div>
+            <h2 id="BibFile">Bibliography file (.bibtex)</h2>
+            <p>
+                To initiate a bibliorgraphy in Latex, you must first create a .bibtex file. A .bibtex file is a text file that contains the citation that you want to cite in your document.  You can also use any text editor, such as sublime, atom, or TexMaker to make your own Bibtex file. In this example, we're going to use a .bibtex file by downloading a citation from google scholar.<br><br>
+                <ol>
+                    <li>
+                        Come to google scholar and search for Einstein paper: <br>
+                        Can quantum-mechanical description of physical reality be considered complete?<br><br>
+                        <img src="../media/img/google_scholar.png" height="600" width="800"><br>
+                    </li>
+                    <li>
+                        Click on the link, you see the export citation  button. Click on that button, you will see Export Article to BibTex. In general, this is how you look for BibTex citation for any research paper. Google Scholar is your friend.<br><br>
+                        <img src="../media/img/Einstein1.png" height="600" width="800"><br>
+                    </li>
+                    <li>
+                        Download the file as bibtex to the same folder of your latex file. The file will have the name:<br>
+                        PhysRev.47.777.bibtex<br><br>
+                        Keep the file name consistent with the file name that you are importing to your latex file.<br><br>
+                        <img src="../media/img/Einstein2.png" height="600" width="800"><br>
+
+                    </li>
+                    
+                </ol>
+
+            </p>
+            <hr>
+        </div>
+
+        <div>
+            <h2 id="Introduction">Introduction and the basics</h2>
+            <p>
+                To make biblatex work, you're required to include these 4 commands: <br>
+
+                <ol>
+                    <li>
+                        Import biblatex package<br><br>
+                        \usepackage{biblatex}<br><br>
+                    </li>
+                    <li>
+                        Imports the bibtex data file sample.bib, this file is the one that includes information about each referenced book, article, etc. <br><br>
+                        \addbibresource{PhysRev.47.777.bibtex}<br><br>
+                    </li>
+                    <li>
+                        This command inserts a reference within the document, [1] in this case, that corresponds to an element in the bibliography, "einstein" is a keyword corresponding to an entry in sample.bib.<br><br>
+                        \cite{PhysRev.47.777}<br><br>
+                    </li>
+                    <li>
+                        Prints the list of cited references, the default title is "References" for the article document class and "Bibliography" for books and reports.<br><br>
+                        \printbibliography<br><br>
+                    </li>
+                </ol>
+                As you compile, there will be a Reference section in the bottom of your page. We will explore further option to customize your Bibliography.<br><br>
+                
+                This is the input of your latex file<br><br>
+                <div>
+                    \documentclass{article}<br>
+                    \usepackage[utf8]{inputenc}<br>
+                    \usepackage[english]{babel}<br><br>
+
+                    \usepackage{biblatex}<br><br>
+
+                    \addbibresource{PhysRev.47.777.bibtex}<br><br>
+
+                    \begin{document}<br><br>
+
+                    \section{First section}<br><br>
+
+                    Using \texttt{biblatex} you can display bibliography <br>divided into sections, depending of citation type.<br> 
+                    Let's cite! Einstein's journal paper<br> \cite{PhysRev.47.777}<br> <br>
+
+                    \printbibliography<br><br>
+
+                    \end{document}<br><br>
+                </div><br><br>
+                And this is the out put:<br><br>
+                <img src="../media/img/bib_out.png"><br><br>
+            </p>
+            <hr>
+        </div>
+        
+        <div>
+            <h2 id="Customization">Customization</h2>
+            <p>
+                Bibtex citing can be easily customized through a few command. In this section, we will add some more source into our Bibtex file, and we will let Biblatex handle sorting and citing.<br><br>
+
+                \printbibliography[title={Whole bibliography}]<br><br>
+                This command will change the title of the bibliography from "References" to which ever title you put there.<br><br>
+
+                \printbibliography[type=article,title={Articles only}]<br>
+                \printbibliography[type=book,title={Books only}]<br><br>
+                 
+                \printbibliography[keyword={physics},title={Physics-related only}]<br>
+                \printbibliography[keyword={latex},title={\LaTeX-related only}]<br><br>
+
+                Here are a few more commands that could be very useful:<br><br>
+                \printbibliography[type=article,title={Articles only}]<br><br>
+                Only prints entries whose type is "article", and sets the title "Articles only" for this section. The same syntax works for any other entry type.<br><br>
+                \printbibliography[keyword={physics},title={Physics-related only}]<br><br>
+                Filters bibliography entries that include the word "physics" in any of the fields. Sets the title "Physics-related only" for said section.
+
+            </p>
+            <hr>
+        </div>
+        <div>
+            <h2 id="TableContent">Adding Bibliography to the table of contents</h2>
+            <p>
+                In \printbibliography you need to add heading option into the command. You can make your heading into bibintoc or subbibintoc, as bibintoc is the option for the main section and subbibintoc is the subsection of the bibliorgraphy<br><br>
+
+                \printbibliography[
+                heading=bibintoc,
+                title={Whole bibliography}
+                ]
+                 
+                \printbibliography[heading=subbibintoc,type=article,title={Articles only}]
+
+            </p>
+            <hr>
+        </div>
+        <div>
+            <h2 id="Reference">Reference guide</h2>
+            <hr>
+        </div>
+    </main>
+	
+
+</body>
+</html>
