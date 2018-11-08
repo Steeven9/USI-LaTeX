@@ -48,7 +48,7 @@ main{
   /* height: auto;
   display: block;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
 } */
 /* END LOGO */
 
@@ -307,6 +307,10 @@ div.homepagebox a:hover{
   border-radius: 25px;
   transition: background-color 0.5s;
 }
+<<<<<<< .mine
+/* END BOXES FOR HOMPAGES */
+||||||| .r17
+/* END BOXES FOR HOMPAGES */=======
 /* END BOXES FOR HOMPAGES */
 
 
@@ -340,4 +344,4 @@ div.homepagebox a:hover{
   text-decoration: none !important;
   transform: translateX(10px);
 }
-/* END OF STYLES FOR QUIZ PAGE */
+/* END OF STYLES FOR QUIZ PAGE */>>>>>>> .r20
