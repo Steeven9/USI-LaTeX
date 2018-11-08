@@ -14,3 +14,12 @@ For CSS:
 		• solution 1: background image has black bars on side built-in
 		• solution 2: content section itself has min & max width
 		• e.g. 400 -> 800 px?
+
+
+
+Answers:
+-Using <p> or the div class "text" is the same things, same for the titles.
+-The problema for which I said to use breaks, is that putting a padding-top on subtitles would applies directly also to the first subtitle, that is right under the title and doesn't have to have additional padding. That is, or we use breaks, or we create two different subtitles classes: one for the first subtitle that is under the title, and one for all the other subtitles. Just let me know which one do you prefer.
+
+-For the fonts, for the moment I left the predefined of the browser, since we'd need to chose a list of fonts; only one is not enough since if a browser doesn't have it, it will use directly his base font (just like it is doing right now).
+-The background is not definitive, it will change considering how the site will look like when the whole body will be complete, navigators included. Anyway, I honestly don't see black bars very well. For what concerns min and max width, I don't think it should need a max width since it works well on any big dimension, while for minimum there is already one that will be reduced with some implementations when both the navigators will be ready and I'll have time to work on it.

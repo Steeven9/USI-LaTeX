@@ -216,12 +216,12 @@ div.formula{
 
 /* ADDRESS */
 address{
-  font-family: "Quattrocento";
   font-size: 1em;
   text-align: justify;
   padding-left: 1%;
   padding-right: 1%;
   padding-top: 5%;
+  padding-bottom: 0.5%;
 }
 /* END ADDRESS */
 
@@ -259,3 +259,36 @@ div.homepagebox a:hover{
   transition: background-color 0.5s;
 }
 /* END BOXES FOR HOMPAGES */
+
+
+
+/* STYLES (by Stefano Taillefert) FOR QUIZ PAGE */
+.margin20 {
+  margin-bottom: 20px;
+}
+
+.margin50 {
+  margin-bottom: 50px;
+}
+
+.vMid {
+  vertical-align: middle;
+}
+
+.button {
+  border: #000 solid 2px;
+  width: fit-content;
+  margin: auto;
+  padding: 7.5px;
+  margin-bottom: 2.5%;
+  transition: 0.6s;
+  cursor: pointer;
+  color: #000 !important;
+  display: inline-block;
+}
+
+.button:hover {
+  text-decoration: none !important;
+  transform: translateX(10px);
+}
+/* END OF STYLES FOR QUIZ PAGE */
