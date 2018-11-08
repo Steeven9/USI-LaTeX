@@ -167,6 +167,15 @@ div.text a:link, div.text a:visited, div.text a:hover {
 div.text a:hover {
   text-decoration: underline;
 }
+
+div.indexgeneral li a:link, div.text a:visited, div.text a:hover {
+  color: blue;
+  text-decoration: none;
+}
+
+div.indexgeneral li a:hover {
+  text-decoration: underline;
+}
 /* END LINKS */
 
 

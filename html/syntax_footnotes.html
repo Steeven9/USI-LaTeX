@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Footnotes</title>
+    <meta name="author" content="Mejrima Smajilbasic">
+    <link rel="stylesheet" href="../css/style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+        <div class="logolink"><a href="index.html"><img src="../media/img/logo.png"></div></a>
+        <nav>
+            <a href="general_index.html">Getting Started</a>
+            <a href="syntax_index.html" class="active">Basic Syntax</a>
+            <a href="graphics_index.html">Graphics</a>
+            <a href="equations_index.html">Equations</a>
+            <a href="packages_index.html">Packages</a>
+            <a href="quiz.html">Quiz</a>
+        </nav>
+    <main>
+    <div class="title">Footnotes</div>
+    <div class="indexgeneral"><ul>
+        <li><a href="footnotes.html#first"><div class="index">Basic footnotes</div></a></li>
+        <li><a href="footnotes.html#second"><div class="index">Footnotes with more references</div></a></li>
+        <li><a href="footnotes.html#third"><div class="index">Numbering styles</div></a></li>
+    </ul>
+    <hr>
+</div>
+    <div class="firstsubtitle" id="first">Basic footnotes</div>
+    In almost every document you will need footnotes, so this
+    article explains how to add them. In Latex there is a simple
+    command <i>\footnote</i> which automatically numbers it. 
+    <br>
+    <br>
+    <!--need some div here-->
+    <code>This is a test to check if the footnote\footnote{it works} works.</code>
+    <br>
+    <br>
+    <div class="images">
+    <img src="" alt="Image representing a test for \footnote{}">
+    </div>
+    <br>
+    <br>
+    The superscript for the footnote can be modified manually using 
+    an option like this, which sets "10" as the reference mark:
+    <br>
+    <br>
+    <!--need some div here-->
+    <code>This is a test to check if the footnote \footnote[10]{it works} works.</code>
+    <br>
+    <br>
+    <div class="images">
+    <img src="" alt="Image representing a test for \footnote[]{}">
+    </div>
+    <br>
+    <br>
+    Another command is <code>\footnotetext{}</code> which prints the
+    footnote corresponding to the previous <code>\footnotemark</code>. 
+    The latter prints a foot note mark but without the actual footnote.
+    This can be used to write the actual footnote text in a new line:
+    <br>
+    <br>
+    <!--need some div here-->
+    <code>This is a test to check if the footnote \footnote[10]{it works} works.
+        The footnote text\footnotemark can be written in a new line.
+        <br>
+        <br>
+        \footnotetext{second footnote}
+    </code>
+    <br>
+    <br>
+    <div class="images">
+    <img src="" alt="Image combinig the commands">
+    </div>
+    <div class="subtitle" id="second">Footnotes with more references</div>
+    A single footnote can be used multiple times:
+    <br>
+    <br>
+    <!--need some div here-->
+    <code>This is a test to check if the footnote \footnote[10]{it works} works.
+        The footnote text\footnotemark can be written in a new line.
+        <br>
+        <br>
+        \footnotetext{second footnote}
+        <br>
+        <br>
+        The same footnote\footnotemark can be repeated more than 
+        once\footnotemark[\value{footnote}].
+        <br>
+        <br>
+        \footnotetext{the same footnote}
+    </code>
+    <br>
+    <div class="images">
+    <img src="" alt="footnote used multiple times">
+    </div>
+    <br>
+    <br> 
+    A footnote can be labeled too:
+    <br>
+    <br>
+    <!--need some div here-->
+    <code>This is a test to see if the footnote\footnote{\label{test}first} label works</code>
+    <br>
+    <br>
+    If you want to refer them later in the document you can use the <code>\ref{}</code> command:
+    <br>
+    <br>
+    <!--need some div here-->
+    <code>I want to refer to a footnote\ref{test}.</code>
+    <br>
+    <div class="images">
+    <img src="" alt="labeled footnote">
+    </div>
+    <div class="subtitle" id="third">Numbering styles</div>
+    <div class="text">
+    The type of numbers of the footnotes can be modified and the possible styles are:
+    <br>
+    <ul>
+        <li><code>roman</code>: Lower case Roman numerals</li>
+        <li><code>Roman</code>: Upper case Roman numerals</li>
+        <li><code>alph</code>: Alphabetic lower case</li>
+        <li><code>Alph</code>: Alphabetic upper case</li>
+        <li><code>fnsymbol</code>: A set of 9 special symbols.</li>
+    </ul>
+    <br>
+    To make an example, the command <code>\renewcommand{\thefootnote}{\roman{footnote}}</code> 
+    sets the number style to lower case roman. It can be used in the preamble to change 
+    the numbering style of the footnotes in the whole document.
+    <br>
+    <br>
+    <!--need some div here-->
+    <code>This is a test to check if the footnote \footnote[10]{it works} works.
+        The footnote text\footnotemark can be written in a new line.
+        <br>
+        <br>
+        \footnotetext{second footnote}
+        <br>
+        <br>
+        The same footnote\footnotemark can be repeated more than 
+        once\footnotemark[\value{footnote}].
+        <br>
+        <br>
+        \footnotetext{the same footnote}
+        <br>
+        <br>
+        \renewcommand{\thefootnote}{\roman{footnote}}
+        <br>
+        <br>
+        Testing footnote in Roman\footnote{footnote in Roman numerals}
+    </code>
+    <br>
+    <div class="images">
+    <img src="" alt="footnote styles">
+    </div>
+    <br>
+    <br>
+</div>
+    <footer>
+        <address>Page written by Mejrima Smajilbasic</address>
+    </footer>
+</main>
+</body>
+
+</html>
