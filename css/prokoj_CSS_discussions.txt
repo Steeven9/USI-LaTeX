@@ -1,0 +1,16 @@
+SA1 Suggestions
+
+
+For CSS:
+
+• Would using class tags on <p>, <h1>, etc. be easier or harder to manipulate later?
+• We can avoid using line breaks, have margin built in to headings (subtitles)
+
+• font to sans serif? would make it a bit easier to read?
+• black bars on the left and right side of the background?
+	• since background is light, dark sides would be less distracting for a reader
+	• we can decide whether static/dynamic
+	• may not be a problem w/ sidebar afterwards, but would still be asymmetric
+		• solution 1: background image has black bars on side built-in
+		• solution 2: content section itself has min & max width
+		• e.g. 400 -> 800 px?
