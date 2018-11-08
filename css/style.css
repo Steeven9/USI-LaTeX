@@ -85,7 +85,13 @@ nav a:hover{
 
 
 /* FONT STYLES FOR TEXTS AND TITLES */
+@font-face {
+  font-family: Roboto;
+  src: url("../media/fonts/Roboto/Roboto-Regular.ttf");
+}
+
 div.text{
+  font-family: Roboto;
   font-size: 1.2em;
   text-align: justify;
   padding-bottom: 0.5%;
@@ -94,7 +100,8 @@ div.text{
   padding-top: 0.5%;
 }
 
-div.titles{
+div.title{
+  font-family: Roboto;
   font-size: 2em;
   text-align: justify;
   text-decoration: none;
@@ -105,7 +112,8 @@ div.titles{
   padding-top: 1%;
 }
 
-div.subtitles{
+div.firstsubtitle{
+  font-family: Roboto;
   font-size: 1.5em;
   text-align: justify;
   text-decoration: none;
@@ -114,6 +122,18 @@ div.subtitles{
   padding-left: 4%;
   padding-right: 4%;
   padding-top: 1%;
+}
+
+div.subtitle{
+  font-family: Roboto;
+  font-size: 1.5em;
+  text-align: justify;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 1%;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 4%;
 }
 /* END FONT STYLES */
 
@@ -177,6 +197,7 @@ div.exercises p{
   padding-top: 5px;
   font-size: 1.2em;
   text-align: justify;
+  font-family: Roboto;
 }
 
 div.exercises div.blackbox{
