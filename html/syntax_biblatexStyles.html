@@ -1,0 +1,135 @@
+	<title>Biblaxtex</title>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Biblaxtex</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <script >
+        let changeNav = function()
+        {
+            // let navs = document.getElementsByTagName('nav');
+            // let xd = navs[0];
+            // console.log(xd);
+            // let links = xd.childNodes;
+            // console.log(links);
+            // for (let i = 1; i < links.length; i++)
+            //     links[i].outerText = 'Our Lord and Savior';
+        }
+
+    </script>
+</head>
+<body onload="changeNav()">
+
+	<div class="logolink">
+            <a href="../index.html"><img src="../media/img/logo.png"></a>
+    </div>
+    <nav>
+            <a href="general.html">General Infos</a>
+            <a href="basic.html">Basic Syntax</a>
+            <a href="graphics.html">Graphics</a>
+            <a href="equations.html">Equations</a>
+            <a href="packages.html">Packages</a>
+            <a href="quiz.html">Quiz</a>
+    </nav>
+
+    <main>
+        
+        <div>
+            <h1>Biblaxtex Citation Styles</h1>
+            To construct bibliography for your Latex document, there are several packages that could be deployed and used. Biblatex is one powerful package that can helps you 
+            <hr>
+        </div>
+        
+        <div>
+            <h2>Content</h2>
+            <ol>
+                <li><a href="#Bibbibstyle">Biblatex bibliography styles</a></li>
+                <li><a href="#Bibcitestyle">Biblatex citation styles</a></li>
+            </ol>
+            <hr>
+        </div>
+        <div>
+            <h2 id="Bibbibstyle">Biblatex bibliography styles</h2>
+            <p>
+                #TODO a fraking lot in here
+                numeric <br><br>
+                alphabetic  <br><br>
+                authoryear  <br><br>
+                authortitle <br><br>
+                verbose <br><br>
+                reading <br><br>
+                draft<br>
+                The draft style is intended for editing your document before the final version, since it makes easier to keep track of the cited sources.<br><br>
+                authoryear-icomp  <br><br>
+                apa <br><br>
+                bwl-FU  <br><br>
+                chem-acs   <br><br> 
+                chem-angew  <br><br>
+                chem-biochem   <br><br> 
+                chem-rsc <br><br>   
+                ieee  <br><br> 
+                mla <br><br>
+                musuos <br><br> 
+                nature  <br><br>
+                nejm   <br><br> 
+                phys   <br><br> 
+                science <br><br>
+                geschichtsfrkl  <br><br>
+                oscola<br><br>
+            </p>
+            <hr>
+        </div>
+        <div>
+            <h2 id="Bibcitestyle">Biblatex citation styles</h2>
+            <p>
+                #TODO a fraking lot in here too<br><br>
+
+                The parameter citestyle=authoryear passed to the command that imports biblatex is the one that sets the citation style, in this case authoryear. The standard citation styles are:<br><br>
+
+                numeric Implements a numeric citation scheme intended for in-text citations. Should be employed in conjunction with the numeric bibliography style.<br><br>
+                numeric-comp Compact variant of the numeric mode. Citations like [1, 2, 3] are replaced by [1-3].<br><br>
+                numeric-verb Verbose variant of the numeric style. Instead of [2, 5, 7] will print [2];[5];[7].<br><br>
+                alphabetic Alphabetic citation scheme similar to the standard alpha in style bibtex. To be used in conjunction with the alphabetic bibliography style.<br><br>
+                alphabetic-verb Verbose version of the alphabetic style. Instead of [Doe98, Doe95, Farn2004] will print [Doe98];[Doe95];[Farn2004].<br><br>
+                authoryear Implements the author-year citation scheme. To be used in conjunction with the author-year bibliography style.<br><br>
+                authoryear-comp Compact variant of the authoryear style. Prints the author only once if subsequent references passed to a single citation command share the same author. Prints Doe 1992, 1995 instead of Doe 1992, Doe 1995.<br><br>
+                authoryear-ibid A variant of the authoryear intended for footnote citations. Replaces repeated citations by the abbreviation ibidem.<br><br>
+                authoryear-icomp A style combining the features of authoryear-comp and authoryear-ibid
+                authortitle Implements the author-title scheme. Intended for citations given in footnotes.<br><br>
+                authortitle-comp Compact variant of authortitle. Instead of Doe, First title; Doe, Second title this will print Doe, First title, Second title.<br><br>
+                authortitle-ibid A variant of the authortitle intended for footnote citations. Replaces repeated citations by the abbreviation ibidem.<br><br>
+                authortitle-icomp A style combining authortitle-comp and authortitle-ibid.<br><br>
+                authortitle-terse Variant of authoritle that only prints the title if the bibliography contains more than one work of the respective author/editor.<br><br>
+                authortitle-tcomp Style combining authortitle-terse and authortitle-comp.<br><br>
+                authortitle-ticomp Style combining authortitle-icomp and authortitle-terse.<br><br>
+                verbose Citation style that prints a full citation when the entry is cited for the first time and a short version afterwards.<br><br>
+                reading Citation style that goes with the bibliography style by the same name. Loads the authortitle style.
+                There are other non-standard citation styles popular in different journals and thesis<br><br>
+
+                In Sciences:<br><br>
+                American Chemical Society (ACS) style<br><br>
+                American Institute of Physics (AIP) style<br><br>
+                American Mathematical Society (AMS) style<br><br>
+                Vancouver system<br><br>
+                Institute of Electrical and Electronics Engineers (IEEE) style<br><br>
+                Nature style<br><br>
+                Science style<br><br>
+                In Humanities:<br><br>
+                Chicago Style<br><br>
+                Harvard referencing style<br><br>
+                MLA style<br><br>
+                In Socials:<br><br>
+                American Psychological Association (APA) style<br><br>
+            </p>
+            <hr>
+        </div>
+       
+    </main>
+	
+
+</body>
+</html>
