@@ -80,6 +80,10 @@ nav a:hover{
   background-color: rgb(0, 174, 255);
   transition: background-color 0.5s;
 }
+
+nav a.active{
+  background-color: rgb(0, 174, 255);
+}
 /* END TOP NAVIGATOR */
 
 
@@ -92,7 +96,7 @@ nav a:hover{
 
 div.text{
   font-family: Roboto;
-  font-size: 1.2em;
+  font-size: 1.1em;
   text-align: justify;
   padding-bottom: 0.5%;
   padding-left: 5%;
@@ -134,6 +138,20 @@ div.subtitle{
   padding-left: 4%;
   padding-right: 4%;
   padding-top: 4%;
+}
+
+div.indexgeneral{
+  font-family: Roboto;
+  padding-bottom: 0.5%;
+  padding-left: 2.5%;
+  padding-right: 5%;
+  padding-top: 0.5%;
+}
+
+div.index{
+  font-family: Roboto;
+  font-size: 1.2em;
+  margin-bottom: 0.5%;
 }
 /* END FONT STYLES */
 
@@ -195,7 +213,7 @@ div.exercises p{
   margin-right: 2.5%;
   padding-bottom: 5px;
   padding-top: 5px;
-  font-size: 1.2em;
+  font-size: 1.1em;
   text-align: justify;
   font-family: Roboto;
 }

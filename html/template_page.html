@@ -1,9 +1,8 @@
 <!-- WARNING: WRITE ALL THE TEXT INSIDE THE MAIN AND NOT DIRECTLY ON THE BODY -->
-<!-- NOTE: THE WHITE SPACE BELOW THE LOGO AND ON THE LEFT OF THE PAGE ARE PLACE-HOLDERS FOR THE NAVIGATORS -->
+<!-- NOTE: THE WHITE SPACE ON THE LEFT OF THE PAGE IS A PLACE-HOLDERS FOR THE NAVIGATOR -->
 <!-- NOTE: SINCE THE NAVIGATORS HAVE NOT BEEN CREATED YET, THEY WILL BE ADDED TO THE TEMPLATE ON A LATER TIME
 AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN -->
 <!-- NOTE: BE AWARE OF THE FACT THAT IN THE FUTURE WILL BE ADDED A BOX FOR THE CODES -->
-<!-- NOTE: AFTER EVERY PARAGRAPHS, BEFORE USING A NEW SUBTITLE PUT AT LEAST ONE BREAK -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,11 +17,28 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 
 <body>
     <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general.html" class="active"> General Infos</a>  <!-- Move the class="active" to your group-->
+        <a href="basic.html">Basic Syntax</a>
+        <a href="graphics.html">Graphics</a>
+        <a href="equations.html">Equations</a>
+        <a href="packages.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
     <main>
         <div class="title">*TITLE*</div>
-        <div class="firstsubtitle">*SUBTITLE*</div>
+        <div class="indexgeneral"><ul>
+            <li><a href="NAMEOFTHISFILE.html#first"><div class="index">*NAME OF THE FIRST SUBTITLE*</div></a></li>
+            <li><a href="NAMEOFTHISFILE.html#second"><div class="index">*NAME OF THE SECOND SUBTITLE*</div></a></li>
+            <li><a href="NAMEOFTHISFILE.html#third"><div class="index">*NAME OF THE THIRD SUBTITLE*</div></a></li>
+        </ul>
+        <hr>
+        </div>
+        <div class="firstsubtitle" id="first">*SUBTITLE*</div>
         <div class="text">*TEXT*</div>
-        <div class="subtitle">*SUBTITLE*</div>
+        <div class="subtitle" id="second">*SUBTITLE*</div>
+        <div class="text">*TEXT*</div>
+        <div class="subtitle" id="third">*SUBTITLE*</div>
         <div class="text">*TEXT*</div>
 
         <footer>
