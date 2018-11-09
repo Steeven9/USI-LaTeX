@@ -129,7 +129,7 @@ nav a.active{
   src: url("../media/fonts/Roboto/Roboto-Regular.ttf");
 }
 
-div.text, div.textbox div.longtext{
+div.text, div.longtext, div.standardbox{
   font-family: Roboto;
   font-size: 1.1em;
   text-align: justify;
@@ -175,7 +175,7 @@ div.subtitle{
   padding-top: 4%;
 }
 
-div.textbox div.longtext {
+div.textbox div.longtext{
   margin-top: 1%;
   margin-left: 5%;
   margin-right: 5%;
@@ -193,8 +193,20 @@ div.longtext{
   overflow: scroll;
 }
 
+div.textbox div.standardbox{
+  margin-top: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-bottom: 1.5%;
+  padding-top: 1.5%;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 25px;
+  width: 50%;
+  background-color: rgb(235, 235, 235);
+}
+
 div.indexgeneral{
-  font-family: Roboto;
   padding-bottom: 0.5%;
   padding-left: 2.5%;
   padding-right: 5%;
@@ -233,7 +245,7 @@ div.indexgeneral li a:hover {
 
 
 /* IMAGES STRUCTURE */
-.images{
+.images, div.exercises div.blackbox img{
   width: auto;
   height: 2vw;
   margin-left: 5%;
@@ -339,7 +351,6 @@ div.exercises div.blackbox{
   height: auto;
   background-color: black;
   color: black;
-  transition: 0.5s;
   text-align: center;
   margin-left: 2.5%;
   margin-right: 5%;
@@ -348,9 +359,16 @@ div.exercises div.blackbox{
   font-size: 1.5em;
 }
 
+div.exercises div.blackbox img{
+  visibility: hidden;
+}
+
 div.exercises div.blackbox:hover{
-  background-color: whitesmoke;
-  transition: 0.5s;
+  background-color: lightgrey;
+}
+
+div.exercises div.blackbox:hover img{
+  visibility: visible;
 }
 /* END BLACKBOX WITH TEXT ON THE LEFT */
 
