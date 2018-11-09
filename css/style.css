@@ -245,7 +245,7 @@ div.indexgeneral li a:hover {
 
 
 /* IMAGES STRUCTURE */
-.images, div.exercises div.blackbox img{
+.images{
   width: auto;
   height: 2vw;
   margin-left: 5%;
@@ -354,8 +354,8 @@ div.exercises div.blackbox{
   text-align: center;
   margin-left: 2.5%;
   margin-right: 5%;
-  padding-top: 10%;
-  padding-bottom: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   font-size: 1.5em;
 }
 
@@ -369,6 +369,10 @@ div.exercises div.blackbox:hover{
 
 div.exercises div.blackbox:hover img{
   visibility: visible;
+}
+
+div.exercises div.blackbox img{
+  width: 90%;
 }
 /* END BLACKBOX WITH TEXT ON THE LEFT */
 
