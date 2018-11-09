@@ -99,24 +99,24 @@ nav a.active{
   font-family: Roboto;
 }
 
-#first{
+#firstsubpage{
   background-color: grey;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 }
 
-#last{
+#lastsubpage{
   background-color: grey;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
 }
 
-.sidenav a:hover, #first:hover, #last:hover{
+.sidenav a:hover, #firstsubpage:hover, #lastsubpage:hover{
   background-color: rgb(0, 174, 255);
   transition: background-color 0.5s;
 }
 
-.sidenav a.active, #first.active, #lasthover{
+.sidenav a.active, #firstsubpage.active, #lastsubpage.active{
   background-color: rgb(0, 174, 255);
 }
 /*END OF SIDE NAVIGATOR*/
