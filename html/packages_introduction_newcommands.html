@@ -1,0 +1,76 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="../css/style.css">
+      </head>
+   <body>
+     <meta name="author" content="Renato Iannace">
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+    <nav>
+        <a href="general_index.html">Getting Started</a>
+        <a href="syntax_index.html" >Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html" class="active">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+   </body>
+<main>
+  <div class="title">Latex Packages</div>
+  <div class="indexgeneral"><ul>
+      <li><div class="index"><a href="#first">what is a package</a></div></li>
+      <li><div class="index"><a href="#second">how to install a package</a></div></li>
+      <li><div class="index"><a href="#third">purpose of packages</a></div></li>
+      <li><div class="index"><a href="#fourth">how to use a package</a></div></li>
+
+  </ul>
+  <br>
+
+<div class="subtitle" id="first"> What is a package </div>
+  <div class="text">
+    Use packages in LaTeX to add more functions. Demonstration of amsmath package and basic math typesetting.
+    LaTeX offers a lot of functions by default, but in some situations it can become in handy to use so called packages.
+     To import a package in LaTeX, you simply add the \usepackage directive to the preamble of your document.
+  </div>
+
+
+  <div class="subtitle" id="second"> How to install a package </div>
+  <div class="text">
+    When using Linux or Mac, most packages will already be installed by default and it is usually not necessary to install them.
+     In case of Ubuntu installing texlive-full from the package manager would provide all packages available.
+     The MiKTeX bundle in Windows, will download the package if you include it to your document.
+  </div>
+
+  <div style="padding-left:40px">
+  <img src="../media/img/package_how_install packages.png" alt="Image">
+  </div>
+
+  <div class="subtitle" id="third"> Purpose of packages </div>
+  <div class="text">
+    There are countless packages, all for different purposes in my tutorials I will explain some of the most useful.
+    To typeset math, LaTeX offers (among others) an environment called equation.
+    Everything inside this environment will be printed in math mode,
+    a special typesetting environment for math. LaTeX also takes care of equation numbers for us:
+  </div>
+
+  <div style="padding-left:40px">
+  <img src="../media/img/package_purpose.png" alt="Image">
+  </div>
+
+  <div class="subtitle" id="fourth"> How to use a package </div>
+  <div class="text">
+    The automatic numbering is a useful feature,
+    but sometimes it's necessary to remove them for auxiliary calculations.
+     LaTeX doesn't allow this by default, now we want to include a package that does:
+  </div>
+
+  <div style="padding-left:40px">
+  <img src="../media/img/package_how-use-package.png" alt="Image">
+  </div>
+
+   <br>
+  <footer>
+      <address>Page written by Renato Iannace</address>
+  </footer>
+  </main>
+
+  </html>

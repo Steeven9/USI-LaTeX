@@ -1,0 +1,88 @@
+<html>
+      <head>
+            <link rel="stylesheet" href="../css/style.css">
+      </head>
+    <body>
+     <meta name="author" content="Davide Trupia">
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+    <nav>
+                <a href="general_index.html">Getting Started</a>
+                <a href="syntax_index.html" >Basic Syntax</a>
+                <a href="graphics_index.html">Graphics</a>
+                <a href="equations_index.html">Equations</a>
+                <a href="packages_index.html"class="active">Packages</a>
+                <a href="quiz.html">Quiz</a>
+            </nav>
+   </body>
+<main>
+  <div class="title">BEAMER</div>
+  <div class="indexgeneral">
+     <ol>
+        <div class="index"><a href="#firstpart"><li>What is the Beamer?</li></a></div>
+        <br>
+        <div class="index"><a href="#secondpart"><li>Structure</li></a></div>
+        <br>
+        <div class="index"><a href="#thirdpart"><li>Styling features</li></a></div>
+        <br>
+        <div class="index"><a href="#fourthpart"><li>Animations</li></a></div>
+        <br>
+        <div class="index"><a href="#fifthpart"><li>Columns, blocks and other options </li></a></div>
+     </ol>
+  </div>
+  <hr>
+
+
+  <div class="title" id="Firstpart">What is the Beamer?</div>
+  <div class="text">Beamer is a LaTeX class to create powerful, flexible and nice-looking <strong>presentations</strong> and slides.
+    This article explains the most common features to create a presentation: make the title page, add a logo, highlight important points,
+    make a table of contents and add effects to the presentation.
+  <br>
+  <br>
+  <code>\documentclass{beamer} </code></div>
+  <br>
+  <br>
+
+  <div class="title" id="secondpart">Structure</div>
+  <div class="subtitle">Title page and information</div>
+  <div class="text"> You can set the title of your presentation by putting the code below(Must be in brackets!).
+    Of course the subtitle is not required to have a title so you can omit it if not necessary:</div>
+    <br><br>
+  <code> \title[Your title] {About your title} <br>
+         \subtitle{Subtitle optional}</code>
+  <br>
+  <br>
+  <img src="../media/img/packages_Beamer1.png" alt="Beamer screenshot" width="500" height="400">
+  <br>
+  <br><br>
+  <div class="text">
+    You can of course add the authors/author names and surnames or even the initials.
+    There is also an option to reference where each of the person works for/studies.</div>
+  <br><br>
+  <code>\author {C.D.Spiace\inst{1}}<br>
+    \institute{\inst{1}Faculty name\\Uni}</code>
+      <br><br>
+  <img src="../media/img/packages_Beamer2.png" alt="Beamer screenshot" width="500" height="400">
+      <br><br><br>
+
+  <div class="text">
+    The date is always displayed in default when you set the document as Beamer but you can display it also like this:</div><br><br>
+  <code>\date[Rome, 2018]</code>
+      <br>
+      <br>
+<img src="../media/img/packages_Beamer3.png" alt="Beamer screenshot" width="500" height="400">
+<br><br><br>
+
+
+  <div class="subtitle">Table of contents</div>
+  <div class="text">
+  It's always better to divide your presentation into parts (sections) if the presentation is too long. Therefore you can create sections,subsections or subsubsections.If you use \AtBeginSubsection[] instead of \AtBeginSection[] the table of contents will appear at the beginning of each subsection:
+</div>
+ <code> \AtBeginSection[]<br>{  \begin{frame}<br>\frametitle{Table of Contents}<br>\tableofcontents<br>\end{frame}<br>}
+
+  <footer>
+      <address>Page written by Davide Trupia</address>
+  </footer>
+</main>
+
+
+  </html>
