@@ -192,6 +192,28 @@ div.indexgeneral li a:hover {
 
 
 
+/* CODE BOX */
+div.codebox {
+  margin-top: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-bottom: 1.5%;
+  padding-top: 1.5%;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 25px;
+  background-color: lightgrey;
+}
+
+div.codebox p{
+  font-size: 1.2em;
+  text-align: justify;
+  font-family: Roboto;
+}
+/* CODE BOX */
+
+
+
 /* CODE WITH LaTeX PDF FILE */
 div.latex {
   width: 100%;
@@ -204,7 +226,7 @@ div.latex div.paragraph {
   flex-basis: 40%;
   margin-right: 2.5%;
   padding-bottom: 18%;
-  padding-top: 2%;
+  padding-top: 1.5%;
   padding-left: 2%;
   padding-right: 2%;
   border-radius: 25px;
