@@ -6,18 +6,6 @@
     <title>Tests</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
-    <script>
-        let changeNav = function () {
-            // let navs = document.getElementsByTagName('nav');
-            // let xd = navs[0];
-            // console.log(xd);
-            // let links = xd.childNodes;
-            // console.log(links);
-            // for (let i = 1; i < links.length; i++)
-            //     links[i].outerText = 'Our Lord and Savior';
-        }
-
-    </script>
 </head>
 
 <body onload="changeNav()">
@@ -32,16 +20,17 @@
         <a href="packages.html">Packages</a>
         <a href="quiz.html">Quiz</a>
     </nav>
-
-
+    <div class="sidenav">
+        <a href="general.html" id="first" class="active">Getting Started</a>
+        <a href="basic.html">Basic Syntax</a>
+        <a href="graphics.html">Graphics</a>
+        <a href="equations.html">Equations</a>
+        <a href="packages.html">Packages</a>
+        <a href="quiz.html" id="last">Quiz</a>
+    </div>
     <main>
 
-      <div class="sidenavbar">
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
-      </div>
+      
         <div class="title">
             This should be a title
         </div>

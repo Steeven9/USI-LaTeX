@@ -11,9 +11,9 @@ body{
 
 main{
     background-color: rgb(255, 255, 255);
-    width: 75%;
+    width: 72%;
     margin: auto;
-    padding-left: 15%;
+    padding-left: 18%;
     padding-top: 1%;
 }
 
@@ -70,6 +70,56 @@ nav a.active{
   background-color: rgb(0, 174, 255);
 }
 /* END TOP NAVIGATOR */
+
+
+
+/*SIDE NAVIGATOR*/
+.sidenav {
+  float: left;
+  margin-top: 1.5%;
+  margin-left: 5%;
+  width: 15%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 25px;
+  background-color: grey;
+}
+
+.sidenav a {
+  flex-basis: 100%;
+  text-align: center;
+  text-decoration: none;
+  padding: 1.5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color: white;
+  transition: background-color 0.5s;
+  font-size: 1.1em;
+  font-family: Roboto;
+}
+
+#first{
+  background-color: grey;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+#last{
+  background-color: grey;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.sidenav a:hover, #first:hover, #last:hover{
+  background-color: rgb(0, 174, 255);
+  transition: background-color 0.5s;
+}
+
+.sidenav a.active, #first.active, #lasthover{
+  background-color: rgb(0, 174, 255);
+}
+/*END OF SIDE NAVIGATOR*/
 
 
 
@@ -397,22 +447,3 @@ div.homepagebox a:hover{
   transform: translateX(10px);
 } */
 /* END OF STYLES FOR QUIZ PAGE */
-/*SIDE BAR*/
-.sidenavbar {
-  height: 100%;
-}
-
-.sidenavbar a {
-    padding: 2em 6em 2em 6em;
-    text-decoration: none;
-    font-size: 25px;
-    color: black;
-    display: block;
-    width: 30px;
-    background-color: whitesmoke;
-}
-
-.sidenavbar a:hover {
-    color: #f1f1f1;
-    background-color: rgb(0, 174, 255);
-}
