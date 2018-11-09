@@ -14,23 +14,72 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
     <title>Test yourself!</title>
     <meta name="author" content="Stefano Taillefert">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    <style>
+        .margin20 {
+            margin-bottom: 20px;
+        }
+
+        .margin50 {
+            margin-bottom: 50px;
+        }
+
+        .vMid {
+            vertical-align: middle;
+        }
+
+        .line1-5 {
+            line-height: 1.5;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .button {
+            border: #000 solid 2px;
+            width: fit-content;
+            margin: auto;
+            padding: 7.5px;
+            margin-bottom: 2.5%;
+            transition: 0.5s;
+            cursor: pointer;
+            color: #000 !important;
+            display: inline-block;
+        }
+
+        .button:hover {
+            text-decoration: none !important;
+            color: #fff !important;
+            background-color: #000;
+        }
+    </style>
 </head>
 
 <body>
     <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html" class="active">Quiz</a>
+    </nav>
 
     <main>
-        <div class="titles">Test yourself!</div>
-        <div class="text margin50">
-            <div class="margin20">Question 1</div>
-            <label><input type="radio" name="question1"><span class="vMid"> Option 1</span></label><br>
-            <label><input type="radio" name="question1"><span class="vMid"> Option 2</span></label><br>
-            <label><input type="radio" name="question1"><span class="vMid"> Option 3</span></label><br>
-            <label><input type="radio" name="question1"><span class="vMid"> Option 4</span></label>
+        <div class="title">Test yourself!</div>
+        <div class="text margin50 line1-5">
+            <div>Question 1: is this question a question?</div> 
+            <div id="answQuestion1" class="margin20 red"></div>
+            <label><input type="radio" name="question1"><span class="vMid"> Yes</span></label><br>
+            <label><input type="radio" name="question1"><span class="vMid"> No</span></label><br>
+            <label><input type="radio" name="question1"><span class="vMid"> Maybe</span></label><br>
+            <label><input type="radio" name="question1"><span class="vMid"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></label>
         </div>
 
-        <div class="text margin50">
+        <div class="text margin50 line1-5">
             <div class="margin20">Question 2</div>
             <label><input type="radio" name="question2"><span class="vMid"> Option 1</span></label><br>
             <label><input type="radio" name="question2"><span class="vMid"> Option 2</span></label><br>
@@ -38,7 +87,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
             <label><input type="radio" name="question2"><span class="vMid"> Option 4</span></label>
         </div>
 
-        <div class="text margin50">
+        <div class="text margin50 line1-5">
             <div class="margin20">Question 3</div>
             <label><input type="radio" name="question3"><span class="vMid"> Option 1</span></label><br>
             <label><input type="radio" name="question3"><span class="vMid"> Option 2</span></label><br>
@@ -46,7 +95,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
             <label><input type="radio" name="question3"><span class="vMid"> Option 4</span></label>
         </div>
 
-        <div class="text margin50">
+        <div class="text margin50 line1-5">
             <div class="margin20">Question 4</div>
             <label><input type="radio" name="question4"><span class="vMid"> Option 1</span></label><br>
             <label><input type="radio" name="question4"><span class="vMid"> Option 2</span></label><br>
@@ -54,7 +103,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
             <label><input type="radio" name="question4"><span class="vMid"> Option 4</span></label>
         </div>
 
-        <div class="text margin50">
+        <div class="text margin50 line1-5">
             <div class="margin20">Question 5</div>
             <label><input type="radio" name="question5"><span class="vMid"> Option 1</span></label><br>
             <label><input type="radio" name="question5"><span class="vMid"> Option 2</span></label><br>
@@ -62,7 +111,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
             <label><input type="radio" name="question5"><span class="vMid"> Option 4</span></label>
         </div>
 
-        <div class="text margin50">
+        <div class="text margin50 line1-5">
             <div class="margin20">Question 6</div>
             <label><input type="radio" name="question6"><span class="vMid"> Option 1</span></label><br>
             <label><input type="radio" name="question6"><span class="vMid"> Option 2</span></label><br>
@@ -70,7 +119,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
             <label><input type="radio" name="question6"><span class="vMid"> Option 4</span></label>
         </div>
 
-        <div class="text margin50">
+        <div class="text margin50 line1-5">
             <div class="margin20">Question 7</div>
             <label><input type="radio" name="question7"><span class="vMid"> Option 1</span></label><br>
             <label><input type="radio" name="question7"><span class="vMid"> Option 2</span></label><br>
@@ -78,7 +127,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
             <label><input type="radio" name="question7"><span class="vMid"> Option 4</span></label>
         </div>
 
-        <div class="text margin50">
+        <div class="text margin50 line1-5">
             <div class="margin20">Question 8</div>
             <label><input type="radio" name="question8"><span class="vMid"> Option 1</span></label><br>
             <label><input type="radio" name="question8"><span class="vMid"> Option 2</span></label><br>
@@ -86,7 +135,28 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
             <label><input type="radio" name="question8"><span class="vMid"> Option 4</span></label>
         </div>
 
-        <div class="text margin50"><a href="" class="button">Submit</a></div>
+        <div class="text margin50"><a onclick="submit()" class="button">Submit</a></div>
+
+        <script>
+            function submit() {
+                var xhttp = new XMLHttpRequest();
+
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        //append right or wrong to every question
+
+                        //test
+                        document.getElementById("answQuestion1").innerHTML = this.responseText;
+
+                        //get back to top of the page
+                        document.body.scrollTop = 0; // For Safari
+                        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+                    }
+                };
+                xhttp.open("POST", "https://kiba.ddns.net/school/sa1Quiz.php", true);
+                xhttp.send();
+            }
+        </script>
 
         <footer>
             <address>Page written by Stefano Taillefert</address>
