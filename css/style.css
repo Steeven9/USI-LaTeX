@@ -79,7 +79,7 @@ nav a.active{
   src: url("../media/fonts/Roboto/Roboto-Regular.ttf");
 }
 
-div.text{
+div.text, div.textbox div.longtext{
   font-family: Roboto;
   font-size: 1.1em;
   text-align: justify;
@@ -125,6 +125,24 @@ div.subtitle{
   padding-top: 4%;
 }
 
+div.textbox div.longtext {
+  margin-top: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-bottom: 1.5%;
+  padding-top: 1.5%;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 25px;
+  height: 350px;
+  width: 50%;
+  background-color: rgb(235, 235, 235);
+}
+
+div.longtext{
+  overflow: scroll;
+}
+
 div.indexgeneral{
   font-family: Roboto;
   padding-bottom: 0.5%;
@@ -152,7 +170,7 @@ div.text a:hover {
   text-decoration: underline;
 }
 
-div.indexgeneral li a:link, div.text a:visited, div.text a:hover {
+div.indexgeneral li a:link, div.indexgeneral li a:visited, div.indexgeneral li a:hover {
   color: blue;
   text-decoration: none;
 }
@@ -350,7 +368,7 @@ div.homepagebox a:hover{
 
 
 /* STYLES (by Stefano Taillefert) FOR QUIZ PAGE */
-.margin20 {
+/* .margin20 {
   margin-bottom: 20px;
 }
 
@@ -377,5 +395,5 @@ div.homepagebox a:hover{
 .button:hover {
   text-decoration: none !important;
   transform: translateX(10px);
-}
+} */
 /* END OF STYLES FOR QUIZ PAGE */
