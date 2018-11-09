@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>*TITLE OF THE PAGE*</title>
+    <meta name="author" content="*LEONARDO CINO*">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <main>
+        <div class="title">HOW TO PLACE IMAGES</div>
+        <div class="firstsubtitle"></div> 
+        <div class="text">After adding the image, it's time to choose where to place it and how.
+                          Initially, you will notice that the figure does not necessarily appear
+                          at the exact point where you enter the code in the .tex file.
+                          In fact, Latex could put images on the next page or where there is enough space.
+                          This happens because you may have a lot of text in the document.</div>
+        <div class="subtitle">Image Positioning</div>
+        <div class="text">Per evitare questa situazione, è necessario impostare il valore float per l'ambiente figure.
+           Per farlo bisogna impostare il float aggiungendo  [h!] dopo il comando "\begin{figure}".
+           I valori possibili sono:
+           <ul>
+           <li>h (qui) - stessa posizione</li>
+           <li>t (in alto) - parte superiore della pagina</li>
+           <li>b (in basso) - in fondo alla pagina</li>
+           <li>p (pagina) - su una pagina aggiuntiva</li>
+           <li>! (sostituisci): forza la posizione specificata</li>
+           </ul>
+           Il pacchetto float (\ usepackage {float}) consente di impostare
+           l'opzione su [H], che è ancora più rigida di [h!].</div>
+        <div class="subtitle">Examples</div>
+        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u
+          t labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip e
+          x ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+
+        <footer>
+            <address>Page written by LEONARDO CINO</address>
+        </footer>
+    </main>
+</body>
+
+</html>
