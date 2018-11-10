@@ -469,3 +469,38 @@ div.homepagebox a:hover{
   transform: translateX(10px);
 } */
 /* END OF STYLES FOR QUIZ PAGE */
+
+
+
+/* HOMEPAGE */
+.firstbackground {
+  background-image: url("../media/img/background3.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+}
+  
+.firstbackground .homepagetext, .secondbackground .homepagetext {
+  text-align: center;
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 4vw;
+  color: white;
+  letter-spacing: 3px;
+  padding-top: 100px;
+  opacity: 1;
+      -webkit-transition: height 0.3s; /* Safari */
+      transition: height 0.3s;
+}
+
+.secondbackground {
+    background-image: url("../media/img/background2.jpg");
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+}
+/* END HOMEPAGE */
