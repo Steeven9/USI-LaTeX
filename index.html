@@ -1,46 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<script>
-    jQuery(document).ready(function () {
-        widthw = $(window).width();
-        heightw = $(window).height();
-        var lastScrollTop = 0;
-        var startingheight = $(".firstbackground").height();
-        var startingposition = 0;
-        var docheight = $(document).height()
-        $(window).scroll(function (event) {
-            var st = $(this).scrollTop();
-            if (st > lastScrollTop) {
-                height1 = $(".firstbackground").height();
-                finalheight = startingheight - st;
-                $(".firstbackground").css("height", finalheight + "px");
-                opacity = $(".homepagetext").css('opacity');
-                opacityfinalech = 1 - ((st - startingposition) / (500 - startingposition));
-                $(".homepagetext").css("opacity", opacityfinalech);
-            } else {
-                if (st < heightw) {
-                    height1 = $(".firstbackground").height();
-                    var lol = lastScrollTop - st;
-                    finalheight = height1 + lol;
-                    $(".firstbackground").css("height", finalheight + "px");
-                    opacity = $(".homepagetext").css('opacity');
-                    opacityfinalech = 1 - ((st - startingposition) / (500 - startingposition));
-                    $(".homepagetext").css("opacity", opacityfinalech);
-                    heightw = $(window).height();
-                    if (st == 0) { $(".firstbackground").css("height", heightw - 149.2 + "px"); }
-                }
-            }
-
-            lastScrollTop = st;
-        });
-</script>
-
 <head>
     <meta charset="utf-8" />
     <title>Index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script>
+        window.addEventListener('scroll', function(e)
+        {
+            let scrolled = window.pageYOffset;
+
+            let first_background = document.querySelector('.homepagetext');
+            first_background.style.opacity = 1 - scrolled/screen.height;
+
+            let second_background = document.querySelector('.homepagetext2');
+            second_background.style.opacity = 0.2 + scrolled/screen.height;
+        })
+    </script>
 </head>
 
 <body>
@@ -50,7 +26,7 @@
     </div>
 
     <div class="secondbackground">
-        <div class="homepagetext"><span>TEXT NUMBER 2</span></div>
+        <div class="homepagetext2"><span>TEXT NUMBER 2</span></div>
     </div>
 
 </body>
