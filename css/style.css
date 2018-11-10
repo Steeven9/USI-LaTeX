@@ -477,7 +477,7 @@ div.homepagebox a:hover{
 
 
 
-/* HOMEPAGE */
+/* MAIN HOMEPAGE */
 .firstbackground {
   background-image: url("../media/img/background3.jpg");
   background-attachment: fixed;
@@ -487,15 +487,32 @@ div.homepagebox a:hover{
   background-position: center;
 }
   
-.homepagetext, .homepagetext2 {
+.mainhomepagetext{
   text-align: center;
   font-family: Roboto;
   font-weight: bold;
   font-size: 4vw;
   color: black;
   letter-spacing: 3px;
-  padding-top: 20%;
+  padding-top: 10%;
   opacity: 1;
+}
+
+.mainhomepagetext2box {
+  padding-top: 3%;
+  opacity: 1;
+}
+
+.mainhomepagetext2box .mainhomepagetext2 {
+  background-color: rgb(0, 174, 255);
+  text-align: center;
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 3.5vw;
+  color: white;
+  letter-spacing: 3px;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .secondbackground {
@@ -506,15 +523,50 @@ div.homepagebox a:hover{
     background-attachment: fixed;
     background-position: center;
 }
+
+div.mainhomepagebox {
+  opacity: 1;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+div.mainhomepagebox a {
+  flex-basis: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8vw;
+  text-decoration: none;
+  padding: 1px;
+  border-radius: 25px;
+  background-color: grey;
+  color: white;
+  transition: background-color 0.5s;
+  margin-top: 5%;
+  font-size: 2.5vw;
+}
+
+div.mainhomepagebox a:hover{
+  background-color: rgb(0, 174, 255);
+  border-radius: 25px;
+  transition: background-color 0.5s;
+}
 /* END HOMEPAGE */
 
 
 
 /* RESPONSIVITY */
-@media (max-width: 981px)
+@media (max-width: 1024px)
 {
   nav a{
-    font-size: 0.8em;
+    font-size: 0.88em;
+  }
+  .sidenav a{
+    font-size: 0.9em;
   }
   div.latex div.paragraph {
     height: 420px;
@@ -524,32 +576,60 @@ div.homepagebox a:hover{
   }
 }
 
-@media (max-width: 700px)
+@media (max-width: 768px)
 {
   nav a{
-    font-size: 0.6em;
+    font-size: 0.48em;
   }
   .sidenav a{
-    font-size: 0.8em;
+    font-size: 0.5em;
   }
   div.latex div.paragraph {
-    height: 300px;
+    height: 330px;
   }
   div.latex div.paragraph p{
     font-size: 0.7em;
   }
+  .sidenav {
+    border-radius: 15px;
+  }
+  #firstsubpage{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  #lastsubpage{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
 }
 
-@media (max-width: 525px)
+@media (max-width: 425px)
 {
   body{
     min-width: 375px;
   }
   nav a{
-    font-size: 0.4em;
+    font-size: 0.2em;
   }
   .sidenav a{
+    font-size: 0.6em;
+  }
+  div.latex div.paragraph {
+    height: 210px;
+  }
+  div.latex div.paragraph p{
     font-size: 0.7em;
+  }
+  .sidenav {
+    border-radius: 15px;
+  }
+  #firstsubpage{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  #lastsubpage{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
   }
 }
 /* END RESPONSIVITY */
