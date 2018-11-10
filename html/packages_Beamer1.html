@@ -14,6 +14,7 @@
                 <a href="quiz.html">Quiz</a>
             </nav>
    </body>
+
 <main>
   <div class="title">BEAMER</div>
   <div class="indexgeneral">
@@ -22,7 +23,7 @@
         <br>
         <div class="index"><a href="#secondpart"><li>Structure</li></a></div>
         <br>
-        <div class="index"><a href="#thirdpart"><li>Styling features</li></a></div>
+        <div class="index"><a href="../html/packages_Beamer2.html"><li>Styling features</li></a></div>
         <br>
         <div class="index"><a href="#fourthpart"><li>Animations</li></a></div>
         <br>
@@ -75,12 +76,45 @@
 
   <div class="subtitle">Table of contents</div>
   <div class="text">
-  It's always better to divide your presentation into parts (sections) if the presentation is too long. Therefore you can create sections,subsections or subsubsections.If you use \AtBeginSubsection[] instead of \AtBeginSection[] the table of contents will appear at the beginning of each subsection:
+  It's always better to divide your presentation into parts (sections) if the presentation is too long. Therefore you can create sections,subsections or subsubsections
+  the style used in this slide can be set like this: <code> \usetheme{Warsaw} <code> and the package <code> \usepackage{graphicx} </code> is required.
 </div>
- <code> \AtBeginSection[]<br>{  \begin{frame}<br>\frametitle{Table of Contents}<br>\tableofcontents<br>\end{frame}<br>}
+<br>
+ <code> \section{One} <br>
+\begin{frame} <br>
+  \frametitle{ff} <br>
 
+\end{frame} <br>
+\section{Two}<br>
+\begin{frame}<br>
+  \frametitle{ff}<br>
+<br>
+\end{frame}<br><br>
+
+\subsection{Two a}<br>
+\begin{frame}<br>
+  \frametitle{ff}<br>
+<br>
+\end{frame}<br>
+<br>
+\subsection{Two b}<br>
+\begin{frame}<br>
+  \frametitle{ff}<br>
+<br>
+\end{frame}<br>
+<br>
+\section{Three}<br>
+\begin{frame}<br>
+  \frametitle{ff}<br>
+<br>
+\end{frame}<br>
+  <img src="../media/img/packages_beamer4.png">
   <footer>
-      <address>Page written by Davide Trupia</address>
+      <address>Page written by Davide Trupia |
+        <a href="../html/packages_Beamer2.html">
+          NEXT PAGE
+        </a>|
+      </address>
   </footer>
 </main>
 
