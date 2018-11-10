@@ -398,7 +398,8 @@ div.formula{
 
 /* ADDRESS */
 address{
-  font-size: 1em;
+  font-size: 0.9em;
+  font-family: Roboto;
   text-align: justify;
   padding-left: 1%;
   padding-right: 1%;
@@ -535,7 +536,7 @@ div.mainhomepagebox {
 }
 
 div.mainhomepagebox a {
-  flex-basis: 40%;
+  flex-basis: 42%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -554,6 +555,15 @@ div.mainhomepagebox a:hover{
   background-color: rgb(0, 174, 255);
   border-radius: 25px;
   transition: background-color 0.5s;
+}
+
+.specialfooter{
+  font-size: 0.85vw;
+  font-family: Roboto;
+  font-style: italic;
+  color: white;
+  padding-top: 3%;
+  padding-left: 90%;
 }
 /* END HOMEPAGE */
 
@@ -600,6 +610,71 @@ div.mainhomepagebox a:hover{
   #lastsubpage{
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+  }
+
+  div.text, div.longtext, div.standardbox{
+    font-size: 0.9em;
+  }
+  
+  div.title{
+    font-family: Roboto;
+    font-size: 1.7em;
+    text-align: justify;
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 1%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-top: 1%;
+  }
+  
+  div.firstsubtitle{
+    font-family: Roboto;
+    font-size: 1.3em;
+    text-align: justify;
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 1%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 1%;
+  }
+  
+  div.subtitle{
+    font-family: Roboto;
+    font-size: 1.3em;
+    text-align: justify;
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 1%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 4%;
+  }
+  div.index{
+    font-family: Roboto;
+    font-size: 1em;
+    margin-bottom: 0.5%;
+  }
+
+  div.exercises p{
+    font-size: 0.9em;
+  }
+  
+  div.exercises div.blackbox{
+    font-size: 1.3em;
+  }
+
+  div.codebox p{
+    font-size: 1em;
+  }
+
+  div.formula{
+    font-size: 1.2em;
+  }
+
+  address{
+    font-size: 0.7em;
   }
 }
 
