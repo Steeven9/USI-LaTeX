@@ -36,25 +36,24 @@
     <main>
         
         <div>
-            <h1>Bibliography management in LaTeX</h1>
+            <h1 class="title">Bibliography management in LaTeX</h1>
             To construct bibliography for your Latex document, there are several packages that could be deployed and used. Biblatex is one powerful package that can helps you.
             <hr>
         </div>
         
         <div>
-            <h2>Content</h2>
+            <h2 class="firssubtitle">Content</h2>
             <ol>
                 <li><a href="#BibFile">Bibliography file</a></li>
                 <li><a href="#Introduction">Introduction and the basic</a></li>
                 <li><a href="#Customization">Customization</a></li>
                 <li><a href="#TableContent">Adding Bibliography to the table of contents</a></li>
-                <li><a href="#Reference">Reference guide</a></li>
             </ol>
             <hr>
         </div>
 
         <div>
-            <h2 id="BibFile">Bibliography file (.bibtex)</h2>
+            <h2 class="subtitle" id="BibFile">Bibliography file (.bibtex or .bib)</h2>
             <p>
                 To initiate a bibliorgraphy in Latex, you must first create a .bibtex file. A .bibtex file is a text file that contains the citation that you want to cite in your document.  You can also use any text editor, such as sublime, atom, or TexMaker to make your own Bibtex file. In this example, we're going to use a .bibtex file by downloading a citation from google scholar.<br><br>
                 <ol>
@@ -93,7 +92,7 @@
         </div>
 
         <div>
-            <h2 id="Introduction">Introduction and the basics</h2>
+            <h2 class="subtitle" id="Introduction">Introduction and the basics</h2>
             <p>
                 To make biblatex work, you're required to include these 4 commands: <br>
 
@@ -131,7 +130,6 @@
 
                     \section{First section}<br><br>
 
-                    Using \texttt{biblatex} you can display bibliography <br>divided into sections, depending of citation type.<br> 
                     Let's cite! Einstein's journal paper<br> \cite{PhysRev.47.777}<br> <br>
 
                     \printbibliography<br><br>
@@ -139,51 +137,169 @@
                     \end{document}<br><br>
                 </code><br><br>
                 And this is the out put:<br><br>
-                <img src="../media/img/bib_out.png" style="width: 50%"><br><br>
+                <img src="../media/img/syntax_Biboutput.png"style="width: 80%"><br><br>
             </p>
             <hr>
         </div>
         
         <div>
-            <h2 id="Customization">Customization</h2>
+            <h2 class="subtitle" id="Customization">Customization</h2>
             <p>
-                Bibtex citing can be easily customized through a few command. In this section, we will add some more source into our Bibtex file, and we will let Biblatex handle sorting and citing.<br><br>
+                Bibtex citing can be easily customized through a few command. In this section, we will add some more source into our Bibtex file, and we will let Biblatex handle sorting and citing.This command will change the title of the bibliography from "References" to which ever title you put there.<br><br>
 
-                \printbibliography[title={Whole bibliography}]<br><br>
-                This command will change the title of the bibliography from "References" to which ever title you put there.<br><br>
-
-                \printbibliography[type=article,title={Articles only}]<br>
-                \printbibliography[type=book,title={Books only}]<br><br>
-                 
-                \printbibliography[keyword={physics},title={Physics-related only}]<br>
-                \printbibliography[keyword={latex},title={\LaTeX-related only}]<br><br>
+                <code>\printbibliography[title={Whole bibliography}]</code><br><br>
+                
 
                 Here are a few more commands that could be very useful:<br><br>
-                \printbibliography[type=article,title={Articles only}]<br><br>
+
+                <code>
+                    \printbibliography[type=article,title={Articles only}]<br>
+                    \printbibliography[type=book,title={Books only}]<br><br>
+                 
+                    \printbibliography[keyword={physics},title={Physics-related only}]<br>
+                    \printbibliography[keyword={latex},title={\LaTeX-related only}]<br><br>
+                </code>
+
+
+                
+
+
                 Only prints entries whose type is "article", and sets the title "Articles only" for this section. The same syntax works for any other entry type.<br><br>
-                \printbibliography[keyword={physics},title={Physics-related only}]<br><br>
-                Filters bibliography entries that include the word "physics" in any of the fields. Sets the title "Physics-related only" for said section.
+
+                <code>\printbibliography[type=article,title={Articles only}]</code><br><br>
+                <code>\printbibliography[keyword={physics},title={Physics-related only}]</code><br><br>
+
+
+                Filters bibliography entries that include the word "physics" in any of the fields. Sets the title "Physics-related only" for said section.<br><br>
+
+                For this part, we have an example to demonstrate some of this customization.<br><br>
+                <ol>
+                    <li>
+                        You need to add to your bib file this following lines, making you bib files complete and full of example:<br><br>
+                        <code>
+                            @article{PhysRev.47.777,<br>
+                              title = {Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},<br>
+                              author = {Einstein, A. and Podolsky, B. and Rosen, N.},<br>
+                              journal = {Phys. Rev.},<br>
+                              volume = {47},<br>
+                              issue = {10},<br>
+                              pages = {777--780},<br>
+                              numpages = {0},<br>
+                              year = {1935},<br>
+                              month = {May},<br>
+                              publisher = {American Physical Society},<br>
+                              doi = {10.1103/PhysRev.47.777},<br>
+                              url = {https://link.aps.org/doi/10.1103/PhysRev.47.777}<br>
+                            }<br><br>
+
+                            @article{einstein,<br>
+                              author =       "Albert Einstein",<br>
+                              title =        "{Zur Elektrodynamik bewegter K{\"o}rper}. ({German})<br>
+                                             [{On} the electrodynamics of moving bodies]",<br>
+                              journal =      "Annalen der Physik",<br>
+                              volume =       "322",<br>
+                              number =       "10",<br>
+                              pages =        "891--921",<br>
+                              year =         "1905",<br>
+                              DOI =          "http://dx.doi.org/10.1002/andp.19053221004",<br>
+                              keywords =     "physics"<br>
+                            }<br><br>
+
+                            @book{tetlock2016superforecasting,<br>
+                              title={Superforecasting: The art and science of prediction},<br>
+                              author={Tetlock, Philip E and Gardner, Dan},<br>
+                              year={2016},<br>
+                              publisher={Random House}<br>
+                            }<br><br>
+
+                            @book{fine2009economics,<br>
+                              title={From economics imperialism to freakonomics: The shifting boundaries between economics and other social sciences},<br>
+                              author={Fine, Ben and Milonakis, Dimitris},<br>
+                              year={2009},<br>
+                              publisher={Routledge}<br>
+                            }<br><br>
+                             
+                            @online{knuthwebsite,<br>
+                                author    = "Donald Knuth",<br>
+                                title     = "Knuth: Computers and Typesetting",<br>
+                                url       = "http://www-cs-faculty.stanford.edu/~uno/abcde.html",<br>
+                                addendum = "(accessed: 01.09.2016)",<br>
+                                keywords  = "latex,knuth"<br>
+                            }<br><br>
+
+
+                            @book{manber1989introduction,<br>
+                              title={Introduction to algorithms: a creative approach},<br>
+                              author={Manber, Udi},<br>
+                              volume={4},<br>
+                              year={1989},<br>
+                              publisher={Addison-Wesley Reading, MA}<br>
+                            }<br><br>
+
+                            @article{lecun2015deep,<br>
+                              title={Deep learning},<br>
+                              author={LeCun, Yann and Bengio, Yoshua and Hinton, Geoffrey},<br>
+                              journal={nature},<br>
+                              volume={521},<br>
+                              number={7553},<br>
+                              pages={436},<br>
+                              year={2015},<br>
+                              publisher={Nature Publishing Group}<br>
+                            }<br><br>
+
+                        </code>
+                    </li>
+                        
+                    <li>
+                        Put this piece of Latex code into your example file for demonstration:<br><br>
+                        <code>
+                            \documentclass{article}<br>
+                            \usepackage[utf8]{inputenc}<br>
+                            \usepackage[english]{babel}<br><br>
+
+                            \usepackage{biblatex}<br><br>
+
+                            \addbibresource{PhysRev.47.777.bibtex}<br><br>
+
+                            \begin{document}<br><br>
+
+                            \section{First section}<br><br>
+
+                            Let's cite! Einstein's journal paper \cite{PhysRev.47.777}\\<br>
+                            Let's cite more journal paper from Einstein \cite{einstein}\\<br>
+                            Let's cite from my 2 most favorite book: Freakonomics \cite{fine2009economics} and Superforcasting \cite{tetlock2016superforecasting}\\<br>
+                            Some few more citation to make to table more interesting:\\<br>
+                            Deep Learning \cite{lecun2015deep}\\<br>
+                            Introduction to Algorithm \cite{manber1989introduction}\\<br><br>
+
+                            \printbibliography[type=article,title={Articles only}]<br>
+                            \printbibliography[type=book,title={Books only}]<br><br>
+
+                            \end{document}<br><br>
+                        </code>
+                    </li>
+                    <li>
+                        The expected output should be:<br><br>
+                        <img src="../media/img/syntax_Biboutput2.png"style="width: 80%"><br><br>
+                    </li>
+                </ol>
 
             </p>
             <hr>
         </div>
         <div>
-            <h2 id="TableContent">Adding Bibliography to the table of contents</h2>
+            <h2 class="subtitle" id="TableContent">Adding Bibliography to the table of contents</h2>
             <p>
                 In \printbibliography you need to add heading option into the command. You can make your heading into bibintoc or subbibintoc, as bibintoc is the option for the main section and subbibintoc is the subsection of the bibliorgraphy<br><br>
 
-                \printbibliography[
-                heading=bibintoc,
-                title={Whole bibliography}
-                ]<br><br>
+                <code>
+                    \printbibliography[heading=bibintoc,title={Whole bibliography}]
+                </code>
+                <br><br>
                  
-                \printbibliography[heading=subbibintoc,type=article,title={Articles only}]
+                <code>\printbibliography[heading=subbibintoc,type=article,title={Articles only}]</code><br><br>
 
             </p>
-            <hr>
-        </div>
-        <div>
-            <h2 id="Reference">Reference guide</h2>
             <hr>
         </div>
     </main>
