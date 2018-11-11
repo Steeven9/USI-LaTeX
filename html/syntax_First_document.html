@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Create your first document!</title>
+    <meta name="author" content="Marco Barabaschi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body onload="changeNav()">
+
+    <div class="logolink">
+            <a href="../index.html"><img src="../media/img/logo.png"></a>
+    </div>
+    <nav>
+            <a href="general.html">General Infos</a>
+            <a href="basic.html" class="active">Basic Syntax</a>
+            <a href="graphics.html">Graphics</a>
+            <a href="equations.html">Equations</a>
+            <a href="packages.html">Packages</a>
+            <a href="quiz.html">Quiz</a>
+    </nav>
+    <main>
+      <h1 class="Title">Create your first document!</h1>
+      <h2>Basic Latex Layout</h2>
+      <p>Latex is a very useful and creative tool for creating documents, and it is not as complicated as you may think.</p>
+      <p>First of all, in order to make the document exist and make
+      its preview work when you activate it (on-key "command" + "T"), there is a specific, basic format
+      that you must follow. When I say activate the document, I mean to let the PDF file pop up, of the corresponding code you have written, using the command written before. Below, there is the code
+      and the corresponding PDF file:</p>
+      <blockquote><code><p>\documentclass{article}</p>
+        <br>
+        <p>\begin{document}</p>
+        <p>Hello World! This is a very simple, Latex document.</p>
+        <p>\end{document}</p></code></blockquote>
+
+
+
+
+
+
+      <center><img src="../media/img/syntax_intro_preview.png" alt="The preview
+
+        of the most basic Latex document" height="800" width="550" ></center>
+
+
+
+
+        <h2>The preamble</h2>
+        <p>As shown above, the text you write is written after the "\begindocument" section,
+        but before it, there is the <b>preamble</b>, which is the section where
+        you define the document type, load packages and insert parameters.</p>
+        <p>On this section, it is even possible to put the \title{First Latex Document},
+        \author{Name} and \date{November 2nd}. When you want to insert
+        this information on the actual page, the code that you should insert is
+        \maketitle.</p>
+        <p>The code should be:</p>
+          <blockquote><code><p>\documentclass{article}</p>
+          <p>\title{My First Latex Document!}</p>
+          <p>\author{Bob Malcom}</p>
+          <p>\date{November 2, 2018}</p>
+          <br>
+          <p>\begin{document}</p>
+          <p>\maketitle</p>
+          <p>Hello World! This is a very simple, Latex document.</p>
+          <p>\end{document}
+          </code></blockquote>
+
+          <p>The document now looks like this:</p>
+          <center><img src="../media/img/syntax_latex.png" alt="The updated document" style="width: 80%"></center>
+
+          <footer>
+            <address>Page written by Marco Barabaschi</address>
+          </footer>
+    </main>
+</body>
+
+</html>

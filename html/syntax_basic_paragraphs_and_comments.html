@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Basic paragraphs and comments</title>
+    <meta name="author" content="Marco Barabaschi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body onload="changeNav()">
+  <div class="logolink">
+            <a href="../index.html"><img src="../media/img/logo.png"></a>
+    </div>
+    <nav>
+            <a href="general.html">General Infos</a>
+            <a href="basic.html" class="active">Basic Syntax</a>
+            <a href="graphics.html">Graphics</a>
+            <a href="equations.html">Equations</a>
+            <a href="packages.html">Packages</a>
+            <a href="quiz.html">Quiz</a>
+    </nav>
+  <main>
+  <h1 class="Title">Basic paragraphs and comments</h1>
+  <h2>Creating paragraphs and new lines</h2>
+   <p>In very important documents, such as scientific ones, you do not
+    want to keep a simple, basic format. In Latex, for example,
+    if you want to start a new paragraph, you have to click the
+    "Enter" key twice, and if you write on a new line and not
+    start a new paragraph, you can write a backslash (\\) two times,
+    after the line previous to the new line. For example,</p>
+    <blockquote><code><p>\documentclass{article}</p>
+      <p><p>\title{My first Latex Document!}</p>
+      <p>\author{Bob Malcom}</p>
+      <p>\date{November 2, 2018}</p>
+      <br>
+      <p>\begin{document}</p>
+      <p>\maketitle</p>
+      <p>Hello World! This is a very simple, Latex document. \\</p>
+      <p>This is a new line \\</p>
+      <p>This is another line.</p>
+      <br>
+      <p>This is a new paragraph.</p></code></blockquote>
+
+      <img src="../media/img/syntax_doc2.png" alt="The
+        document with new lines and paragraphs" height="700" width="600">
+<h2>Comments</h2>
+  <p>We saw from the code and the  picture of the document, that a new line
+    goes simply down a line, while a paragraph gets indented.</p>
+
+    <p>On Latex, it is also possible to insert comments (colored in red), useful
+      for remembering what you meant in one of your lines of
+      code. Very simply, you type the symbol "%", and start writing the
+    comment. When you are finished with the comment, you  press the "Enter" key. Below, for example:</p>
+    <blockquote><code><p>\documentclass{article}</p>
+      <p>\title{My first Latex Document!}</p>
+      <p>\author{Bob Malcom}</p>
+      <p>\date{November 2, 2018}</p>
+      <br>
+      <p>\begin{document}</p>
+      <p>\maketitle %Title inserted</p>
+      Hello World! This is a very simple
+      Latex document. \\ %This is a text, containing the command that lets the following text go down the next line</p>
+      <p>This is a new line \\ %This is a text, containing the command
+        that lets the following text go down the next line</p>
+      <p>This is another new line. %This is a text, containing the command
+        that creates a new paragraph (double "Enter" key)</p>
+      <br>
+      <p>This is a new paragraph. %Final text (in new paragraph)</p>
+      <p>\end{document}</p></code></blockquote>
+
+
+
+
+  <p>As you may imagine, comments will not appear
+    on the actual Latex document. This is a very useful tool,
+    because it makes the coder remember what he meant with
+    a particular code, or line of code.
+    Are you not so sure about remembering in the future what you have written, or what your code really means?
+    Put a % and write your comment!</p>
+  <footer>
+    <address>Page written by Marco Barabaschi</address>
+  </footer>
+    </main>
+</body>
+
+</html>

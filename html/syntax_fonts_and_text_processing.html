@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Fonts and text processing</title>
+    <meta name="author" content="Marco Barabaschi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body onload="changeNav()">
+    <div class="logolink">
+            <a href="../index.html"><img src="../media/img/logo.png"></a>
+    </div>
+    <nav>
+            <a href="general.html">General Infos</a>
+            <a href="basic.html" class="active">Basic Syntax</a>
+            <a href="graphics.html">Graphics</a>
+            <a href="equations.html">Equations</a>
+            <a href="packages.html">Packages</a>
+            <a href="quiz.html">Quiz</a>
+    </nav>
+    <main>
+    <h1 class="Title">Fonts and text processing</h1>
+    <h2>Bold, Italics and Underlining</h2>
+    <p>The concept of the bold, italics and underlining features are
+      basic, but useful at the same time. These features will make
+    parts of your code stand out and highlight important concepts.
+    To write a bold word/sentence, you must insert your text between
+    the parenthesis of the command \textbf{text}, to write an italic word/sentence,
+    you must insert your text between the parenthesis of the
+    command \textit{text}, and finally, to write an underlining word/sentence,
+    you must insert your text between the parentheses of the
+    command \underline{text}. Fairly easy, right?</p>
+    <h2>Emphasizing text</h2>
+    <p>We are not done yet, because there is an extra important feature, that may even help some people.
+      There is the command \emph{text}, which, at first sight,
+      has the same behaviour of the underlining feature, but not fully.
+      This command emphasizes the interested text. For example,
+      if you start the audio version of your text, the computer
+      automatic reader will orally emphasize it, making the text seem
+      more important. This feature, for example, helps blind people.</p>
+      <br>
+    <p>Let's look at an example below of the code and the document,
+      including the two topics discussed above:</p>
+    <blockquote><code><p>\documentclass{article}</p>
+      <p>\title{My first Latex Document!}</p>
+      <p>\author{Bob Malcom}</p>
+      <p>\date{November 2, 2018}</p>
+      <br>
+      <p>\begin{document}</p>
+      <p>This is a really simple example of how the text
+        features will look in Latex.</p>
+      <p>This is a \textbf{bold} word, this is a \textit{sentence in Italics},
+        this is an \underline{underlined} word, and this
+        is an \emph{emphasized} word. This last is, at first
+        sight, the same as the sentence in italics, but has the
+        job to emphasize the text, most of all during the audio
+        reading.</p>
+        <p>\end{document}</p>
+      </code></blockquote>
+
+
+      <center><img src="../media/img/syntax_doctext.png" alt="The
+        document with text features" height="950" width="600"></center>
+        <footer>
+            <address>Page written by Marco Barabaschi</address>
+        </footer>
+    </main>
+</body>
+
+</html>
