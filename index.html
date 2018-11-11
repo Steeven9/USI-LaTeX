@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title>Index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <script>
-        window.addEventListener('scroll', function(e)
-        {
+        window.addEventListener('scroll', function (e) {
             let scrolled = window.pageYOffset;
 
-            let first_background = document.querySelector('.mainhomepagetext');
-            first_background.style.opacity = 1 - 2*scrolled/screen.height;
+            let zero_background = document.querySelector('.mainhomepagetextboxzero');
+            zero_background.style.opacity = 1 - 1.3 * scrolled / screen.height;
+
+            let first_background = document.querySelector('.mainhomepagetextbox');
+            first_background.style.opacity = 1 - 1.3 * scrolled / screen.height;
 
             let second_background = document.querySelector('.mainhomepagetext2box');
-            second_background.style.opacity = 0 + 1.3*scrolled/screen.height;
+            second_background.style.opacity = 0 + 1.3 * scrolled / screen.height;
 
             let main_boxes = document.querySelector('.mainhomepagebox');
-            main_boxes.style.opacity = 0 + 1.3*scrolled/screen.height;
+            main_boxes.style.opacity = 0 + 1.3 * scrolled / screen.height;
         })
     </script>
 </head>
@@ -25,22 +28,34 @@
 <body>
 
     <div class="firstbackground">
-        <div class="mainhomepagetext"><span>TEXT FOR HOMEPAGE</span></div>
+        <div class="mainhomepagetextboxzero">
+            <div class="mainhomepagetextzero"><span>From this...
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    To this...</span></div>
+        </div>
+
+        <div class="mainhomepagetextbox">
+            <div class="mainhomepagetext"><span>Scroll down to discover how! ↓</span></div>
+        </div>
     </div>
 
     <div class="secondbackground">
         <div class="mainhomepagetext2box">
-        <div class="mainhomepagetext2"><span>TEXT NUMBER 2</span></div></div>
+            <div class="mainhomepagetext2"><span>Learn how to use LaTeX!</span></div>
+        </div>
         <div class="mainhomepagebox">
-            <a href="general_index.html">Getting Started</a>
-            <a href="syntax_index.html">Basic Syntax</a>
-            <a href="graphics_index.html">Graphics</a>
-            <a href="equations_index.html">Equations</a>
-            <a href="packages_index.html">Packages</a>
-            <a href="quiz.html">Quiz</a>
+            <a href="hmtl/general_index.html">Getting Started</a>
+            <a href="html/syntax_index.html">Basic Syntax</a>
+            <a href="html/graphics_index.html">Graphics</a>
+            <a href="html/equations_index.html">Equations</a>
+            <a href="html/packages_index.html">Packages</a>
+            <a href="html/quiz.html">Quiz</a>
         </div>
 
-        <div class="specialfooter"><footer>Page by Aron Dalle Pezze</footer></div>
+        <div class="specialfooter">
+            <footer>Page by Aron Dalle Pezze</footer>
+        </div>
     </div>
 
 </body>
