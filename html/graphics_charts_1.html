@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Introduction & SmartDiagram</title>
+    <meta name="author" content="Tommaso Rodolfo Masera">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html" class="active">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+        <a href="general.html" id="firstsubpage">Getting Started</a> <!-- Put the class="active" on your subpage -->
+        <a href="basic.html">Basic Syntax</a>
+        <a href="graphics.html" class="active">Graphics</a>
+        <a href="equations.html">Equations</a>
+        <a href="packages.html">Packages</a>
+        <a href="quiz.html" id="lastsubpage">Quiz</a>
+    </div>
+
+    <main>
+
+        <div class="title">CHARTS</div>
+        <div class="firstsubtitle">Simple charts, drawings and diagrams</div>
+
+        <div class="text">
+
+          <p>In this part of the graphics section we plan on covering
+           the basics of the following packages:</p>
+
+          <ol>
+            <li>SmartDiagram</li>
+            <li>Ti<i>k</i>Z</li>
+            <li>PGFPlots</li>
+          </ol>
+
+          <p>They range from easiest to hardest as they all come from the
+             same "PGFPlots" package and their only difference is the level of the
+             syntax used. SmartDiagram is simpler and more accessible but going down
+             through Ti<i>k</i>Z and finally to the "root" package which is PGFPlots you
+             won't have a higher level language anymore, meaning the learning curve
+             will be harder but you will also have more freedom.</p>
+
+          <p>What you should expect from this tutorial is how to make basic diagrams
+          and draw effectively in LaTeX at a beginner level. Of course, if you feel
+          brave enough to delve into the packages documentation, go ahead, no one
+          will stop you:
+          <ul style="list-style-type:none">
+
+            <li>
+              <a href="http://texdoc.net/texmf-dist/doc/latex/smartdiagram/smartdiagram.pdf">
+              Documentation for SmartDiagram
+             </a>
+            </li>
+
+            <li>
+              <a href="http://www.texample.net/media/pgf/builds/pgfmanualCVS2012-11-04.pdf">
+              Documentation for Ti<i>k</i>Z
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.iro.umontreal.ca/~simardr/pgfplots.pdf">
+                Documentation for PGFPlots
+              </a>
+            </li>
+
+          </ul></p>
+
+        </div>
+
+        <div class="subtitle">SmartDiagram</div>
+
+        <div class="text">
+
+          <p> With that said, let's get right into business, starting off from the
+            top of our list with our first drawing package: "SmartDiagram".
+          </p>
+
+          <p>As the name suggests, the aim of the package is to provide the user
+          with an easy way of drawing diagrams to use in presentations or text
+          documents. It is a pretty intuitive package and should not give many
+          issues during the learning process.</p>
+          <small> Note that the SmartDiagram package automatically loads the
+           Ti<i>k</i>Z, etoolbox, xparse, xtring packages along with the backgrounds,
+           calcs, fadings, shadows, shapes.arrows, shapes.symbols Ti<i>k</i>Z libraries.
+         </small>
+
+          <p>The basic command to make diagrams is
+            <code>\smartdiagram[type of diagram]{item list}</code> where each item should be
+            separated by a comma.<br>
+            The diagram types you can insert are the following:<sup>*</sup> <br>
+
+            <small>
+            *Note that the following elements are written with capital letters
+            for the sake of a better appearance. Every diagram type should be written
+            without capital letters when used as actual code.
+          </small>
+
+            <ul>
+              <li>
+                <b>Circular Diagram</b>: counterclockwise circular diagram by default
+              </li>
+              <li>
+                <b>Circular Diagram:clockwise</b>: clockwise version of the previous diagram
+              </li>
+              <li>
+                <b>Flow Diagram</b>: represents a flow chart
+              </li>
+              <li>
+                <b>Flow Diagram:horizontal</b>: horizontal version of the previous diagram
+              </li>
+              <li>
+                <b>Descriptive Diagram</b>: displays items and their descriptions
+              </li>
+              <li>
+                <b>Priority Descriptive Diagram</b>: items are sorted by their relevance
+              </li>
+              <li>
+                <b>Bubble Diagram</b>: each item is displayed as a bubble around a bubble center
+                which contains the first element
+              </li>
+
+              <li>
+                <b>Constellation Diagram</b>: each item is a circle connected to the center which is
+                  the first item of the list
+              </li>
+
+              <li>
+                <b>Connected Constellation Diagram</b>: every item is a cirlce and they are
+                all connected except for the first item
+              </li>
+
+              <li>
+                <b>Sequence Diagram</b>: all the items are displayed in a sequence
+                which points to the following element
+              </li>
+
+            </ul>
+
+         With this, we'll be going through the main types of diagrams with their own example.
+         They're all pretty easy to draw with the given command but they can be
+         further modified by adding options using the <code>\smartdiagramset{list of options}</code> command.
+         We'll list the general options here:
+
+         <ul>
+           <li><code>set color list (initial: none):</code>defines the list of usable colors</li>
+           <li><code>uniform color list (initial: none):</code>defines a single color for the diagram</li>
+           <li><code>use predefined color list (initial: none)</code>lets the user reuse the colors used in a previous diagram</li>
+           <li><code>insert decoration (initial: none):</code>allows the user to decorate the borders of the diagram module.
+           This would require additional decoration packages so we won't cover it here. If you're interested, we reccomend to check out the documentation.</li>
+           <li><code>arrow line width (initial: 0.1cm):</code>changes the width of the diagram arrows</li>
+           <li><code>arrow tip (initial: stealth):</code>allows to select the arrow tip. This requires more expertise and further libraries to work.</li>
+           <li><code></code>arrow style (initial: &#60;-):</li>
+           <li><code>uniform arrow color (initial: false):</code></li>
+           <li><code>arrow color (initial: gray):</code></li>
+
+         </ul>
+
+         you will then be able to find the specific ones in
+         their respective diagram section. </p>
+
+        </div>
+
+        <ol>
+          <li>
+
+            <div class="subtitles">
+              <h3>Circular Diagram</h3>
+            </div>
+
+            <div class="text">
+
+              <p>The following example shows you how LaTeX compiles the basic <code>\smartdiagram[circular diagram]</code> command: </p>
+
+                <div class="latex">
+                <div class="paragraph">
+                  <code>
+                    \documentclass[12pt]{article} <br>
+                    \title{Circular Diagram}<br>
+                    \date{}<br> <br>
+
+                    \usepackage{smartdiagram}<br> <br>
+
+                    \begin{document}<br>
+                    \maketitle <br> <br>
+
+                    \begin{center} <br>
+                    \smartdiagram[circular diagram]{Item 1, Item 2, Item 3, Item 4} <br>
+                    \end{center} <br>
+                    \end{document} <br>
+                  </code>
+                </div >
+                <div class="object">
+                <object type="application/pdf" data="../docs/circular_diagram_example.pdf" width="600" height="768">
+                </object>
+              </div>
+            </div>
+              <p>This might be simple and effective but if it doesn't fit what you want
+              you might also want to check out options to customize your own diagram.
+              The specific options for this type of diagram also apply to the clockwise circular diagram,
+              to the flow diagram and its horizontal counterpart.
+              They are as follows:</p>
+
+              <ul>
+                <li><code>module minimum width (default: 2cm)</code>: sets the minimum width of the module</li>
+                <li><code>module minimum height (default: 1cm)</code>: sets the minimum height of the module</li>
+                <li><code>module shape (default: rectangle, rounded corners)</code>:sets the shape of the module but you should ensure
+                                                                                    to load the correct library for shapes</li>
+                <li><code>text width (default: 1.75cm)</code>:sets the text width inside the module</li>
+                <li><code>font (default: \small)</code>: sets the font inside the module</li>
+                <li><code>border color (default: gray)</code>:sets the color of the module border</li>
+                <li><code>text color</code>: sets the color of the text in the module</li>
+                <li><code>circular distance (default 2.75)</code>: sets the radius of the circle which the items are placed onto</li>
+              </ul>
+
+              <p>Now, let's try to make use of some of these options to make our
+              diagram look even better:</p>
+
+              <div class="latex">
+              <div class="paragraph">
+                <code>
+                  \documentclass[12pt]{article} <br>
+                  \title{Customized Circular Diagram} <br>
+                  \date{} <br> <br>
+
+                  \usepackage{smartdiagram} <br> <br>
+
+                  \begin{document} <br>
+                  \maketitle <br> <br>
+
+                  \begin{center} <br>
+                  \smartdiagramset{ <br>
+                  module minimum width=4cm, <br>
+                  module minimum height=2cm, <br>
+                  font= \huge, <br>
+                  border color= black, <br>
+                  text color= blue!30!green, <br>
+                  circular distance= 5} <br>
+                  \smartdiagram[circular diagram]{Item 1, Item 2, Item 3, Item 4} <br>
+                  \end{center} <br> <br>
+
+                  \end{document}
+                </code>
+              </div>
+              <div class="object">
+              <object type="application/pdf" data="../docs/circular_diagram_with_options.pdf" width="600" height="768">
+              </object>
+            </div>
+          </div>
+
+            <p>This diagram is compiled using a few of the previously listed options.
+            We first begin the <code>center</code> environment to center the diagram in the middle
+            of our document, then we define the settings of our diagram with the command
+            <code>\smartdiagram</code>, we list the options we wish to modify taking them from the available ones
+            and finally we draw our diagram with the <code>\smartdiagram</code> command.
+            Take a look at the code above the pdf embed to get a grasp of how the
+            options and diagrams should be built in LaTeX. <br>
+            As you can see our options were typed out as they are, nothing fancy
+            or complex needed. Just follow it with an "=" sign and you're set for
+            building your own diagram. <p>
+
+            <p>The <code>circular diagram:clockwise</code> works exactly the same,
+            it only flips the arrow direction. </p>
+
+            </div>
+
+          </li>
+
+          <li>
+
+            <div class="subtitles">
+              <h3>Flow Diagram</h3>
+            </div>
+
+            <div class="text">
+              <p>First of all the flow diagram makes use of 4 more options that you can apply:</p>
+
+              <ul>
+                <li><code>module y sep (default: 1.65)</code>: sets the vertical distance between modules in the <b>flow diagram</b></li>
+                <li><code>module x sep (default: 2.75)</code>: sets the horizontal distance between modules in the <b>flow diagram horizontal</b></li>
+                <li><code>back arrow distance (default: 0.5)</code>: sets the distance of the arrows from the modules</li>
+                <li><code>back arrow disabled (default: false)</code>: when set to true, it disables the back arrow </li>
+              </ul>
+
+              <p>Here you can find the basic way LaTeX compiles a basic <code>\smartdiagram[flow diagram]</code> command:</p>
+
+              <div class="latex">
+              <div class="paragraph">
+                <code>
+                  \documentclass[12pt]{article} <br>
+                  \title{Flow Diagram} <br>
+                  \date{} <br> <br>
+
+                  \usepackage{smartdiagram} <br>
+
+                  \begin{document} <br>
+                  \maketitle <br> <br>
+
+                  \begin{center} <br>
+                  \smartdiagram[flow diagram]{Item 1, Item 2, Item 3, Item 4} <br>
+                  \end{center} <br> <br>
+
+                  \end{document}
+                </code>
+              </div>
+              <div class="object">
+              <object type="application/pdf" data="../docs/flow_diagram_example.pdf" width="600" height="768">
+              </object>
+            </div>
+          </div>
+
+            <p>Likewise, we are now going to introduce options to make this default
+            flow diagram our way:</p>
+
+              <div class="latex">
+              <div class="paragraph">
+                <code>
+                  \documentclass[12pt]{article} <br>
+                  \title{Customized Flow Diagram} <br>
+                  \date{} <br> <br>
+
+                  \usepackage{smartdiagram} <br> <br>
+
+                  \begin{document} <br>
+                  \maketitle <br> <br>
+
+                  \begin{center} <br>
+                  \smartdiagramset{ <br>
+                  uniform color list=black!50!white for 4 items, <br>
+                  module minimum width= 6cm, <br>
+                  module minimum height= 2cm, <br>
+                  module y sep= 3.5, <br>
+                  text color= blue, <br>
+                  font= \Large, <br>
+                  border color= red, <br>
+                  back arrow disabled= true} <br>
+                  \smartdiagram[flow diagram]{Item 1, Item 2, Item 3, Item 4} <br>
+                  \end{center} <br> <br>
+
+                  \end{document}
+                </code>
+              </div>
+              <div class="object">
+              <object type="application/pdf" data="../docs/flow_diagram_with_options.pdf" width="600" height="768">
+              </object>
+            </div>
+          </div>
+
+            <p>We now used the additional flow diagram options to increase the vertical
+            distance between modules and disable the back arrow that points back to
+            the beginning of the diagram. Additionally we defined a uniform color
+            for the first 4 items. </p>
+
+          </div>
+
+          </li>
+
+          <li>
+
+            <div class="subtitles">
+              <h3>Constellation Diagram</h3>
+            </div>
+
+            <div class="text">
+              <p>Bubble and Constellation diagrams have a more complex set of options as
+              they can be customized in more detail.<br>
+              Here follows the list of new available options:</p>
+
+              <ul>
+                <li><code>planet size (default 2.5cm)</code>: minimum size of the planet</li>
+                <li><code>planet color (default lightgray!60)</code>: background color of the planet</li>
+                <li><code>planet font (default \large)</code>: font size of the planet</li>
+                <li><code>distance planet-connection (default 0.1cm)</code>: distance between the planet and the connecting arrow</li>
+                <li><code>distance planet-text (default 0.5cm)</code>: distance between the planet text and its border</li>
+                <li><code>planet text width (default 1.75cm)</code>: width of the planet text</li>
+                <li><code>satellite size (default 1.75cm)</code>: size of the satellite</li>
+                <li><code>satellite font (default: \normalfont)</code>: font size of the satellite</li>
+                <li><code>satellite fill opacity (default: 0.5)</code>: opacity of the satellite background</li>
+                <li><code>satellite text opacity (default: 0.8)</code>: opacity of the satellite text</li>
+                <li><code>satellite text width (default: 1.5cm)</code>: width of the satellite text</li>
+                <li><code>distance satellite-connection (default: 0.075cm)</code>: distance between the satellite and the connecting arrow</li>
+                <li><code>connection line width (default: 0.1cm)</code>: allows the customization of the width of the connecting arrow</li>
+                <li><code>distance planet-satellite (default: 3.5cm)</code>: distance between the planet and a satellite</li>
+                <li><code>uniform connection color (default: false)</code>: when true, overrides the color list definition enabling
+                                                                            the <code>connection color</code> command</li>
+                <li><code>connection color (default: gray)</code>: allows to set a color for the connecting arrows</li>
+
+              </ul>
+
+              <p>Here follows a default Constellation Diagram:</p>
+
+                <div class="latex">
+                <div class="paragraph">
+                  <code>
+                    \documentclass[12pt]{article} <br>
+                    \title{Constellation Diagram} <br>
+                    \date{} <br> <br>
+
+                    \usepackage{smartdiagram} <br> <br>
+
+                    \begin{document} <br>
+                    \maketitle <br> <br>
+
+                    \begin{center} <br>
+                    \smartdiagram[constellation diagram]{Item 1, Item 2, Item 3, Item 4, Item 5} <br>
+                    \end{center} <br> <br>
+
+                    \end{document}
+                  </code>
+                </div>
+                <div class="object">
+                <object type="application/pdf" data="../docs/constellation_diagram_example.pdf" width="600" height="768">
+                </object>
+              </div>
+            </div>
+
+              <p>And now will follow a customized constellation diagram:</p>
+
+              <div class="latex">
+              <div class="paragraph">
+                  <code>
+                    \documentclass[12pt]{article} <br>
+                    \title{Customized Constellation Diagram} <br>
+                    \date{} <br> <br>
+
+                    \usepackage{smartdiagram} <br> <br>
+
+                    \begin{document}  <br>
+                    \maketitle <br> <br>
+
+                    \begin{center} <br>
+                    \smartdiagramset{ <br>
+                    planet size= 4cm, <br>
+                    planet color= green, <br>
+                    planet font= \huge, <br>
+                    distance planet-connection= 0.1cm, <br>
+                    distance planet-text= 1cm, <br>
+                    satellite size= 2cm, <br>
+                    satellite font= \large, <br>
+                    satellite text opacity= 0.9, <br>
+                    distance satellite-connection= 0.1cm, <br>
+                    connection line width= 0.5cm, <br>
+                    distance planet-satellite= 5cm, <br>
+                    uniform connection color= true, <br>
+                    connection color= black} <br>
+                    \smartdiagram[constellation diagram]{Item 1, Item 2, Item 3, Item 4, Item 5} <br>
+                    \end{center} <br> <br>
+
+                    \end{document}
+                  </code>
+                </div>
+                <div class="object">
+                <object type="application/pdf" data="../docs/constellation_diagram_with_options.pdf" width="600" height="768">
+                </object>
+              </div>
+            </div>
+
+            </div>
+
+            <p>Constellation diagrams are more complex as you can see from the length of the code,
+            by using all of our options we managed to modify its default shape.
+            Most commands like size, font, color we have already seen. What you should watch out for
+            are the "distance" commands, those can get tricky if you miscalculate the space you're using. <br>
+            <small><i>Author's note</i>: I'd reccomend not to mess too much with this
+            diagram, it can get messy.</small></p>
+
+          </li>
+
+        </ol>
+
+        <p>And here we conclude our brief introduction to SmartDiagram. You're welcome to keep
+        reading this subsection of the Graphics section to find out how to draw with Ti<i>k</i>Z and PGFPlots.</p>
+
+        </div>
+
+        <footer>
+            <address>Page written by Tommaso Rodolfo Masera</address>
+        </footer>
+    </main>
+</body>
+
+</html>
