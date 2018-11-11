@@ -19,69 +19,111 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 <body>
     <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
     <main>
-        <div class="title">VECTOR DRAWING</div>
-        <div class="text">Do you need to add figures or draws to your LaTeX document? Or do you feel creative? The easiest way to draw in LaTeX is by using latexdraw, which is a tool that allows
-        to include professional draws into a latex document. </div>
+        <div class="title">HOW TO DRAW WITH LATEXDRAW</div>
+        <br>
+          <div class="text">Do you need to add figures or draws to your LaTeX document? The easiest way is by using latexdraw.
+              Vector tools allow users to include good graphics in LaTeX. LaTeXDraw is a free PDPTricks code. Since it is developed in JAVA it can be used
+              with any system.
+          </div>
         </div>
-        <div class="firstsubtitle">How to install latex draw</div>
-        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dolor eros, elementum et mattis vel,
-          ornare id est. Nulla facilisi. Etiam pretium aliquet est in iaculis. Vestibulum euismod dictum molestie.
-          In varius tortor faucibus finibus eleifend. Duis eu rhoncus lorem,
-          sit amet vulputate elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        <br>
+        <br>
+        <div class="firstsubtitle">How to install LaTeX Draw</div>
+        <div class="text">You can find the program here: <a href="http://latexdraw.sourceforge.net/">http://latexdraw.sourceforge.net/</a>.
+          Once you download it, open the installer.jar to install the program. The program will create a <i>templates</i> folder in <i>/Users/Shared/latexdraw</i>.
         </div>
-
-        <div class="exercises">
-              <p>Example</p>
-              <img src="..." class="images">
-        </div>
-
+        <br>
+        <img src="../media/img/latexdraw_installing.png" style="width: 80%">
+        <br>
+        <br>
+        <br>
         <div class="subtitle">Time to draw</div>
-        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dolor eros, elementum et mattis vel,
-            ornare id est. Nulla facilisi. Etiam pretium aliquet est in iaculis. Vestibulum euismod dictum molestie.
-            In varius tortor faucibus finibus eleifend. Duis eu rhoncus lorem,
-            sit amet vulputate elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        <div class="text">The first time you open the program, you will find yourself facing a vast grid. This grid is the interface where you can draw or place shapes.
+           The grid can be adjusted by clicking on the little grid button on the left side of the item bar.
+           You can add templates by clicking on <i>Draw->Templates</i>. This can help you understanding how the items works.<br>
+           If you wish, you can add images or PSTricks code by clicking on <i>Insert</i>. The image will be added on the grid pattern. With <i>Code</i> you can add comments on the code, which will be added later on your <i>.tex</i> document.<br>
+           <br>
+           <img src="../media/img/%this_is_a_comment.png" style="width: 30%"><br>
+           <br>
+           You can select any shape by selecting one from the right side of the item bar, for example circles, rectangles, square, etc. If you wish to draw by hand, you can use the Freehand tool.<br>
+           With the <i>select tool</i> you can select more than one element on the grid. Once you have selected them, if you right-click you will see a few options.
+           You can rotate the figure, or group elements together.<br>
+           <br>
+           <img src="../media/img/item_bar.png" style="width: 60%"><br>
+           <br>
+           You can color your shapes by changing the figure properties. Here you can add a fill color, or add gradients or shadows.<br>
+           Lastly, if you want to add a text you can click on the <i>add text</i> icon. If you're going to write a formula, write it between $$.<br>
+           Now try to make your draw in LaTeXDraw before going on!<br>
+           <br>
+           <img src="../media/img/latexdraw_test.png" style="width: 30%"><br>
+           <br>
         </div>
-
-        <div class="exercises">
-                <p>Example</p>
-                <img src="..." class="images">
-        </div>
-        <div class="subtitle">Time to draw</div>
-        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dolor eros, elementum et mattis vel,
-            ornare id est. Nulla facilisi. Etiam pretium aliquet est in iaculis. Vestibulum euismod dictum molestie.
-            In varius tortor faucibus finibus eleifend. Duis eu rhoncus lorem,
-            sit amet vulputate elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-        </div>
-
-        <div class="exercises">
-                <p>Example</p>
-                <img src="..." class="images">
-        </div>
-
         <div class="subtitle">How to import your draw in LaTeX</div>
-        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dolor eros, elementum et mattis vel,
-              ornare id est. Nulla facilisi. Etiam pretium aliquet est in iaculis. Vestibulum euismod dictum molestie.
-              In varius tortor faucibus finibus eleifend. Duis eu rhoncus lorem,
-              sit amet vulputate elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        <div class="text">When you're finished drawing on LaTeXDraw, export your document as PSPTricks in a .tex file.
+          To do so, click on <i>File->Export as...->PSTricks code</i>.<br>
+          Now, create a new .tex file on LaTeX.
+          Write the following code:<br>
+          <br>
+          <div class="latex">
+              <div class="paragraph"><b> code</b><hr>
+          <p>\documentclass{article}<br>
+          \usepackage{pstricks}<br>
+          \usepackage{pst-plot}<br>
+          \usepackage{pst-eps}<br>
+          \usepackage{pst-grad}<br>
+          \pagestyle{empty}<br>
+          \begin{document}<br>
+          \begin{TeXtoEPS}<br>
+          \begin{pspicture}<br>
+          <...><br>
+          \end{pspicture}<br>
+          \end{TeXtoEPS}<br>
+          \end{document}<br></p>
         </div>
-
-        <div class="exercises">
-                  <p>Example</p>
-                  <img src="..." class="images">
+      </div>
+          <br>
+          <...> is where you have to put your PSPTricks code that you just exported from LaTeXDraw.<br>
+          <b>DON'T</b> try to run the code now, you'll encounter several errors and you will obtain a black box.
+          Place the pspicture inside TeXtoEPS to have your PDF with the correct bounding box for the picture.
         </div>
 
         <div class="subtitle">Export your draw</div>
-        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dolor eros, elementum et mattis vel,
-              ornare id est. Nulla facilisi. Etiam pretium aliquet est in iaculis. Vestibulum euismod dictum molestie.
-              In varius tortor faucibus finibus eleifend. Duis eu rhoncus lorem,
-              sit amet vulputate elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        <div class="text">Open your terminal, go to the right folder and execute the following command on your shell:<br>
+          <br>
+          <i>latex myfigure.tex<br>
+          dvips -E -q -o myfigure.eps myfigure.dvi</i><br>
+          <br>
+          Now you can enjoy your draw!
         </div>
-
-        <div class="exercises">
-              <p>Example</p>
-              <img src="..." class="images">
+        <div class="latex">
+          <div class="object">
+            <object type="application/pdf" data="../docs/latexdraw.pdf"  height="400%" width="100%"></object>
+          </div>
         </div>
-
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <footer>
             <address>Page written by Carlo Bettelini</address>
         </footer>

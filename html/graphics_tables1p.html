@@ -1,0 +1,358 @@
+<!-- WARNING: WRITE ALL THE TEXT INSIDE THE MAIN AND NOT DIRECTLY ON THE BODY -->
+<!-- NOTE: THE WHITE SPACE ON THE LEFT OF THE PAGE IS A PLACE-HOLDERS FOR THE NAVIGATOR -->
+<!-- NOTE: SINCE THE NAVIGATORS HAVE NOT BEEN CREATED YET, THEY WILL BE ADDED TO THE TEMPLATE ON A LATER TIME
+AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN -->
+<!-- NOTE: BE AWARE OF THE FACT THAT IN THE FUTURE WILL BE ADDED A BOX FOR THE CODES -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Enviroment of the table in LaTeX</title>
+    <meta name="author" content="Maxim Ryakhovskiy">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html" class="active">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+        <a href="general.html">Getting Started</a> <!-- Put the class="active" on your subpage -->
+        <a href="basic.html">Basic Syntax</a>
+        <a href="graphics.html" id="first">Graphics</a>
+        <a href="equations.html">Equations</a>
+        <a href="packages.html">Packages</a>
+        <a href="quiz.html" id="last">Quiz</a>
+    </div>
+    <main>
+        <div class="title">Environment</div>
+        <div class="indexgeneral"><ul>
+            <li><div class="index"><a href="graphics_tables1p.html#Simple">Building a simple table</a></div></li>
+            <li><div class="index"><a href="graphics_tables1p.html#Adding_lines">Adding lines</a></div></li>
+            <li><div class="index"><a href="graphics_tables1p.html#Special_columns">Special columns</a></div></li>
+            <li><div class="index"><a href="graphics_tables1p.html#Borders">Borders</a></div></li>
+            <li><div class="index"><a href="graphics_tables1p.html#Size">Size of the table</a></div></li>
+</ul>
+        <hr>
+        </div>
+        <div class="firstsubtitle" id="Simple">Building a simple table</div>
+        <div class="text">In order to create the table, it is necessary to begin the <i>table</i> enviroment, using the comand <code>\begin{table}</code>.
+        This is not sufficient to begin the table, to create the table we use the <i>tabular</i> enviroment, which generates the table.<br>
+      General command is <code>\begin{tabular}[<i>pos</i>]{<i>spec</i>}</code>.<br>
+    The <i>pos</i> stays for position of the table in the page. This is explained in the section <a href="graphics_tables3p.html"> Positioning: Position of the table in the page</a>.
+  In the position of <i>spec</i> stay the comands, used to determine the number of columns, their width and their alignment. The tables in LaTeX are
+  deteminated by the number of <i>spec</i> attributes.<br>
+<ul>                     <!-- no bullet points, the list without bullets -->
+<li> <code>l</code> - the content of the table will be aligned to the left side</li>
+<li> <code>c</code> - the content of the table will be aligned to the center side</li>
+<li> <code>r</code> - the content of the table will be aligned to the rigth side</li>
+</ul>
+<br>
+<div class="latex">
+    <div class="paragraph"><b> code</b><hr>
+      <p>\documentclass{article}<br>
+        \begin{document}<br>
+        \begin{table}<br>
+        \begin{tabular}{lcr}<br>
+        table & long table & not so long table \\<br>
+        1 & 123456789000 & 3.14 \\<br>
+        \end{tabular}<br>
+        \end{table}<br>
+        \end{document}
+      </p>
+    </div>
+    <div class="object">
+      <object type="application/pdf" data="../docs/experiment.pdf"  height="100%" width="100%"></object>
+    </div>
+</div>
+<br>
+In the example above, the number of columns is 3: the content of first is aligned on the left, of the second one in the center
+and of the third on the left.<br>
+The size of the cell depends on the size of the content in the cell, so the biggest content will set the size. Despite,
+it is possible to determine the the size of column and row (see chapter <a href="#Special_columns"> Special columns</a> and <a href="#Spacing">Spacing</a>).<br>
+<ul>
+<li><code> \\</code> - signature is used to separate rows.</li>
+<li><code> &</code> - signature is used to separate columns.</li>
+</ul>
+In all the next examples, the code of <code>\begin{document}, \begin{table}, \end{table}, \end{document}</code> will not be shown,
+in order to dedicate more attention to the importantdetails. Although these elements are necessary for the code in LaTeX. The commands
+will be shown only in case are needed for demostration.
+<br>
+<br>
+<div class="latex">
+  <div class="paragraph"><b> code</b><hr>
+    <p>
+\begin{table}<br>
+\begin{tabular}{rcr}<br>
+example & & example\\<br>
+long example & not so long example & example\\<br>
+\end{tabular}<br>
+\caption{Example of the table with caption and one single empty column}<br>
+\end{table}<br></p>
+</div>
+  <div class="object">
+    <object type="application/pdf" data="../docs/example_caption.pdf"  height="100%" width="100%"></object>
+</div>
+</div>
+<br>
+In this example, it is shown the <code>\caption{}</code> command. It is used to write a small description of the table. In the
+exxample, the caption is aligned on the left. For more details see <a href="graphics_tables3p.html">Positioning: Alignment</a>.<br>
+Also, it is possible to see the empty column. In order to create it, the input for the cell is empty, in other words place two <code> &</code> symbols:
+ <code>example & & example</code>
+without putting nothing inside.
+</div>
+        <div class="subtitle" id="Adding_lines">Adding lines</div>
+        <div class="text">In this chapter is shown how to add the lines, both vertical and horizontal to the table.<br> In order to add
+          vertical line, the symbol <code>|</code> is added in the tabular enviroment, e.g. <code>\begin{tabular}{|r|c|r}</code>. If the line must be on the right of the columns, so the
+          <code>|</code> symbol is putted on the right, vice versa for the left. Note, that the vertical line is propagated over all the table.
+          In order to get a table with vertical lines and one cell without vertical lines, see <a href="graphics_tables2p.html">Cell spanning: Multicolumns</a>.<br>
+While, for the horizontal line the procedure is different: the command <code>\hline</code> must be added after or before every row. Also this command
+designes the line over all the width of the table.<br>
+Using <code>\cline{i-j}</code>, it is possible to draw a horizontal line only for deteminated columns.
+<br>
+<br>
+          <div class="latex">
+            <div class="paragraph"><b> code</b><hr>
+              <p>  \begin{tabular}{|r|c|r}\hline<br>
+        example & & examplemd\\ \hline<br>
+        long example & not so long example & example\\ /cline{2-3}<br>
+        \end{tabular}</p>
+          </div>
+            <div class="object">
+              <object type="application/pdf" data="../docs/example_lines.pdf"  height="100%" width="100%"></object>
+          </div>
+          </div>
+          <br>
+In this example were added 3 vertical lines and 2 horizontal. Also, here is shown the <code>\cline</code> command.
+In this case, the code says to draw a horizontal line from cell 2 to cell 3.
+        </div>
+        <div class="subtitle" id="Special_columns">Special columns</div>
+        <div class="text">In this section the new types of columns are introduced.
+          <ul>
+            <li><code>p{<i>width</i>}</code> - creates a column of maximum <i>width</i>, with the content aligned vertically at the top,
+               while hotizontally the content is aligned at the left</li>
+             <li><code>m{<i>width</i>}</code> - creates a column of maximum <i>width</i>, with the content of all other cells aligned vertically at the middle,
+                while hotizontally the content is aligned at the left; <b>use the <code>\usepackage{array}</code></b></li>
+             <li><code>b{<i>width</i>}</code> - creates a column of maximum <i>width</i>, with the content of all other cells aligned vertically at the bottom,
+                while hotizontally the content is aligned at the left; <b>use the <code>\usepackage{array}</code></b></li>
+                <br>
+             <div class="latex">
+               <div class="paragraph"><b> code</b><hr>
+                 <p>  \begin{tabular}{|r|p{2cm}|r|}\hline<br>
+example & & example for cell\\ \hline<br>
+long example & not so long example not very long& example\\\hline<br>
+\end{tabular}</p>
+<p>  \begin{tabular}{|r|m{2cm}|r|}\hline<br>
+example & & example for cell\\ \hline<br>
+long example & not so long example not very long& example\\\hline<br>
+\end{tabular}</p>
+<p>  \begin{tabular}{|r|b{2cm}|r|}\hline<br>
+example & & example for cell\\ \hline<br>
+long example & not so long example not very long& example\\\hline<br>
+\end{tabular}</p>
+             </div>
+               <div class="object">
+                 <object type="application/pdf" data="../docs/example_spec_col.pdf"  height="100%" width="100%"></object>
+             </div>
+             </div>
+             <br>
+In the first table the <code>p</code> is used. In fact, all the content of other cell is aligned at the top. Command <code>m</code>
+alignes the content at the middle(second table) and <code>b</code> at the bottom(third table).
+        </div>
+        <div class="subtitle" id="Spacing">Spacing</div>
+        <div class="text">This chapter speaks about the sapce between columns and rows.<br>
+          First, it is more easy to introduce the command <code>\setlength{\tabcolsep}{<i>width</i>}</code>, which modifies
+            space between columns. The default width between the columns is <i>6pt</i>.
+            <br>
+            <br>
+            <div class="latex">
+              <div class="paragraph"><b> code</b><hr>
+                <p>  \setlength{\tabcolsep}{1pt}<br>
+\begin{table}<br>
+\begin{tabular}{|r|m{2cm}|r|}\hline<br>
+example & & example for cell\\ \hline<br>
+long example & not so long example not very long& example\\\hline<br>
+example& table & tables\\<br>
+\end{tabular}<br>
+\end{table}</p>
+<p>\setlength{\tabcolsep}{7pt}<br>
+\begin{table}<br>
+\begin{tabular}{|r|m{2cm}|r|}\hline<br>
+example & & example for cell\\ \hline<br>
+long example & not so long example not very long& example\\\hline<br>
+example& table & tables\\<br>
+\end{tabular}<br>
+\end{table}</p>
+<p>\setlength{\tabcolsep}{25pt}<br>
+\begin{table}<br>
+\begin{tabular}{|r|m{2cm}|r|}\hline<br>
+example & & example for cell\\ \hline<br>
+long example & not so long example not very long& example\\\hline<br>
+example& table & tables\\<br>
+\end{tabular}<br>
+\end{table}</p>
+            </div>
+              <div class="object">
+                <object type="application/pdf" data="../docs/example_spacing_col.pdf"  height="100%" width="100%"></object>
+            </div>
+          </div>
+            <br>
+The first table has 1pt as the widht between columns, in fact it is very tight. The second one has almost normal width and the third one
+has very large width (25pt).<br>
+Meanwhile for spacing between the rows, exists different ways. One of the method is to redefine the space between the rows (<code>\arraystretch</code>) by using <code>\renewcommand{\arraystretch}{<i>height</i>}</code>.
+  The default spacing is 1.0.
+  <br>
+  <br>
+<div class="latex">
+  <div class="paragraph"><b> code</b><hr>
+    <p>  \begin{table}<br>
+\begin{tabular}{|r|c|r|}\hline<br>
+example & & example for cell\\ \hline<br>
+long example & not so long example not very long& example\\\hline<br>
+\end{tabular}<br>
+\end{table}</p>
+<p>\begin{table}<br>
+\renewcommand{\arraystretch}{1.5}<br>
+\begin{tabular}{|r|c|r|}\hline<br>
+example & & example for cell\\ \hline<br>
+long example & not so long example not very long& example\\\hline<br>
+\end{tabular}<br>
+\end{table}</p>
+<p>\begin{table}<br>
+\renewcommand{\arraystretch}{6}<br>
+\begin{tabular}{|r|c|r|}\hline<br>
+example & & example for cell\\ \hline<br>
+long example & not so long example not very long& example\\\hline<br>
+\end{tabular}<br>
+\end{table}</p>
+</div>
+  <div class="object">
+    <object type="application/pdf" data="../docs/example_spacing1.pdf"  height="100%" width="100%"></object>
+</div>
+</div>
+<br>
+The first table is default. The second one has a little spacing between the rows. While the last one uses large spacing. As you can see
+  the more space there is the more the missalignment is visible. In order to fix this go to the section <a href="graphics_tables3p.html">Cell spanning: alignment</a>.<br>
+  Another way to add space between the rows is to use <code>\noalign{\smallskip}</code> after or before the <code>\hline</code> and <code>\cline</code>
+  commands. It is quiete useless, except like in the examples below. Instead insering <code>[<i>height</i>]</code> is more practical.
+  <br>
+  <br>
+  <div class="latex">
+    <div class="paragraph"><b> code</b><hr>
+      \begin{table}<br>
+        \begin{tabular}{|r|c|r|}\hline <br>
+        example & & example for cell\\ \hline<br>
+        long example & not so long example not very long& example\\ \hline<br>
+        example& table & tables\\<br>
+        \end{tabular}<br>
+        \end{table}
+        \begin{table}<br>
+          \begin{tabular}{|r|c|r|}\hline <br>
+          example & & example for cell\\ \hline \noalign{\bigskip} \hline<br>
+          long example & not so long example not very long& example\\ \noalign{\bigskip}<br>
+          example& table & tables\\<br>
+          \end{tabular}<br>
+          \end{table}
+            \begin{table}<br>
+            \begin{tabular}{rcr}\hline <br>
+            example & & example for cell\\ \hline \noalign{\bigskip} \hline<br>
+            long example & not so long example not very long& example\\ \noalign{\smallskip}<br>
+            example& table & tables\\<br>
+            \end{tabular}<br>
+            \end{table}
+              \begin{table}<br>
+              \begin{tabular}{|rcr|}\hline <br>
+              example & & example for cell\\ [0.5cm] \hline<br>
+              long example & not so long example not very long& example\\ [1.5cm] \hline<br>
+              example& table & tables\\<br>
+              \end{tabular}<br>
+              \end{table}
+    </div>
+    <div class="object">
+         <object type="application/pdf" data="../docs/example_spacing2.pdf"  height="100%" width="100%"></object>
+      </div>
+  </div>
+  <br>
+The first table is default. In the second one the command <code>\noalign{\bigskip}</code> is used. As you can see,
+it creates the space between rows but also between the lines, so it is good to use double<code>/hline</code> or to avoid
+the vertical lines, like shown in third table.<br>
+The fourth table uses <code>[<i>height</i>]</code> to create space between rows. This command is more practical and it does
+not influence the lines.
+        </div>
+        <div class="subtitle" id="Borders">Borders</div>
+        <div class="text">In order to create beautiful border, the LaTeX needs some packages <i>array,booktabs,arydshln,xcolor</i>.
+          <br>
+          <br>
+          <div class="latex">
+            <div class="paragraph"><b> code</b><hr>
+              <p>  \usepackage{array,booktabs,arydshln,xcolor}<br>
+\newcommand\VRule[1][\arrayrulewidth]{\vrule width #1}<br>
+                \begin{tabular}{!{\VRule[2pt]}r!{\VRule}c!{\color{green}\VRule[3pt]}c!{\VRule}} \hline<br>
+Column 1 & Column 2 & column3 \\ \specialrule{2pt}{0pt}{0pt}<br>
+second row & & \\ \hdashline<br>
+third row  & & \\ \specialrule{4pt}{0pt}{0pt}<br>
+example & 1234 & super example\\ \specialrule{1pt}{3pt}{0pt}<br>
+\end{tabular}</p>
+          </div>
+            <div class="object">
+              <object type="application/pdf" data="../docs/example_borders.pdf"  height="100%" width="100%"></object>
+          </div>
+          </div>
+          <br>
+Firstly, we must add 4 packages <code>\usepackage{array,booktabs,arydshln,xcolor}</code> and the define new command (<code>VRule</code>).
+Inside the tabular enviroment, the inputs (c, l, r) must be accompanied by <code>!</code> symbol. The new command <code>VRule[<i>width</i>]</code>
+is used to generate the vertical lines of certain <i>width</i>. Also, it is possible to change the color by adding <code>\color{<i>color</i>}</code> before the <code>VRule[<i>width</i>]</code> command.<br>
+The <code>\hdashline</code> command, which adds the dashed horizontal line.
+At the end the <code>\specialrule{pt}{pt}{pt}</code> adds the editable horizontal line: the first input is the width of the line, the second one is the vertical positioning and the last one is horizontal.
+        </div>
+        <div class="subtitle" id="Size">Size of the table</div>
+        <div class="text">In this last chapter is explained how to  manage the size of the table. The most common way is to use package <i>graphicx</i> and the command
+          <code>\resizebox{<i>width</i>}{<i>height</i>}{<i>object</i>}</code>.
+          <br>
+          <br>
+          <div class="latex">
+            <div class="paragraph"><b> code</b><hr>
+              <p>  \usepackage{graphicx}<br>
+\begin{document}<br>
+\begin{table}<br>
+\resizebox{1.5\textwidth}{!}{\begin{minipage}{\textwidth}<br>
+\begin{tabular}{|r|c|r|}\hline <br>
+example & & example for cell\\ \hline<br>
+long example & not so long example not very long& example\\ \hline<br>
+example& table & tables\\<br>
+\end{tabular}<br>
+\end{minipage}}<br>
+\end{table}</p>
+<p>\resizebox{12cm}{!}{\begin{minipage}{\textwidth}<br>
+\begin{tabular}{|r|c|r|}\hline <br>
+example & & example for cell\\ \hline<br>
+long example & not so long example not very long& example\\ \hline<br>
+example& table & tables\\<br>
+\end{tabular}<br>
+\end{minipage}}<br>
+\end{table}</p>
+          </div>
+            <div class="object">
+              <object type="application/pdf" data="../docs/example_size.pdf"  height="100%" width="100%"></object>
+          </div>
+          </div>
+          <br>
+In the first table, we imposed the % of the width of the text area. While in the second one it is used a fix value in cm.
+
+</div>
+        <footer>
+            <address>Page written by Maxim Ryakhovskiy</address>
+        </footer>
+    </main>
+</body>
+
+</html>
