@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/style.css">
+
+  </head>
+  <body>
+   <meta name="author" content="Jacopo Stucchi">
+  <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+  <nav>
+              <a href="general_index.html">Getting Started</a>
+              <a href="syntax_index.html" >Basic Syntax</a>
+              <a href="graphics_index.html">Graphics</a>
+              <a href="equations_index.html">Equations</a>
+              <a href="packages_index.html"class="active">Packages</a>
+              <a href="quiz.html">Quiz</a>
+          </nav>
+ </body>
+
+ <main>
+ <div class="title">GEOMETRY</div>
+ <div class="indexgeneral">
+    <ol>
+     <div class="index"><a href="#firstpart"><li>User Interface</li></a></div>
+       <br>
+       <div class="index"><a href="#secondpart"><li>Options Details</li></a></div>
+
+    </ol>
+ </div>
+ <hr>
+
+ <div class="title" id="firstpart" >User interface</div>
+ <div class="text"> The geometry package provides the following commands:
+ <ul>
+   <li><code>\geometry{options}</code></li>
+   <li> <code>\newgeometry{options} and \restoregeometry</code> </li>
+   <li> <code>\savegeometry{name} and \loadgeometry{name}</code> </li>
+ </ul>
+ <code>\geometry{options} </code>changes the page layout according
+  to the options specified in the argument.
+   This command, if any, should be placed only in the preamble (before <code> \begin{document}).</code>
+   The geometry package may be used as part of a class or another package you use in your document.
+   The command <code> \geometry </code> can overwrite some of the settings in the preamble. Multiple use of <code>\geometry</code> is allowed and then processed with the options concatenated.
+   If geometry is not yet loaded, you can use only <code> \usepackage[options]{geometry}</code> instead of <code> \geometry. </code>
+   <br><br>
+   <code>\newgeometry{options}</code> changes the page layout mid-document. <code>\newgeometry</code> is almost similar to <code>\geometry</code> except that <code>\newgeometry</code> disables all the options specified by <code>\usepackage and \geometry</code> in the preamble and skips papersize-related options.
+    <code>\restoregeometry</code> restores the page layout specified in the preamble. This command has no arguments.
+ <br><br>
+ <code>\savegeometry{name}</code> saves the page dimensions as
+  {name} where you put this command. <code> \loadgeometry{name}</code> loads the page dimensions saved as {name}.
+
+
+
+
+  </div>
+
+
+  <div class="title" id="secondpart" >Option details</div>
+  <div class="text">This section describes all options available in geometry. Options with a star * are not available as arguments of <code>\newgeometry.</code>
+  All the option are in key-value order <code> optionName={value}. </code></div>
+
+  <div class="subtitle">Paper size</div>
+  <div class="text">
+The options below set paper/media size and orientation.<br><br>
+<b><code>*paper | papername</code></b> <br><br>
+specifies the paper size by name. paper=hpaper-namei.
+ For convenience, you can specify the paper name without paper=. For example, a4paper is equivalent to paper=a4paper. <br><br>
+
+<code> * a0paper, a1paper, a2paper, a3paper, a4paper, a5paper, a6paper, b0paper, b1paper, b2paper, b3paper, b4paper, b5paper, b6paper, c0paper, c1paper, c2paper, c3paper, c4paper, c5paper, c6paper, b0j, b1j, b2j, b3j, b4j, b5j, b6j,
+  ansiapaper, ansibpaper, ansicpaper, ansidpaper, ansiepaper,
+  letterpaper, executivepaper, legalpaper </code><br><br>
+  specifies paper name.<br><br>
+  <b><code>*screen</code></b>
+  is special paper size with (W,H) = (225mm,180mm).
+  For presentation with PC and video projector, “screen,centering” with ‘slide’ documentclass would be useful.
+  <br>
+  <br>
+    <b><code>*paperwidth | *paperheight</code></b> set width and height of the paper.
+<br>
+<br>
+      <b><code>*landscape | *potrait</code></b> switches the paper orientation to landscape mode or portrait mode. <br>
+      The options for paper names (e.g., a4paper) and orientation (portrait and landscape) can be set as document class options. For example, you can set \documentclass[a4paper,landscape]{article}, then a4paper and landscape are processed in geometry as well. This is also the case for twoside and twocolumn .
+
+   </div>
+
+<div class="subtitle">Layout size </div>
+<div class="text">
+  You can specify the layout area with options described in this section regardless of the paper size. The options would help to print the specified layout to a different sized paper. For example, with a4paper and layout=a5paper, the package uses ‘A5’ layout to calculate margins on ’A4’ paper. The layout size defaults to the same as the paper. The options for the layout size are available in \newgeometry, so that you can change the layout size in the middle of the document. The paper size itself can’t be changed though.
+  <br>
+  <br>
+<b><code>layout</code></b> specifies the layout size by paper name. layout=hpaper-namei. All the paper names defined above are available.
+<br>
+<br>
+<b><code>layoutwidth | layoutheight</code></b> set width and height of the layout.
+<br>
+<br>
+<b><code>layouthoffset | layoutvoffset</code></b> specifies the horizontal offset from the left edge of the paper or specifies the vertical offset from the top edge of the paper.
+The same thing can be achived using <b><code>layoutoffset</code></b> that specifies both horizontal and vertical offsets.
+<br>
+<br>
+<img src="../media/img/packages_geometry2.png" >
+
+
+</div>
+
+
+<div class="subtitle">Margin size</div>
+<div class="text"> Learn how to manipulate the margins.
+  <br>
+  <br>
+   <b><code>left | lmargin | inner</code></b> left margin (for oneside) or inner margin (for twoside) of total body. In other words, the distance between the left (inner) edge of the paper and that of total body.
+   <code>left={length}.</code> inner has no special meaning, just an alias of left and lmargin.
+  <br>
+  <br>
+    <b><code>right | rmargin | outer</code></b> right or outer margin of total body.
+  <br>
+  <br>
+    <b><code>top | bottom</code></b> top and bottom margin of the page.
+  <br>
+  <br>
+   <b><code>hmargin</code></b> left and right margin.
+  <br>
+  <br>
+   <b><code>vmargin</code></b> top and bottom margin.
+
+
+</div>
+
+
+  <footer>
+      <address>Page written by Stucchi Jacopo</address>
+  </footer>
+  </main>
+
+
+  </html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/style.css">
+
+  </head>
+  <body>
+   <meta name="author" content="Jacopo Stucchi">
+  <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+  <nav>
+              <a href="general_index.html">Getting Started</a>
+              <a href="syntax_index.html" >Basic Syntax</a>
+              <a href="graphics_index.html">Graphics</a>
+              <a href="equations_index.html">Equations</a>
+              <a href="packages_index.html"class="active">Packages</a>
+              <a href="quiz.html">Quiz</a>
+          </nav>
+ </body>
+<main>
+<div class="title">GEOMETRY</div>
+<div class="indexgeneral">
+   <ol>
+      <div class="index"><a href="#firstpart"><li>What is Geometry?</li></a></div>
+      <br>
+      <div class="index"><a href="#secondpart"><li>Page Geometry</li></a></div>
+      <br>
+      <div class="index"><a href="#thirdpart"><li>Useful Parametres</li></a></div>
+      <br>
+   </ol>
+</div>
+<hr>
+
+
+<div class="title" id="firstpart">What is Geometry?</div>
+<div class="subtitle">\usepackage{geometry} </div>
+<div class="text">The page dimensions in a LATEX document are highly configurable and the geometry package offers a simple way
+  to change the length and layout of different elements such as the paper size, margins, footnote, header, orientation.
+  <br>
+    Geometry package has an auto-completion mechanism, in which unspecified dimensions are automatically determined.
+    The geometry package will be also useful when you have to set page layout obeying strict instructions: for example,
+<br>
+<br>
+    <i>The total allowable width of the text area is 6.5 inches wide by 8.75 inches high.
+      The top margin on each page should be 1.2 inches from the top edge of the page.
+       The left margin should be 0.9 inch from the left edge.
+       The footer with page number should be at the bottom of the text area.
+ </i>
+<br>
+<br>
+<code>\usepackage[total={6.5in,8.75in}, <br>
+top=1.2in, left=0.9in, includefoot]{geometry}. </code></div>
+<br>
+<br>
+
+<div class="title" id="secondpart">Page geometry</div>
+<div class="text">The page layout contains a total body (printable area) and margins. The total body consists of a body (text area) with an optional header, footer and marginal notes (marginpar).
+   There are four margins: left, right, top and bottom. For twosided documents, horizontal margins should be called inner and outer
+ <br>
+<br>
+Each margin is measured from the corresponding edge of a paper. For example, left margin (inner margin)
+means a horizontal distance between the left (inner) edge of the paper and that of the total body.
+ Therefore the left and top margins defined in geometry are di↵erent from the native dimensions \leftmargin and \topmargin.
+ The size of a body (text area) can be modified by \textwidth and \textheight.
+ The dimensions for paper, total body and margins have the following relations.
+<br>
+<br>
+<code>paperwidth = left+width+right</code> <br>
+<code>paperheight = top+height+bottom</code>
+
+
+</div>
+
+
+<div class="subtitle" >Manipulate page geometry</div>
+<div class="text"> Paper size, orientation and margins are the most common page elements that must be changed depending on the type of document.
+   To set the desired values there are two ways, either you pass them as parameters to the \includepackage statement:
+<br>
+<br>
+<code>\usepackage[legalpaper, landscape, margin=2in]{geometry} </code>
+<br>
+<br>
+or use a \geometry command in the preamble. In fact you can achieve the same thing in a slightly different way:
+<br>
+<br>
+<code>\usepackage{geometry} <br>
+\geometry{legalpaper, landscape, margin=2in}</code>
+
+<br>
+  </div>
+  <br><br>
+
+
+  <div class="title" id="thirdpart" >Useful parametres</div>
+  <div class="text"> The geometry package provides a flexible and easy interface to change page dimensions.
+    You can change the page layout with intuitive parameters.
+The parameters have to be written in the form parameter=value, use standard LATEX units. (mm, cm, pt, in).
+<br>
+<br>
+<img src="../media/img/packages_geometry1.png" alt="geometryimg">
+<br>
+<br>
+
+<code><b>textwidth</b></code><br>
+Corresponds to element 8 in the figure.
+<br>
+<br>
+<code><b>textheight</b></code> <br>
+Element 7 in the figure.
+<br>
+<br>
+<code><b>total</b></code> <br>
+Depends on other parameters, by default defines the dimensions of the Body, but can be combined with the includehead, includefoot,
+ includeheadfoot and includemp commands to change the dimensions of Header, the Body, the Footer and the Margin Notes altogether.
+<br>
+<br>
+<code><b>left, lmargin, inner</b></code> <br>
+These three parameters change the length of the left margin. Elements 1 and 3 in the figure, combined.
+<br>
+<br>
+<code><b>right, rmargin, outer</b></code> <br>
+These three parameters change the length of the right margin. Elements 9 and 10 in the figure, combined.
+<br>
+<br>
+<code><b>top, tmargin</b></code> <br>
+These two parameters represent elements 2 and 6 in the figure, combined.
+<br>
+<br>
+<code><b>bottom, bmargin</b></code> <br>
+These two parameters set the distance from the bottom edge of the document to its baseline.
+<br>
+<br>
+<code><b>headheight</b></code><br>
+Height of the header
+<br>
+<br>
+<code><b>footsep</b></code><br>
+Separation between the bottom of the text (baseline) and the top of the footnote. Element 11 in the figure.
+<br>
+<br>
+<code><b>footskip</b></code><br>
+Distance between the baseline of the text and the baseline of the footnote.
+<br>
+<br>
+<code><b>marginparwidth, marginpar</b></code><br>
+Width of the margin notes. Element 10 in the figure.
+<br>
+<br>
+The paper size can be set to any size you need by means of the command papersize={⟨width⟩,⟨height⟩}. <br>
+Let's see an example: <br><br>
+
+<code>
+\usepackage{geometry} <br>
+ \geometry{           <br>
+ a4paper,             <br>
+ total={170mm,257mm}, <br>
+ left=20mm,           <br>
+ top=20mm,            <br>
+ } </code>
+ <br><br>
+Here the text area, the left margin and the top margin are set. The right and bottom margins are automatically computed to fit the page.
+</div>
+<br>
+
+
+
+
+
+</div>
+
+
+
+
+
+<footer>
+    <address>Page written by Stucchi Jacopo</address>
+</footer>
+</main>
+
+
+</html>
