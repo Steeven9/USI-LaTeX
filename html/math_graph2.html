@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Graph 2</title>
+    <meta name="author" content="Alessio Giovagnini">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+
+    <nav>
+        <a href="general_index.html" >Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html" class="active">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+        <a href="general.html" id="firstsubpage">Getting Started</a> <!-- Put the class="active" on your subpage -->
+        <a href="basic.html">Basic Syntax</a>
+        <a href="graphics.html">Graphics</a>
+        <a href="equations.html" class="active" >Equations</a>
+        <a href="packages.html">Packages</a>
+        <a href="quiz.html" id="lastsubpage">Quiz</a>
+    </div>
+
+    <main>
+        <div class="title">Drawing 3D graph with LATEX</div>
+
+        <div class="indexgeneral"><ul>
+          <li><div class="index"><a href="math_graph2.html#1">Basic 3D graph.</a></div></li>
+          <li><div class="index"><a href="math_graph2.html#2">Surface from coordinates.</a></div></li>
+          <li><div class="index"><a href="math_graph2.html#3">Exercice.</a></div></li>
+      </ul>
+      <hr>
+      </div>
+
+        <div class="text">Latex is not limited at two dimension functions, it can also draw
+          three dimentional representation of functions with three variable. For this type
+          of graph we still need the same packages as 2D graph, so add:</br>
+        </br>
+        <code class="codebox">
+          \usepackage{tikz}</br>
+          \usepackage{pgfplot}</br>
+        </br>
+      </code>
+          before starting the document.
+        </div>
+
+        <div class="subtitle" id="1">Basic 3D graph.</div>
+        <div class="text">Exactly like 2D graph, we need first to create the environment for plotting
+          graphs, for that we write:</br>
+        </br>
+        <code class="codebox">
+        \begin{tikzpicture}</br>
+         \begin{axis}[option of the axis]</br>
+        ...</br>
+        \end{axis}</br>
+        \end{tikzpicture}</br>
+        </br>
+      </code>
+        Now we can insert our function in the environment. There is a small difference between the 2D
+        plot and 3D: for the 3 dimension the code is: \addplot3[surf,]{function}; Here is an exemple:</br>
+      </br>
+      <code class="codebox">
+      \begin{tikzpicture}</br>
+      \begin{axis}</br>
+      \addplot3[surf,]{x^2+y^2};</br>
+      \end{axis}</br>
+      \end{tikzpicture}</br>
+      </br>
+    </code>
+      The result is:</br>
+      <img src="../media/img/3d_graph.png" style="width: 40%;">
+    </br>
+      There is also the possibility to draw the function as a grid instead of a surface, change
+      [surf,] to [mesh,]:</br>
+    </br>
+    <code class="codebox">
+    \begin{tikzpicture}</br>
+    \begin{axis}</br>
+    \addplot3[mash,]{x+10*y};</br>
+    \end{axis}</br>
+    \end{tikzpicture}</br>
+    </br>
+  </code>
+    The result is:</br>
+      <img src="../media/img/3d_graph2.png" style="width: 40%;">
+    </br>
+    We can change even the color, add in the option [colormap/cool]:</br>
+  </br>
+  <code class="codebox">
+  \begin{tikzpicture}</br>
+  \begin{axis}</br>
+  \addplot3[surf, colormap/cool]{x*y};</br>
+  \end{axis}</br>
+  \end{tikzpicture}</br>
+  </br>
+</code>
+  The result is:</br>
+  <img src="../media/img/3d_graph3.png" style="width: 40%;">
+  </br>
+  After the option colormap/ we can use other predefine extension, here are other possible
+  parts: hot, hot2, jet, blackwhite, bluered, greenyellow, redyellow, violet.
+  </br>
+
+  <div class="subtitle" id="2">Surface from coordinates.</div>
+  <div class="text">Latex can plot 3D graph not just from function, but also from coordinates
+    to create a surface. Here is an example:</br>
+    </br>
+    <code class="codebox">
+    \begin{tikzpicture}</br>
+    \begin{axis}</br>
+    \addplot3[surf,]</br>
+    coordinates {</br>
+      (0,0,0) (0,1,0) (0,0.5,0)</br>
+      (1,0,0) (1,1,1) (1,2,2)</br>
+      (2,0,0) (2,1,1) (2,2,2)};</br>
+      \end{axis}</br>
+      \end{tikzpicture}</br>
+    </br>
+  </code>
+    This is the result:
+  </br>
+    <img src="../media/img/surface_graph.png" style="width: 40%;">
+
+  </div>
+        </div>
+
+        <div class="subtitle" id="3">Exercice.</div>
+        <div class="exercises">
+            <p>Now try to display the function: f(x,y)=x+y^3  </br>
+            for the solution move the mouse over the black box on the right </p>
+            <div class="blackbox">
+              <code class="codebox">
+              \begin{tikzpicture}</br>
+              \begin{axis}</br>
+              \addplot3[surf,]{x+y^3};</br>
+              \end{axis}</br>
+              \end{tikzpicture}</br>
+            </code>
+            </div>
+        </div>
+
+
+        <footer>
+            <address>Page written by Alessio Giovagnini</address>
+        </footer>
+    </main>
+</body>
+</html>

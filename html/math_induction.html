@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>LaTeX Math Induction</title>
+    <meta name="author" content="Jacopo Caratti">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html" class="active">Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+        <a href="general.html" id="first">Getting Started</a> <!-- Put the class="active" on your subpage -->
+        <a href="basic.html">Basic Syntax</a>
+        <a href="graphics.html">Graphics</a>
+        <a href="equations.html">Equations</a>
+        <a href="packages.html">Packages</a>
+        <a href="quiz.html" id="last">Quiz</a>
+    </div>
+    <main>
+
+        <!-- BEGIN INTRODUCTION -->
+
+        <div class="title">Proof by induction</div>
+        <div class="text">The principle of induction is frequently used in mathematic in order
+          to prove some simple statement. It asserts that if a certain property is valid for
+          <i>P<sub>(n)</sub></i> and for <i>P<sub>(n+1)</sub></i>, it is valid for all the <i>n</i>
+          (as a kind of domino effect). A proof by induction is divided into three fundamental steps,
+          which I will show you in detail:
+          <ol>
+            <li><a href="#Base_Case">Base Case</a></li>
+            <li><a href="#Inductive_Hypothesis">Inductive Hypotesis</a></li>
+            <li><a href="#Inductive_Step">Inductive Step</a></li>
+          </ol>
+          The principle of induction is often used to demonstrate statements concerning summaries and fractions. So it is
+          very important that you understand how to write them in LaTeX. For this reason I suggest you visit the
+          related section of this site that deals with <a href="math_basics.html#Summations">summaries</a>
+          and <a href="math_basics.html#Fractions">fractions</a>.<br>
+          In order to better understand the principle of induction, I decide to choose a precise statement and demonstrate
+          it step by step using LaTeX.
+        </div>
+
+        <!-- END INTRODUCTION -->
+
+        <!-- BEGIN LATEX SETUP -->
+
+        <div class="firstsubtitle">LaTeX setup</div>
+        <div class="text">In the header of the LaTeX file we have to specify some feature that we are going to 
+            use in order to prove a generel formula. With <code>\newtheorem{thm}{Theorem}[chapter]</code> we tell to LaTeX
+            we are going to write a <i>Theorem</i> and every time we will call a Theorem using <code>\begin{thm}</code>, 
+            LaTeX will start a new <i>Chapter</i> named <i>Theorem</i> with a specific enumeration.</div>
+
+        <!-- END LATEX SETUP -->
+
+        <!-- BEGIN INDUCTIVE HYPOTHESIS -->
+
+        <div class="subtitle" id="Inductive_Hypothesis">Inductive Hypothesis</div>
+        <div class="text">In this step we have to write the formula we want to proof in LaTeX. In our case I chose the summaries
+          of <i>n</i> natural numbers starting from <i>1</i>, which we assume to be equal to a certain formula. Since it is a <i>Theorem</i>
+          we specify that with <code>\begin{thm}</code> and after writing it we close the tag with <code>\end{thm}</code>.
+        </div>
+        <div class="formula">Code Necessary:<br>\begin{thm}<br>$$\sum_{k=1}^{n} k = \frac{n \left(n+1\right)}{2}$$<br>\end{thm}</div><br>
+        <img src="../media/img/math_induction_statement.png" class="centerimagesbig">
+
+        <!-- END INDUCTIVE HYPOTHESIS -->
+
+        <!-- BEGIN BASE CASE -->
+
+        <div class="subtitle" id="Base_Case">Base Case</div>
+        <div class="text">With the base case we start the <i>prove</i>, so we say that to LaTeX with <code>\begin{proof}</code>. 
+            We must prove that the given statement <i>P(k)</i> is true for the first value of <i>k</i>, that is, <i>k=1</i>.
+            In our case the first value of <i>k</i> is <i>1</i> and the formula is verified.</div>
+        <div class="formula">Code necessary:<br>\begin{proof}<br>$$\sum_{k=1}^{1} k = \frac{1\left(1+1 \right )}{2} = 1\left(\cdots\right)$$<br>
+            \end{proof}</div><br>
+        <img src="../media/img/math_induction_basecase.png" class="centerimagesbig">
+
+        <!-- END BASE CASE -->
+
+        <!-- BEGIN INDUCTIVE STEP -->
+
+        <div class="subtitle" id="Inductive_Step">Inductive Step</div>
+        <div class="text">This is the crucial passage of all the principle. We want to demonstrate that if this statement is valid for <i>n</i>,
+          it will be also valid for <i>n+1</i>, in symbols: <i>P(n)&#x21d2;P(n + 1)</i>. So we compute the statement with our assumption, that is,
+           <i>k=n+1</i>.<br>Since it is the end of the <i>proof</i> we write the command <code>\end{proof}</code> in LaTeX, so that the entire
+           <i>proof</i> is enclosed between two <i>proof-tags</i>.</div>
+        <div class="formula">Code necessary:<br>\begin{proof}<br>$$\left(\cdots\right)\sum_{k=1}^{n+1} k = \sum_{k=1}^{n} k + \left(n+1\right) = 
+            \frac{n \left(n+1\right)}{2} + \left(n+1\right) = \frac{\left(n+1\right) \left(\left(n+1\right)+1\right)}{2}$$<br>\end{proof}</div><br>
+        <img src="../media/img/math_induction_inductivestep.png" class="centerimagesbig"><br>
+        <div class="text">The demonstration ended. We have shown through induction that the theorem is true for <i>P(n)</i> and <i>P(n+1)</i>, 
+            hen for every <i>n</i>. As you can see in the lower left LaTeX has drawn a little square, which in mathematical language means 
+            <i>demonstrated</i>.</div>
+
+        <!-- END INDUCTIVE STEP -->
+
+        <!-- BEGIN EXERCISES -->
+
+        <div class="subtitle">Exercices</div>
+        <div class="exercises">
+            <p>1) Write the induction Base Case of this statement: the number 7<sup>k</sup> - 2<sup>k</sup> is divisible by 5 starting from k=0.</p>
+            <div class="blackbox">
+                \begin{proof}<br>
+                \noindent Base Case k=0:<br>
+                $$7^{k} - 2^{k} = 5x\rightarrow 7^{0} - 2^{0} = 5$$<br>
+                5 is divisible by 5, so the Theorem holds when k = 0.<br>
+                $$\left(\cdots\right)$$<br>
+                \end{proof}
+            </div>
+        </div><br>
+
+        <div class="exercises">
+            <p>2) Write the Inductive Step for the Theorem which says that the summation of (3n - 2) is equal to n(3n - 1)/2
+                for all n ≥ 1.</p>
+            <div class="blackbox">
+                \begin{proof}<br>
+                $$\left(\cdots\right)$$<br>
+                $$\sum_{k=1}^{n+1} \left(3k+2\right) = \sum_{k=1}^{n} \left(3k+2\right) + \sum_{k=1}^{1} \left(3k+2\right) =
+                \sum_{k=1}^{n} \left(3k+2\right) + \left(3\left(n+1 \right )+2\right) =$$<br>
+                $$=\frac{n\left(3n-1 \right )}{2} + \left(3\left(n+1 \right )+2\right)$$<br>
+                \end{proof}                    
+            </div>
+        </div>
+
+        <!-- END EXERCISES -->
+
+        <footer>
+            <address>Page written by Jacopo Caratti</address>
+        </footer>
+    </main>
+</body>
+</html>
+
+<!-- END BASE PAGE -->
