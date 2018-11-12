@@ -87,16 +87,44 @@ nav a.active{
   background-color: grey;
 }
 
-.sidenav a {
+.sidenav a.sidenavlink, .sidenav a.sidenavlinkactive  {
   flex-basis: 100%;
-  text-align: center;
   text-decoration: none;
-  padding: 1.5%;
+  padding: 5%;
   padding-top: 5%;
   padding-bottom: 5%;
   color: white;
   transition: background-color 0.5s;
   font-size: 1.1vw;
+  font-family: Roboto;
+}
+
+.sidenav div.subpage{
+  margin-top: 5%;
+  margin-right: 0%;
+  color: white;
+  background-color: grey;
+  font-size: 1.1vw;
+  font-family: Roboto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidenav .subpage .subpagepadding{
+  margin-left: 5%;
+  padding-bottom: 3%;
+}
+
+.sidenav div.subpage a.subpagelink, .sidenav div.subpage a.subpagelinkactive{
+  flex-basis: 100%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-left: 5%;
+  padding-left: 5%;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.5s;
+  font-size: 1vw;
   font-family: Roboto;
 }
 
@@ -108,12 +136,20 @@ nav a.active{
   font-size: 1.3vw;
 }
 
-.sidenav a:hover, #firstsubpage:hover{
+#firstsubpageactive{
+  background-color: rgb(0, 174, 255);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  font-weight: bold;
+  font-size: 1.3vw;
+}
+
+.sidenav a:hover, #firstsubpage:hover, .sidenav p a:hover{
   background-color: rgb(0, 174, 255);
   transition: background-color 0.5s;
 }
 
-.sidenav a.active, #firstsubpage:active{
+.sidenav a.sidenavlinkactive, .sidenav div.subpage a.subpagelinkactive, #firstsubpage:active{
   background-color: rgb(0, 174, 255);
 }
 /*END OF SIDE NAVIGATOR*/
@@ -220,12 +256,12 @@ div.index{
 
 
 /* LINKS */
-div.text a:link, div.text a:visited, div.text a:hover {
+div.text a:link, div.text a:visited, div.text a:hover, div.index a:link, div.index a:visited, div.index a:hover{
   color: blue;
   text-decoration: none;
 }
 
-div.text a:hover {
+div.text a:hover, div.index a:hover {
   text-decoration: underline;
 }
 
@@ -515,13 +551,13 @@ div.homepagebox a:hover{
   background-image: url("../media/img/background3.jpg");
   background-attachment: fixed;
   background-size: cover;
-  height: 100vh;
+  height: 97vh;
   width: 100%;
   background-position: center;
 }
 
 .mainhomepagetextboxzero {
-  padding-top: 2vh;
+  padding-top: 1vh;
   opacity: 1;
 }
 
@@ -531,7 +567,7 @@ div.homepagebox a:hover{
 }
 
 .mainhomepagetext2box {
-  padding-top: 2vh;
+  padding-top: 1vh;
   opacity: 1;
 }
 
@@ -540,11 +576,11 @@ div.homepagebox a:hover{
   text-align: center;
   font-family: Roboto;
   font-weight: bold;
-  font-size: 3.5vw;
+  font-size: 3vw;
   color: white;
   letter-spacing: 3px;
-  padding-top: 2vh;
-  padding-bottom: 2vh;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
 }
 
 .secondbackground {
@@ -593,10 +629,48 @@ div.mainhomepagebox a:hover{
   font-family: Roboto;
   font-style: italic;
   color: white;
-  padding-top: 3%;
-  padding-left: 90%;
+  margin-top: 10vh;
+  text-align: right;
+  margin-right: 0.5vw;
 }
 /* END HOMEPAGE */
+
+
+
+/* HOMEPAGE TOP NAVIGATOR */
+.homepagenavigator {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.homepagenavigator a {
+  flex-basis: 14%;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5vh;
+  background-color: grey;
+  color: white;
+  transition: background-color 0.5s;
+  font-size: 2vh;
+  font-family: Roboto;
+}
+
+.homepagenavigator img {
+  flex-basis: 14%;
+  text-align: center;
+  text-decoration: none;
+  height: 3.5vh;
+}
+
+.homepagenavigator a:hover{
+  background-color: rgb(0, 174, 255);
+  transition: background-color 0.5s;
+}
+/* END OF HOMEPAGE TOP NAVIGATOR */
 
 
 
@@ -692,6 +766,14 @@ div.mainhomepagebox a:hover{
   address{
     font-size: 0.7em;
   }
+
+  .firstbackground {
+    height: 98vh;
+  }
+
+  .homepagenavigator a {
+    font-size: 1vh;
+  }
 }
 
 @media (max-width: 425px)
@@ -712,6 +794,14 @@ div.mainhomepagebox a:hover{
   #firstsubpage{
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+  }
+
+  .firstbackground {
+    height: 98.4vh;
+  }
+
+  .homepagenavigator a {
+    font-size: 0.8vh;
   }
 }
 /* END RESPONSIVITY */
