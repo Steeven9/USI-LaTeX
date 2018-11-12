@@ -201,7 +201,9 @@ AND YOU WILL BE REQUIanswer TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITT
             <label><input type="radio" class="question7" name="question7" value="4"><span class="optionSpan"> Option 4</span></label>
         </div>
 
-        <div id="score" class="text margin40 hide"></div>
+        <div id="score" class="text margin10 hide"></div>
+
+        <div id="previousResults" class="text margin40 hide"></div>
 
         <div class="text margin40"><a onclick="submit()" class="button">Submit</a></div>
 
@@ -223,7 +225,7 @@ AND YOU WILL BE REQUIanswer TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITT
                         4:$(".question4:checked").val(),
                         5:$(".question5:checked").val(),
                         6:$(".question6:checked").val(),
-                        7:$(".question7:checked").val(),
+                        7:$(".question7:checked").val()
                     },
                     success:function(msg){
                         //get back to top of the page
@@ -240,8 +242,31 @@ AND YOU WILL BE REQUIanswer TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITT
                                 document.getElementById("answQuestion"+i).classList.add('red');
                             }
                         }
-                        document.getElementById('score').innerHTML = "Your score: "+points+"/"+msg.length;
+
+                        var total = msg.length;
+                        var grade = points*100/total;
+                        var score = points+"/"+total+" ("+grade+"%). ";
+
+                        document.getElementById('score').innerHTML = "Your score: "+score;
+
+                        if (grade==100) {
+                            document.getElementById('score').innerHTML += "Wow, great job!";
+                        } else if (grade>=80) {
+                            document.getElementById('score').innerHTML += "You're close, keep fighting!";
+                        } else if (grade>=60) {
+                            document.getElementById('score').innerHTML += "Not bad, but you can do better.";
+                        } else {
+                            document.getElementById('score').innerHTML += "Meh. Try harder!";
+                        }
+
                         document.getElementById('score').classList.remove("hide");
+
+                        if (localStorage.lastAttempt) {
+                            document.getElementById("previousResults").innerHTML = "Last attempt: "+localStorage.lastAttempt;
+                            document.getElementById('previousResults').classList.remove("hide");
+                        }
+
+                        localStorage.lastAttempt = score;
                     },
                     error:function(msg){
                         alert("Something went wrong.");
