@@ -2,7 +2,7 @@
 <!-- WARNING: WRITE ALL THE TEXT INSIDE THE MAIN AND NOT DIRECTLY ON THE BODY -->
 <!-- NOTE: THE WHITE SPACE BELOW THE LOGO AND ON THE LEFT OF THE PAGE ARE PLACE-HOLDERS FOR THE NAVIGATORS-->
 <!-- NOTE: SINCE THE NAVIGATORS HAVE NOT BEEN CREATED YET, THEY WILL BE ADDED TO THE TEMPLATE ON A LATER TIME,
-AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN -->
+AND YOU WILL BE REQUIanswer TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN -->
 <!-- NOTE: BE AWARE OF THE FACT THAT IN THE FUTURE WILL BE ADDED A BOX FOR THE CODES -->
 <!-- NOTE: AFTER EVERY PARAGRAPHS, BEFORE USING A NEW SUBTITLE PUT AT LEAST ONE BREAK -->
 
@@ -17,16 +17,18 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 
     <style>
-        .margin20 {
-            margin-bottom: 20px;
+        .margin10 {
+            margin-bottom: 10px;
         }
 
-        .margin50 {
-            margin-bottom: 50px;
+        .margin40 {
+            margin-bottom: 40px;
         }
 
-        .vMid {
+        .optionSpan {
             vertical-align: middle;
+            margin-left: 7px;
+            margin-bottom: 3px;
         }
 
         .line1-5 {
@@ -35,6 +37,18 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 
         .red {
             color: red;
+        }
+
+        .green {
+            color: green;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .inlb {
+            display: inline-block;
         }
 
         .button {
@@ -70,91 +84,170 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 
     <main>
         <div class="title">Test yourself!</div>
-        <div class="text margin50 line1-5">
-            <div>Question 1: is this question a question?</div> 
-            <div id="answQuestion1" class="margin20 red"></div>
-            <label><input type="radio" name="question1"><span class="vMid"> Yes</span></label><br>
-            <label><input type="radio" name="question1"><span class="vMid"> No</span></label><br>
-            <label><input type="radio" name="question1"><span class="vMid"> Maybe</span></label><br>
-            <label><input type="radio" name="question1"><span class="vMid"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></label>
+
+        <div class="subtitle">General</div>
+
+        <div class="text margin40 line1-5">
+            <div class="margin10">1. Is this question a question?</div> 
+            <div id="answQuestion0" class="margin10 answer"></div>
+            <label><input type="radio" class="question0" name="question0" value="1"><span class="optionSpan">Yes</span></label><br>
+            <label><input type="radio" class="question0" name="question0" value="2"><span class="optionSpan">No</span></label><br>
+            <label><input type="radio" class="question0" name="question0" value="3"><span class="optionSpan">Maybe</span></label><br>
+            <label><input type="radio" class="question0" name="question0" value="4"><span class="optionSpan">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></label>
         </div>
 
-        <div class="text margin50 line1-5">
-            <div class="margin20">Question 2</div>
-            <label><input type="radio" name="question2"><span class="vMid"> Option 1</span></label><br>
-            <label><input type="radio" name="question2"><span class="vMid"> Option 2</span></label><br>
-            <label><input type="radio" name="question2"><span class="vMid"> Option 3</span></label><br>
-            <label><input type="radio" name="question2"><span class="vMid"> Option 4</span></label>
+
+        <div class="subtitle">Packages</div>
+
+        <div class="text margin40 line1-5">
+            <div class="margin10">1. Which of the following is the package that you should use to con­struct head­ers and foot­ers and to control their use?</div>
+            <div id="answQuestion1" class="margin10 answer"></div>
+            <label><input type="radio" class="question1" name="question1" value="1"><span class="optionSpan">fancyhdr</span></label><br>
+            <label><input type="radio" class="question1" name="question1" value="2"><span class="optionSpan">babel</span></label><br>
+            <label><input type="radio" class="question1" name="question1" value="3"><span class="optionSpan">TiKz/PGF</span></label><br>
+            <label><input type="radio" class="question1" name="question1" value="4"><span class="optionSpan">caption</span></label>
         </div>
 
-        <div class="text margin50 line1-5">
-            <div class="margin20">Question 3</div>
-            <label><input type="radio" name="question3"><span class="vMid"> Option 1</span></label><br>
-            <label><input type="radio" name="question3"><span class="vMid"> Option 2</span></label><br>
-            <label><input type="radio" name="question3"><span class="vMid"> Option 3</span></label><br>
-            <label><input type="radio" name="question3"><span class="vMid"> Option 4</span></label>
+        <div class="text margin40 line1-5">
+            <div class="margin10">2. What is the package that will help you set the page dimensions?</div>
+            <div id="answQuestion2" class="margin10 answer"></div>
+            <label><input type="radio" class="question2" name="question2" value="1"><span class="optionSpan">inpuntenc</span></label><br>
+            <label><input type="radio" class="question2" name="question2" value="2"><span class="optionSpan">geometry</span></label><br>
+            <label><input type="radio" class="question2" name="question2" value="3"><span class="optionSpan">pgfplots</span></label><br>
+            <label><input type="radio" class="question2" name="question2" value="4"><span class="optionSpan">xypic</span></label>
         </div>
 
-        <div class="text margin50 line1-5">
-            <div class="margin20">Question 4</div>
-            <label><input type="radio" name="question4"><span class="vMid"> Option 1</span></label><br>
-            <label><input type="radio" name="question4"><span class="vMid"> Option 2</span></label><br>
-            <label><input type="radio" name="question4"><span class="vMid"> Option 3</span></label><br>
-            <label><input type="radio" name="question4"><span class="vMid"> Option 4</span></label>
+        <div class="text margin40 line1-5">
+            <div class="margin10">3. Which of these packages can be used to create diagrams, graphs or trees?</div>
+            <div id="answQuestion3" class="margin10 answer"></div>
+            <label><input type="radio" class="question3" name="question3" value="1"><span class="optionSpan">xypic</span></label><br>
+            <label><input type="radio" class="question3" name="question3" value="2"><span class="optionSpan">AMSmath</span></label><br>
+            <label><input type="radio" class="question3" name="question3" value="3"><span class="optionSpan">booktabs</span></label><br>
+            <label><input type="radio" class="question3" name="question3" value="4"><span class="optionSpan">geometry</span></label>
         </div>
 
-        <div class="text margin50 line1-5">
-            <div class="margin20">Question 5</div>
-            <label><input type="radio" name="question5"><span class="vMid"> Option 1</span></label><br>
-            <label><input type="radio" name="question5"><span class="vMid"> Option 2</span></label><br>
-            <label><input type="radio" name="question5"><span class="vMid"> Option 3</span></label><br>
-            <label><input type="radio" name="question5"><span class="vMid"> Option 4</span></label>
+
+        <div class="subtitle">Tables</div>
+
+        <div class="text margin40 line1-5">
+            <div class="margin10">1. Given a table of 6 rows and 4 columns, choose the correct code in order to get the table in the image below. <b>Note</b>: the code is provided only for 3 influenced lines.<br>
+            <img src="../media/img/quiz_tableExample.jpg" alt="Image of the table" width="40%"></div>
+            <div id="answQuestion4" class="margin10 answer"></div>
+
+            <label><input type="radio" class="question4" name="question4" value="1">
+                <span class="optionSpan">Option 1:<br>
+                    <code class="margin10 inlb">
+                        example & \multicolumn{3}{c|} {\multirow{3}{*}{solution} } & not empty \\\cline{1-1}\cline{5-5}<br>
+                        example &  &  & & not empty\\\cline{1-1}\cline{5-5}<br>
+                        empty &  &  &  & not empty\\\hline
+                    </code>
+                </span>
+            </label><br>
+            <label><input type="radio" class="question4" name="question4" value="2">
+                <span class="optionSpan">Option 2:<br>
+                    <code class="margin10 inlb">example & \multicolumn{3}{c|} {\multirow{3}{*}{solution} } & not empty \\\cline{1-1}\cline{5-5}<br>
+                    example & \multicolumn{1}{c|}{} & not empty\\\cline{1-1}\cline{5-5}<br>
+                    empty &  \multicolumn{1}{c|}{} & not empty\\\hline
+                </code>
+                </span>
+            </label><br>
+            <label><input type="radio" class="question4" name="question4" value="3">
+                <span class="optionSpan">Option 3:<br>
+                    <code class="margin10 inlb">
+                        example & \multicolumn{3}{c|} {\multirow{3}{*}{solution} } & not empty \\\hline<br>
+                        example & \multirow{3}{*}{solution} & not empty\\\hline<br>
+                        empty &  \multirow{3}{*}{solution} & not empty\\\hline
+                    </code>
+                </span>
+            </label><br>
+            <label><input type="radio" class="question4" name="question4" value="4">
+                <span class="optionSpan">Option 4:<br>
+                    <code class="margin10 inlb">
+                        example & \multicolumn{3}{c|} {\multirow{3}{*}{solution} } & not empty \\\cline{1-1}\cline{5-5}<br>
+                        example & \multicolumn{3}{c|}{} & not empty\\\cline{1-1}\cline{5-5}<br>
+                        empty &  \multicolumn{3}{c|}{} & not empty\\\hline
+                    </code>
+                </span>
+            </label>
         </div>
 
-        <div class="text margin50 line1-5">
-            <div class="margin20">Question 6</div>
-            <label><input type="radio" name="question6"><span class="vMid"> Option 1</span></label><br>
-            <label><input type="radio" name="question6"><span class="vMid"> Option 2</span></label><br>
-            <label><input type="radio" name="question6"><span class="vMid"> Option 3</span></label><br>
-            <label><input type="radio" name="question6"><span class="vMid"> Option 4</span></label>
+
+        <div class="subtitle">Placeholders</div>
+
+        <div class="text margin40 line1-5">
+            <div class="margin10">Question 1</div>
+            <div id="answQuestion5" class="margin10 answer"></div>
+            <label><input type="radio" class="question5" name="question5" value="1"><span class="optionSpan"> Option 1</span></label><br>
+            <label><input type="radio" class="question5" name="question5" value="2"><span class="optionSpan"> Option 2</span></label><br>
+            <label><input type="radio" class="question5" name="question5" value="3"><span class="optionSpan"> Option 3</span></label><br>
+            <label><input type="radio" class="question5" name="question5" value="4"><span class="optionSpan"> Option 4</span></label>
         </div>
 
-        <div class="text margin50 line1-5">
-            <div class="margin20">Question 7</div>
-            <label><input type="radio" name="question7"><span class="vMid"> Option 1</span></label><br>
-            <label><input type="radio" name="question7"><span class="vMid"> Option 2</span></label><br>
-            <label><input type="radio" name="question7"><span class="vMid"> Option 3</span></label><br>
-            <label><input type="radio" name="question7"><span class="vMid"> Option 4</span></label>
+        <div class="text margin40 line1-5">
+            <div class="margin10">Question 2</div>
+            <div id="answQuestion6" class="margin10 answer"></div>
+            <label><input type="radio" class="question6" name="question6" value="1"><span class="optionSpan"> Option 1</span></label><br>
+            <label><input type="radio" class="question6" name="question6" value="2"><span class="optionSpan"> Option 2</span></label><br>
+            <label><input type="radio" class="question6" name="question6" value="3"><span class="optionSpan"> Option 3</span></label><br>
+            <label><input type="radio" class="question6" name="question6" value="4"><span class="optionSpan"> Option 4</span></label>
         </div>
 
-        <div class="text margin50 line1-5">
-            <div class="margin20">Question 8</div>
-            <label><input type="radio" name="question8"><span class="vMid"> Option 1</span></label><br>
-            <label><input type="radio" name="question8"><span class="vMid"> Option 2</span></label><br>
-            <label><input type="radio" name="question8"><span class="vMid"> Option 3</span></label><br>
-            <label><input type="radio" name="question8"><span class="vMid"> Option 4</span></label>
+        <div class="text margin40 line1-5">
+            <div class="margin10">Question 3</div>
+            <div id="answQuestion7" class="margin10 answer"></div>
+            <label><input type="radio" class="question7" name="question7" value="1"><span class="optionSpan"> Option 1</span></label><br>
+            <label><input type="radio" class="question7" name="question7" value="2"><span class="optionSpan"> Option 2</span></label><br>
+            <label><input type="radio" class="question7" name="question7" value="3"><span class="optionSpan"> Option 3</span></label><br>
+            <label><input type="radio" class="question7" name="question7" value="4"><span class="optionSpan"> Option 4</span></label>
         </div>
 
-        <div class="text margin50"><a onclick="submit()" class="button">Submit</a></div>
+        <div id="score" class="text margin40 hide"></div>
+
+        <div class="text margin40"><a onclick="submit()" class="button">Submit</a></div>
+
+        <script src="../js/jquery-3.3.1.min.js"></script>
 
         <script>
             function submit() {
-                var xhttp = new XMLHttpRequest();
+                var points = 0;
 
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        //append right or wrong to every question
-
-                        //test
-                        document.getElementById("answQuestion1").innerHTML = this.responseText;
-
+                $.ajax({
+                    url:"https://kiba.ddns.net/school/sa1Quiz.php",
+                    type:"POST",
+                    data:
+                    {
+                        0:$(".question0:checked").val(),
+                        1:$(".question1:checked").val(),
+                        2:$(".question2:checked").val(),
+                        3:$(".question3:checked").val(),
+                        4:$(".question4:checked").val(),
+                        5:$(".question5:checked").val(),
+                        6:$(".question6:checked").val(),
+                        7:$(".question7:checked").val(),
+                    },
+                    success:function(msg){
                         //get back to top of the page
-                        document.body.scrollTop = 0; // For Safari
-                        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-                    }
-                };
-                xhttp.open("POST", "https://kiba.ddns.net/school/sa1Quiz.php", true);
-                xhttp.send();
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
+
+                        for (var i=0; i<msg.length; i++) {
+                            if (msg[i]) {
+                                document.getElementsByClassName("answer")[i].innerHTML = "Correct!";
+                                document.getElementById("answQuestion"+i).classList.add('green');
+                                points++;
+                            } else {
+                                document.getElementsByClassName("answer")[i].innerHTML = "Wrong";
+                                document.getElementById("answQuestion"+i).classList.add('red');
+                            }
+                        }
+                        document.getElementById('score').innerHTML = "Your score: "+points+"/"+msg.length;
+                        document.getElementById('score').classList.remove("hide");
+                    },
+                    error:function(msg){
+                        alert("Something went wrong.");
+                    },
+                    dataType:"json"
+                });
             }
         </script>
 
