@@ -1,6 +1,3 @@
-	<title>Biblaxtex</title>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +21,7 @@
 </head>
 <body onload="changeNav()">
 
-	<div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+   <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
     <nav>
         <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
         <a href="syntax_index.html"class="active">Basic Syntax</a>
@@ -33,25 +30,39 @@
         <a href="packages_index.html">Packages</a>
         <a href="quiz.html">Quiz</a>
     </nav>
+    <div class="sidenav">
+        <a href="syntax_First_document.HTML" id="firstsubpage"><center>CREATE YOUR FIRST LATEX</center></a>
+        <a href="syntax_title_section.HTML"><center>TITLE SECTION</center></a>
+        <a href="syntax_basic_paragraphs_and_comments.HTML"><center>PARAGRAPH AND COMMENTS</center></a>
+        <a href="syntax_fonts_and_text_processing.HTML"><center>TEXT PROCESSING</center></a>
+        <a href="LINKSUBPAGE.HTML"><center>FONTS</center></a>
+        <a href="syntax_formatting.HTML"><center>FORMATTING</center></a>
+        <a href="syntax_lists.HTML"><center>LIST</center></a>
+        <a href="classes.HTML"><center>DOCUMENT CLASS</center></a>
+        <a href="syntax_TableOfContentsAndPageNumber.HTML"><center>TABLE OF CONTENT AND PAGE NUMBERING</center></a>
+        <a href="syntax_footnotes.HTML"><center>FOOTNOTE</center></a>
+        <a href="syntax_language_support.HTML"><center>LANGUAGE SUPPORT</center></a>
+        <a href="syntax_bibManagement.HTML" class="active"><center>BIBLIOGRPAHY MANAGMENT</center></a>
+        <a href="syntax_biblatexStyles.HTML"><center>BIBLATEX STYLES</center></a>
+        <a href="LINKSUBPAGE.HTML" id="lastsubpage"><center>BIBTEX STYLES</center></a>
+    </div>
 
     <main>
         
-        <div>
-            <h1>Biblaxtex Citation Styles</h1>
-            To construct bibliography for your Latex document, there are several packages that could be deployed and used. Biblatex is one powerful package that can helps you 
+        <div class="title">Biblaxtex Citation Styles</div>
+        To construct bibliography for your Latex document, there are several packages that could be deployed and used. Biblatex is one powerful package that can helps you 
             <hr>
-        </div>
         
-        <div>
-            <h2>Content</h2>
+        <div class="text">
+            <div class="subtitle">Content</div>
             <ol>
                 <li><a href="#Bibbibstyle">Biblatex bibliography styles</a></li>
                 <li><a href="#Bibcitestyle">Biblatex citation styles</a></li>
             </ol>
             <hr>
         </div>
-        <div>
-            <h2 id="Bibbibstyle">Biblatex bibliography styles</h2>
+        <div class="text">
+            <div class="subtitle" id="Bibbibstyle">Biblatex bibliography styles</div>
             <p>
                 #TODO a fraking lot in here
                 numeric <br><br>
@@ -81,7 +92,7 @@
             </p>
             <hr>
         </div>
-        <div>
+        <div class="text">
             <h2 id="Bibcitestyle">Biblatex citation styles</h2>
             <p>
                 #TODO a fraking lot in here too<br><br>
@@ -129,7 +140,6 @@
             <address>Page written by Thuong Le</address>
         </footer>
     </main>
-	
 
 </body>
 </html>
