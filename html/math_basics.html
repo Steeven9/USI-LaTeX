@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>LaTeX Math Basic Syntax</title>
+    <title>Equations - Basic Syntax</title>
     <meta name="author" content="Jacopo Caratti">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
@@ -12,15 +12,15 @@
 <body>
     <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
     <nav>
-        <a href="general_index.html" class="active">Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="general_index.html">Getting Started</a>
         <a href="syntax_index.html">Basic Syntax</a>
         <a href="graphics_index.html">Graphics</a>
-        <a href="equations_index.html">Equations</a>
+        <a href="equations_index.html" class="active">Equations</a>
         <a href="packages_index.html">Packages</a>
         <a href="quiz.html">Quiz</a>
     </nav>
     <div class="sidenav">
-        <a href="general.html" id="first">Getting Started</a> <!-- Put the class="active" on your subpage -->
+        <a href="general.html" id="first">Getting Started</a>
         <a href="basic.html">Basic Syntax</a>
         <a href="graphics.html">Graphics</a>
         <a href="equations.html">Equations</a>
@@ -34,18 +34,20 @@
         <div class="title">Basic Syntax</div>
         <div class="text">To write in latex in mathematical language you need a base. In this
           section you will find the basic commands to write the main operations. Below there is a
-          list of the topics we will touch.
-          <ol>
-            <li><a href="#Fractions">Fractions</a></li>
-            <li><a href="#Exponentiations">Exponentiations (Superscript)</a></li>
-            <li><a href="#Subscripts">Subscripts</a></li>
-            <li><a href="#Roots"><i>n</i><sup>th</sup> roots</a></li>
-            <li><a href="#Logarithms">Logarithms</a></li>
-            <li><a href="#Summations">Summations and Product</a></li>
-            <li><a href="#Limits">Limits</a></li>
-            <li><a href="#Derivatives">Derivatives</a></li>
-            <li><a href="#Integrals">Integrals</a></li>
-          </ol>
+          list of the topics we will touch.</div>
+        <div class="indexgeneral">
+          <ul>
+            <li><div class="index"><a href="#Fractions">Fractions</a></div></li>
+            <li><div class="index"><a href="#Exponentiations">Exponentiations (Superscript)</a></div></li>
+            <li><div class="index"><a href="#Subscripts">Subscripts</a></div></li>
+            <li><div class="index"><a href="#Roots"><i>n</i><sup>th</sup> roots</a></div></li>
+            <li><div class="index"><a href="#Logarithms">Logarithms</a></div></li>
+            <li><div class="index"><a href="#Summations">Summations and Product</a></div></li>
+            <li><div class="index"><a href="#Limits">Limits</a></div></li>
+            <li><div class="index"><a href="#Derivatives">Derivatives</a></div></li>
+            <li><div class="index"><a href="#Integrals">Integrals</a></div></li>
+          </ul>
+          <hr>
         </div>
 
         <!-- END INTRODUCTION -->
@@ -58,7 +60,14 @@
           which represents the part respect to the total, represented by the <i>denominator</i>.<br>
           In order to write a fraction in LaTeX you have to use the command <code>\frac{a}{b}</code>,
           where <code>a</code> is the numerator and <code>b</code> is the denominator.</div>
-        <div class="formula">Code Necessary:<br>$$\frac{19+99}{7}$$</div><br>
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>$$\frac{19+99}{7}$$</code>
+        </div><br>
+
+        <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
+
         <img src="../media/img/math_basics_fractions.png" class="centerimagesbig">
         
         <!-- END FRACTIONS -->
@@ -71,7 +80,15 @@
           given by the product of <i>n</i> factors equal to <i>a</i>. This function can also be used as superscript 
           of something.<br> In LaTeX we write <code>a^{b}</code>, where <code>a</code> is the <i>base</i> and 
           <code>b</code> the <i>exponent</i>.</div>
-        <div class="formula">Code Necessary:<br>$$8^{4}=4096$$</div><br>
+        
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>$$8^{4}=4096$$</code>
+        </div><br>
+
+        <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
+
         <img src="../media/img/math_basics_exponentiations.png" class="centerimagessmall">
   
 
@@ -84,7 +101,15 @@
           certain value or a certain constant.<br>
           We write <code>a_{b}</code> in LaTeX, where <code>a</code> is the base number and <code>b</code>
           is the subscript.</div>
-        <div class="formula">Code Necessary:<br>$$n_{0}=0, n_{1}=1$$</div><br>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>$$n_{0}=0, n_{1}=1$$</code>
+        </div><br>
+
+        <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
+
         <img src="../media/img/math_basics_subscripts.png" class="centerimagessmall">
   
 
@@ -99,7 +124,15 @@
           In LaTeX the <code>\sqrt{x}</code> command allows you to write the square root of a number <code>x</code>.
           Instead if you want to write the <i>n</i><sup>th</sup> root of any number you can use the command
           <code>\sqrt[a]{b}</code>, where <code>a</code> is the root degrees and <code>b</code> is the root number.</div>
-        <div class="formula">Code Necessary:<br>$$\sqrt[3]{7}+\sqrt[3]{2}$$</div><br>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>$$\sqrt[3]{7}+\sqrt[3]{2}$$</code>
+        </div><br>
+
+        <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
+
         <img src="../media/img/math_basics_roots.png" class="centerimagessmall">
   
         <!-- END ROOTS -->
@@ -110,7 +143,15 @@
         <div class="text">The logarithm of a number in a certain <i>base</i> is the exponent to which the
           base must be elevated to obtain the same number.<br>We write <code>\log_{a}b</code> in LaTeX in
           order to indicate the logarithm to base <code>a</code> of <code>b</code>.</div>
-        <div class="formula">Code Necessary:<br>$$\log_{4}12$$</div><br>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>$$\log_{4}12$$</code>
+        </div><br>
+
+        <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
+
         <img src="../media/img/math_basics_logarithms.png" class="centerimagessmall">
 
         <!-- END LOGARITHMS -->
@@ -130,7 +171,15 @@
         the two lower and higher <i>limits</i> and a <i>function</i>.<br>
         To build a product in LaTeX we write <code>\prod_{b}^{x=a}f(k)</code>, which means the product
         for <code>x</code> ranging from <code>a</code> to <code>b</code> of <code>f(k)</code>.</div>
-        <div class="formula">Code Necessary:<br>$$\sum_{x=0}^{7}x+3$$</div><br>
+        
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>$$\sum_{x=0}^{7}x+3$$</code>
+        </div><br>
+
+        <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
+
         <img src="../media/img/math_basics_summations.png" class="centerimagesbig">
 
         <!-- END SUMMATIONS & PRODUCT -->
@@ -143,7 +192,15 @@
           In LaTeX we write <code>\lim_{a \to b}</code> to say that the value of <code>a</code> is
           getting closer and closer to <code>b</code>. The command <code>\to</code> is used to build the arrow that leads
           <code>a</code> to <code>b</code>.</div>
-        <div class="formula">Code Necessary:<br>$$\lim_{x \to 10}$$</div><br>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>$$\lim_{x \to 10}$$</code>
+        </div><br>
+
+        <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
+
         <img src="../media/img/math_basics_limits.png" class="centerimagesbig">
   
         <!-- END LIMITS -->
@@ -155,7 +212,15 @@
           argument changes.<br>
           We use this syntax in LaTeX: <code>\frac{\mathrm{d} f}{\mathrm{d} x}</code>, where <code>f</code> is 
           the function that we want to derive.</div>
-        <div class="formula">Code Necessary:<br>$$\frac{\mathrm{d} y}{\mathrm{d} x} = y'$$</div><br>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>$$\frac{\mathrm{d} y}{\mathrm{d} x} = y'$$</code>
+        </div><br>
+
+        <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
+
         <img src="../media/img/math_basics_derivatives.png" class="centerimagesbig">
   
         <!-- END DERIVATIVES -->
@@ -168,7 +233,15 @@
           There are two type of integrals: the undefided and the defined. In LaTeX we write the first as <code>\int</code>
           and the second as <code>\int_{a}^{b}</code>, where <code>a</code> is the beginning of the considered 
           graph and <code>b</code> the end.</div>
-        <div class="formula">Code Necessary:<br>$$\int_{-10}^{10}7x+30$$</div><br>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>$$\int_{-10}^{10}7x+30$$</code>
+        </div><br>
+
+        <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
+
         <img src="../media/img/math_basics_integrals.png" class="centerimagesbig">
   
         <!-- END INTEGRALS -->
@@ -180,15 +253,15 @@
             <p>1) Write the steps to find the hypotenuse length of a 4cm base right triangle and 3cm high by using 
               the Pitagora Theorem.<br>Then, in a second line, multiply it by the logarithm of base 10 of 100.</p>
             <div class="blackbox">
-                $$\sqrt{4^{2}+3^{2}} = 5//<br>
-                5 x \log_{10}100 = 10$$
+                <code>$$\sqrt{4^{2}+3^{2}} = 5//<br>
+                5 x \log_{10}100 = 10$$</code>
             </div>
         </div><br>
 
         <div class="exercises">
             <p>2) Using a summation, write the sum of the first 5 numbers raised to the power of 3/2, starting with 1.</p>
             <div class="blackbox">
-                \sum_{5}^{x=1}x^{\frac{3}{2}} \cong 28.205
+                <code>\sum_{5}^{x=1}x^{\frac{3}{2}} \cong 28.205</code>
             </div>
         </div><br>
 

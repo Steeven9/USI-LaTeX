@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Equations - Writing Notes</title>
+    <meta name="author" content="Jacopo Caratti">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html">Getting Started</a>
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html" class="active">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+        <a href="general.html" id="first">Getting Started</a>
+        <a href="basic.html">Basic Syntax</a>
+        <a href="graphics.html">Graphics</a>
+        <a href="equations.html">Equations</a>
+        <a href="packages.html">Packages</a>
+        <a href="quiz.html" id="last">Quiz</a>
+    </div>
+    <main>
+
+        <!-- BEGIN INTRODUCTION -->
+
+        <div class="title">Writing Notes</div>
+        <div class="text">If you want to produce a clean and tidy text from a mathematical point of view, you need to know 
+            how to use LaTeX in the most appropriate way. On this page you will discover how to organize your text by dividing 
+            it, if necessary, into the following categories:</div>
+        <div class="indexgeneral">
+            <ul>
+                <li><div class="index"><a href="math_writing_notes.html#NumberedEnvironment">Numbered Environment</a></div></li>
+                <li><div class="index"><a href="math_writing_notes.html#UnnumeredEnvironment">Unnumered Environment</a></div></li>
+                <li><div class="index"><a href="math_writing_notes.html#Counters">Counters</a></div></li>
+                <li><div class="index"><a href="math_writing_notes.html#Proof">Proof</a></div></li>
+            </ul>
+        <hr>
+        </div>
+
+        <!-- END INTRODUCTION -->
+
+        <!-- BEGIN NUMBERED ENVIRONMENT -->
+
+        <div class="firstsubtitle" id="NumberedEnvironment">Numbered Environment</div>
+        <div class="text">The numbered environments in LaTeX can be defined by the command <code>\newtheorem{myTheo}{NumTheo}</code>.
+            As you can see this command has two parameters: <code>myTheo</code> is the name you will use to reference this environment,
+            while <code>NumTheo</code> is the character that will be printed in bold at the beginning of the environment. Once defined 
+            in the header of the LaTeX document, this type of environment can be used in the text delimited by the marks 
+            <code>\begin{myTheo}</code> and <code>\end{myTheo}</code>.
+        </div><br>
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+            <code>\documentclass{article}<br>
+                \usepackage{amsthm}<br>
+                \newtheorem{myTheo}{NumTheo.}<br><br> 
+
+                \begin{document}<br><br>
+                
+                \begin{myTheo}<br>
+                $$\left(\cdots\right)$$<br>
+                \end{myTheo}<br><br>
+                
+                \end{document}</code>
+        </div><br>
+
+        <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
+
+        <img src="../media/img/math_writing_notes_numbered_environment.png" class="centerimagesbig">
+
+        <!-- END NUMBERED ENVIRONMENT -->
+
+        <!-- BEGIN UNNUMBERED ENVIRONMENT -->
+
+        <div class="subtitle" id="UnnumeredEnvironment">Unnumered Environment</div>
+        <div class="text">In case we want an unnumbered environment, the syntax is very similar to that of the numbered list. The 
+            only difference is in the asterisk <code>*</code> inserted before the two parameters in the header of the document.
+            What results will be <code>\newtheorem*{myUnnumTheo}{UnNumTheo}</code>. Otherwise it is used in the same way as the 
+            numbered one.</div><br>
+            
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+            <code>
+                \documentclass{article}<br>
+                \usepackage{amsthm}<br>
+                \newtheorem*{myUnnumTheo}{UnNumTheo}<br><br>
+                
+                \begin{document}<br>
+                
+                \begin{myUnnumTheo}<br>
+                $$\left(\cdots\right)$$<br>
+                \end{myUnnumTheo}<br><br>
+                
+                \end{document}
+            </code>
+        </div><br>
+
+        <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
+
+        <img src="../media/img/math_writing_notes_unnumbered_environment.png" class="centerimagesbig">
+
+        <!-- END UNNUMBERED ENVIRONMENT -->
+
+        <!-- BEGIN COUNTERS -->
+
+        <div class="subtitle" id="Counters">Counters</div>
+        <div class="text">By default, each <code>\newtheorem{myTheo}{NumTheo}</code> has its counter. However, it is possible to customize
+            the counters.</div>
+            <div class="text">If I want the counter of something to be updated to the section change, I have to write 
+            <code>\newtheorem{myTheo}{NumTheo}[section]</code>. Instead of <code>section</code> I also can write others
+            sectioning names.</div>
+            <div class="text">If I have to use a common counter for similar types of theorems I write <code>\newtheorem{lemma}[myTheo]{Lemma}</code>,
+            where in the square brackets I'm telling LaTeX to use the same counter as <code>myTheo</code>.</div>
+            <div class="text">Another customization of the counter is that the counter of an environment <code>corollary</code> will be reset 
+                each time <code>myTheo</code> is used. To do this we write <code>\newtheorem{corollary}{Corollary}[myTheo]</code>.</div><br>
+
+        <!-- CODE WITH PDF OF LATEX DOCUMENT -->
+
+        <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+                <code>\documentclass{article}<br>
+                        \usepackage{amsthm}<br><br>
+                        
+                        \newtheorem{myTheo}{NumTheoSection}[section]<br>
+                        \newtheorem{lemma}[myTheo]{Lemma}<br>
+                        \newtheorem{corollary}{Corollary}[myTheo]<br><br>
+                        
+                        
+                        \begin{document}<br><br>
+                        
+                        \section{First Section}<br><br>
+                        
+                        \begin{myTheo}<br>
+                        $$\left(\cdots\right)$$<br>
+                        \end{myTheo}<br><br>
+                        
+                        \begin{corollary}<br>
+                        $$\left(\cdots\right)$$<br>
+                        \end{corollary}<br><br>
+                        
+                        \begin{lemma}<br>
+                        $$\left(\cdots\right)$$<br>
+                        \end{lemma}<br><br>
+                        
+                        \begin{myTheo}<br>
+                        $$\left(\cdots\right)$$<br>
+                        \end{myTheo}<br><br>
+                        
+                        \begin{corollary}<br>
+                        $$\left(\cdots\right)$$<br>
+                        \end{corollary}<br><br>
+                        
+                        \section{Second Section}<br><br>
+                        
+                        \begin{lemma}<br>
+                        $$\left(\cdots\right)$$<br>
+                        \end{lemma}<br><br>
+                        
+                        \begin{corollary}<br>
+                        $$\left(\cdots\right)$$<br>
+                        \end{corollary}<br><br>
+                        
+                        \begin{myTheo}<br>
+                        $$\left(\cdots\right)$$<br>
+                        \end{myTheo}<br><br>
+                        
+                        \begin{lemma}<br>
+                        $$\left(\cdots\right)$$<br>
+                        \end{lemma}<br><br>
+                        
+                        \begin{corollary}<br>
+                        $$\left(\cdots\right)$$<br>
+                        \end{corollary}<br><br>
+                        
+                        \end{document}</code>
+            </div>
+            <div class="object">
+                <object type="application/pdf" data="../docs/Writing_Notes.pdf" height="100%" width="100%"></object>
+            </div>
+
+        </div>
+
+        <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
+
+        <!-- END COUNTERS -->
+
+        <!-- BEGIN PROOF -->
+
+
+        <div class="subtitle" id="Proof">Proof</div>
+        <div class="text">When we want to prove something we don't have to use the mark <code>\newtheorem</code> as above. LaTeX provides <i>proofs</i> by
+            using the commands <code>\begin{proof}</code> and <code>\end{proof}</code>. Writing the proof inside them will make a small square appear at 
+            the end of the proof, which in mathematical language means <i>proven</i>.</div>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+            <code>
+                \documentclass{article}<br>
+                \usepackage{amsthm}<br><br>
+
+                \begin{document}<br><br>
+
+                \begin{proof}<br>
+                $$\left(\cdots\right)$$<br>
+                \end{proof}<br><br>
+
+                \end{document}
+            </code>
+        </div><br>
+
+        <img src="../media/img/math_writing_notes_proof.png" class="centerimagesbig">
+
+        <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
+
+        <!-- END PROOF -->
+
+        <!-- BEGIN EXERCISES -->
+
+        <div class="subtitle">Exercices</div>
+        <div class="exercises">
+          <p>1) Write a numbered and a unnumbered environment. The string that will be printed in bold at the beginning of both the environments must be 
+              the same, that is, LEMMA.</p>
+          <div class="blackbox">
+            <code>\documentclass{article}<br>
+                    \usepackage{amsthm}<br>
+                    \newtheorem*{myUnnumTheo}{LEMMA}<br>
+                    \newtheorem{myNumTheo}{LEMMA}<br><br>
+                    
+                    \begin{document}<br><br>
+                    
+                    \begin{myNumTheo}<br>
+                    Content of the numbered environment<br>
+                    \end{myNumTheo}<br><br>
+                    
+                    \begin{myUnnumTheo}<br>
+                    Content of the unnumbered environment<br>
+                    \end{myUnnumTheo}<br><br>
+                    
+                    \end{document}</code>
+          </div>
+        </div><br>
+
+        <div class="exercises">
+          <p>
+            2) What should be added in the file header of the first exercise to have an environment whose counter follows that of the numbered LEMMA?<br>
+            After defining it in the header, use it in the document.
+          </p>
+          <div class="blackbox">
+            Header: <code>\newtheorem{alfa}[myNumTheo]{ALFA}</code><br>Document: <code>\begin{alfa}<br>I'm following the myNumTheo counter<br>\end{alfa}<br></code>
+          </div>
+        </div>
+
+        <!-- END EXERCISES -->
+
+        <footer>
+            <address>Page written by Jacopo Caratti</address>
+        </footer>
+    </main>
+</body>
+
+</html>

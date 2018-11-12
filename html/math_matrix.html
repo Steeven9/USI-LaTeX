@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Matrix</title>
+    <meta name="author" content="*JACOB_SALVI*">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <main>
+        <div class="titles">Latex in relation to math</div>
+        <div class="subtitles">Matrices</div>
+        <div class="text">
+        A matrix is a way to represent and manupulate linear transformations.
+        <br>
+        In general any linear transformation can be represented using matrices in
+        the following way:<br>
+        <img src="../media/img/lintransf.png" style="width: 40%;"><br>
+        <img src="../media/img/matrix.png" style="width: 40%;"><br>
+        This said, i won't explain the math behind matrices any further and i will
+        go on now with the Latex code necessary to replicate both the linear
+        transformation and the matrix above.<br>
+        For starting i will assume that the basics of latex mathematical
+        enviroment are known (if this isn't the case, the reader is invited to
+        read <a href="basics.html"> this </a>first), and therefore they won't
+        be re-explained here.<br>
+        <div class="subtitles">Let's start with the linear transformation:</div>
+        If the page about the basics has been read it should be clear how to write
+        each of the expressions, but there still are two problem to solve,
+        how to make a break line inside the math enviroment and how to align the
+        3 expressions. Both problems are solved with the align enviroment given by
+          amsmath. This enviroment is somewhat similar to a table, therefore
+          I also invite the reader to read the table section of this page before
+          reading this section. (<a href="table.html"> here </a>)
+          The symbol \\ indicates that the current row ended and the & symbol indicates the
+          point of alignment in each row. That means to take the carachter just
+          after as beginning of the alignment. They might also be multiples point of
+          alignement<br>
+          I will now make an example to clarify:<br>
+          \begin{align}<br>
+          ax= a_1 +a_2+a_3+a_4\cdots a_n\\ <br>
+          y=b_1 + b_2 +b_3+b_4\cdots b_m\\<br>
+          a_n,b_n\in\mathbb{b}\quad m,n\in\mathbb{N}\\<br>
+          \end{align}<br>
+          This will result in three unaligned expressions, since we didn't put &
+          to express where we want the alignment.
+          <br> <img src="../media/img/unaligned.png" style="width:40%;">
+          <br>
+          \begin{align}<br>
+          &x= a_1 +a_2+a_3+a_4\cdots a_n\\<br>
+          &y=b_1 + b_2 +b_3+b_4\cdots b_m\\<br>
+          &a_n,b_n\in\mathbb{b}\quad m,n\in\mathbb{N}\\<br>
+          \end{align}<br>
+          This one will align them by x for the first row, y for the second  and
+          a_n for the third.
+          <img src="../media/img/align.png" style="width: 40%"><br>
+
+          \begin{align*}<br>
+          &x: & a_1 +a_2+a_3+a_4\cdots a_n\\<br>
+          &y: &b_1 + b_2 +b_3+b_4\cdots b_m\\<br>
+          &a_n,b_n\in\mathbb{R} & m,n\in\mathbb{N}\\<br>
+          \end{align*}<br>
+          This last one will have 2 alignment, the first will be the same as for
+          above, and the second alignment will be for a_1 in the first row, b_1
+          in the second and m,n in the third.
+          <img src="../media/img/dalign.png" style="width:40%;">
+          <br>
+          To remove the numbers that appear to the very right a * must be added
+          after align both in the \begin and \end.
+          \begin{align*}<br>
+          \end{align*}<br>
+          The reader should now notice clearly the similarity between this enviroment
+          and a table.<br>
+          <h3>To sum up the important concepts:</h3>
+          To align multiple expressions to 1 or multiple points the following
+          code is necessary.<br>
+          <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
+          \begin{align}<br>
+          0-th field (if any) & first field to align &second field to align...& n-th field to align\\<br>
+          0-th field (if any) & first field to align &second field to align...&b-th field to align\\<br>
+          ...<br>
+          \end{align}</div>
+          And <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
+            \begin{align*}...\end{align*}
+          </div>
+             is needed to remove the number that count
+          the corrent expression.
+          <div class="subtitles">Matrix</div>
+          Let's discuss now how to make a matrix just like the one in the beginning.
+          example:<br>
+          We saw that the align enviroment share some similarities with the tables,
+          this said matrices are almost identical to tables. In fact the \\
+          indicates the end of a row and the & symbols indicates that end of the
+          element of that coloumn in that row. It is also worth noting that three
+          different parenthesis can be made for the matrices.
+          Let's make an example to clarify:<br>
+          \begin{pmatrix}<br>
+          a_{11}&a_{12}\\<br>
+          a_{21}&a_{22}}\\<br>
+          \end{pmatrix}<br>
+          Here pmatrix indicates that we want round parenthesis, the end result
+          will be.<br>
+          <img src="../media/img/pmatrix.png" style="width:20%;"><br>
+          Of corse the members of the matrix can be any symbol or expression:<br>
+          \begin{vmatrix}<br>
+          a_{11}&a_{12}&\cdots&a_{1n}\\<br>
+          a_{21}&a_{22}&\cdots&a_{2n}\\<br>
+          \vdots &\vdots& \ddots&\vdots\\<br>
+          \displaystyle\sum_{k=1}^n k&\cdots&
+          \sin\epsilon&x^{\frac{\phi}{3}}\\<br>
+          \end{vmatrix}<br>
+          That will give the following matrix that since it is a vmatrix will have
+          vertical parenthesis.<br>
+          <img src="../media/img/vmatrix.png" style="width: 40%;"><br>
+          To obtain square brackets bmatrix must be used.
+          <h3>To sum up the important concepts</h3>
+          To make a matrix with square brackets:
+          <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
+          \begin{bmatrix}...\end{bmatrix}</div>
+          To make a matrix with round brackets:
+          <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
+          \begin{pmatrix}...\end{pmatrix}</div>
+          To make a matrix with vertical brackets:
+          <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
+          \begin{vmatrix}...\end{vmatrix}</div>
+          To make a matrix with no brackets:
+          <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
+          \begin{matrix}...\end{matrix}</div>
+          And matrix, similarly to tables, follow the form:
+          <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
+            \begin{matrix}<br>
+            firstrow first element & firstrow second element & ...firstrow n-th element\\<br>
+            2-ndrow first element & 2-ndrow second element & ...2-ndrow n-th element\\<br>
+            ...<br>
+            m-throw first element & m-throw second element & ...m-throw n-th element\\<br>
+            \end{matrix}
+          </div>
+          <div class="subtitles">
+            Vectors</div>
+            It should be obvious that to make a vector it is enough to make a
+            matrix with either only one coloumn or only one row, that said, there
+            is a command to make the symbol of a vector, or namely, a letter with
+            an arrow above it to indicate it is a vector.<br>
+            Example:
+            <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
+              $\vec{v}=<br>
+              \begin{pmatrix}<br>
+                    a1\\<br>
+                    a2\\<br>
+                    \end{pmatrix}$<br>
+            </div>
+            That will output<br>
+            <img src="../media/img/vector.png" style="width: 20%;">
+
+
+
+
+
+
+
+
+        </thead>
+
+          </thead>
+        </div>
+        <div class="exercises">
+            <p>To check that all this new concept are been understood i would
+            like to invite the reader to try and replicate the following expression
+          in latex
+          <img src="../media/img/matrixexercise.png" style="width:40%;">
+        </p>
+            <div class="blackbox">
+              \begin{align*}<br>
+        &\begin{vmatrix}<br>
+        a_{11}&a_{12}\\<br>
+        a_{21}&a_{22}\\<br>
+        \end{vmatrix} \vec{v}=x\vec{v}\\<br>
+        &x\in\mathbb{R}\\<br>
+        \end{align*}
+            </div>
+        </div>
+
+        <footer>
+            <address>Page written by Jacob Salvi</address>
+        </footer>
+    </main>
+</body>
+
+</html>
+
+<!-- END BASE PAGE -->
+
+
+
+
+
+
+<!-- BLAXKBOX WITH LEFT TEXT -->
