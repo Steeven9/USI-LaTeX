@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>LaTeX two column</title>
+    <meta name="author" content="*NAME_SURNAME*">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <main>
+        <h1>Comparing two columns of each document class</h1>
+<br>
+<br>
+
+<h2>Article/Book/Report/Letter - Without twocolumn package</h2>
+
+  <div class="latex">
+          <div class="paragraph">
+            <b>CODE</b>
+            <hr>
+            <p>
+            <br>\documentclass <b> {article} {book} {report} {letter}</b>
+            <br>\usepackage {xcolor}
+            <br>\usepackage {geometry}
+            <br>\usepackage [most] {tcolorbox}
+            <br>\geometry {margin=0pt}
+            <br>\newtcolorbox {bgbox} [1] [] {nobeforeafter, sharp corners, #1}
+            <br>\begin {document}
+            <br>\noindent
+            <br>\begin{bgbox} [height=\paperheight,
+            <br>colback=black,width=0.35\textwidth,rightrule=0pt]
+            <br>\end {bgbox}%
+            <br>\begin{bgbox}
+            <br>[height=\paperheight, colback=white, width=0.65\textwidth]
+            <br>\section* {Canto 1 -  Incipit - Inferno}
+            <br>
+              <i>
+              Nel mezzo del cammin di nostra vita\\
+              <br>ché la diritta via era smarrita.\\
+              <br>Ahi quanto a dir qual era è cosa dura\\
+              <br>esta selva selvaggia e aspra e forte\\
+              <br>che nel pensier rinova la paura!\\
+              <br>Tant’è amara che poco è più morte;\\
+              <br>ma per trattar del ben ch’i’ vi trovai,\\
+              <br>dirò de l’altre cose ch’i’ v’ho scorte.\\
+              <br>Io non so ben ridir com’i’ v’intrai,\\
+              <br>tant’era pien di sonno a quel punto\\
+              <br>che la verace via abbandonai.\\
+              <br>....
+             </i>
+              <br>\end {bgbox}
+              <br>\end {document}
+            </p>
+           </div>
+            <div class="object">
+              <object type="application/pdf" data="../docs/syntax_two_column.pdf" height="100%" width="100%"> </object>
+            </div>
+  </div>
+
+
+
+
+
+
+
+
+<div class="text">
+This is an universal method for making a two column document, without using the twocolumn {option}.
+For this reason it works also for the letter class, which doesn't support twocolumn option.
+</div>
+
+
+
+
+
+
+<h2>Article/Book/Report - With twocolumn package</h2>
+<div class="text">
+ In this way we can easily represent an universal output for each class.
+</div>
+
+<div class="latex">
+        <div class="paragraph">
+          <b>CODE</b>
+          <hr>
+          <p>
+            <br>\documentclass [twocolumn] <b>{article} {book} {report} </b>
+            <br>\begin {document}
+            <br>\section* {Canto 1 -  Incipit - Inferno}
+            <br>
+             <i>Nel mezzo del cammin di nostra vita\\
+            <br>ché la diritta via era smarrita.\\
+            <br>Ahi quanto a dir qual era è cosa dura\\
+            <br>esta selva selvaggia e aspra e forte\\
+            <br>Tant’è amara che poco è più morte;\\
+            <br>ma per trattar del ben ch’i’ vi trovai,\\
+            <br>dirò de l’altre cose ch’i’ v’ho scorte.\\
+            <br>Io non so ben ridir com’i’ v’intrai,\\
+            <br>tant’era pien di sonno a quel punto\\
+            <br>che la verace via abbandonai.\\
+            <br>.... </i>
+            <br>\end{document}
+           </p>
+         </div>
+          <div class="object">
+            <object type="application/pdf" data="../docs/syntax_two_column_comp.pdf" height="100%" width="100%"> </object>
+          </div>
+</div>
+
+
+
+
+
+<h2>Letter</h2>
+<div class="text">
+The Letter class does not support [two column]
+</div>
+
+</div>
+<div class="latex">
+        <div class="paragraph">
+          <b>CODE</b>
+          <hr>
+           <p>
+             <br>\documentclass [twocolumn] <b>{letter} </b>
+             <br>\begin {document}
+             <br> <br>
+              <i>Nel mezzo del cammin di nostra vita\\
+             <br>ché la diritta via era smarrita.\\
+             <br>Ahi quanto a dir qual era è cosa dura\\
+             <br>esta selva selvaggia e aspra e forte\\
+             <br>Tant’è amara che poco è più morte;\\
+             <br>ma per trattar del ben ch’i’ vi trovai,\\
+             <br>dirò de l’altre cose ch’i’ v’ho scorte.\\
+             <br>Io non so ben ridir com’i’ v’intrai,\\
+             <br>tant’era pien di sonno a quel punto\\
+             <br>che la verace via abbandonai.\\
+             <br>....
+
+             <br>\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+             <br> <b>A le quai poi se tu vorrai salire,</b>\\
+             <br> <b>anima fia a ciò più di me degna:</b>\\
+             <br> <b>con lei ti lascerò nel mio partire;</b>\\
+             <br> <b>ché quello imperador che là sù regna,</b>\\
+            </i>
+             <br>\end{document}
+           </p>
+         </div>
+          <div class="object">
+            <object type="application/pdf" data="../docs/syntax_two_column_letter.pdf" height="100%" width="100%"> </object>
+     </div>
+   </div>
+
+        <footer>
+            <address>Page written by Giulio Catanese</address>
+        </footer>
+    </main>
+</body>
+
+</html>

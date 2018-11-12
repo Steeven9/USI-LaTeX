@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>LaTeX Document Class</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+    <meta name="author" content="*Giulio_Catanese*">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+ <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+  <main>
+  <h1>Document Class</h1>
+<div class="text">
+   Documents written with LaTeX can be interpreted in different classes, which are standard formats for some types of documents.
+   The first command determines the global processing format for the entire document.
+   Its syntax is:
+ <br>
+ <br> \documentclass [option] {class}
+ <br> \documentclass [option1, option2, etc.] {class}
+ <br>
+ <br>
+    The \documentclass command takes an argument (class), which describe the type of document Where some value of class must be given, while [options] may be omitted if default values are acceptable.
+ <br> The most common classes are:
+ <ul>
+        <li><b> Article </b>, for articles (usually scientific), short reports, documents, ...</li>
+        <li><b> Book </b>, for book.</li>
+        <li><b> Report </b>, for longer reports, thesis, small book, ...</li>
+        </ul>
+        There are many other non-standard classes for the most diverse documents:
+        there are memos (which allows a lot of freedom in customizing the document), topsis and suftesi (for thesis and doctoral thesis)
+        and <b>beamer</b> for presentations.
+</div>
+<br>
+<br>
+<div class="text">
+  <table border="1">
+          <tr>
+            <th><b>Option</b></th>
+            <th>Article</th>
+            <th>Book</th>
+            <th>Report</th>
+            <th>Letter</th>
+          </tr>
+
+          <tr>
+          <td>10pt, 11pt, 12pt</td>
+          <td>default</td>
+          <td>default</td>
+          <td>default</td>
+          <td>default</td>
+          </tr>
+
+          <tr>
+            <td>one column </td>
+            <td>supported</td>
+            <td>supported</td>
+            <td>supported</td>
+            <td>default</td>
+          </tr>
+          <tr>
+            <td>two column </td>
+            <td>supported</td>
+            <td>default</td>
+            <td>supported</td>
+            <td>not supported</td>
+          </tr>
+          <tr>
+            <td>letter paper </td>
+            <td>default</td>
+            <td>default</td>
+            <td>default</td>
+            <td>default</td>
+          </tr>
+          <tr>
+            <td>title page </td>
+            <td>supported</td>
+            <td>default</td>
+            <td>default</td>
+            <td>not supported</td>
+          </tr>
+       </table>
+</div>
+<br>
+<br>
+<h2>Article</h2>
+<div class="text">
+    Article is the most common class as well as the most flexible.
+</div>
+
+    <div class="exercises">
+            <p>
+            <br>\documentclass{article}
+            <br>\title{Hello World}
+            <br>\begin{document}
+            <br>\maketitle
+            <br>Hello world, content
+            <br>\end{document} </p>
+            <img src="../media/img/syntax_hello-world-article.png" class="images">
+        </div>
+
+
+
+<h2>Book</h2>
+<div class="text">
+    Book is the most common class as well as the most flexible.
+</div>
+<div class="exercises">
+        <p>
+        <br>\documentclass{book}
+        <br>\title{Hello World}
+        <br>\begin{document}
+        <br>\maketitle
+        <br>\end{document} </p>
+    <img src="../media/img/syntax_hello-world-book.png" class="images">
+    </div>
+
+
+<h2>Report</h2>
+<div class="text">
+    Report is the most common class as well as the most flexible.
+</div>
+
+<div class="exercises">
+        <p>
+        <br>\documentclass{report}
+        <br>\title{Hello World}
+        <br>\date{November 9, 2018}
+        <br>\begin{document}
+        <br>\maketitle
+        <br>\end{document} </p>
+    <img src="../media/img/syntax_hello-world-report.png" class="images">
+    </div>
+
+
+        <footer>
+            <address>Page written by Giulio Catanese</address>
+        </footer>
+    </main>
+</body>
+</html>
