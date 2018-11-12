@@ -1,0 +1,851 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-image: url("../media/img/background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  
+}
+
+main{
+  background-color: rgb(255, 255, 255);
+  width: 74%;
+  margin: auto;
+  padding-left: 16%;
+  padding-top: 1%;
+}
+
+/* LOGO */
+.logolink img{
+width: 100%;
+height: auto;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.logolink a{
+margin-left: 5%;
+margin-right: 10%;
+width: 90%;
+display: inherit;
+display: block;
+height: auto;
+}
+/* END LOGO */
+
+
+
+/* TOP NAVIGATOR */
+nav {
+margin-left: auto;
+margin-right: auto;
+width: 90%;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+align-self: center;
+}
+
+nav a {
+flex-basis: 16%;
+text-align: center;
+text-decoration: none;
+padding: 1.5%;
+background-color: grey;
+color: white;
+transition: background-color 0.5s;
+font-size: 1.3vw;
+font-family: Roboto;
+}
+
+nav a:hover{
+background-color: rgb(0, 174, 255);
+transition: background-color 0.5s;
+}
+
+nav a.active{
+background-color: rgb(0, 174, 255);
+}
+/* END TOP NAVIGATOR */
+
+
+
+/*SIDE NAVIGATOR*/
+.sidenav {
+float: left;
+margin-top: 1.5%;
+margin-left: 5%;
+width: 15%;
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+border-top-left-radius: 25px;
+border-top-right-radius: 25px;
+background-color: grey;
+}
+
+.sidenav a.sidenavlink, .sidenav a.sidenavlinkactive  {
+flex-basis: 100%;
+text-decoration: none;
+padding: 5%;
+padding-top: 5%;
+padding-bottom: 5%;
+color: white;
+transition: background-color 0.5s;
+font-size: 1.1vw;
+font-family: Roboto;
+}
+
+.sidenav div.subpage{
+margin-top: 5%;
+margin-right: 0%;
+color: white;
+background-color: grey;
+font-size: 1.1vw;
+font-family: Roboto;
+display: flex;
+flex-wrap: wrap;
+}
+
+.sidenav .subpage .subpagepadding{
+margin-left: 5%;
+padding-bottom: 3%;
+}
+
+.sidenav div.subpage a.subpagelink, .sidenav div.subpage a.subpagelinkactive{
+flex-basis: 100%;
+padding-top: 3%;
+padding-bottom: 3%;
+margin-left: 5%;
+padding-left: 5%;
+text-decoration: none;
+color: white;
+transition: background-color 0.5s;
+font-size: 1vw;
+font-family: Roboto;
+}
+
+#firstsubpage{
+background-color: rgb(82, 82, 82);
+border-top-left-radius: 25px;
+border-top-right-radius: 25px;
+font-weight: bold;
+font-size: 1.3vw;
+}
+
+#firstsubpageactive{
+background-color: rgb(0, 155, 226);
+border-top-left-radius: 25px;
+border-top-right-radius: 25px;
+font-weight: bold;
+font-size: 1.3vw;
+}
+
+#firstsubpage:hover{
+background-color: rgb(0, 155, 226);
+transition: background-color 0.5s;
+}
+
+.sidenav a:hover, .sidenav p a:hover{
+background-color: rgb(0, 174, 255);
+transition: background-color 0.5s;
+}
+
+.sidenav a.sidenavlinkactive, .sidenav div.subpage a.subpagelinkactive, #firstsubpage:active{
+background-color: rgb(0, 174, 255);
+}
+/*END OF SIDE NAVIGATOR*/
+
+
+
+/* FONT STYLES FOR TEXTS AND TITLES */
+@font-face {
+font-family: Roboto;
+src: url("../media/fonts/Roboto/Roboto-Regular.ttf");
+}
+
+div.text, div.longtext, div.standardbox{
+font-family: Roboto;
+font-size: 1.1em;
+text-align: justify;
+padding-bottom: 0.5%;
+padding-left: 5%;
+padding-right: 5%;
+padding-top: 0.5%;
+}
+
+div.title{
+font-family: Roboto;
+font-size: 2em;
+text-align: justify;
+text-decoration: none;
+font-weight: bold;
+padding-bottom: 1%;
+padding-left: 2.5%;
+padding-right: 2.5%;
+padding-top: 1%;
+}
+
+div.firstsubtitle{
+font-family: Roboto;
+font-size: 1.5em;
+text-align: justify;
+text-decoration: none;
+font-weight: bold;
+padding-bottom: 1%;
+padding-left: 4%;
+padding-right: 4%;
+padding-top: 1%;
+}
+
+div.subtitle{
+font-family: Roboto;
+font-size: 1.5em;
+text-align: justify;
+text-decoration: none;
+font-weight: bold;
+padding-bottom: 1%;
+padding-left: 4%;
+padding-right: 4%;
+padding-top: 4%;
+}
+
+div.textbox div.longtext{
+margin-top: 1%;
+margin-left: 5%;
+margin-right: 5%;
+padding-bottom: 1.5%;
+padding-top: 1.5%;
+padding-left: 2%;
+padding-right: 2%;
+border-radius: 25px;
+height: 350px;
+width: 50%;
+background-color: rgb(235, 235, 235);
+}
+
+div.longtext{
+overflow: scroll;
+}
+
+div.textbox div.standardbox{
+margin-top: 1%;
+margin-left: 5%;
+margin-right: 5%;
+padding-bottom: 1.5%;
+padding-top: 1.5%;
+padding-left: 2%;
+padding-right: 2%;
+border-radius: 25px;
+width: 50%;
+background-color: rgb(235, 235, 235);
+}
+
+div.indexgeneral{
+padding-bottom: 0.5%;
+padding-left: 2.5%;
+padding-right: 5%;
+padding-top: 0.5%;
+}
+
+div.index{
+font-family: Roboto;
+font-size: 1.2em;
+margin-bottom: 0.5%;
+}
+/* END FONT STYLES */
+
+
+
+/* LINKS */
+div.text a:link, div.text a:visited, div.text a:hover, div.index a:link, div.index a:visited, div.index a:hover{
+color: blue;
+text-decoration: none;
+}
+
+div.text a:hover, div.index a:hover {
+text-decoration: underline;
+}
+
+div.indexgeneral li a:link, div.indexgeneral li a:visited, div.indexgeneral li a:hover {
+color: blue;
+text-decoration: none;
+}
+
+div.indexgeneral li a:hover {
+text-decoration: underline;
+}
+/* END LINKS */
+
+
+
+/* IMAGES STRUCTURE */
+.images{
+width: auto;
+height: 10vw;
+margin: 1%;
+margin-left: 5%;
+}
+
+.imageswithborder{
+width: auto;
+height: 10vw;
+margin: 1%;
+margin-left: 5%;
+border: 2px solid black;
+}
+
+.centerimagessmall{
+width: auto;
+height: 3vw;
+display: block;
+margin: 1%;
+margin-left: auto;
+margin-right: auto;
+border: 2px solid black;
+}
+
+.centerimagesbig{
+width: auto;
+height: 5vw;
+display: block;
+margin: 1%;
+margin-left: auto;
+margin-right: auto;
+border: 2px solid black;
+}
+/* END IMAGES STRUCTURE */
+
+
+
+/* TABLES (by Sasha Bagnovini) */
+table{
+margin-left: 5%;
+margin-right: 5%;
+}
+
+#customers {
+font-family: Roboto;
+border-collapse: collapse;
+width: 90%;
+}
+
+#customers td, #customers th {
+border: 1px solid #ddd;
+padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: lightgrey;}
+
+#customers th {
+padding-top: 1%;
+padding-bottom: 1%;
+text-align: left;
+background-color: rgb(0, 174, 255);
+color: white;
+}
+/* END TABLES */
+
+
+
+/* QUOTE BOX */
+div.quotebox {
+margin-top: 1%;
+margin-left: 5%;
+margin-right: 5%;
+margin-bottom: 1%;
+padding-bottom: 1.5%;
+padding-top: 1.5%;
+padding-left: 2%;
+padding-right: 2%;
+border-radius: 25px;
+background-color: lightgrey;
+}
+
+div.quotebox p{
+font-size: 1.1em;
+font-family: Roboto;
+text-align: justify;
+font-style: italic;
+}
+
+div.quotebox div.quote{
+font-size: 1em;
+font-family: Roboto;
+text-align: right;
+font-weight: bold;
+font-style: italic;
+margin-right: 0.5%;
+}
+/* END QUOTE BOX */
+
+
+
+/* CODE BOX */
+div.codebox {
+margin-top: 1%;
+margin-left: 5%;
+margin-right: 5%;
+padding-bottom: 1.5%;
+padding-top: 1.5%;
+padding-left: 2%;
+padding-right: 2%;
+border-radius: 25px;
+background-color: lightgrey;
+}
+
+div.codebox code{
+font-size: 1.3em;
+text-align: justify;
+}
+/* END CODE BOX */
+
+
+
+/* CODE WITH LaTeX PDF FILE */
+div.latex {
+width: 100%;
+margin-left: 5%;
+margin-right: 5%;
+display: flex;
+}
+
+div.latex div.paragraph {
+flex-basis: 40%;
+margin-right: 2.5%;
+padding-bottom: 10px;
+padding-top: 10px;
+padding-left: 2%;
+padding-right: 2%;
+border-radius: 25px;
+background-color: lightgrey;
+height: 700px;
+overflow: scroll;
+}
+
+div.latex div.paragraph code{
+font-size: 1.3em;
+text-align: justify;
+}
+
+div.latex div.object {
+flex-basis: 40%;
+}
+/* END CODE WITH LaTeX PDF FILE */
+
+
+
+/* BLACKBOX WITH TEXT ON THE LEFT */
+div.exercises{
+width: 100%;
+display: flex;
+align-self: center;
+justify-content: space-evenly;
+align-items: center;
+}
+
+div.exercises p{
+flex-basis: 50%;
+margin-left: 5%;
+margin-right: 2.5%;
+padding-bottom: 5px;
+padding-top: 5px;
+font-size: 1.1em;
+text-align: justify;
+font-family: Roboto;
+}
+
+div.exercises div.blackbox{
+flex-basis: 50%;
+height: auto;
+background-color: black;
+color: black;
+text-align: center;
+margin-left: 2.5%;
+margin-right: 5%;
+padding-top: 5%;
+padding-bottom: 5%;
+font-size: 1.5em;
+transition: background-color 1s;
+}
+
+div.exercises div.blackbox img{
+opacity: 0;
+transition: opacity 1s;
+}
+
+div.exercises div.blackbox:hover{
+background-color: lightgrey;
+transition: background-color 1s;
+}
+
+div.exercises div.blackbox:hover img{
+opacity: 1;
+transition: opacity 1s;
+}
+
+div.exercises div.blackbox img{
+width: 90%;
+}
+/* END BLACKBOX WITH TEXT ON THE LEFT */
+
+
+
+/* MATH FORMULA */
+div.formula{
+padding-bottom: 10px;
+padding-left: 5%;
+padding-right: 5%;
+padding-top: 10px;
+font-size: 1.4em;
+text-align: center;
+}
+/* END MATH FORMULA */
+
+
+
+/* ADDRESS */
+address{
+font-size: 0.9em;
+font-family: Roboto;
+text-align: justify;
+padding-left: 1%;
+padding-right: 1%;
+padding-top: 5%;
+padding-bottom: 0.5%;
+}
+/* END ADDRESS */
+
+
+
+/* BOXES FOR HOMPAGES */
+div.homepagebox {
+margin-left: 5%;
+margin-right: 10%;
+width: 85%;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+div.homepagebox a {
+flex-basis: 47%;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 5vw;
+text-decoration: none;
+padding: 1px;
+border-radius: 25px;
+background-color: grey;
+color: white;
+transition: background-color 0.5s;
+margin-bottom: 2%;
+font-size: 1.1em;
+}
+
+div.homepagebox a:hover{
+background-color: rgb(0, 174, 255);
+border-radius: 25px;
+transition: background-color 0.5s;
+}
+/* END BOXES FOR HOMPAGES */
+
+
+
+/* STYLES (by Stefano Taillefert) FOR QUIZ PAGE */
+/* .margin20 {
+margin-bottom: 20px;
+}
+
+.margin50 {
+margin-bottom: 50px;
+}
+
+.vMid {
+vertical-align: middle;
+}
+
+.button {
+border: #000 solid 2px;
+width: fit-content;
+margin: auto;
+padding: 7.5px;
+margin-bottom: 2.5%;
+transition: 0.6s;
+cursor: pointer;
+color: #000 !important;
+display: inline-block;
+}
+
+.button:hover {
+text-decoration: none !important;
+transform: translateX(10px);
+} */
+/* END OF STYLES FOR QUIZ PAGE */
+
+
+
+/* MAIN HOMEPAGE */
+.firstbackground {
+background-image: url("../media/img/fourth.jpeg");
+background-attachment: fixed;
+background-size: cover;
+height: 97vh;
+width: 100%;
+background-position: center;
+}
+
+.mainhomepagetextboxzero {
+padding-top: 1vh;
+opacity: 1;
+}
+
+.mainhomepagetextbox {
+padding-top: 71vh;
+opacity: 1;
+}
+
+.mainhomepagetext2box {
+padding-top: 1vh;
+opacity: 1;
+}
+
+.mainhomepagetext2box .mainhomepagetext2, .mainhomepagetextbox .mainhomepagetext, .mainhomepagetextboxzero .mainhomepagetextzero{
+background-color: rgb(0, 174, 255);
+text-align: center;
+font-family: Roboto;
+font-weight: bold;
+font-size: 3vw;
+color: white;
+letter-spacing: 3px;
+padding-top: 1.5vh;
+padding-bottom: 1.5vh;
+}
+
+.secondbackground {
+  background-image: url("../media/img/thrid.jpeg");
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+div.mainhomepagebox {
+opacity: 1;
+margin-top: 10%;
+margin-left: 10%;
+margin-right: 10%;
+width: 80%;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+}
+
+div.mainhomepagebox a {
+flex-basis: 42%;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 8vw;
+text-decoration: none;
+padding: 1px;
+border-radius: 25px;
+background-color: grey;
+color: white;
+transition: background-color 0.5s;
+margin-top: 9vh;
+font-size: 2.5vw;
+}
+
+div.mainhomepagebox a:hover{
+background-color: rgb(0, 174, 255);
+border-radius: 25px;
+transition: background-color 0.5s;
+}
+
+.specialfooter{
+font-size: 0.85vw;
+font-family: Roboto;
+font-style: italic;
+color: white;
+margin-top: 10vh;
+text-align: right;
+margin-right: 0.5vw;
+}
+/* END HOMEPAGE */
+
+
+
+/* HOMEPAGE TOP NAVIGATOR */
+.homepagenavigator {
+margin-left: auto;
+margin-right: auto;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+}
+
+.homepagenavigator a {
+flex-basis: 14%;
+text-align: center;
+text-decoration: none;
+padding: 0.5vh;
+background-color: grey;
+color: white;
+transition: background-color 0.5s;
+font-size: 2vh;
+font-family: Roboto;
+}
+
+.homepagenavigator img {
+flex-basis: 14%;
+text-align: center;
+text-decoration: none;
+height: 3.5vh;
+}
+
+.homepagenavigator a:hover{
+background-color: rgb(0, 174, 255);
+transition: background-color 0.5s;
+}
+/* END OF HOMEPAGE TOP NAVIGATOR */
+
+
+
+/* RESPONSIVITY */
+@media (max-width: 1024px)
+{
+div.latex div.paragraph {
+  height: 420px;
+}
+div.latex div.paragraph code{
+  font-size: 1em;
+}
+}
+
+@media (max-width: 768px)
+{
+div.latex div.paragraph {
+  height: 330px;
+}
+div.latex div.paragraph p{
+  font-size: 0.8em;
+}
+.sidenav {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+#firstsubpage{
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+div.text, div.longtext, div.standardbox{
+  font-size: 0.9em;
+}
+
+div.title{
+  font-family: Roboto;
+  font-size: 1.7em;
+  text-align: justify;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 1%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  padding-top: 1%;
+}
+
+div.firstsubtitle{
+  font-family: Roboto;
+  font-size: 1.3em;
+  text-align: justify;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 1%;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 1%;
+}
+
+div.subtitle{
+  font-family: Roboto;
+  font-size: 1.3em;
+  text-align: justify;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 1%;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 4%;
+}
+div.index{
+  font-family: Roboto;
+  font-size: 1em;
+  margin-bottom: 0.5%;
+}
+
+div.exercises p{
+  font-size: 0.9em;
+}
+
+div.exercises div.blackbox{
+  font-size: 1.3em;
+}
+
+div.codebox code{
+  font-size: 1.1em;
+}
+
+div.formula{
+  font-size: 1.2em;
+}
+
+address{
+  font-size: 0.7em;
+}
+
+.firstbackground {
+  height: 98vh;
+}
+
+.homepagenavigator a {
+  font-size: 1vh;
+}
+}
+
+@media (max-width: 425px)
+{
+body{
+  min-width: 375px;
+}
+div.latex div.paragraph {
+  height: 210px;
+}
+div.latex div.paragraph code{
+  font-size: 0.8em;
+}
+.sidenav {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+#firstsubpage{
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.firstbackground {
+  height: 98.4vh;
+}
+
+.homepagenavigator a {
+  font-size: 0.8vh;
+}
+}
+/* END RESPONSIVITY */
