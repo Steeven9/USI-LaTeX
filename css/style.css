@@ -308,6 +308,36 @@ div.indexgeneral li a:hover {
 
 
 
+/* TABLES (by Sasha Bagnovini) */
+table{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#customers {
+  font-family: Roboto;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: lightgrey;}
+
+#customers th {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  text-align: left;
+  background-color: rgb(0, 174, 255);
+  color: white;
+}
+/* END TABLES */
+
+
+
 /* QUOTE BOX */
 div.quotebox {
   margin-top: 1%;
