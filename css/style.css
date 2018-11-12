@@ -137,14 +137,19 @@ nav a.active{
 }
 
 #firstsubpageactive{
-  background-color: rgb(0, 174, 255);
+  background-color: rgb(0, 155, 226);
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   font-weight: bold;
   font-size: 1.3vw;
 }
 
-.sidenav a:hover, #firstsubpage:hover, .sidenav p a:hover{
+#firstsubpage:hover{
+  background-color: rgb(0, 155, 226);
+  transition: background-color 0.5s;
+}
+
+.sidenav a:hover, .sidenav p a:hover{
   background-color: rgb(0, 174, 255);
   transition: background-color 0.5s;
 }
@@ -283,6 +288,14 @@ div.indexgeneral li a:hover {
   height: 10vw;
   margin: 1%;
   margin-left: 5%;
+}
+
+.imageswithborder{
+  width: auto;
+  height: 10vw;
+  margin: 1%;
+  margin-left: 5%;
+  border: 2px solid black;
 }
 
 .centerimagessmall{
