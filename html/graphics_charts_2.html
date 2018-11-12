@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>TikZ: Simple Drawings</title>
+    <meta name="author" content="Tommaso Rodolfo Masera">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html" class="active">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+            <a href="graphics_index" id="firstsubpage"><center>GRAPHICS</center></a>
+            <a href="graphics_charts_1.html"><center>CHARTS</center></a>
+            <a href="graphics_tables_1.html"><center>TABLES</center></a>
+            <a href="graphics_images_1.html"><center>IMAGES</center></a>
+            <a href="graphics_vectordrawing_1.html"><center>VECTOR DRAWING</center></a>
+    </div>
+    <main>
+        <div class="title">TikZ: Simple Drawings</div>
+        <div class="firstsubtitle">Ti<i>k</i>Z: First start with Ti<i>k</i>Z
+        </div>
+        <div class="text">From our previous subsection on SmartDiagram, we now
+        move onto a more complex topic: the Ti<i>k</i>Z package.
+        In this first part we plan on covering how to draw simple things and
+        how to put them together to make something look nice. If you're looking
+        to draw more difficult things, then the second part on Ti<i>k</i>Z will be able
+        to give you more ideas of what you can build with this package.
+        </div>
+        <div class="subtitle">Simple drawings with Ti<i>k</i>Z</div>
+        <div class="text">
+          Now we will cover the very basics of the package:
+        </div>
+
+        <div class="subtitle">Drawing lines</div>
+
+        <div class="text">
+             First of all Ti<i>k</i>Z has a path syntax with its commands that acts like this:
+        <code>\path[&lt;Options&gt;]specification;</code>.
+        <h4>Most common Path Actions:</h4>
+        <ul>
+        <li><code>\draw</code>: draws a given argument</li>
+        <li><code>\fill</code>: fills a given argument with a color</li>
+        <li><code>\filldraw</code>: draws the border of a given argument and fills it with a color</li>
+        <li><code>\shade</code>: fills a given argument with a smooth transition from one color to another</li>
+        </ul> <br>
+        <small>Note that inside the environment <code>tikzpicture</code> all of these
+              command lines are a shortcut for <code>\path[command]</code>.</small><br>
+        <br>
+        With that said, you can give single orders to Ti<i>k</i>Z by using the
+        command line <code>\tikz</code> following it up with another Ti<i>k</i>Z command. <br>
+        For example following drawing yields the following result:
+      </div>
+        <br>
+        <br>
+        <div class="latex">
+              <div class="paragraph"><b>CODE</b><hr>
+                  <code>
+                    \documentclass[12pt]{article} <br>
+                    \title{Drawing Lines} <br>
+                    \date{} <br> <br>
+
+                    \usepackage{tikz} <br> <br>
+
+                    \begin{document} <br>
+                    \maketitle <br> <br>
+
+                    \tikz \draw (0,0) -- (10,10); <br> <br>
+
+                    \end{document}
+                  </code>
+              </div>
+              <div class="object">
+                 <object type="application/pdf" data="../docs/graphics_tikz_lines.pdf" width="600" height="768">
+                 </object>
+             </div>
+           </div>
+           <br>
+           <br>
+            <div class="text">But what exactly did we do?<br>
+            Firstly, we used the Ti<i>k</i>Z package with <code>\usepackage{tikz}</code>,
+            then we used the <code>\tikz</code> command line to introduce our
+            <code>\draw</code> command and we specified the coordinates from which the line should start
+            and to where it should arrive. These coordinates work like (x,y) on a Cartesian plane and
+            as long as <code>--</code> is present in between you can keep drawing from point to point until you
+            choose that you have drawn enough random lines.
+
+            Likewise we can draw curved lines introducing the <code>controls</code> command which must be
+            separated by two dots:<code>..</code> and given the coordinates of the control points makes that coordinate
+            behave like a "center of gravity" which pulls the line towards it:<br>
+            <br>
+            </div>
+
+            <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+                <code>
+                  \documentclass[12pt]{article} <br>
+                  \title{Drawing Curved Lines} <br>
+                  \date{} <br> <br>
+
+                  \usepackage{tikz} <br> <br>
+
+                  \begin{document} <br>
+                  \maketitle <br> <br>
+
+                  \begin{tikzpicture} <br>
+                  \draw (0,0) .. controls (0,8) and (5,0) .. (10,10); <br>
+                  \end{tikzpicture} <br> <br>
+
+                  \end{document}
+                </code>
+              </div>
+              <div class="object">
+              <object type="application/pdf" data="../docs/graphics_tikz_lines2.pdf" width="600" height="768">
+              </object>
+            </div>
+          </div>
+          <br>
+          <br>
+
+            <div class="text">
+              Control points must be separated by <code>and</code> when we want
+              more than one to have effect on our <code>\draw</code>.
+
+            The other way to draw with Ti<i>k</i>Z is to begin the
+            <code>tikzpicture</code> environment through the <code>\begin{tikzpicture}</code> command line
+            and it's the one we're going to keep using since it's required to make more complex images.
+
+            Other than that there are a number of options you can insert in your <code>\draw</code> command
+            to modify the behaviour of your line:
+
+            <h4>Geometric options:</h4>
+            <ul>
+              <li><code>rotate= angle in degree</code>: rotates the argument by the given angle</li>
+              <li>xshift= length<code></code>: shifts the argument by the given horizontal length</li>
+              <li><code>yshift= length</code>: shifts the argument by the given vertical length</li>
+              <li><code>scale= factor</code>: rescales the argument by the given factor</li>
+              <li><code>xscale= factor</code>: rescales the x coordinates of the argument by the given factor</li>
+              <li><code>yscale= factor</code>: rescales the y coordinates of the argument by the given factor</li>
+            </ul>
+
+            <h4>Color options:</h4>
+            <ul>
+              <li><code>color= color name</code>: colors the argument with the given color</li>
+              <li><code>opacity= factor</code>: determines the opacity of the given color</li>
+            </ul>
+
+            <h4>Line width options:</h4>
+            <ul>
+              <li><code>line width= dimension</code>: determines the width of the line</li>
+            </ul>
+
+            <h4>Line end options:</h4>
+            <ul>
+              <li><code>line cap= type: round, rect, butt</code>: applies one of the 3 types to the argument</li>
+              <li><code>rounded corners</code>: makes the corners round by a default size</li>
+              <li><code>rounded corners= size</code>: makes the corner round by the given size</li>
+              <li>line join= type: round, bevel, miter<code></code>: applies one of the 3 types to the argument</li>
+            </ul>
+
+            <h4>Line pattern options:</h4>
+            <ul>
+              <li><code>dash pattern= dash pattern</code>: determines a custom dash pattern
+                                                         (for example dash pattern= on 2pt off 3pt on 4pt off 5pt)</li>
+              <li><code>solid</code></li>
+              <li><code>dashed</code></li>
+              <li><code>dotted</code></li>
+              <li><code>dashdotted</code></li>
+              <li><code>densely dotted</code></li>
+              <li><code>loosely dotted</code></li>
+              <li><code>double</code></li>
+            </ul>
+
+            Let us now try to make use of some of these options to draw the coolest line to be ever drawn:<br>
+            <br>
+          </div>
+
+            <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+                <code>
+                  \documentclass[12pt]{article} <br>
+                  \title{Drawing Curved Lines} <br>
+                  \date{} <br> <br>
+
+                  \usepackage{tikz} <br> <br>
+
+                  \begin{document} <br>
+                  \maketitle <br> <br>
+
+                  \begin{tikzpicture} <br>
+                  \draw[dashed, color=blue, rotate=36, opacity= 0.8, line width=1.2pt] (0,0) <br>
+		                .. controls (0,8) and (3,0) .. (10,10); <br>
+                    \draw[densely dotted, color=teal, line cap= rect, line join= bevel, <br>
+		                  rounded corners=8pt] (0,0) .. controls (5,0) and (0,5) .. (5,5); <br>
+                      \end{tikzpicture} <br> <br>
+
+                      \end{document}
+                </code>
+              </div>
+              <div class="object">
+              <object type="application/pdf" data="../docs/graphics_tikz_lines3.pdf" width="600" height="768">
+              </object>
+            </div>
+          </div>
+
+           </div>
+
+          </li>
+
+
+            <div class="subtitle">More complex drawings<!--title subject to changes-->
+            </div>
+            <div class="text">
+              We're going to cover the <code>\fill</code>, <code>\filldraw</code>,<code>\shade</code> commands
+              as well as the options to draw rectangles, circles, grids and arcs in this subsection of Ti<i>k</i>Z.
+              Let us first start by drawing a grid and from there we will implement all the
+              above described commands.
+              The <code>step</code> option is needed to specify the step of the grid.<br>
+              <br>
+              </div>
+                <div class="latex">
+                <div class="paragraph"><b>CODE</b><hr>
+                  <code>
+                    \documentclass[12pt]{article} <br>
+                    \title{More Complex Drawings: Step 1} <br>
+                    \date{} <br> <br>
+
+                    \usepackage{tikz} <br> <br>
+
+                    \begin{document} <br>
+                    \maketitle <br> <br>
+
+                    \begin{tikzpicture} <br>
+                    <b>\draw[step=1cm, opacity= 0.6] (-5,-5) grid (5,5);</b> <br>
+                    \end{tikzpicture} <br>
+
+                    \end{document}
+                  </code>
+                </div>
+              <div class="object">
+              <object type="application/pdf" data="../docs/graphics_tikz_example_step1.pdf" width="600" height="768">
+              </object>
+            </div>
+          </div>
+          <br>
+          <br>
+
+              <div class="text">After having drawn our initial grid giving the starting coordinates, the step and the ending coordinates
+              we can start using the commands <code>\fill</code> and <code>rectangle</code> to see
+              how they behave.<br>
+              <br>
+            </div>
+
+              <div class="latex">
+              <div class="paragraph"><b>CODE</b><hr>
+                  <code>
+                    \documentclass[12pt]{article} <br>
+                    \title{More Complex Drawings: Step 2} <br>
+                    \date{} <br> <br>
+
+                    \usepackage{tikz} <br> <br>
+
+                    \begin{document} <br>
+                    \maketitle <br> <br>
+
+                    \begin{tikzpicture} <br>
+                    <b>\fill[color= green, opacity= 0.7] (-2,2) rectangle (-4,4);</b> <br>
+                    \draw[step=1cm, opacity= 0.6] (-5,-5) grid (5,5); <br>
+                    \end{tikzpicture} <br> <br>
+
+                    \end{document}
+                  </code>
+                </div>
+                <div class="object">
+                <object type="application/pdf" data="../docs/graphics_tikz_example_step2.pdf" width="600" height="768">
+                </object>
+              </div>
+            </div>
+            <br>
+            <br>
+
+              <div class="text">Highlighted in bold we can now see what has changed since our last step.
+              We have used the <code>\fill</code> command to fill the given rectangle area going from (-2,2) to (-4,4)
+              Next up we're going to see how <code>\filldraw</code> and <code>circle</code> behave, but they are really not
+              much different from what we've already seen.
+              </div>
+              <br>
+              <br>
+
+              <div class="latex">
+              <div class="paragraph"><b>CODE</b><hr>
+                  <code>
+                    \documentclass[12pt]{article} <br>
+                    \title{More Complex Drawings: Step 3} <br>
+                    \date{} <br> <br>
+
+                    \usepackage{tikz} <br> <br>
+
+                    \begin{document} <br>
+                    \maketitle <br> <br>
+
+                    \begin{tikzpicture} <br>
+                    <b>\filldraw[color= yellow, opacity= 0.85, draw= black] (3,3) circle (2cm);</b> <br>
+                    \fill[color= green, opacity= 0.7] (-2,2) rectangle (-4,4); <br>
+                    \draw[step=1cm, opacity= 0.6] (-5,-5) grid (5,5); <br>
+                    \end{tikzpicture} <br> <br>
+
+                    \end{document}
+                  </code>
+                </div>
+                <div class="object">
+                <object type="application/pdf" data="../docs/graphics_tikz_example_step3.pdf" width="600" height="768">
+                </object>
+              </div>
+            </div>
+            <br>
+            <br>
+              <div class="text"><code>\filldraw</code> behaves essentially the same as fill except that it takes the
+              <code>draw</code> option for the border of the argument given,
+              and circle takes the coordinates of the center and the length of its radius.
+              Now that we've seen these things in action let's move onto two slightly trickier
+              command and option: <code>\shade</code> and <code>arc</code>.
+            </div>
+            <br>
+            <br>
+              <div class="latex">
+              <div class="paragraph"><b>CODE</b><hr>
+                  <code>
+                    \documentclass[12pt]{article} <br>
+                    \title{More Complex Drawings: Step 3} <br>
+                    \date{} <br> <br>
+
+                    \usepackage{tikz} <br> <br>
+
+                    \begin{document} <br>
+                    \maketitle <br> <br>
+
+                    \begin{tikzpicture} <br>
+                    <b>\shade[left color= blue, right color= orange, opacity= 0.8] (-5,-4) -- (-3, -4) arc (0:90:2cm);</b> <br>
+                    \filldraw[color= yellow, opacity= 0.85, draw= black] (3,3) circle (2cm); <br>
+                    \fill[color= green, opacity= 0.7] (-2,2) rectangle (-4,4); <br>
+                    \draw[step=1cm, opacity= 0.6] (-5,-5) grid (5,5); <br>
+                    \end{tikzpicture} <br> <br>
+
+                    \end{document}
+                  </code>
+                </div>
+                <div class="object">
+                <object type="application/pdf" data="../docs/graphics_tikz_example_step4.pdf" width="600" height="768">
+                </object>
+              </div>
+            </div>
+            <br>
+            <br>
+
+              <div class="text">Now we can see how <code>\shade</code> works. It takes the direction
+              from which the color shades into the other (this also includes
+               <code>top, bottom, inner</code> and <code>outer</code> color options).
+              While <code>arc</code> takes the origin of the angle, the coordinates of
+              the points where it spreads to and the width of the angle along with
+              its size.
+            </div>
+
+            <div class="subtitle">Beginning charts
+            </div>
+
+            <div class="text">The next Graphics subsection will be teaching you how to start
+              out with drawing charts, it's bound to become more complex but we are
+              going to use what we've learnt on this initial part while adding commands
+              which are going to become gradually harder but better. You should
+              expect to be able to draw your own chart or graph after having read both Ti<i>k</i>Z subsections.
+            </div>
+
+        <footer>
+            <address>Page written by Tommaso Rodolfo Masera</address>
+        </footer>
+    </main>
+</body>
+
+</html>

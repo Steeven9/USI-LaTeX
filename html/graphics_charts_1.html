@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
     <nav>
         <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
         <a href="syntax_index.html">Basic Syntax</a>
@@ -20,23 +20,19 @@
         <a href="quiz.html">Quiz</a>
     </nav>
     <div class="sidenav">
-        <a href="general.html" id="firstsubpage">Getting Started</a> <!-- Put the class="active" on your subpage -->
-        <a href="basic.html">Basic Syntax</a>
-        <a href="graphics.html" class="active">Graphics</a>
-        <a href="equations.html">Equations</a>
-        <a href="packages.html">Packages</a>
-        <a href="quiz.html" id="lastsubpage">Quiz</a>
+            <a href="graphics_index" id="firstsubpage"><center>GRAPHICS</center></a>
+            <a href="graphics_charts_1.html"><center>CHARTS</center></a>
+            <a href="graphics_tables_1.html"><center>TABLES</center></a>
+            <a href="graphics_images_1.html"><center>IMAGES</center></a>
+            <a href="graphics_vectordrawing_1.html"><center>VECTOR DRAWING</center></a>
     </div>
-
     <main>
 
-        <div class="title">CHARTS</div>
+        <div class="title">Introduction & SmartDiagram</div>
         <div class="firstsubtitle">Simple charts, drawings and diagrams</div>
 
-        <div class="text">
-
-          <p>In this part of the graphics section we plan on covering
-           the basics of the following packages:</p>
+        <div class="text">In this part of the graphics section we plan on covering
+           the basics of the following packages:
 
           <ol>
             <li>SmartDiagram</li>
@@ -44,14 +40,14 @@
             <li>PGFPlots</li>
           </ol>
 
-          <p>They range from easiest to hardest as they all come from the
+          They range from easiest to hardest as they all come from the
              same "PGFPlots" package and their only difference is the level of the
              syntax used. SmartDiagram is simpler and more accessible but going down
              through Ti<i>k</i>Z and finally to the "root" package which is PGFPlots you
              won't have a higher level language anymore, meaning the learning curve
-             will be harder but you will also have more freedom.</p>
+             will be harder but you will also have more freedom.
 
-          <p>What you should expect from this tutorial is how to make basic diagrams
+          What you should expect from this tutorial is how to make basic diagrams
           and draw effectively in LaTeX at a beginner level. Of course, if you feel
           brave enough to delve into the packages documentation, go ahead, no one
           will stop you:
@@ -75,28 +71,24 @@
               </a>
             </li>
 
-          </ul></p>
+          </ul>
 
         </div>
 
         <div class="subtitle">SmartDiagram</div>
 
-        <div class="text">
-
-          <p> With that said, let's get right into business, starting off from the
+        <div class="text">With that said, let's get right into business, starting off from the
             top of our list with our first drawing package: "SmartDiagram".
-          </p>
-
-          <p>As the name suggests, the aim of the package is to provide the user
+           As the name suggests, the aim of the package is to provide the user
           with an easy way of drawing diagrams to use in presentations or text
           documents. It is a pretty intuitive package and should not give many
-          issues during the learning process.</p>
+          issues during the learning process.
           <small> Note that the SmartDiagram package automatically loads the
            Ti<i>k</i>Z, etoolbox, xparse, xtring packages along with the backgrounds,
            calcs, fadings, shadows, shapes.arrows, shapes.symbols Ti<i>k</i>Z libraries.
          </small>
 
-          <p>The basic command to make diagrams is
+          The basic command to make diagrams is
             <code>\smartdiagram[type of diagram]{item list}</code> where each item should be
             separated by a comma.<br>
             The diagram types you can insert are the following:<sup>*</sup> <br>
@@ -168,23 +160,17 @@
          </ul>
 
          you will then be able to find the specific ones in
-         their respective diagram section. </p>
-
+         their respective diagram section.
         </div>
+            <div class="subtitle">Circular Diagram</div>
 
-        <ol>
-          <li>
-
-            <div class="subtitles">
-              <h3>Circular Diagram</h3>
+            <div class="text">The following example shows you how LaTeX compiles the basic <code>\smartdiagram[circular diagram]</code> command:
             </div>
-
-            <div class="text">
-
-              <p>The following example shows you how LaTeX compiles the basic <code>\smartdiagram[circular diagram]</code> command: </p>
+              <br>
+              <br>
 
                 <div class="latex">
-                <div class="paragraph">
+                <div class="paragraph"><b>CODE</b><hr>
                   <code>
                     \documentclass[12pt]{article} <br>
                     \title{Circular Diagram}<br>
@@ -202,15 +188,17 @@
                   </code>
                 </div >
                 <div class="object">
-                <object type="application/pdf" data="../docs/circular_diagram_example.pdf" width="600" height="768">
+                <object type="application/pdf" data="../docs/graphics_circular_diagram.pdf" width="600" height="768">
                 </object>
               </div>
             </div>
-              <p>This might be simple and effective but if it doesn't fit what you want
+            <br>
+            <br>
+            <div class="text">This might be simple and effective but if it doesn't fit what you want
               you might also want to check out options to customize your own diagram.
               The specific options for this type of diagram also apply to the clockwise circular diagram,
               to the flow diagram and its horizontal counterpart.
-              They are as follows:</p>
+              They are as follows:
 
               <ul>
                 <li><code>module minimum width (default: 2cm)</code>: sets the minimum width of the module</li>
@@ -223,12 +211,14 @@
                 <li><code>text color</code>: sets the color of the text in the module</li>
                 <li><code>circular distance (default 2.75)</code>: sets the radius of the circle which the items are placed onto</li>
               </ul>
-
-              <p>Now, let's try to make use of some of these options to make our
-              diagram look even better:</p>
+              Now, let's try to make use of some of these options to make our
+              diagram look even better:
+              </div>
+              <br>
+              <br>
 
               <div class="latex">
-              <div class="paragraph">
+              <div class="paragraph"><b>CODE</b><hr>
                 <code>
                   \documentclass[12pt]{article} <br>
                   \title{Customized Circular Diagram} <br>
@@ -254,12 +244,14 @@
                 </code>
               </div>
               <div class="object">
-              <object type="application/pdf" data="../docs/circular_diagram_with_options.pdf" width="600" height="768">
+              <object type="application/pdf" data="../docs/graphics_circular_diagram_with_options.pdf" width="600" height="768">
               </object>
             </div>
           </div>
-
-            <p>This diagram is compiled using a few of the previously listed options.
+          <br>
+          <br>
+          <div class="text">
+          This diagram is compiled using a few of the previously listed options.
             We first begin the <code>center</code> environment to center the diagram in the middle
             of our document, then we define the settings of our diagram with the command
             <code>\smartdiagram</code>, we list the options we wish to modify taking them from the available ones
@@ -268,23 +260,18 @@
             options and diagrams should be built in LaTeX. <br>
             As you can see our options were typed out as they are, nothing fancy
             or complex needed. Just follow it with an "=" sign and you're set for
-            building your own diagram. <p>
+            building your own diagram.
 
-            <p>The <code>circular diagram:clockwise</code> works exactly the same,
-            it only flips the arrow direction. </p>
-
+            The <code>circular diagram:clockwise</code> works exactly the same,
+            it only flips the arrow direction.
             </div>
 
-          </li>
-
-          <li>
-
-            <div class="subtitles">
-              <h3>Flow Diagram</h3>
+            <div class="subtitle">
+              Flow Diagram
             </div>
 
             <div class="text">
-              <p>First of all the flow diagram makes use of 4 more options that you can apply:</p>
+              First of all the flow diagram makes use of 4 more options that you can apply:
 
               <ul>
                 <li><code>module y sep (default: 1.65)</code>: sets the vertical distance between modules in the <b>flow diagram</b></li>
@@ -293,10 +280,13 @@
                 <li><code>back arrow disabled (default: false)</code>: when set to true, it disables the back arrow </li>
               </ul>
 
-              <p>Here you can find the basic way LaTeX compiles a basic <code>\smartdiagram[flow diagram]</code> command:</p>
+              Here you can find the basic way LaTeX compiles a basic <code>\smartdiagram[flow diagram]</code> command:
+              <br>
+              <br>
+            </div>
 
               <div class="latex">
-              <div class="paragraph">
+              <div class="paragraph"><b>CODE</b><hr>
                 <code>
                   \documentclass[12pt]{article} <br>
                   \title{Flow Diagram} <br>
@@ -315,16 +305,20 @@
                 </code>
               </div>
               <div class="object">
-              <object type="application/pdf" data="../docs/flow_diagram_example.pdf" width="600" height="768">
+              <object type="application/pdf" data="../docs/graphics_flow_diagram.pdf" width="600" height="768">
               </object>
             </div>
           </div>
-
-            <p>Likewise, we are now going to introduce options to make this default
-            flow diagram our way:</p>
-
+          <br>
+          <br>
+          <div class="text">
+            Likewise, we are now going to introduce options to make this default
+            flow diagram our way:
+          </div>
+            <br>
+            <br>
               <div class="latex">
-              <div class="paragraph">
+              <div class="paragraph"><b>CODE</b><hr>
                 <code>
                   \documentclass[12pt]{article} <br>
                   \title{Customized Flow Diagram} <br>
@@ -352,30 +346,26 @@
                 </code>
               </div>
               <div class="object">
-              <object type="application/pdf" data="../docs/flow_diagram_with_options.pdf" width="600" height="768">
+              <object type="application/pdf" data="../docs/graphics_flow_diagram_with_options.pdf" width="600" height="768">
               </object>
             </div>
           </div>
-
-            <p>We now used the additional flow diagram options to increase the vertical
+          <br>
+          <br>
+          <div class="text">
+            We now used the additional flow diagram options to increase the vertical
             distance between modules and disable the back arrow that points back to
             the beginning of the diagram. Additionally we defined a uniform color
-            for the first 4 items. </p>
-
+            for the first 4 items.
           </div>
-
-          </li>
-
-          <li>
-
-            <div class="subtitles">
-              <h3>Constellation Diagram</h3>
+            <div class="subtitle">
+              Constellation Diagram
             </div>
 
             <div class="text">
-              <p>Bubble and Constellation diagrams have a more complex set of options as
+              Bubble and Constellation diagrams have a more complex set of options as
               they can be customized in more detail.<br>
-              Here follows the list of new available options:</p>
+              Here follows the list of new available options:
 
               <ul>
                 <li><code>planet size (default 2.5cm)</code>: minimum size of the planet</li>
@@ -398,10 +388,13 @@
 
               </ul>
 
-              <p>Here follows a default Constellation Diagram:</p>
+              Here follows a default Constellation Diagram:
+            </div>
+              <br>
+              <br>
 
                 <div class="latex">
-                <div class="paragraph">
+                <div class="paragraph"><b>CODE</b><hr>
                   <code>
                     \documentclass[12pt]{article} <br>
                     \title{Constellation Diagram} <br>
@@ -420,15 +413,19 @@
                   </code>
                 </div>
                 <div class="object">
-                <object type="application/pdf" data="../docs/constellation_diagram_example.pdf" width="600" height="768">
+                <object type="application/pdf" data="../docs/graphics_constellation_diagram.pdf" width="600" height="768">
                 </object>
               </div>
             </div>
-
-              <p>And now will follow a customized constellation diagram:</p>
-
+            <br>
+            <br>
+            <div class="text">
+              And now will follow a customized constellation diagram:
+            </div>
+              <br>
+              <br>
               <div class="latex">
-              <div class="paragraph">
+              <div class="paragraph"><b>CODE</b><hr>
                   <code>
                     \documentclass[12pt]{article} <br>
                     \title{Customized Constellation Diagram} <br>
@@ -461,28 +458,25 @@
                   </code>
                 </div>
                 <div class="object">
-                <object type="application/pdf" data="../docs/constellation_diagram_with_options.pdf" width="600" height="768">
+                <object type="application/pdf" data="../docs/graphics_constellation_diagram_with_options.pdf" width="600" height="768">
                 </object>
               </div>
             </div>
+            <br>
+            <br>
 
-            </div>
-
-            <p>Constellation diagrams are more complex as you can see from the length of the code,
+            <div class="text">
+            Constellation diagrams are more complex as you can see from the length of the code,
             by using all of our options we managed to modify its default shape.
             Most commands like size, font, color we have already seen. What you should watch out for
             are the "distance" commands, those can get tricky if you miscalculate the space you're using. <br>
+            <br>
             <small><i>Author's note</i>: I'd reccomend not to mess too much with this
-            diagram, it can get messy.</small></p>
-
-          </li>
-
-        </ol>
-
-        <p>And here we conclude our brief introduction to SmartDiagram. You're welcome to keep
-        reading this subsection of the Graphics section to find out how to draw with Ti<i>k</i>Z and PGFPlots.</p>
-
-        </div>
+            diagram, it can get messy.</small><br>
+            <br>
+            And here we conclude our brief introduction to SmartDiagram. You're welcome to keep
+            reading this subsection of the Graphics section to find out how to draw with Ti<i>k</i>Z and PGFPlots.R
+            </div>
 
         <footer>
             <address>Page written by Tommaso Rodolfo Masera</address>
