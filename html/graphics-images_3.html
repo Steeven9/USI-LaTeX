@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>How to add captions and a label to an image</title>
+    <meta name="author" content="LEONARDO CINO">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html" class="active">Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+        <a href="general.html" id="firstsubpage">Getting Started</a> <!-- Put the class="active" on your subpage -->
+        <a href="basic.html">Basic Syntax</a>
+        <a href="graphics.html">Graphics</a>
+        <a href="equations.html">Equations</a>
+        <a href="packages.html">Packages</a>
+        <a href="quiz.html" id="lastsubpage">Quiz</a>
+    </div>
+    <main>
+        <div class="title">How to add captions and a label to an image</div>
+        <div class="indexgeneral"><ul>
+            <li><div class="index"><a href="NAMEOFTHISFILE.html#first">HOW TO ADD A CAPTION</a></div></li>
+            <li><div class="index"><a href="NAMEOFTHISFILE.html#second">HOW TO ADD A LABEL</a></div></li>
+
+        </ul>
+        <hr>
+        </div>
+        <div class="firstsubtitle" id="first">How to add a caption</div>
+        <div class="text">It's really easy, just add the<strong> \caption{a caption}</strong> and inside the braces write the text to be shown.
+                          The placement of the caption depends on where you place the command; if it'a above the includegraphics
+                          then the caption will be on top of it, if it's below then the caption will also be set below the figure.
+                        </div><br><br>
+
+                        <div class="latex">
+                          <div class="paragraph"><b>CODE</b><hr>
+                           <code>\begin{figure}[t]<br>
+                           <mark> \caption{this is a logo}</mark><br>
+                           \includegraphics[width=0.6\textwidth]{USI-LOGO.png}<br>
+                            \end{figure}<br></code>
+                          </div>
+                          <div class="object">
+                            <object type="application/pdf" data="../docs/graphics_codeice_caption.pdf" width="600" height="768">
+                            </object>
+                          </div>
+                        </div><br><br>
+
+        <div class="subtitle">How to add a label</div>
+        <div class="text">Figures, just as many other elements in a LATEX document
+                          (equations, tables, plots, etc) can be referenced within the text.
+                          This is very easy, just add a label to the figure environment, then later use that label to refer the picture.
+                        </div><br><br>
+
+                        <div class="latex">
+                          <div class="paragraph"><b>CODE</b><hr>
+                           <code>\begin{figure}[h]<br>
+                              \includegraphics[width=0.25\textwidth]{USI-LOGO.png}<br>
+                              \caption{the main building}<br>
+                              <mark>\label{fig1}</mark><br>
+                              \end{figure}<br> </code>
+                            </div>
+                            <div class="object">
+                              <object type="application/pdf" data="../docs/graphics_label.pdf" width="600" height="768">
+                              </object>
+                            </div>
+                          </div><br><br>
+
+        <div class="subtitle" id="third"></div>
+        <div class="text"></div>
+
+        <footer>
+            <address>Page written by LEONARDO CINO</address>
+        </footer>
+    </main>
+</body>
+
+</html>

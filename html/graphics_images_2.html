@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Image positioning</title>
+    <meta name="author" content="LEONARDO CINO">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html" class="active">Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+            <a href="graphics_index" id="firstsubpage"><center>GRAPHICS</center></a>
+            <a href="graphics_charts_1.html"><center>CHARTS</center></a>
+            <a href="graphics_tables_1.html"><center>TABLES</center></a>
+            <a href="graphics_images_1.html"><center>IMAGES</center></a>
+            <a href="graphics_vectordrawing_1.html"><center>VECTOR DRAWING</center></a>
+    </div>
+    <main>
+        <div class="title">Image positioning</div>
+        <div class="indexgeneral"><ul>
+            <li><div class="index"><a href="NAMEOFTHISFILE.html#first">HOW TO PLACE IMAGES</a></div></li>
+            <li><div class="index"><a href="NAMEOFTHISFILE.html#second">FIGURE ENVIRONMENT</a></div></li>
+            <li><div class="index"><a href="NAMEOFTHISFILE.html#third">HOW TO SET THE FLOAT</a></div></li>
+            <li><div class="index"><a href="NAMEOFTHISFILE.html#fourth">EXAMPLE</a></div></li>
+        </ul>
+        <hr>
+        </div>
+        <div class="firstsubtitle">How to place images</div>
+        <div class="text">When we want to insert images into our documents, we often find ourselves faced with the need to give them
+                          a logical place or even to fix their disposition.
+                          For this we can use environments that act as containers for graphic objects: these are floating inside the page.
+                          LATEX will choose the "optimal" position, unless explicitly indicating the positioning modes.
+                          In fact, Latex could put images on the next page or where there is enough space.
+                          This happens because you may have a lot of text in the document.
+                          To avoid this behavior it is necessary to set the float of the figure in its environment as we will see later.</div><br><br>
+        <img src="../media/img/graphics_screen-esempio-sbagliato.png" style="width: 60%">
+
+
+      </div>
+      <div class="subtitle" id="first">Figure environment</div>
+      <div class="text">Usually the <strong>\includegraphics</strong> command is used within the {figure} environment
+                to create a figure, which will be a moving object within the document that LATEX will position in order
+                to make the layout more pleasant.
+      </div>
+
+      <div class="latex">
+        <div class="paragraph"><b>CODE</b><hr>
+           <code>\begin{figure}[htbp]<br>
+          \includegraphics[height=5cm]{USI.jpg}<br>
+          \caption{Prima immagine: USI builfing}<br>
+          \label{fig1}<br>
+          \end{figure}<br></code>
+        </div>
+        <div class="object">
+          <object type="application/pdf" data="../docs/graphics_codeice-latex-html.pdf" width="600" height="768">
+          </object>
+        </div>
+      </div>
+
+        <div class="subtitle" id="second">How to set the float</div>
+        <div class="text">To place the image in the right position it is necessary to set the float value for the figure environment.
+           To do this you need to set the float by adding  <strong>[h!]</strong> after the command <strong>"\begin{figure}"</strong>.
+           In brackets it is possible to put a preference for the final position of the object on the page.
+           The argument is a string consisting of the initial h, t, b, p.
+           If not specified, LATEX prover`a to place the object in this order: top, bottom, page.
+           The possible values are:
+           <ul>
+           <li>h (here) - same position</li>
+           <li>t (up) - top of the page</li>
+           <li>b (down) - at the bottom of the page</li>
+           <li>p (page) - on an additional page</li>
+           <li>! (substitute): force the specified position</li>
+           </ul>
+           </div>
+
+           <div class="latex">
+           <div class="paragraph"><b>CODE</b><hr>
+             <code>\begin{figure}[t]<br>
+               \includegraphics[height=6cm, width=5cm]{USI.LOGO.jpg}<br>
+               \end{figure}<br>
+             </code>
+           </div>
+
+         </div>
+
+       <div class="subtitle">Multiple figures</div>
+       <div class="text">Using the package<strong>/subfigure</strong>
+                         it is possible to combine or overlap several subfigures in the same figure, below the basic code:
+                         <div class="codebox"><b>EXAMPLE</b><hr>
+                      <code>\begin{figure}[position]<br>
+                     \subfigure[caption sub figure 1]{<br>
+                     \includegraphics[opzioni] {subfigure1.eps} \label{label  subfigure 1}}<br>
+                     \subfigure[caption subfigure 1]{<br>
+                        \includegraphics[options] {subfigure1.eps} \label{label subfigure 1}}<br>
+                       \label{label of entire figure}<br>
+                     \end{figure}<br></code></div><br>
+
+                     Commands [position] and [options] are used in the same way as the traditional
+                     environment \begin {figure}, as well as \label and \caption of the
+                     last three lines, in the same way the \label inside the commands \subfigure defines the label of the only subfigures
+                     and the optional caption in square brackets just after the \subfigure command defines their caption.
+                 </div>
+
+        <footer>
+            <address>Page written by LEONARDO CINO</address>
+        </footer>
+    </main>
+</body>
+
+</html>
