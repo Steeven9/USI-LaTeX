@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/style.css">
+
+  </head>
+  <body>
+   <meta name="author" content="Jacopo Stucchi">
+  <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+  <nav>
+              <a href="general_index.html">Getting Started</a>
+              <a href="syntax_index.html" >Basic Syntax</a>
+              <a href="graphics_index.html">Graphics</a>
+              <a href="equations_index.html">Equations</a>
+              <a href="packages_index.html"class="active">Packages</a>
+              <a href="quiz.html">Quiz</a>
+          </nav>
+          <div class="sidenav">
+              <a href="packages_index.html" id="firstsubpage"><center>PACKAGES INTRODUCTION</center></a>
+              <a href="packages_newcommands.html"><center>NEW COMMANDS</center></a>
+              <a href="packages_fancyhdr.HTML"><center>FANCYHDR</center></a>
+              <a href="packages_quotchap.html"><center>QUOTCHAP</center></a>
+              <a href="packages_todonotes.html"><center>TODONOTES</center></a>
+              <a href="packages_geometry.html"><center>GEOMETRY</center></a>
+              <a href="packages_geometry2.html"><center>MORE ABOUT GEOMETRY </center></a>
+              <a href="packages_hyperref_babel_xcolor.html"class="active"><center>HYPERREF</center></a>
+              <a href="packages_hyperref_babel_xcolor2.html"><center>BABEL </center></a>
+              <a href="packages_hyperref_babel_xcolor3.html" ><center>XCOLOR</center></a>
+              <a href="packages_Beamer1.html"><center>BEAMER</center></a>
+              <a href="packages_Beamer2.html"><center>MORE ABOUT BEAMER</center></a>
+              <a href="packages_TOP5.html"><center>TOP5</center></a>
+          </div>
+ </body>
+
+ <main>
+ <div class="title">TODONOTES</div>
+ <div class="indexgeneral">
+    <ol>
+     <div class="index"><a href="#firstpart"><li>What is Todonotes?</li></a></div>
+       <br>
+       <div class="index"><a href="#secondpart"><li>Todo options</li></a></div>
+       <br>
+       <div class="index"><a href="#thirdpart"><li>Missing figure</li></a></div>
+       <br>
+       <div class="index"><a href="#fourthpart"><li>New command</li></a></div>
+    </ol>
+ </div>
+ <hr>
+
+ <div class="title" id="firstpart" >What is Todonotes?</div>
+ <div class="text"> The most important usage of Todonotes package is to create visual remainders about something
+   that your're going to write or add (e.g. an image).
+<br>
+<br>
+The basic command is <code>\todo{something you are going to do} </code>. <br>
+The <code>\todo </code> command has the following structure : <code>\todo[options]{todo text} </code> where <code>{todo text}</code>
+is what your are going to display, that is completely customizable by <code>[options] </code> parametres.
+<br>
+<div class="subtitle" class="secondpart"> Available options </div>
+This is a list of important options to modify your <code>\todo </code> content:
+<br>
+<br>
+<li>The <b> <code> disable </code> </b> option can be given directly to the todo command. If given the command simply has no effect.</li><!--DISABLE OPTION -->
+<br>
+<br>
+<li> The <b> <code> color </code> </b> options is used to change the color of your remainder (unless other options are specified,
+  this options will change text, background and line color).</li> <!--COLOR OPTION -->
+You can manipulate line, background and border color using <b> <code> linecolor | backgroundcolor | bordercolor </code> </b>:
+<br>
+<br><div class="codebox" style="width: 700px;">
+<code>\todo[linecolor=color,backgroundcolor=color,bordercolor=color]{This is my text}  </code></div>
+<br>
+<br>
+<img src="../media/img/todo1.png" width="50%" height="auto">
+<br>
+<br>
+<li>The <b> <code> inline</code> </b> is an options used to set your note inline inside text. You can control it's width using
+<b><code>inlinewidth</code></b> options. By deafult it takes the text width:</li> <!--INLINE OPTION -->
+<br>
+<br><div class="codebox" style="width: 700px;">
+<code>\todo[inline]{Here's an inline to remember me something i'm going to modify here.}</code></div>
+<br>
+<br>
+<img src="../media/img/todo2.png" width="50%" height="auto">
+<br>
+<br>
+<li>The <b> <code> size</code></b> option is used to modify the todo font size:</li> <!--SIZE OPTION -->
+<br>
+<br><div class="codebox" style="width: 700px;">
+<code>\todo[size=\large]{Here's a  todo with large font size}</code> <br>
+<code>\todo[size=\tiny]{Here's a  todo with tiny font size}</code> <br></div>
+<br>
+<img src="../media/img/todo3.png" width="50%" height="auto">
+<br>
+<br>
+<li>The <b> <code> list | nolist</code></b> are options used to include or not a specific todo inside a todolist.
+  A todolist is declared using<code> \todolist</code>, and include all the todonotes declared below it. The default title "Todo list" can be modified using
+  <code>\todolist[your title name]</code>.</li> <!--LIST OPTION -->
+<br>
+<br><div class="codebox" style="width: 100px;">
+ <code>\todolist</code></div>
+<br>
+<img src="../media/img/todo4.png" width="50%" height="auto">
+<br>
+With all elements in page 1 set with <code>nolist \todo[nolist,otherOptions]{This is my text}</code>
+<br>
+<img src="../media/img/todo5.png" width="50%" height="auto" >
+
+
+
+  </div>
+
+
+  <div class="title" id="thirdpart"> Missing figure</div>
+  <div class="text">The <code>\missingfigure</code> command inserts an image containing an attention sign and the given text.
+     The command takes only one argument <code>\missingfigure{text}</code>a text string that could describe what the figure should consist of.
+     An example of its usage could be:
+<br>
+<br><div class="codebox" style="width: 700px;">
+<code>\missingfigure{insert dogs figure here}</code></div>
+<br>
+<img src="../media/img/todo6.png" width="50%" height="auto" >
+<br>
+<br>
+<div class="subtitle">Missing figure options </div>
+As <code>\todo</code> command also <code>\missingfigure</code> command can be modified with different options, and as <code>\todo</code> the options are
+in the form <code>[key=value]</code>:
+<br>
+<br>
+<li>The <b> <code> figheight | figwidth </code></b> options are used to manipulate figure size.</li>
+<br>
+<br><div class="codebox" style="width: 700px;">
+<code>\missingfigure[figheight=7cm]{insert dogs figure here}</code></div>
+<br>
+<img src="../media/img/todo7.png" width="50%" height="auto" >
+<br>
+<br>
+
+<li>The <b> <code>figcolor</code></b> option sets the background color of inserted missing figures. The default color is black.</li>
+<br>
+<br><div class="codebox" style="width: 700px;">
+<code>\missingfigure[figcolor=white]{insert dogs figure here}</code></div>
+<br>
+<img src="../media/img/todo8.png" width="50%" height="auto" >
+<br>
+<br>
+<div class="title" id="fourthpart"> Define new commands with arbitrary default options </div>
+If you do not like the default values of the standard todo command,
+it is possible to define a new command with personal functionality of <code> \todo </code> with custom default options.
+<br>
+<br><div class="codebox" style="width: 700px;">
+<code>
+\newcommand{\myNewCommand}[2][]{\todo[color=red!20,#1]{#2}}</code></div>
+<br>
+<br>
+The new command can now be used like normal <code>\todo</code> command, with a default red color and <code>!20</code> opacity.
+<br>
+<br><div class="codebox" style="width: 700px;">
+<code>\myNewCommand{some text for the new todo} </code></div>
+<br>
+<img src="../media/img/todo9.png" width="50%" height="auto" >
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  <footer>
+      <address>Page written by Stucchi Jacopo</address>
+  </footer>
+  </main>
+
+
+  </html>
