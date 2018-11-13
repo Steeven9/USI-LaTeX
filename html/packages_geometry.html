@@ -18,14 +18,14 @@
               <a href="quiz.html">Quiz</a>
           </nav>
           <div class="sidenav">
-              <a href="packages_index.html" id="firstsubpage"><center>PACKAGES INTRODUCTION</center></a>
+              <a href="packages_IntroNewcommands.html" id="firstsubpage"><center>PACKAGES INTRODUCTION</center></a>
               <a href="packages_newcommands.html"><center>NEW COMMANDS</center></a>
               <a href="packages_fancyhdr.HTML"><center>FANCYHDR</center></a>
               <a href="packages_quotchap.html"><center>QUOTCHAP</center></a>
               <a href="packages_todonotes.html"><center>TODONOTES</center></a>
-              <a href="packages_geometry.html"class="active"><center>GEOMETRY</center></a>
+              <a href="packages_geometry.html"><center>GEOMETRY</center></a>
               <a href="packages_geometry2.html"><center>MORE ABOUT GEOMETRY </center></a>
-              <a href="packages_hyperref_babel_xcolor.html"><center>HYPERREF</center></a>
+              <a href="packages_hyperref_babel_xcolor.html"class="active"><center>HYPERREF</center></a>
               <a href="packages_hyperref_babel_xcolor2.html"><center>BABEL </center></a>
               <a href="packages_hyperref_babel_xcolor3.html" ><center>XCOLOR</center></a>
               <a href="packages_Beamer1.html"><center>BEAMER</center></a>
@@ -61,11 +61,12 @@
       The top margin on each page should be 1.2 inches from the top edge of the page.
        The left margin should be 0.9 inch from the left edge.
        The footer with page number should be at the bottom of the text area.
- </i>
+ </i></div>
 <br>
-<br>
-<code>\usepackage[total={6.5in,8.75in}, <br>
-top=1.2in, left=0.9in, includefoot]{geometry}. </code></div>
+<br><div class="codebox"style="Width: 700px;">
+<div class="paragraph"><b>CODE</b><hr>
+  <code>\usepackage[total={6.5in,8.75in}, <br>
+top=1.2in, left=0.9in, includefoot]{geometry}. </code></div></div>
 <br>
 <br>
 
@@ -90,20 +91,23 @@ means a horizontal distance between the left (inner) edge of the paper and that 
 
 <div class="subtitle" >Manipulate page geometry</div>
 <div class="text"> Paper size, orientation and margins are the most common page elements that must be changed depending on the type of document.
-   To set the desired values there are two ways, either you pass them as parameters to the \includepackage statement:
+   To set the desired values there are two ways, either you pass them as parameters to the \includepackage statement:</div>
+<br>
+<br><div class="codebox" style="Width: 700px;">
+<div class="paragraph"><b>CODE</b><hr>
+<code>\usepackage[legalpaper, landscape, margin=2in]{geometry} </code></div></div>
 <br>
 <br>
-<code>\usepackage[legalpaper, landscape, margin=2in]{geometry} </code>
+<div class="text">
+or use a \geometry command in the preamble. In fact you can achieve the same thing in a slightly different way:</div>
 <br>
-<br>
-or use a \geometry command in the preamble. In fact you can achieve the same thing in a slightly different way:
-<br>
-<br>
+<br><div class="codebox"style="Width: 700px;">
+<div class="paragraph"><b>CODE</b><hr>
 <code>\usepackage{geometry} <br>
-\geometry{legalpaper, landscape, margin=2in}</code>
+\geometry{legalpaper, landscape, margin=2in}</code></div></div>
 
 <br>
-  </div>
+
   <br><br>
 
 
@@ -113,10 +117,10 @@ or use a \geometry command in the preamble. In fact you can achieve the same thi
 The parameters have to be written in the form parameter=value, use standard LATEX units. (mm, cm, pt, in).
 <br>
 <br>
-<img src="../media/img/packages_geometry1.png" alt="geometryimg">
+<img src="../media/img/packages_geometry1.png" alt="geometryimg"></div>
 <br>
 <br>
-
+<div class="text">
 <code><b>textwidth</b></code><br>
 Corresponds to element 8 in the figure.
 <br>
@@ -163,8 +167,9 @@ Width of the margin notes. Element 10 in the figure.
 <br>
 <br>
 The paper size can be set to any size you need by means of the command papersize={⟨width⟩,⟨height⟩}. <br>
-Let's see an example: <br><br>
-
+Let's see an example: <br><br></div>
+<div class="codebox"style="Width: 700px;">
+<div class="paragraph"><b>CODE</b><hr>
 <code>
 \usepackage{geometry} <br>
  \geometry{           <br>
@@ -172,7 +177,7 @@ Let's see an example: <br><br>
  total={170mm,257mm}, <br>
  left=20mm,           <br>
  top=20mm,            <br>
- } </code>
+} </code></div>
  <br><br>
 Here the text area, the left margin and the top margin are set. The right and bottom margins are automatically computed to fit the page.
 </div>
