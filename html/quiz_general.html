@@ -1,0 +1,189 @@
+<!-- WARNING: WRITE ALL THE TEXT INSIDE THE MAIN AND NOT DIRECTLY ON THE BODY -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Test yourself!</title>
+    <meta name="author" content="Stefano Taillefert">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <style>
+        .margin10 {
+            margin-bottom: 10px;
+        }
+
+        .margin40 {
+            margin-bottom: 40px;
+        }
+
+        .optionSpan {
+            vertical-align: middle;
+            margin-left: 7px;
+            margin-bottom: 3px;
+        }
+
+        .line1-5 {
+            line-height: 1.5;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .green {
+            color: green;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .inlb {
+            display: inline-block;
+        }
+
+        .button {
+            border: #000 solid 2px;
+            width: fit-content;
+            margin: auto;
+            padding: 7.5px;
+            margin-bottom: 2.5%;
+            transition: 0.5s;
+            cursor: pointer;
+            color: #000 !important;
+            display: inline-block;
+        }
+
+        .button:hover {
+            text-decoration: none !important;
+            color: #fff !important;
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html" class="active">Quiz</a>
+    </nav>
+    <div class="sidenav">
+            
+    </div>
+    <main>
+        <div class="title">Test yourself!</div>
+
+        <div class="subtitle">General</div>
+
+        <div class="text margin40 line1-5">
+            <div class="margin10">1. Is this question a question?</div> 
+            <div id="answQuestion0" class="margin10 answer"></div>
+            <label><input type="radio" class="question0" name="question0" value="1"><span class="optionSpan">Yes</span></label><br>
+            <label><input type="radio" class="question0" name="question0" value="2"><span class="optionSpan">No</span></label><br>
+            <label><input type="radio" class="question0" name="question0" value="3"><span class="optionSpan">Maybe</span></label><br><!---->
+            <label><input type="radio" class="question0" name="question0" value="4"><span class="optionSpan">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></label>
+        </div>
+
+        <div class="text margin40 line1-5">
+            <div class="margin10">2. What is LaTeX?</div>
+            <div id="answQuestion1" class="margin10 answer"></div>
+            <label><input type="radio" class="question1" name="question1" value="1"><span class="optionSpan">A programming language</span></label><br>
+            <label><input type="radio" class="question1" name="question1" value="2"><span class="optionSpan">An abbreviation</span></label><br>
+            <label><input type="radio" class="question1" name="question1" value="3"><span class="optionSpan">A document preparation system</span></label><br><!---->
+            <label><input type="radio" class="question1" name="question1" value="4"><span class="optionSpan">A rare animal</span></label>
+        </div>
+
+        <div class="text margin40 line1-5">
+            <div class="margin10">3. Nate?</div>
+            <div id="answQuestion2" class="margin10 answer"></div>
+            <label><input type="radio" class="question2" name="question2" value="1"><span class="optionSpan">Yes</span></label><br><!---->
+            <label><input type="radio" class="question2" name="question2" value="2"><span class="optionSpan">Yes</span></label><br>
+            <label><input type="radio" class="question2" name="question2" value="3"><span class="optionSpan">Yes</span></label><br>
+            <label><input type="radio" class="question2" name="question2" value="4"><span class="optionSpan">Yes</span></label>
+        </div>
+
+        <div id="score" class="text margin10 hide"></div>
+
+        <div class="text margin40"><a onclick="submit()" class="button" id="subButton">Submit</a></div>
+
+        <script src="../js/jquery-3.3.1.min.js"></script>
+
+        <script>
+            function submit() {
+                if (document.getElementById('subButton').innerHTML=="Next") {
+                    location.href = "quiz_syntax.html";   
+                } else {
+                    $.ajax({
+                        url:"https://kiba.ddns.net/school/sa1Quiz.php",
+                        type:"POST",
+                        data:
+                        {
+                            section:"general",
+                            0:$(".question0:checked").val(),
+                            1:$(".question1:checked").val(),
+                            2:$(".question2:checked").val()
+                        },
+                        success:function(msg){
+                            //get back to top of the page
+                            document.body.scrollTop = 0;
+                            document.documentElement.scrollTop = 0;
+
+                            var points = 0;
+
+                            for (var i=0; i<msg.length; i++) {
+                                if (msg[i]) {
+                                    document.getElementsByClassName("answer")[i].innerHTML = "Correct!";
+                                    document.getElementById("answQuestion"+i).classList.add('green');
+                                    points++;
+                                } else {
+                                    document.getElementsByClassName("answer")[i].innerHTML = "Wrong";
+                                    document.getElementById("answQuestion"+i).classList.add('red');
+                                }
+                            }
+
+                            var total = msg.length;
+                            var grade = points*100/total;
+                            var score = points+"/"+total+" ("+grade+"%). ";
+
+                            document.getElementById('score').innerHTML = "Your score: "+score;
+
+                            if (grade==100) {
+                                document.getElementById('score').innerHTML += "Wow, great job!";
+                            } else if (grade>=80) {
+                                document.getElementById('score').innerHTML += "You're close, keep fighting!";
+                            } else if (grade>=60) {
+                                document.getElementById('score').innerHTML += "Not bad, but you can do better.";
+                            } else {
+                                document.getElementById('score').innerHTML += "Meh. Try harder!";
+                            }
+
+                            document.getElementById('score').classList.remove("hide");
+
+                            localStorage.currentPoints = points;
+                            localStorage.currentTotal = total;
+
+                            document.getElementById('subButton').innerHTML = "Next";
+                        },
+                        error:function(msg){
+                            alert("Something went wrong.");
+                        },
+                        dataType:"json"
+                    });
+                }               
+            }
+        </script>
+
+        <footer>
+            <address>Page written by Stefano Taillefert</address>
+        </footer>
+    </main>
+</body>
+
+</html>
