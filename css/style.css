@@ -6,7 +6,7 @@ body{
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    
+
 }
 
 main{
@@ -748,7 +748,7 @@ div.mainhomepagebox a:hover{
   div.text, div.longtext, div.standardbox{
     font-size: 0.9em;
   }
-  
+
   div.title{
     font-family: Roboto;
     font-size: 1.7em;
@@ -760,7 +760,7 @@ div.mainhomepagebox a:hover{
     padding-right: 2.5%;
     padding-top: 1%;
   }
-  
+
   div.firstsubtitle{
     font-family: Roboto;
     font-size: 1.3em;
@@ -772,7 +772,7 @@ div.mainhomepagebox a:hover{
     padding-right: 4%;
     padding-top: 1%;
   }
-  
+
   div.subtitle{
     font-family: Roboto;
     font-size: 1.3em;
@@ -793,7 +793,7 @@ div.mainhomepagebox a:hover{
   div.exercises p{
     font-size: 0.9em;
   }
-  
+
   div.exercises div.blackbox{
     font-size: 1.3em;
   }
@@ -848,3 +848,26 @@ div.mainhomepagebox a:hover{
   }
 }
 /* END RESPONSIVITY */
+
+/*--------BUTTON NEXT PAGE------------------*/
+.buttonpage {
+    background-color: lightgrey;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    border-radius: 15px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 30em;
+}
+.buttonpage:hover{
+    background-color: rgb(0, 174, 255);
+    color: white;
+    transition: background-color 0.7s;
+    text-decoration: none;
+}
+/*--------END BUTTON-----------*/
