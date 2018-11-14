@@ -22,24 +22,26 @@
             <a href="quiz.html">Quiz</a>
         </nav>
         <div class="sidenav">
-                <a href="syntax_First_document.HTML" id="firstsubpage"><center>CREATE YOUR FIRST LATEX</center></a>
-                <a href="syntax_title_section.HTML"><center>TITLE SECTION</center></a>
-                <a href="syntax_basic_paragraphs_and_comments.HTML"><center>PARAGRAPH AND COMMENTS</center></a>
-                <a href="syntax_fonts_and_text_processing.HTML"><center>TEXT PROCESSING</center></a>
-                <a href="LINKSUBPAGE.HTML"><center>FONTS</center></a>
-                <a href="syntax_formatting.HTML"><center>FORMATTING</center></a>
-                <a href="syntax_lists.HTML"><center>LIST</center></a>
-                <a href="LINKSUBPAGE.HTML"><center>DOCUMENT CLASS</center></a>
-                <a href="syntax_TableOfContents.HTML"  class="active"><center>TABLE OF CONTENTS</center></a>
-                <a href="syntax_pageNumbering.HTML"><center>PAGE NUMBERING</center></a>
-                <a href="syntax_footnotes.HTML"><center>FOOTNOTE</center></a>
-                <a href="syntax_language_support.HTML"><center>LANGUAGE SUPPORT</center></a>
-                <a href="syntax_bibManagement.HTML"><center>BIBLIOGRPAHY MANAGMENT</center></a>
-                <a href="syntax_biblatexStyles.HTML"><center>BIBLATEX STYLES</center></a>
-                <a href="LINKSUBPAGE.HTML" id="lastsubpage"><center>BIBTEX STYLES</center></a>
-                
-                
-        </div>
+            <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+            <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+            <div class="subpage"><div class="subpagepadding">Title Section ↓</div>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 1</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 2</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 3</a></div>
+            <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+            <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Fonts</a>
+            <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+            <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Document Class</a>
+            <a href="syntax_TableOfContents.HTML" class="sidenavlink">Table of Contents</a>
+            <a href="syntax_pageNumbering.html" class="sidenavlink">Page numbering</a>
+            <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+            <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+            <a href="syntax_bibManagement.HTML" class="sidenavlink" class="active">Bibliography Management</a>
+            <a href="syntax_biblatexStyles.HTML" class="sidenavlink">BibLaTeX Style</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">BibTeX Style</a>
+    </div>
     <main>
         <div class="title">Table of contents</div>
         <div class="indexgeneral"><ul>
@@ -58,7 +60,7 @@
         <br>
             <div class="latex">
                 <div class="paragraph"><b>CODE</b><hr>
-                    <p>\tableofcontents
+                    <code>\tableofcontents
                         <br>
                         <br>
                         \section{Section}
@@ -78,7 +80,7 @@
                         neque pharetra sollicitudin.  Praesent imperdietmi nec ante. 
                         Donec ullamcorper, felis non sodales...
                         <br>
-                    </p>
+                    </code>
                 </div>
                 <div class="object">
                     <object type="application/pdf" data="../docs/syntax_TableOfContents1.pdf" height="100%" width="100%"></object>
@@ -91,7 +93,7 @@
         <br>
         <div class="latex">
             <div class="paragraph"><b>CODE</b><hr>
-                <p>\begin{figure} 
+                <code>\begin{figure} 
                     <br>
                     \caption{Figure example}
                     <br>
@@ -108,7 +110,7 @@
                     \listoffigures
                     <br>
                     \listoftables
-                </p>
+                </code>
             </div>
             <div class="object">
                 <object type="application/pdf" data="../docs/syntax_TableOfContents2.pdf" height="100%" width="100%"></object>
@@ -117,7 +119,7 @@
         <div class="subtitle" id="third">Depth</div>
         <div class="text">
             The depth of the table of contents can be manually modified
-            using the command \setcounter{tocdepth}{X}, where X is the desired depth.
+            using the command <code>\setcounter{tocdepth}{X}</code>, where X is the desired depth.
             If X is 0, then the table of content will not be shown. If it is 3, then 
             even subparagraphs will be shown. The value needs to be set in the preamble 
             of the document so that it automatically applies to the whole document.
@@ -128,7 +130,7 @@
         <br>
         <div class="latex">
                 <div class="paragraph"><b>CODE</b><hr>
-                        <p>\setcounter{tocdepth}{1}
+                        <code>\setcounter{tocdepth}{1}
                             <br>
                             <br>
                             \begin{document}
@@ -150,7 +152,7 @@
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam 
                             lobortisfacilisis sem. Nullam nec mi et neque pharetra sollicitudin.
                             Praesent imperdietmi nec ante. Donec ullamcorper, felis non sodales... 
-                        </p>
+                        </code>
                 </div>
                 <div class="object">
                     <object type="application/pdf" data="../docs/syntax_TableOfContents3.pdf" height="100%" width="100%"></object>
@@ -164,7 +166,7 @@
         <br>
         <div class="latex">
                 <div class="paragraph"><b>CODE</b><hr>
-                    <p>     \setcounter{tocdepth}{1}
+                    <code>     \setcounter{tocdepth}{1}
                             <br>
                             <br>
                             \begin{document}
@@ -194,7 +196,7 @@
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
                             lobortisfacilisis sem. Nullam nec mi et neque pharetra sollicitudin. 
                             Praesent imperdietmi nec ante. Donec ullamcorper, felis non sodales...
-                    </p>
+                    </code>
                 </div>
                 <div class="object">
                     <object type="application/pdf" data="../docs/syntax_TableOfContents4.pdf" height="100%" width="100%"></object>
@@ -204,13 +206,13 @@
         <div class="text">
             The easiest way to change the spacing of the table of contents is by 
             using the setspace package. It needs to be added to your preamble 
-            with the \usepackage{setspace} command. Then, you can set the spacing 
+            with the <code>\usepackage{setspace}</code> command. Then, you can set the spacing 
             for individual parts of your document like this:
         </div>
         <br>
         <div class="latex">
                 <div class="paragraph"><b>CODE</b><hr>
-                    <p> \setcounter{tocdepth}{2}
+                    <code> \setcounter{tocdepth}{2}
                         <br>
                         \usepackage{setspace}
                         <br>
@@ -251,7 +253,7 @@
                         <br>
                         \subsection{Subsection two}
                         Lorem ipsum dolor sit amet...     
-                    </p>
+                    </code>
                 </div>
                 <div class="object">
                     <object type="application/pdf" data="../docs/syntax_TableOfContents5.pdf" height="100%" width="100%"></object>
