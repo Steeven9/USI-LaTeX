@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="stylesheet" href="../css/style.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      </head>
+   <body>
+     <meta name="author" content="Renato Iannace">
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+    <nav>
+        <a href="general_index.html">Getting Started</a>
+        <a href="syntax_index.html" >Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html" class="active">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+  <div class="sidenav">
+      <a href="packages_IntroNewcommands.html" id="firstsubpage"class="sidenavlink">PACKAGES INTRODUCTION</a>
+      <a href="packages_newcommands.html"class="sidenavlink">NEW COMMANDS</a>
+      <a href="packages_fancyhdr.HTML"class="sidenavlink">FANCYHDR</a>
+      <a href="packages_quotchap.html"class="sidenavlink">QUOTCHAP</a>
+      <a href="packages_todonotes.html"class="sidenavlink">TODONOTES</a>
+      <a href="packages_geometry.html"class="sidenavlink">GEOMETRY</a>
+      <a href="packages_geometry2.html"class="sidenavlink">MORE ABOUT GEOMETRY</a>
+      <a href="packages_hyperref_babel_xcolor.html"class="sidenavlink"class="active">HYPERREF</a>
+      <a href="packages_hyperref_babel_xcolor2.html"class="sidenavlink">BABEL</a>
+      <a href="packages_hyperref_babel_xcolor3.html" class="sidenavlink">XCOLOR</a>
+      <a href="packages_Beamer1.html"class="sidenavlink">BEAMER</a>
+      <a href="packages_Beamer2.html"class="sidenavlink">MORE ABOUT BEAMER</a>
+      <a href="packages_TOP5.html"class="sidenavlink">TOP5</a>
+  </div>
+
+   </body>
+<main>
+  <div class="title">Latex Packages</div>
+  <div class="indexgeneral"><ul>
+      <li><div class="index"><a href="#first">Latex Macros</a></div></li>
+      <li><div class="index"><a href="#second">How to create a macro</a></div></li>
+      <li><div class="index"><a href="#third">Purpose of packages</a></div></li>
+      <li><div class="index"><a href="#fourth">How to use a package</a></div></li>
+
+  </ul>
+  <br>
+
+<div class="subtitle" id="first"> Latex Macros </div>
+  <div class="text">
+    In LaTeX you can create your own commands, this commands are called macros.
+  </div>
+
+  <div style="padding-left:40px">
+  <img src= "../media/img/package_new_command_1.png" alt="Image">
+  </div>
+
+  <div class="subtitle" id="second"> How to create a macro </div>
+  <div class="text">
+    To add your own commands, use the command "\newcommand". Basically, the command requires two arguments:
+    the name of the command you want to create, and the definition of the command.
+    Note that the command name can but need not be enclosed in braces, as you like.
+    The num argument in square brackets is optional and specifies the number of arguments the new command takes
+    (up to 9 are possible). If missing it defaults to 0, i.e. no argument allowed.
+  </div>
+
+  <div style="padding-left:40px">
+  <img src="../media/img/package_new_command_2.png" alt="Image">
+  </div>
+
+  <div class="subtitle" id="third"> Example of a macro </div>
+  <div class="text">
+    Name your new command \wbalTwo and not \wbal2 as digits cannot be used to name macros — invalid characters will error out at compile-time.
+    LaTeX will not allow you to create a new command that would overwrite an existing one. But there is a special command in case you explicitly want this:
+    \renewcommand. It uses the same syntax as the \newcommand command.
+    In certain cases you might also want to use the \providecommand command. It works like \newcommand,
+    but if the command is already defined, LaTeX will silently ignore the new command.
+
+
+  </div>
+
+  <div style="padding-left:40px">
+  <img src="../media/img/package_new_command_3.png" alt="Image">
+  </div>
+
+  <div class="subtitle" id="fourth"> DeclareRobustCommand </div>
+  <div class="text">
+    Some commands are fragile, that is they fail in some environments.
+    If a macro works in body text but not in (for example) a figure caption,
+    it's worth trying to replace the <b>\newcommand{\MyCommand}</b>... declaration with
+    <b>\DeclareRobustCommand{\MyCommand}</b>... in the preamble.
+    This is especially true for macros which, when expanded, produce text that is written to a .aux file.
+  </div>
+
+
+   <br>
+
+   <a href="packages_newcommand2.html">
+   <button class="buttonpage">
+
+     NEXT PAGE
+     <i class="fa fa-chevron-circle-right"></i></button></a>
+     <footer>
+  <footer>
+      <address>Page written by Renato Iannace</address>
+  </footer>
+  </main>
+
+  </html>

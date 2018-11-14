@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title> The babel package </title>
+    <meta name="author" content="Filippo Cesana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+                <a href="general_index.html">Getting Started</a>
+                <a href="syntax_index.html" >Basic Syntax</a>
+                <a href="graphics_index.html">Graphics</a>
+                <a href="equations_index.html">Equations</a>
+                <a href="packages_index.html"class="active">Packages</a>
+                <a href="quiz.html">Quiz</a>
+            </nav>
+            <div class="sidenav">
+                <a href="packages_IntroNewcommands.html" id="firstsubpage"class="sidenavlink">PACKAGES INTRODUCTION</a>
+                <a href="packages_newcommands.html"class="sidenavlink">NEW COMMANDS</a>
+                <a href="packages_fancyhdr.HTML"class="sidenavlink">FANCYHDR</a>
+                <a href="packages_quotchap.html"class="sidenavlink">QUOTCHAP</a>
+                <a href="packages_todonotes.html"class="sidenavlink">TODONOTES</a>
+                <a href="packages_geometry.html"class="sidenavlink">GEOMETRY</a>
+                <a href="packages_geometry2.html"class="sidenavlink">MORE ABOUT GEOMETRY</a>
+                <a href="packages_hyperref_babel_xcolor.html"class="sidenavlink"class="active">HYPERREF</a>
+                <a href="packages_hyperref_babel_xcolor2.html"class="sidenavlink">BABEL</a>
+                <a href="packages_hyperref_babel_xcolor3.html" class="sidenavlink">XCOLOR</a>
+                <a href="packages_Beamer1.html"class="sidenavlink">BEAMER</a>
+                <a href="packages_Beamer2.html"class="sidenavlink">MORE ABOUT BEAMER</a>
+                <a href="packages_TOP5.html"class="sidenavlink">TOP5</a>
+            </div>
+    <br>
+    <br>
+
+    <main>
+
+        <!-- BEGIN INTRODUCTION -->
+
+        <div class="title"> The babel package</div>
+        <div class="text"> This pack­age man­ages cul­tur­ally-de­ter­mined
+          ty­po­graph­i­cal (and other) rules for a wide range of lan­guages.
+          A doc­u­ment may se­lect a sin­gle lan­guage to be sup­ported, or it may
+          se­lect sev­eral, in which case the doc­u­ment may switch from one lan­guage
+          to an­other in a va­ri­ety of ways. Ba­bel uses con­tributed con­fig­u­ra­tion
+          files that pro­vide the de­tail of what has to be done for each lan­guage.
+          In­cluded is also a set of ini files for about 200 lan­guages..</div>
+        <div class="indexgeneral">
+          <ul>
+            <li><div class="index"><a href="#implement">How to implement babel</a></div></li>
+          </ul>
+          <hr>
+        </div>
+
+        <!-- END INTRODUCTION -->
+
+        <!-- BEGIN OF THEORY-->
+
+        <!-- THEORY 1-->
+
+        <div class="firstsubtitle" id="implement">How to implement babel </div>
+        <div class="text"> At the beginning of your LaTeX document, where the other
+          packages are listed, simply add the following code:
+          <br>
+        </div>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>\usepackage[a-language-of-your-choice]{babel}</code>
+        </div><br>
+
+        <div class="text"> You can add a second language, by simply adding the
+          following code:
+          <br>
+        </div>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>\usepackage[languageA,languageB]{babel}</code>
+        </div><br>
+
+        <div class="text"> with this code,  the last language in the option list
+           will be active (i.e. languageB), and you can use the command:
+          <br>
+        </div>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>\selectlanguage{languageA}</code>
+        </div><br>
+
+        <div class="text">to change the active language (when the document
+          begins, with \begin{document}, the main language is automatically
+          selected). You can also add short pieces of text in another language
+          using the command
+          <br>
+        </div>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>\foreignlanguage{languageB}{Text in another language}</code>
+        </div><br>
+
+        <div class="text">Babel also offers various environments for entering
+          larger pieces of text in another language:
+          <br>
+        </div>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>\begin{otherlanguage}{languageB}</code></div><br><br>
+          <div class="text">
+            Text in language B. This environment switches all language-related definitions,
+            like the language specific names for figures, tables etc. to the other language.
+            \end{otherlanguage}</div>
+        <br>
+
+        <div class="text">The starred version of this environment typesets the
+          main text according to the rules of the other language, but keeps the
+          language specific string for ancillary things like figures, in the
+          main language of the document. The environment hyphenrules switches
+          only the hyphenation patterns used; it can also be used to disallow
+          hyphenation by using the language name 'nohyphenation' (but note
+          sotherlanguage* is preferred).
+
+        </div><br>
+        <footer>
+            <address>Page written by Filippo Cesana
+            </address>
+        </footer>
+        </main>
+
+
+        </html>
