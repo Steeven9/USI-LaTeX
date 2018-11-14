@@ -1,57 +1,191 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <title>*TITLE OF THE PAGE*</title>
-    <meta name="author" content="Cesana Filippo">
+    <title> The package hyperref</title>
+    <meta name="author" content="Filippo Cesana">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
 </head>
-<div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
 
-<div class="sidenav">
-    <a href="packages_IntroNewcommands.html" id="firstsubpage"><center>PACKAGES INTRODUCTION</center></a>
-    <a href="packages_newcommands.html"><center>NEW COMMANDS</center></a>
-    <a href="packages_fancyhdr.HTML"><center>FANCYHDR</center></a>
-    <a href="packages_quotchap.html"><center>QUOTCHAP</center></a>
-    <a href="packages_todonotes.html"><center>TODONOTES</center></a>
-    <a href="packages_geometry.html"><center>GEOMETRY</center></a>
-    <a href="packages_geometry2.html"><center>MORE ABOUT GEOMETRY </center></a>
-    <a href="packages_hyperref_babel_xcolor.html"class="active"><center>HYPERREF</center></a>
-    <a href="packages_hyperref_babel_xcolor2.html"><center>BABEL </center></a>
-    <a href="packages_hyperref_babel_xcolor3.html" ><center>XCOLOR</center></a>
-    <a href="packages_Beamer1.html"><center>BEAMER</center></a>
-    <a href="packages_Beamer2.html"><center>MORE ABOUT BEAMER</center></a>
-    <a href="packages_TOP5.html"><center>TOP5</center></a>
-</div>
 <body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+                <a href="general_index.html">Getting Started</a>
+                <a href="syntax_index.html" >Basic Syntax</a>
+                <a href="graphics_index.html">Graphics</a>
+                <a href="equations_index.html">Equations</a>
+                <a href="packages_index.html"class="active">Packages</a>
+                <a href="quiz.html">Quiz</a>
+            </nav>
+    <div class="sidenav">
+        <a href="packages_IntroNewcommands.html" id="firstsubpage"class="sidenavlink">PACKAGES INTRODUCTION</a>
+        <a href="packages_newcommands.html"class="sidenavlink">NEW COMMANDS</a>
+        <a href="packages_fancyhdr.HTML"class="sidenavlink">FANCYHDR</a>
+        <a href="packages_quotchap.html"class="sidenavlink">QUOTCHAP</a>
+        <a href="packages_todonotes.html"class="sidenavlink">TODONOTES</a>
+        <a href="packages_geometry.html"class="sidenavlink">GEOMETRY</a>
+        <a href="packages_geometry2.html"class="sidenavlink">MORE ABOUT GEOMETRY</a>
+        <a href="packages_hyperref_babel_xcolor.html"class="sidenavlink"class="active">HYPERREF</a>
+        <a href="packages_hyperref_babel_xcolor2.html"class="sidenavlink">BABEL</a>
+        <a href="packages_hyperref_babel_xcolor3.html" class="sidenavlink">XCOLOR</a>
+        <a href="packages_Beamer1.html"class="sidenavlink">BEAMER</a>
+        <a href="packages_Beamer2.html"class="sidenavlink">MORE ABOUT BEAMER</a>
+        <a href="packages_TOP5.html"class="sidenavlink">TOP5</a>
+    </div>
+    <br>
+    <br>
 
-    <main>
-        <div class="title">The package xcolor</div>
-        <div class="firstsubtitle"> What is xcolor</div>
-        <div class="firstsubtitle"> Which colors are available </div>
-        <div class="firstsubtitle">How to color a text </div>
-        <div class="firstsubtitle"> How to color a background</div>
-        <div class="firstsubtitle"> How to add more colors </div>
-        <br>
-        <div class="title"> The package hyperref</div>
-        <div class="firstsubtitle"> What is hyperref?</div>
-        <div class="firstsubtitle"> Differences between \hyperref, \url, and \href </div>
-        <div class="firstsubtitle"> Customisation </div>
-        <br>
-        <div class="title"> The package babel </div>
-        <div class="firstsubtitle"> What is babel</div>
-        <div class="firstsubtitle"> How to mamnage to font</div>
-        <div class="firstsubtitle"> Applying bidirectional text </div>
-        <div class="firstsubtitle"> Multilingual version </div>
+    <main><div class="title">The package xcolor</div>
+      <div class="indexgeneral">
+        <ul>
+          <li><div class="index"><a href="packages_hyperref_babel_xcolor3.html">How to implement xcolor</a></div></li>
+          <li><div class="index"><a href="packages_hyperref_babel_xcolor3.html">How to infuse color to a text</a></div></li>
+          <li><div class="index"><a href="packages_hyperref_babel_xcolor3.html"> Nested use of xcolor </a></div></li>
+          <li><div class="index"><a href="packages_hyperref_babel_xcolor3.html">How to color a background</a></div></li>
+          <li><div class="index"><a href="packages_hyperref_babel_xcolor3.html">How to add more colors</a></div></li>
+          <li><div class="index"><a href="packages_hyperref_babel_xcolor3.html">How to create colors</a></div></li>
+        </ul>
+        <hr>
+      </div>
+
+      <div class="title"> The package babel </div>
+      <div class="indexgeneral">
+        <ul>
+      <li><div class="index"><a href="packages_hyperref_babel_xcolor2.html"> What is babel</a></div></li>
+      <li><div class="index"><a href="packages_hyperref_babel_xcolor2.html"> How to implement Babel</a> </div></li></ul>
+<hr>
+        <div class="title">HYPERREF</div>
+        <div class="text"> The package hyperref provides LaTeX the ability to create hyperlinks within the document.
+          It works with pdflatex and also with standard "latex" used with dvips and ghostscript or dvipdfm to build a PDF file.
+          If you load it, you will have the possibility to include interactive external links and all your internal references will be turned to hyperlinks.
+          The compiler pdflatex makes it possible to create PDF files directly from the LaTeX source, and PDF supports more features than DVI.
+          In particular PDF supports hyperlinks. Moreover, PDF can contain other information about a document such as the title, the author, etc.,
+          which can be edited using this same package.</div>
+        <div class="indexgeneral">
+          <ul>
+            <li><div class="index"><a href="#implement">Implementing hyperref</a></div></li>
+            <li><div class="index"><a href="#autoref">autoref</a></div></li>
+            <li><div class="index"><a href="#nameref">nameref</a></div></li>
+            <li><div class="index"><a href="#outisde">Outiside documents</a></div></li>
+          </ul>
+
+        </div>
+
+        <!-- END INTRODUCTION -->
+
+        <!-- BEGIN OF THEORY-->
 
 
-        <footer>
-            <address>Page written by Cesana Filippo </address>
-        </footer>
-    </main>
-</body>
+        <div class="firstsubtitle" id="implement">How to implement hyperref </div>
+        <div class="text"> At the beginning of your LaTeX document, where the other
+          packages are listed, simply add the following code:
+          <br>
+        </div>
 
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>\usepackage{hyperref}</code>
+        </div><br>
+
+        <div class="firstsubtitle" id="autoref"> autoref </div>
+        <div class="text"> The following code
+          <br>
+        </div>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>\autoref{}</code>
+        </div><br>
+
+        <div class="text"> creates a reference with additional text
+          corresponding to the target's type, all of which will be a hyperlink.
+          For example, the command
+          <br>
+        </div>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>\autoref{sec:intro}</code>
+        </div><br>
+
+        <div class="text">  would create a hyperlink to the
+          <br>
+        </div>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>\label{sec:intro}</code>
+        </div><br>
+
+        <div class="text">  wherever it is.
+          <br>
+        </div>
+
+        <div class="firstsubtitle" id="nameref"> nameref </div>
+        <div class="text"> The hyperref package also automatically includes the
+          nameref package, and a similarly named command. It is similar to
+          <br>
+        </div>
+
+
+          <!-- CODE BOX -->
+
+          <div class="codebox"><b>CODE</b><hr>
+            <code>\autoref{}</code>
+          </div><br>
+
+          <div class="text"> but inserts a text corresponding to the section name.
+          For example, this output "In section MyFirstSection we defined..." is
+          generated by the following code:
+            <br>
+          </div>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>\section{MyFirstSection} \label{sec:marker}
+            \section{MySecondSection}
+            In section~\nameref{sec:marker} we defined...</code>
+        </div><br>
+
+        <div class="firstsubtitle" id="outisde"> Outisde documents </div>
+        <div class="text"> The package provides some useful commands for
+          inserting links pointing outside the document.
+          <br>
+        </div>
+
+
+          <!-- CODE BOX -->
+
+          <div class="codebox"><b>CODE</b><hr>
+            <code>\hyperref[label_name]{''link text''}</code>
+          </div><br>
+
+          <div class="text"> This will have the same effect as
+            <br>
+          </div>
+
+          <!-- CODE BOX -->
+
+          <div class="codebox"><b>CODE</b><hr>
+            <code>\ref{label_name}</code>
+          </div><br>
+
+          <div class="text"> but will make the text link text a full link, instead.
+            <br>
+          </div>
+
+          <footer>
+              <address>Page written by Cesana Filippo </address>
+          </footer>
+
+</main>
 </html>
+
+<!-- END BASE PAGE -->
