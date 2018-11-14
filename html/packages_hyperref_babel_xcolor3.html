@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title> The package xcolor </title>
+    <meta name="author" content="Filippo Cesana">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+              <a href="general_index.html">Getting Started</a>
+              <a href="syntax_index.html" >Basic Syntax</a>
+              <a href="graphics_index.html">Graphics</a>
+              <a href="equations_index.html">Equations</a>
+              <a href="packages_index.html"class="active">Packages</a>
+              <a href="quiz.html">Quiz</a>
+          </nav>
+    <div class="sidenav">
+        <a href="packages_IntroNewcommands.html" id="firstsubpage"><center>PACKAGES INTRODUCTION</center></a>
+        <a href="packages_newcommands.html"><center>NEW COMMANDS</center></a>
+        <a href="packages_fancyhdr.HTML"><center>FANCYHDR</center></a>
+        <a href="packages_quotchap.html"><center>QUOTCHAP</center></a>
+        <a href="packages_todonotes.html"><center>TODONOTES</center></a>
+        <a href="packages_geometry.html"><center>GEOMETRY</center></a>
+        <a href="packages_geometry2.html"><center>MORE ABOUT GEOMETRY </center></a>
+        <a href="packages_hyperref_babel_xcolor.html"><center>HYPERREF</center></a>
+        <a href="packages_hyperref_babel_xcolor2.html"><center>BABEL </center></a>
+        <a href="packages_hyperref_babel_xcolor3.html" class="active"><center>XCOLOR</center></a>
+        <a href="packages_Beamer1.html"><center>BEAMER</center></a>
+        <a href="packages_Beamer2.html"><center>MORE ABOUT BEAMER</center></a>
+        <a href="packages_TOP5.html"><center>TOP5</center></a>
+    </div>
+    <br>
+    <br>
+
+    <main>
+
+        <!-- BEGIN INTRODUCTION -->
+
+        <div class="title"> XCOLOR</div>
+        <div class="text"> xcolor is a package which allows LaTeX users to paint
+          the font or the background of their documents, thus adding vitality
+          to their work.</div>
+        <div class="indexgeneral">
+          <ul>
+            <li><div class="index"><a href="#implement">How to implement xcolor</a></div></li>
+            <li><div class="index"><a href="#text">How to infuse color to a text</a></div></li>
+            <li><div class="index"><a href="#example"> Nested use of xcolor </a></div></li>
+            <li><div class="index"><a href="#background">How to color a background</a></div></li>
+            <li><div class="index"><a href="#morecolors">How to add more colors</a></div></li>
+            <li><div class="index"><a href="#create">How to create colors</a></div></li>
+          </ul>
+          <hr>
+        </div>
+
+        <!-- END INTRODUCTION -->
+
+        <!-- BEGIN OF THEORY-->
+
+        <!-- THEORY 1-->
+
+        <div class="firstsubtitle" id="implement">How to implement xcolor </div>
+        <div class="text"> At the beginning of your LaTeX document, where the other
+          packages are listed, simply add the following code:
+          <br>
+        </div>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>\usepackage{xcolor}</code>
+        </div><br>
+
+        <!-- THEORY 2-->
+
+        <div class="firstsubtitle" id="text">How to infuse color to a text </div>
+        <div class="text"> The basic color in LaTeX are
+          </div>
+
+          <!-- CODE BOX -->
+
+          <div class="codebox"><b>CODE</b><hr>
+            <code> black, blue, brown, cyan, darkgray, gray, green, lightgray,
+              lime, magenta, olive, orange, pink, purple, red, teal, violet, white, yellow.</code>
+          </div>
+          <br>
+
+          <div class="text">  To color your text on a LaTeX document, add the following code before
+          the text:
+          <br>
+         </div>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>\textcolor{a-color-of-your-choice}{text}</code>
+        </div><br>
+
+          <div class="text"> Another possibility to color your text is:
+          </div>
+
+            <!-- CODE BOX -->
+          <div class="codebox"><b>CODE</b><hr>
+              <code>{\color{a-color-of-your-choice} your text}</code>
+          </div><br>
+
+        <!-- THEORY 3-->
+
+        <div class="firstsubtitle" id="example">Nested use of xcolor </div>
+        <div class="text"> You can mix xcolor to color your text with other
+          basic modifiers of latex text. For example, to write a yellow, emphasized
+          and bold text, of normalsize, you can use one of the two following codes:
+          <br>
+          </div>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code> {\normalsize\color{yellow}{\textbf{\emph{\underline{your-text}}}}}
+            <br>
+            <br>
+              \textcolor{yellow}{\normalsize{\textbf{\emph{\underline{your-text}}}}}
+          </code>
+        </div><br>
+
+        <!-- THEORY 4-->
+
+        <div class="firstsubtitle" id="background">How to color a background </div>
+        <div class="text"> To overlap your text on a colorful background, you can type the
+          following code:
+          <br>
+          </div>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>\colorbox{a-color-of-your-choice}{\color{a-color-of-your-choice}text}</code>
+        </div><br>
+
+        <div class="text"> To add a colorful frame to your box, you can write the
+          following code:
+          <br>
+          </div>
+
+          <!-- CODE BOX -->
+
+          <div class="codebox"><b>CODE</b><hr>
+            <code>\fcolorbox{declared-color-frame}{declared-color-background}
+              {\color{a-color-of-your-choice}text}</code>
+          </div><br>
+
+          <div class="text"> Note: if inside your text you keep the default color, in both of the previous examples it is unnecessary to enclose
+            the code
+          </div>
+
+          <!-- CODE BOX -->
+
+          <div class="codebox"><b>CODE</b><hr>
+            <code>{\color{a-color-of-your-choice}text}</code>
+          </div><br>
+
+          <div class="text">  In this latter case you would only write:
+          </div>
+
+            <!-- CODE BOX -->
+
+            <div class="codebox"><b>CODE</b><hr>
+              <code> {text}</code>
+            </div><br>
+
+
+        <!-- THEORY 5-->
+
+        <div class="firstsubtitle" id="morecolors">How to add more colors </div>
+        <div class="text"> In addition to the basic colors mentioned above, there are numerous other colors
+          which can be implemented in your document. You should modify the xcolor package at the beginning
+          of the document as following:
+          <br>
+        </div>
+
+        <!-- CODE BOX -->
+
+        <div class="codebox"><b>CODE</b><hr>
+          <code>\usepackage[usenames,dvipsnames]{xcolor}</code>
+        </div><br>
+
+        <div class="text"> Below you can find a list of all the addional colors.
+          <br>
+
+
+          <!-- CODE BOX -->
+
+
+          <code>  <img src="../media/img/morecolors.png" width="500" height="500"></code>
+  </div>
+
+  <div class="firstsubtitle" id="create">How to create colors</div>
+  <div class="text"> There are five different ways to create a new color. Firstly, include this
+    code inside your LaTeX documents
+  </div>
+
+    <!-- CODE BOX -->
+
+  <div class="codebox"><b>Code</b><hr>
+   \definecolor{name}{model}{color-spec}
+  </div><br>
+
+  <div class="text"> Where "name" is the user chosen name for the color,
+    "model" is the way you describe the color, and is one of "gray",
+      "rgb", "RGB", "HTML", and "cmyk".
+      <br>
+  </div>
+
+    <table style="width:100%">
+   <tr>
+     <th>Model</th>
+     <th>Description</th>
+     <th>Color Specification</th>
+     <th> Example </th>
+   </tr>
+   <tr>
+     <td>grey</td>
+     <td>Shades of gray (0-1)</td>
+     <td>Just one number between 0 (black) and 1 (white), so 0.95 will be very light gray, 0.30 will be dark gray.</td>
+     <td> <code> \definecolor{light-gray}{gray}{0.95}</code></td>
+   </tr>
+   <tr>
+     <td>rgb</td>
+     <td>Red, Green, Blue (0-1)</td>
+     <td>Three numbers given in the form red,green,blue; the quantity of each color is represented with a number between 0 and 1.</td>
+     <td><code> \definecolor{orange}{RGB}{255,127,0}</code></td>
+   </tr>
+   <tr>
+     <td>RGB</td>
+     <td>Red, Green, Blue (0-255)</td>
+     <td>Three numbers given in the form red,green,blue; the quantity of each color is
+       represented with a number between 00
+      0  and 255.</td>
+     <td><code>\definecolor{orange}{RGB}{255,127,0}</code></td>
+     <tr>
+       <td>HTML</td>
+       <td>Red, Green, Blue (00-FF)</td>
+       <td>Six hexadecimal numbers given in the form RRGGBB; similar to what is used in HTML.</td>
+       <td><code>\definecolor{orange}{HTML}{FF7F00}</code></td>
+     </tr>
+     <tr>
+       <td>cmyk</td>
+       <td>Cyan, Magenta, Yellow, Black (0-1)</td>
+       <td>Four numbers given in the form cyan,magenta,yellow,black;
+         the quantity of each color is represented with a number between 0 and 1.</td>
+       <td><code>\definecolor{orange}{cmyk}{0,0.5,1,0}</code></td>
+     </tr></table>
+     <br>
+     <br>
+
+
+
+     <footer>
+         <address>Page written by Filippo Cesana</address>
+     </footer>
+</main>
+
+</html>
+
+<!-- END BASE PAGE -->
