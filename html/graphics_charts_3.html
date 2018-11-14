@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>TikZ: Advanced Commands</title>
+    <meta name="author" content="Tommaso Rodolfo Masera">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html" class="active">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+            <a href="graphics_index" id="firstsubpage"><center>GRAPHICS</center></a>
+            <a href="graphics_charts_1.html"><center>CHARTS</center></a>
+            <a href="graphics_tables_1.html"><center>TABLES</center></a>
+            <a href="graphics_images_1.html"><center>IMAGES</center></a>
+            <a href="graphics_vectordrawing_1.html"><center>VECTOR DRAWING</center></a>
+    </div>
+    <main>
+        <div class="title">Ti<i>k</i>Z: Advanced Commands</div>
+        <div class="firstsubtitle">Drawing a pie chart</div>
+
+        <div class="text">
+          This second section on Ti<i>k</i>Z will cover slightly more
+          challenging commands and will guide you through making charts.
+          So let us start right away with a pie chart:
+         </div><br><br>
+
+         <div class="latex">
+           <div class="paragraph"><b>CODE</b><hr>
+             <code>
+               \documentclass[12pt]{article} <br>
+               \title{Pie Chart: Step 1} <br>
+               \date{} <br>
+
+               \usepackage{tikz} <br> <br>
+
+               \begin{document} <br>
+               \maketitle <br> <br>
+
+               \begin{center} <br>
+               <b>\begin{tikzpicture} <br>
+               \filldraw <br>
+               [line width= 3pt, opacity= 1, color= gray!30!white, draw= black] (0,0) circle (5cm); <br>
+               \end{tikzpicture}</b> <br>
+               end{center} <br> <br>
+
+               \end{document}
+             </code>
+           </div>
+           <div class="object">
+             <object type="application/pdf" data="../docs/graphics_pie_chart_example_step1.pdf" width="500" height="768">
+             </object>
+           </div>
+
+         </div><br><br>
+
+         <div class="text">
+           So far, so easy. We just drew a circle like in the previous subsection.
+           The next step is still going to be about what we have already learnt
+           as we're going to draw lines to determine the slices of our pie chart:
+         </div><br><br>
+
+         <div class="latex">
+           <div class="paragraph"><b>CODE</b><hr>
+             <code>
+               \documentclass[12pt]{article} <br>
+               \title{Pie Chart: Step 2} <br>
+               \date{} <br> <br>
+
+               \usepackage{tikz} <br> <br>
+
+               \begin{document} <br>
+               \maketitle <br> <br>
+
+               \begin{center} <br>
+               \begin{tikzpicture} <br> <br>
+
+               <b>\filldraw <br>
+               [line width= 3pt, opacity= 1, color= gray!30!white, draw= black] <br>
+               (0,0) circle (5cm); <br> <br>
+
+               \filldraw <br>
+               [line width= 1.2pt, opacity= 1, color= yellow, draw= black] <br>
+               (0,0) -- (-5,0) arc (180:135:5cm); <br>
+               \filldraw <br>
+               [line width= 1.2pt, opacity= 1, color= yellow!60!brown, draw= black] <br>
+			         (0,0) -- (5,0) arc (0:135:5cm); <br>
+               \filldraw <br>
+               [line width= 1.2pt, opacity= 1, color= purple!60!pink, draw= black] <br>
+			         (0,0) -- (-5,0) arc (180:255:5cm); <br> <br>
+
+               \draw[line width= 1.2pt] (0,0) -- (-1.3,-4.8); <br>
+               \draw[line width= 1.2pt] (0,0) -- (-3.55,3.55); </b> <br>
+               \end{tikzpicture} <br>
+               \end{center} <br> <br>
+
+               \end{document}
+             </code>
+           </div>
+           <div class="object">
+             <object type="application/pdf" data="../docs/graphics_pie_chart_example_step2.pdf" width="500" height="768">
+             </object>
+           </div>
+
+         </div><br><br>
+
+         <div class="text">
+           These are still all commands that we've seen and used already but we can see
+           that their options have been used to their full extent to make the best use out of them.
+           Our <code>arc</code> now actually uses the first of its last specification set,
+           which basically swaps the side from which the angle gets drawn if we change it from
+           0 to 180; what's more about it, is that the angle gets generated differently.
+           To draw a 45 degree angle we had to "flip" our angle with 180 and then use 135
+           so that the 45 degree angle would be drawn on the opposite side.
+           The behaviour isn't as simple, but since we're looking to simplify LaTex
+           and not make it more difficult, we can generalize and say that if we flip the angle
+           with the 180 value then the degree of the angle begins at 90 and not 0 anymore;
+           because of this <code>arc</code> requires a bit of trial and error to get right at first
+           so you might want to experiment around with it more before actually implementing it.
+           Other than <code>arc</code> we also drew lines to close our slices and
+           there isn't much new about that.
+         </div>
+
+         <div class="text">
+           To show what can happen if you mess up the "flip value" that we've used,
+           you can find the following examples of what went wrong while our pie chart
+           was being written:
+         </div><br><br>
+
+         <div class="latex">
+           <div class="paragraph"><b>CODE</b><hr>
+             <code>
+               \documentclass[12pt]{article} <br>
+               \title{Failed Examples} <br>
+               \date{} <br> <br>
+
+               \usepackage{tikz} <br> <br>
+
+               \begin{document} <br>
+               \maketitle <br> <br>
+
+               \begin{center} <br>
+               \begin{tikzpicture} <br> <br>
+
+               \filldraw <br>
+               [line width= 3pt, opacity= 1, color= gray!30!white, draw= black] <br>
+               (0,0) circle (5cm); <br> <br>
+
+               \filldraw <br>
+               [line width= 1.2pt, opacity= 1, color= yellow, draw= black] <br>
+               (0,0) -- (-5,0) arc (180:135:5cm); <br>
+               \filldraw<br>
+               [line width= 1.2pt, opacity= 1, color= yellow!60!brown, draw= black] <br>
+               (0,0) -- (5,0) arc (0:135:5cm); <br>
+               \filldraw <br>
+               [line width= 1.2pt, opacity= 1, color= purple!60!pink, draw= black] <br>
+               (0,0) -- (-5,0) arc (360:255:5cm); <br> <br>
+
+               \draw[line width= 1.2pt] (0,0) -- (-1.3,-4.8); <br>
+               \draw[line width= 1.2pt] (0,0) -- (-3.55,3.55); <br>
+
+               \end{tikzpicture} <br>
+               \end{center} <br> <br>
+
+               \begin{center} <br>
+               \begin{tikzpicture} <br> <br>
+
+               \filldraw <br>
+               [line width= 3pt, opacity= 1, color= gray!30!white, draw= black] <br>
+               (0,0) circle (5cm); <br>
+
+               \filldraw <br>
+               [line width= 1.2pt, opacity= 1, color= yellow, draw= black] <br>
+               (0,0) -- (-5,0) arc (270:135:5cm); <br>
+               \filldraw <br>
+               [line width= 1.2pt, opacity= 1, color= yellow!60!brown, draw= black] <br>
+               (0,0) -- (5,0) arc (0:135:5cm); <br>
+               \filldraw <br>
+               [line width= 1.2pt, opacity= 1, color= purple!60!pink, draw= black] <br>
+               (0,0) -- (-5,0) arc (180:255:5cm); <br> <br>
+
+               \draw[line width= 1.2pt] (0,0) -- (-1.3,-4.8); <br>
+               \draw[line width= 1.2pt] (0,0) -- (-3.55,3.55); <br>
+               \end{tikzpicture} <br>
+               \end{center} <br> <br>
+
+               \begin{center} <br>
+               \begin{tikzpicture} <br> <br>
+
+               \filldraw <br>
+               [line width= 3pt, opacity= 1, color= gray!30!white, draw= black] <br>
+               (0,0) circle (5cm); <br> <br>
+
+               \filldraw <br>
+               [line width= 1.2pt, opacity= 1, color= yellow, draw= black] <br>
+               (0,0) -- (-5,0) arc (180:135:5cm); <br>
+               \filldraw <br>
+               [line width= 1.2pt, opacity= 1, color= yellow!60!brown, draw= black] <br>
+               (0,0) -- (5,0) arc (255:135:5cm); <br>
+               \filldraw <br>
+               [line width= 1.2pt, opacity= 1, color= purple!60!pink, draw= black] <br>
+               (0,0) -- (-5,0) arc (180:255:5cm); <br> <br>
+
+               \draw[line width= 1.2pt] (0,0) -- (-1.3,-4.8); <br>
+               \draw[line width= 1.2pt] (0,0) -- (-3.55,3.55); <br>
+               \end{tikzpicture} <br>
+               \end{center} <br> <br>
+
+               \end{document}
+             </code>
+           </div>
+           <div class="object">
+             <object type="application/pdf" data="../docs/graphics_failed_examples.pdf" width="500" height="800">
+             </object>
+           </div>
+         </div><br><br>
+
+         <div class="text">
+           Next up we're going to see how to insert text on our chart via the
+          <code>node</code> command:
+         </div><br><br>
+
+         <div class="latex">
+           <div class="paragraph"><b>CODE</b><hr>
+             <code>
+               \documentclass[12pt]{article} <br>
+               \title{Pie Chart: Step 3} <br>
+               \date{} <br> <br>
+
+               \usepackage{tikz} <br> <br>
+
+               \begin{document}  <br>
+               \maketitle <br> <br>
+
+               \begin{center} <br>
+               \begin{tikzpicture} <br>
+               \filldraw[line width= 3pt, opacity= 1, color= gray!30!white, draw= black] <br>
+               			(0,0) circle (5cm); <br>
+               \filldraw[line width= 1.2pt, opacity= 1, color= yellow, draw= black] <br>
+                     		 (0,0) -- (-5,0) arc (180:135:5cm); <br>
+               \filldraw[line width= 1.2pt, opacity= 1, color= yellow!60!brown, draw= black] <br>
+               			(0,0) -- (5,0) arc (0:135:5cm); <br>
+               \filldraw[line width= 1.2pt, opacity= 1, color= purple!60!pink, draw= black] <br>
+               			(0,0) -- (-5,0) arc (180:255:5cm); <br>
+               \draw[line width= 1.2pt] (0,0) -- (-1.3,-4.8); <br>
+               \draw[line width= 1.2pt] (0,0) -- (-3.55,3.55); <br> <br>
+
+               <b>\draw (1,2.5) node[font= \Large] {Pie I have not eaten}; <br>
+               \draw (1.8,-2.5) node[font= \Large] {Pie I have eaten}; <br>
+               \draw (-3,1) node[font= \Large] {Pie I have cut}; <br>
+               \draw (-2.3,-2) node[font= \Large, text width= 3cm] {Pie with magical properties};</b> <br>
+               \end{tikzpicture} <br>
+               \end{center} <br> <br>
+
+               \end{document}
+             </code>
+           </div>
+           <div class="object">
+             <object type="application/pdf" data="../docs/graphics_pie_chart_example_step3.pdf" width="500" height="768">
+             </object>
+           </div>
+         </div><br><br>
+
+         <div class="text">
+           <small><i>Author's note</i>:over the internet you will find different ways of
+            typing nodes, this is the one I'm most comfortable with but if you find
+            a way that better fits your style feel free to follow it instead.</small> <br><br>
+
+            So now we've successfully added text to our chart with <code>node</code>.
+            As you can see it works mostly the same as the other commands, you
+            first <code>\draw</code>, you give the coordinates and then you specify
+            that it is a <code>node</code>, we then added options to make the font
+            bigger in the last <code>node</code> a <code>text width</code> was specified
+            in order to prevent the text to overflow outside the chart.
+            Other than that, by giving the option <code>draw= *color*</code>
+            (where color is a color of your choice), a default rectangle box will be drawn
+            around your <code>node</code> and you can then change the shape of said box
+            by typing <code>circle</code> as an option, for instance, or any other shape
+            supported by Ti<i>k</i>Z or by other additional packages you might find useful.
+            Surely there are statistic packages that will let you create charts of this
+            kind with percentages at the ready and such. But for the sake of simplicity
+            you can obtain the same result by drawing it yourself and calculating the
+            percentage with a calculator. In this case we mostly took precise angles,
+            such as 45 degrees, but in a real chart you might have to find the right
+            value to insert with your <code>node</code>.
+         </div>
+
+
+        <footer>
+            <address>Page written by Tommaso Rodolfo Masera</address>
+        </footer>
+    </main>
+</body>
+
+</html>

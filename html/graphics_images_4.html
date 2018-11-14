@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>HOW TO ROTATE AND SCALE BACK AN IMAGE</title>
+    <meta name="author" content="LEONARDO CINO">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html" class="active">Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+        <a href="general.html" id="firstsubpage">Getting Started</a> <!-- Put the class="active" on your subpage -->
+        <a href="basic.html">Basic Syntax</a>
+        <a href="graphics.html">Graphics</a>
+        <a href="equations.html">Equations</a>
+        <a href="packages.html">Packages</a>
+        <a href="quiz.html" id="lastsubpage">Quiz</a>
+    </div>
+    <main>
+        <div class="title">How to rotate and scale back an image</div>
+        <div class="indexgeneral"><ul>
+            <li><div class="index"><a href="NAMEOFTHISFILE.html#first">HOW TO ROTATE AN IMAGE</a></div></li>
+            <li><div class="index"><a href="NAMEOFTHISFILE.html#second">HOW TO RESIZE AN IMAGE</a></div></li>
+
+        </ul>
+        <hr>
+        </div>
+        <div class="firstsubtitle" id="first">HOW TO ROTATE AN IMAGE</div>
+        <div class="text">The language Latex gives you the possibility to rotate objects and on this page we will see how to rotate images.
+                          When you insert an image into your latex document you can rotate, and resize it at the same time.
+                          It is useful, especially if you are working with pictures downloaded from internet or if you have
+                          a full page postscript graph that has a landscape layout. To do this it is necessary to add "angle=..." in the \includegraphics command.
+                          The value of the angle command will be the number of degrees of image rotations.
+                          Here below there's an example of a rotated image.</div><br><br>
+
+                          <div class="latex">
+                            <div class="paragraph"><b>CODE</b><hr>
+                          <code>\begin{figure} <br>
+                                \includegraphics[width=.5\textwidth,<mark>angle=270</mark>]{USI-LOGO.png} <br>
+                                \label{fig:example} \caption{History} <br>
+                                \end{figure}<br>
+                          </code>
+                          </div>
+                          <div class="object">
+                          <object type="application/pdf" data="../docs/graphics_rotating-image.png" width="500" height="768"></object>
+                        </div>
+                      </div><br><br>
+
+        <div class="subtitle" id="second">HOW TO RESIZE AN IMAGE</div>
+        <div class="text">To resize an image on Latex it is necessary to set the width and height values in the <strong>\includegraphics</strong> command.
+           You can also use the "scale" option that allows you to zoom in or out to reduce the size of an image.</div><br><br>
+
+           <div class="latex">
+             <div class="paragraph"><b>CODE</b><hr>
+                          <code>\begin{figure}[h]<br>
+                                \includegraphics[height=6cm, width=5cm, angle=30, scale=1.5]{USI-LOGO.png}<br>
+                                \end{figure}<br>
+                          </code>
+                          </div>
+                          <div class="object">
+                          <object type="application/pdf" data="../docs/graphics_rotating-image.png" width="500" height="768"></object>
+                        </div>
+                      </div><br><br>
+
+        <div class="subtitle"></div>
+        <div class="text"></div>
+
+        <footer>
+            <address>Page written by LEONARDO CINO</address>
+        </footer>
+    </main>
+</body>
+
+</html>
