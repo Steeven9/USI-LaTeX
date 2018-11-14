@@ -85,7 +85,7 @@
     <main>
         <div class="title">Test yourself!</div>
 
-        <div class="subtitle">Packages</div>
+        <div class="subtitle">Graphics</div>
 
         <div class="text margin40 line1-5">
             <div class="margin10">1. What is the correct syntax to include an image?</div>
@@ -188,6 +188,31 @@
             </label>
         </div>
 
+        <div class="text margin40 line1-5">
+            <div class="margin10">5. Select the false statement:</div>
+            <div id="answQuestion4" class="margin10 answer"></div>
+            <label><input type="radio" class="question4" name="question4" value="1">
+                <span class="optionSpan">
+                SmartDiagram is a higher order LaTeX package based on Ti<i>k</i>Z and PGFPlots.
+                </span>
+            </label><br>
+            <label><input type="radio" class="question4" name="question4" value="2">
+                <span class="optionSpan">
+                    In TikZ, in the <code>tikzpicture</code> environment the <code>\draw</code>, <code>\fill</code> <code>\filldraw</code> and <code>\shade</code> 
+                    commands are a shortcut for <code>\path[draw]</code>, <code>\path[fill]</code>, <code>\path[filldraw]</code> and <code>\path[shade]</code>.
+                </span>
+            </label><br>
+            <label><input type="radio" class="question4" name="question4" value="3">
+                <span class="optionSpan">
+                    The <code>\fill</code> and <code>\filldraw</code> commands both work the same way.
+                </span>
+            </label><br>
+            <label><input type="radio" class="question4" name="question4" value="4">
+                <span class="optionSpan">
+                    PGFPlots offers more freedom with its available commands at the cost of beginner friendliness.
+                </span>
+            </label>
+        </div>
         
 
         <div id="score" class="text margin10 hide"></div>
@@ -209,7 +234,8 @@
                             section:"graphics",
                             0:$(".question0:checked").val(),
                             1:$(".question1:checked").val(),
-                            2:$(".question2:checked").val()
+                            2:$(".question2:checked").val(),
+                            3:$(".question3:checked").val()
                         },
                         success:function(msg){
                             //get back to top of the page
