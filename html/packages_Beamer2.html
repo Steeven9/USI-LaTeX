@@ -132,9 +132,31 @@ right<br>
 \end{columns}<br>
 \end{frame}</code></div></div>
 <br><br><br>
-  <img src="../media/img/packages_beamer7.png" width="800" height="550">
-
+  <img src="../media/img/packages_beamer7.png" width="800" height="550"><br><br>
+<div class="text"> An image can be put beside some text.
+  The text can also be split and will be displayed above and under eachother.
+  To have the image displayed you must put it in <strong> the same folder</strong> or even in a different folder but the correct <strong>path</strong>.
+  Otherwise you will not have the image inserted. Here there is an example with the code that you can use:
+</div><br><br>
+<div class="codebox" style="width: 600px;"><div class="paragraph"><b>CODE</b><hr><code>
+  \begin{frame}{Example of text next to image}<br>
+     \begin{columns}[T]<br>
+     \begin{column}[T]{5cm}<br>
+     Some text above \\ some text under<br>
+     \end{column}<br>
+     \begin{column}[T]{2cm} <br>
+          \includegraphics[height=3cm]{imagepath.png}<br>
+     \end{column}<br>
+     \end{columns}<br>
+\end{frame}<br>
+</code></div></div><br><br><br>
+<img src="../media/img/packages_beamer8.png" width="800" height="550"><br><br>
 <br>
+
+<div class="subtitle">Blocks</div>
+<div class="text">A block can be easily put in the LaTeX code and can be useful to distinguish between what you want to write about.</div> 
+
+
 <a href="packages_Beamer1.html">
   <button class="buttonpage" style="margin-left: 1px;">
     <i class="fa fa-chevron-circle-left">
