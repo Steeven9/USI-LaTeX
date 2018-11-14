@@ -1,0 +1,266 @@
+<!-- WARNING: WRITE ALL THE TEXT INSIDE THE MAIN AND NOT DIRECTLY ON THE BODY -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Table of contents and Page numbering</title>
+    <meta name="author" content="*NAME_SURNAME*">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+        <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+        <nav>
+            <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
+            <a href="syntax_index.html"class="active">Basic Syntax</a>
+            <a href="graphics_index.html">Graphics</a>
+            <a href="equations_index.html">Equations</a>
+            <a href="packages_index.html">Packages</a>
+            <a href="quiz.html">Quiz</a>
+        </nav>
+        <div class="sidenav">
+                <a href="syntax_First_document.HTML" id="firstsubpage"><center>CREATE YOUR FIRST LATEX</center></a>
+                <a href="syntax_title_section.HTML"><center>TITLE SECTION</center></a>
+                <a href="syntax_basic_paragraphs_and_comments.HTML"><center>PARAGRAPH AND COMMENTS</center></a>
+                <a href="syntax_fonts_and_text_processing.HTML"><center>TEXT PROCESSING</center></a>
+                <a href="LINKSUBPAGE.HTML"><center>FONTS</center></a>
+                <a href="syntax_formatting.HTML"><center>FORMATTING</center></a>
+                <a href="syntax_lists.HTML"><center>LIST</center></a>
+                <a href="LINKSUBPAGE.HTML"><center>DOCUMENT CLASS</center></a>
+                <a href="syntax_TableOfContents.HTML"  class="active"><center>TABLE OF CONTENTS</center></a>
+                <a href="syntax_pageNumbering.HTML"><center>PAGE NUMBERING</center></a>
+                <a href="syntax_footnotes.HTML"><center>FOOTNOTE</center></a>
+                <a href="syntax_language_support.HTML"><center>LANGUAGE SUPPORT</center></a>
+                <a href="syntax_bibManagement.HTML"><center>BIBLIOGRPAHY MANAGMENT</center></a>
+                <a href="syntax_biblatexStyles.HTML"><center>BIBLATEX STYLES</center></a>
+                <a href="LINKSUBPAGE.HTML" id="lastsubpage"><center>BIBTEX STYLES</center></a>
+                
+                
+        </div>
+    <main>
+        <div class="title">Table of contents</div>
+        <div class="indexgeneral"><ul>
+            <li><div class="index"><a href="syntax_TableOfContents.html#first">Autogenerate table</a></div></li>
+            <li><div class="index"><a href="syntax_TableOfContents.html#second">List of figures/tables</a></div></li>
+            <li><div class="index"><a href="syntax_TableOfContents.html#third">Depth</a></div></li>
+            <li><div class="index"><a href="syntax_TableOfContents.html#fourth">Spacing</a></div></li>
+        </ul>
+        <hr>
+        </div>
+        <div class="firstsubtitle" id="first">Autogenerate table</div>
+        <div class="text">
+            Creating the table of contents is quite simple, using only a few 
+            commands:
+        </div>
+        <br>
+            <div class="latex">
+                <div class="paragraph"><b>CODE</b><hr>
+                    <p>\tableofcontents
+                        <br>
+                        <br>
+                        \section{Section}
+                        <br>
+                        <br>
+                        Lorem  ipsum  dolor  sit  amet,  consectetuer  adipiscing  
+                        elit.   Etiam  lobortisfacilisis sem.  Nullam nec mi et 
+                        neque pharetra sollicitudin.  Praesent imperdietmi nec ante. 
+                        Donec ullamcorper, felis non sodales...
+                        <br>
+                        <br>
+                        \subsection{Subsection}
+                        <br>
+                        <br>
+                        Lorem  ipsum  dolor  sit  amet,  consectetuer  adipiscing  
+                        elit.   Etiam  lobortisfacilisis sem.  Nullam nec mi et 
+                        neque pharetra sollicitudin.  Praesent imperdietmi nec ante. 
+                        Donec ullamcorper, felis non sodales...
+                        <br>
+                    </p>
+                </div>
+                <div class="object">
+                    <object type="application/pdf" data="../docs/syntax_TableOfContents1.pdf" height="100%" width="100%"></object>
+                </div>
+            </div>
+        <div class="subtitle" id="second">List of figures/tables</div>
+        <div class="text">
+            A list of figures or tables works in the same way:
+        </div>
+        <br>
+        <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+                <p>\begin{figure} 
+                    <br>
+                    \caption{Figure example}
+                    <br>
+                    \end{figure}
+                    <br>
+                    <br>
+                    \begin{table}
+                    <br>
+                    \caption{Table example}
+                    <br>
+                    \end{table}
+                    <br>
+                    <br>
+                    \listoffigures
+                    <br>
+                    \listoftables
+                </p>
+            </div>
+            <div class="object">
+                <object type="application/pdf" data="../docs/syntax_TableOfContents2.pdf" height="100%" width="100%"></object>
+            </div>
+        </div>
+        <div class="subtitle" id="third">Depth</div>
+        <div class="text">
+            The depth of the table of contents can be manually modified
+            using the command \setcounter{tocdepth}{X}, where X is the desired depth.
+            If X is 0, then the table of content will not be shown. If it is 3, then 
+            even subparagraphs will be shown. The value needs to be set in the preamble 
+            of the document so that it automatically applies to the whole document.
+            <br>
+            <br>
+            Setting X as 1 will give the following output:
+        </div>
+        <br>
+        <div class="latex">
+                <div class="paragraph"><b>CODE</b><hr>
+                        <p>\setcounter{tocdepth}{1}
+                            <br>
+                            <br>
+                            \begin{document}
+                            <br>
+                            <br>
+                            \tableofcontents
+                            <br>
+                            \section{Section}
+                            <br>
+                            <br>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam 
+                            lobortisfacilisis sem. Nullam nec mi et neque pharetra sollicitudin.
+                            Praesent imperdietmi nec ante. Donec ullamcorper, felis non sodales... 
+                            <br>
+                            <br>
+                            \subsection{Subsection} 
+                            <br>
+                            <br>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam 
+                            lobortisfacilisis sem. Nullam nec mi et neque pharetra sollicitudin.
+                            Praesent imperdietmi nec ante. Donec ullamcorper, felis non sodales... 
+                        </p>
+                </div>
+                <div class="object">
+                    <object type="application/pdf" data="../docs/syntax_TableOfContents3.pdf" height="100%" width="100%"></object>
+                </div>
+        </div>
+        <br>
+        <div class="text">
+            Increasing the number, e.g. setting X as 4, will give the following
+            output:
+        </div>
+        <br>
+        <div class="latex">
+                <div class="paragraph"><b>CODE</b><hr>
+                    <p>     \setcounter{tocdepth}{1}
+                            <br>
+                            <br>
+                            \begin{document}
+                            <br>
+                            <br>
+                            \tableofcontents
+                            <br>
+                            \section{Section}
+                            <br>
+                            <br>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam 
+                            lobortisfacilisis sem. Nullam nec mi et neque pharetra sollicitudin.
+                            Praesent imperdietmi nec ante. Donec ullamcorper, felis non sodales... 
+                            <br>
+                            <br>
+                            \subsection{Subsection} 
+                            <br>
+                            <br>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam 
+                            lobortisfacilisis sem. Nullam nec mi et neque pharetra sollicitudin.
+                            Praesent imperdietmi nec ante. Donec ullamcorper, felis non sodales...
+                            <br>
+                            <br>
+                            \paragraph{Paragraph}
+                            <br>
+                            <br>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
+                            lobortisfacilisis sem. Nullam nec mi et neque pharetra sollicitudin. 
+                            Praesent imperdietmi nec ante. Donec ullamcorper, felis non sodales...
+                    </p>
+                </div>
+                <div class="object">
+                    <object type="application/pdf" data="../docs/syntax_TableOfContents4.pdf" height="100%" width="100%"></object>
+                </div>
+        </div>
+        <div class="subtitle" id="fourth">Spacing</div>
+        <div class="text">
+            The easiest way to change the spacing of the table of contents is by 
+            using the setspace package. It needs to be added to your preamble 
+            with the \usepackage{setspace} command. Then, you can set the spacing 
+            for individual parts of your document like this:
+        </div>
+        <br>
+        <div class="latex">
+                <div class="paragraph"><b>CODE</b><hr>
+                    <p> \setcounter{tocdepth}{2}
+                        <br>
+                        \usepackage{setspace}
+                        <br>
+                        <br>
+                        \begin{document}
+                        <br>
+                        <br>
+                        \doublespacing
+                        <br>
+                        \tableofcontents
+                        <br>
+                        \singlespacing
+                        <br>
+                        <br>
+                        \section{Section}
+                        <br>
+                        <br>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                        Etiam lobortisfacilisis sem. Nullam nec mi et neque pharetra 
+                        sollicitudin. Praesent imperdietmi nec ante. Donec ullamcorper, 
+                        felis non sodales... 
+                        <br>
+                        <br>
+                        \subsection{Subsection} 
+                        <br>
+                        <br>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                        Etiam lobortisfacilisis sem. Nullam nec mi et neque pharetra 
+                        sollicitudin. Praesent imperdietmi nec ante. Donec ullamcorper, 
+                        felis non sodales... 
+                        <br>
+                        <br>
+                        \section{Section two}
+                        <br>
+                        <br>
+                        Lorem ipsum dolor sit amet... 
+                        <br>
+                        <br>
+                        \subsection{Subsection two}
+                        Lorem ipsum dolor sit amet...     
+                    </p>
+                </div>
+                <div class="object">
+                    <object type="application/pdf" data="../docs/syntax_TableOfContents5.pdf" height="100%" width="100%"></object>
+                </div>
+            </div>
+        <footer>
+            <address>Page written by Mejrima Smajilbasic</address>
+        </footer>
+    </main>
+</body>
+
+</html>
