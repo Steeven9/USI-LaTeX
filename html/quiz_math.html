@@ -44,6 +44,11 @@
             display: inline-block;
         }
 
+        .paddedCode {
+            margin-left: 30px;
+            display: block;
+        }
+
         .button {
             border: #000 solid 2px;
             width: fit-content;
@@ -88,7 +93,7 @@
             <div id="answQuestion0" class="margin10 answer"></div>
             <label><input type="radio" class="question0" name="question0" value="1">
                 <span class="optionSpan">Option 1:<br>
-                    <code>
+                    <code class="paddedCode">
                         \vec{v}=<br>
                         \begin{pmatrix}<br>
                         a_1&a_2&\cdots&a_n\\<br>
@@ -99,7 +104,7 @@
             </label><br>
             <label><input type="radio" class="question0" name="question0" value="2">
                 <span class="optionSpan">Option 2:<br>
-                    <code>
+                    <code class="paddedCode">
                         \begin{align*}<br>
                         \vec{v}=&<br>
                         \begin{vmatrix}<br>
@@ -112,7 +117,7 @@
             </label><br>
             <label><input type="radio" class="question0" name="question0" value="3"><span class="optionSpan">
                 <span class="optionSpan">Option 3:<br>
-                    <code>
+                    <code class="paddedCode">
                         \begin{align*}<br>
                         \vec{v}=&<br>
                         \begin{pmatrix}<br>
@@ -125,7 +130,7 @@
             </label><br>
             <label><input type="radio" class="question0" name="question0" value="4">
                 <span class="optionSpan">Option 4:<br>
-                    <code>
+                    <code class="paddedCode">
                         \begin{align*}<br>
                         \vec{v}=&<br>
                         \begin{pmatrix}<br>
@@ -173,7 +178,7 @@
             <div id="answQuestion2" class="margin10 answer"></div>
             <label><input type="radio" class="question2" name="question2" value="1">
                 <span class="optionSpan">Option 1:<br>
-                    <code>
+                    <code class="paddedCode">
                         \begin{axis}[domain=0:2*pi,]<br>
                         \addplot {sin(deg(x))};<br>
                         \end{axis}
@@ -182,8 +187,9 @@
             </label><br>
             <label><input type="radio" class="question2" name="question2" value="2">
                 <span class="optionSpan">Option 2:<br>
-                    <code>
-                        \begin{tikzpicture} \begin{axis}<br>
+                    <code class="paddedCode">
+                        \begin{tikzpicture}<br>
+                        \begin{axis}<br>
                         \addplot {sin(deg(x))};<br>
                         \end{axis}<br>
                         \end{tikzpicture}
@@ -192,8 +198,10 @@
             </label><br>
             <label><input type="radio" class="question2" name="question2" value="3">
                 <span class="optionSpan">Option 3:<br>
-                    <code>
-                        \begin{tikzpicture} \begin{axis}[domain=0:2*pi,] \addplot {sin(x)};<br>
+                    <code class="paddedCode">
+                        \begin{tikzpicture}<br>
+                        \begin{axis}[domain=0:2*pi,]<br>
+                        \addplot {sin(x)};<br>
                         \end{axis}<br>
                         \end{tikzpicture}
                     </code>
@@ -201,8 +209,10 @@
             </label><br>
             <label><input type="radio" class="question2" name="question2" value="4">
                 <span class="optionSpan">Option 4:<br>
-                    <code>
-                        \begin{tikzpicture} \begin{axis}[domain=0:2*pi,] \addplot {sin(deg(x))};<br>
+                    <code class="paddedCode">
+                        \begin{tikzpicture}<br>
+                        \begin{axis}[domain=0:2*pi,]<br>
+                        \addplot {sin(deg(x))};<br>
                         \end{axis}<br>
                         \end{tikzpicture}
                     </code>
@@ -250,7 +260,7 @@
                             }
 
                             var total = msg.length;
-                            var grade = points*100/total;
+                            var grade = (points*100/total).toFixed(2);
                             var score = points+"/"+total+" ("+grade+"%). ";
 
                             document.getElementById('score').innerHTML = "Your score: "+score;

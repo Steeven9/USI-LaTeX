@@ -44,6 +44,11 @@
             display: inline-block;
         }
 
+        .paddedCode {
+            margin-left: 30px;
+            display: block;
+        }
+
         .button {
             border: #000 solid 2px;
             width: fit-content;
@@ -85,7 +90,7 @@
         <div class="text margin40 line1-5">
             <div class="margin10">1. Which of the following is the package that you should use to con­struct head­ers and foot­ers and to control their use?</div>
             <div id="answQuestion0" class="margin10 answer"></div>
-            <label><input type="radio" class="question0" name="question0" value="1"><span class="optionSpan">fancyhdr</span></label><br><!---->
+            <label><input type="radio" class="question0" name="question0" value="1"><span class="optionSpan">fancyhdr</span></label><br>
             <label><input type="radio" class="question0" name="question0" value="2"><span class="optionSpan">babel</span></label><br>
             <label><input type="radio" class="question0" name="question0" value="3"><span class="optionSpan">TiKz/PGF</span></label><br>
             <label><input type="radio" class="question0" name="question0" value="4"><span class="optionSpan">caption</span></label>
@@ -95,7 +100,7 @@
             <div class="margin10">2. What is the package that will help you set the page dimensions?</div>
             <div id="answQuestion1" class="margin10 answer"></div>
             <label><input type="radio" class="question1" name="question1" value="1"><span class="optionSpan">inpuntenc</span></label><br>
-            <label><input type="radio" class="question1" name="question1" value="2"><span class="optionSpan">geometry</span></label><br><!---->
+            <label><input type="radio" class="question1" name="question1" value="2"><span class="optionSpan">geometry</span></label><br>
             <label><input type="radio" class="question1" name="question1" value="3"><span class="optionSpan">pgfplots</span></label><br>
             <label><input type="radio" class="question1" name="question1" value="4"><span class="optionSpan">xypic</span></label>
         </div>
@@ -103,7 +108,7 @@
         <div class="text margin40 line1-5">
             <div class="margin10">3. Which of these packages can be used to create diagrams, graphs or trees?</div>
             <div id="answQuestion2" class="margin10 answer"></div>
-            <label><input type="radio" class="question2" name="question2" value="1"><span class="optionSpan">xypic</span></label><br><!---->
+            <label><input type="radio" class="question2" name="question2" value="1"><span class="optionSpan">xypic</span></label><br>
             <label><input type="radio" class="question2" name="question2" value="2"><span class="optionSpan">AMSmath</span></label><br>
             <label><input type="radio" class="question2" name="question2" value="3"><span class="optionSpan">booktabs</span></label><br>
             <label><input type="radio" class="question2" name="question2" value="4"><span class="optionSpan">geometry</span></label>
@@ -151,30 +156,31 @@
                             }
 
                             var total = msg.length;
-                            var grade = points*100/total;
+                            var grade = (points*100/total).toFixed(2);
                             var score = points+"/"+total+" ("+grade+"%). ";
 
                             document.getElementById('score').innerHTML = "Your score: "+score;
 
-                            if (grade==100) {
-                                document.getElementById('score').innerHTML += "Wow, great job!";
-                            } else if (grade>=80) {
-                                document.getElementById('score').innerHTML += "You're close, keep fighting!";
-                            } else if (grade>=60) {
-                                document.getElementById('score').innerHTML += "Not bad, but you can do better.";
-                            } else {
-                                document.getElementById('score').innerHTML += "Meh. Try harder!";
-                            }
-
                             document.getElementById('score').classList.remove("hide");
 
-                            var totalScore = parseInt(localStorage.currentPoints)+points/parseInt(localStorage.currentTotal)+total;
+                            var totalGrade = (parseInt(localStorage.currentPoints)+points)*100/(parseInt(localStorage.currentTotal)+total);
+                            var totalScore = (parseInt(localStorage.currentPoints)+points)+"/"+(parseInt(localStorage.currentTotal)+total)+" ("+totalGrade+"%). ";
 
                             localStorage.currentPoints = 0;
                             localStorage.currentTotal = 0;
-                            localStorage.lastAttempt = score;
+                            localStorage.lastAttempt = totalScore;
 
                             document.getElementById('totalScore').innerHTML = "Your total score: "+totalScore;
+
+                            if (grade==100) {
+                                document.getElementById('totalScore').innerHTML += "Wow, great job!";
+                            } else if (grade>=80) {
+                                document.getElementById('totalScore').innerHTML += "You're close, keep fighting!";
+                            } else if (grade>=60) {
+                                document.getElementById('totalScore').innerHTML += "Not bad, but you can do better.";
+                            } else {
+                                document.getElementById('totalScore').innerHTML += "Meh. Try harder!";
+                            }
 
                             document.getElementById('totalScore').classList.remove("hide");
 

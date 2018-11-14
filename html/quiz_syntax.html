@@ -44,6 +44,11 @@
             display: inline-block;
         }
 
+        .paddedCode {
+            margin-left: 30px;
+            display: block;
+        }
+
         .button {
             border: #000 solid 2px;
             width: fit-content;
@@ -86,7 +91,7 @@
             <div class="margin10">1. How do you make an underlined text?</div>
             <div id="answQuestion0" class="margin10 answer"></div>
             <label><input type="radio" class="question0" name="question0" value="1"><span class="optionSpan">&lt;underline&gt; text &lt;/underline&gt;</span></label><br>
-            <label><input type="radio" class="question0" name="question0" value="2"><span class="optionSpan">\underline{text}</span></label><br><!---->
+            <label><input type="radio" class="question0" name="question0" value="2"><span class="optionSpan">\underline{text}</span></label><br>
             <label><input type="radio" class="question0" name="question0" value="3"><span class="optionSpan">string text = underline(text)</span></label><br>
             <label><input type="radio" class="question0" name="question0" value="4"><span class="optionSpan">Right click the text and press underline</span></label>
         </div>
@@ -94,7 +99,7 @@
         <div class="text margin40 line1-5">
             <div class="margin10">2. How do you declare an item in a list?</div>
             <div id="answQuestion1" class="margin10 answer"></div>
-            <label><input type="radio" class="question1" name="question1" value="1"><span class="optionSpan">\item{text}</span></label><br><!---->
+            <label><input type="radio" class="question1" name="question1" value="1"><span class="optionSpan">\item{text}</span></label><br>
             <label><input type="radio" class="question1" name="question1" value="2"><span class="optionSpan">\begin{item}</span></label><br>
             <label><input type="radio" class="question1" name="question1" value="3"><span class="optionSpan">1. text/span></label><br>
             <label><input type="radio" class="question1" name="question1" value="4"><span class="optionSpan">&lt;li&gt; text &lt;/li&gt;</span></label>
@@ -106,7 +111,7 @@
             <label><input type="radio" class="question2" name="question2" value="1"><span class="optionSpan">.txt</span></label><br>
             <label><input type="radio" class="question2" name="question2" value="2"><span class="optionSpan">.tex</span></label><br>
             <label><input type="radio" class="question2" name="question2" value="3"><span class="optionSpan">.rkt</span></label><br>
-            <label><input type="radio" class="question2" name="question2" value="4"><span class="optionSpan">.bib or .bibtex</span></label><!---->
+            <label><input type="radio" class="question2" name="question2" value="4"><span class="optionSpan">.bib or .bibtex</span></label>
         </div>
 
         <div id="score" class="text margin10 hide"></div>
@@ -149,7 +154,7 @@
                             }
 
                             var total = msg.length;
-                            var grade = points*100/total;
+                            var grade = (points*100/total).toFixed(2);
                             var score = points+"/"+total+" ("+grade+"%). ";
 
                             document.getElementById('score').innerHTML = "Your score: "+score;

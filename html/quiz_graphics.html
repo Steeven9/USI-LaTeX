@@ -44,6 +44,11 @@
             display: inline-block;
         }
 
+        .paddedCode {
+            margin-left: 30px;
+            display: block;
+        }
+
         .button {
             border: #000 solid 2px;
             width: fit-content;
@@ -87,7 +92,7 @@
             <div id="answQuestion0" class="margin10 answer"></div>
             <label><input type="radio" class="question0" name="question0" value="1"><span class="optionSpan">\begine[figure]</span></label><br>
             <label><input type="radio" class="question0" name="question0" value="2"><span class="optionSpan">\includegraphics{figure}</span></label><br>
-            <label><input type="radio" class="question0" name="question0" value="3"><span class="optionSpan">\begin{figure}[...]</span></label><br><!---->
+            <label><input type="radio" class="question0" name="question0" value="3"><span class="optionSpan">\begin{figure}[...]</span></label><br>
             <label><input type="radio" class="question0" name="question0" value="4"><span class="optionSpan">\image{figure}</span></label>
         </div>
 
@@ -95,7 +100,7 @@
             <div class="margin10">2. Which option should I use to place an image on top of the page?</div>
             <div id="answQuestion1" class="margin10 answer"></div>
             <label><input type="radio" class="question1" name="question1" value="1"><span class="optionSpan">\begin{figure}[h]</span></label><br>
-            <label><input type="radio" class="question1" name="question1" value="2"><span class="optionSpan">\begin{figure}[t]</span></label><br><!---->
+            <label><input type="radio" class="question1" name="question1" value="2"><span class="optionSpan">\begin{figure}[t]</span></label><br>
             <label><input type="radio" class="question1" name="question1" value="3"><span class="optionSpan">\begin{figure}[up]</span></label><br>
             <label><input type="radio" class="question1" name="question1" value="4"><span class="optionSpan">\begin{figure}[pagetop]</span></label>
         </div>
@@ -107,7 +112,7 @@
 
             <label><input type="radio" class="question2" name="question2" value="1">
                 <span class="optionSpan">Option 1:<br>
-                    <code class="margin10 inlb">
+                    <code class="paddedCode">
                         example & \multicolumn{3}{c|} {\multirow{3}{*}{solution} } & not empty \\\cline{1-1}\cline{5-5}<br>
                         example &  &  & & not empty\\\cline{1-1}\cline{5-5}<br>
                         empty &  &  &  & not empty\\\hline
@@ -116,7 +121,7 @@
             </label><br>
             <label><input type="radio" class="question2" name="question2" value="2">
                 <span class="optionSpan">Option 2:<br>
-                    <code class="margin10 inlb">example & \multicolumn{3}{c|} {\multirow{3}{*}{solution} } & not empty \\\cline{1-1}\cline{5-5}<br>
+                    <code class="paddedCode">example & \multicolumn{3}{c|} {\multirow{3}{*}{solution} } & not empty \\\cline{1-1}\cline{5-5}<br>
                     example & \multicolumn{1}{c|}{} & not empty\\\cline{1-1}\cline{5-5}<br>
                     empty &  \multicolumn{1}{c|}{} & not empty\\\hline
                 </code>
@@ -124,7 +129,7 @@
             </label><br>
             <label><input type="radio" class="question2" name="question2" value="3">
                 <span class="optionSpan">Option 3:<br>
-                    <code class="margin10 inlb">
+                    <code class="paddedCode">
                         example & \multicolumn{3}{c|} {\multirow{3}{*}{solution} } & not empty \\\hline<br>
                         example & \multirow{3}{*}{solution} & not empty\\\hline<br>
                         empty &  \multirow{3}{*}{solution} & not empty\\\hline
@@ -133,29 +138,53 @@
             </label><br>
             <label><input type="radio" class="question2" name="question2" value="4">
                 <span class="optionSpan">Option 4:<br>
-                    <code class="margin10 inlb">
+                    <code class="paddedCode">
                         example & \multicolumn{3}{c|} {\multirow{3}{*}{solution} } & not empty \\\cline{1-1}\cline{5-5}<br>
                         example & \multicolumn{3}{c|}{} & not empty\\\cline{1-1}\cline{5-5}<br>
                         empty &  \multicolumn{3}{c|}{} & not empty\\\hline
                     </code>
                 </span>
-            </label><!---->
+            </label>
         </div>
 
         <div class="text margin40 line1-5">
             <div class="margin10">4. Which is the right command sequence if I want to rotate an image?</div>
             <div id="answQuestion3" class="margin10 answer"></div>
             <label><input type="radio" class="question3" name="question3" value="1">
-                <span class="optionSpan">\begin{figure}  \includegraphics[width=.5\textwidth, rotate=270]{USI-LOGO.png}  \end{figure}</span>
+                <span class="optionSpan">Option 1:<br>
+                    <code class="paddedCode">
+                        \begin{figure} <br>
+                        \includegraphics[width=.5\textwidth, rotate=270]{USI-LOGO.png} <br>
+                        \end{figure}
+                    </code>
+                </span>
             </label><br>
             <label><input type="radio" class="question3" name="question3" value="2">
-                <span class="optionSpan">\begin{figure}  \includegraphics[width=.5\textwidth, angle=270]{USI-LOGO.png}  \end{figure}</span><!---->
-            </label><br><!---->
+                <span class="optionSpan">Option 2:<br>
+                    <code class="paddedCode">
+                        \begin{figure} <br>
+                        \includegraphics[width=.5\textwidth, angle=270]{USI-LOGO.png} <br>
+                        \end{figure}
+                    </code>
+                </span>
+            </label><br>
             <label><input type="radio" class="question3" name="question3" value="3">
-                <span class="optionSpan">\begin{figure}  \includegraphics[width=.5\textwidth, rotate(270)]{USI-LOGO.png}  \end{figure}</span>
+                <span class="optionSpan">Option 3:<br>
+                    <code class="paddedCode">
+                        \begin{figure} <br>
+                        \includegraphics[width=.5\textwidth, rotate(270)]{USI-LOGO.png} <br>
+                        \end{figure}
+                    </code>
+                </span>
             </label><br>
             <label><input type="radio" class="question3" name="question3" value="4">
-                <span class="optionSpan">\begin{figure}  \includegraphics[width=.5\textwidth, degrees=270]{USI-LOGO.png}  \end{figure}</span>
+                <span class="optionSpan">Option 4:<br>
+                    <code class="paddedCode">
+                        \begin{figure} <br>
+                        \includegraphics[width=.5\textwidth, degrees=270]{USI-LOGO.png} <br>
+                        \end{figure}
+                    </code>
+                </span>
             </label>
         </div>
 
@@ -201,7 +230,7 @@
                             }
 
                             var total = msg.length;
-                            var grade = points*100/total;
+                            var grade = (points*100/total).toFixed(2);
                             var score = points+"/"+total+" ("+grade+"%). ";
 
                             document.getElementById('score').innerHTML = "Your score: "+score;

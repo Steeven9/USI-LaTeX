@@ -44,6 +44,11 @@
             display: inline-block;
         }
 
+        .paddedCode {
+            margin-left: 30px;
+            display: block;
+        }
+
         .button {
             border: #000 solid 2px;
             width: fit-content;
@@ -87,7 +92,7 @@
             <div id="answQuestion0" class="margin10 answer"></div>
             <label><input type="radio" class="question0" name="question0" value="1"><span class="optionSpan">Yes</span></label><br>
             <label><input type="radio" class="question0" name="question0" value="2"><span class="optionSpan">No</span></label><br>
-            <label><input type="radio" class="question0" name="question0" value="3"><span class="optionSpan">Maybe</span></label><br><!---->
+            <label><input type="radio" class="question0" name="question0" value="3"><span class="optionSpan">Maybe</span></label><br>
             <label><input type="radio" class="question0" name="question0" value="4"><span class="optionSpan">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></label>
         </div>
 
@@ -96,17 +101,17 @@
             <div id="answQuestion1" class="margin10 answer"></div>
             <label><input type="radio" class="question1" name="question1" value="1"><span class="optionSpan">A programming language</span></label><br>
             <label><input type="radio" class="question1" name="question1" value="2"><span class="optionSpan">An abbreviation</span></label><br>
-            <label><input type="radio" class="question1" name="question1" value="3"><span class="optionSpan">A document preparation system</span></label><br><!---->
+            <label><input type="radio" class="question1" name="question1" value="3"><span class="optionSpan">A document preparation system</span></label><br>
             <label><input type="radio" class="question1" name="question1" value="4"><span class="optionSpan">A rare animal</span></label>
         </div>
 
         <div class="text margin40 line1-5">
-            <div class="margin10">3. Nate?</div>
+            <div class="margin10">3. Who invented LaTeX?</div>
             <div id="answQuestion2" class="margin10 answer"></div>
-            <label><input type="radio" class="question2" name="question2" value="1"><span class="optionSpan">Yes</span></label><br><!---->
-            <label><input type="radio" class="question2" name="question2" value="2"><span class="optionSpan">Yes</span></label><br>
-            <label><input type="radio" class="question2" name="question2" value="3"><span class="optionSpan">Yes</span></label><br>
-            <label><input type="radio" class="question2" name="question2" value="4"><span class="optionSpan">Yes</span></label>
+            <label><input type="radio" class="question2" name="question2" value="1"><span class="optionSpan">Donald Knuth</span></label><br>
+            <label><input type="radio" class="question2" name="question2" value="2"><span class="optionSpan">Leslie Lamport</span></label><br>
+            <label><input type="radio" class="question2" name="question2" value="3"><span class="optionSpan">Tim Berners-Lee</span></label><br>
+            <label><input type="radio" class="question2" name="question2" value="4"><span class="optionSpan">Gabriele Bavota</span></label>
         </div>
 
         <div id="score" class="text margin10 hide"></div>
@@ -149,7 +154,7 @@
                             }
 
                             var total = msg.length;
-                            var grade = points*100/total;
+                            var grade = (points*100/total).toFixed(2);
                             var score = points+"/"+total+" ("+grade+"%). ";
 
                             document.getElementById('score').innerHTML = "Your score: "+score;
