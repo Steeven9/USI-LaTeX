@@ -1,0 +1,129 @@
+<html>
+      <head>
+            <link rel="stylesheet" href="../css/style.css">
+      </head>
+    <body>
+     <meta name="author" content="Andrea di Micco">
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+    <nav>
+                <a href="general_index.html">Getting Started</a>
+                <a href="syntax_index.html" >Basic Syntax</a>
+                <a href="graphics_index.html">Graphics</a>
+                <a href="equations_index.html">Equations</a>
+                <a href="packages_index.html"class="active">Packages</a>
+                <a href="quiz.html">Quiz</a>
+            </nav>
+            <div class="sidenav">
+                <a href="packages_IntroNewcommands.html" id="firstsubpage"><center>PACKAGES INTRODUCTION</center></a>
+                <a href="packages_newcommands.html"><center>NEW COMMANDS</center></a>
+                <a href="packages_fancyhdr.HTML"><center>FANCYHDR</center></a>
+                <a href="packages_quotchap.html"><center>QUOTCHAP</center></a>
+                <a href="packages_todonotes.html"><center>TODONOTES</center></a>
+                <a href="packages_geometry.html"><center>GEOMETRY</center></a>
+                <a href="packages_geometry2.html"><center>MORE ABOUT GEOMETRY </center></a>
+                <a href="packages_hyperref_babel_xcolor.html"class="active"><center>HYPERREF</center></a>
+                <a href="packages_hyperref_babel_xcolor2.html"><center>BABEL </center></a>
+                <a href="packages_hyperref_babel_xcolor3.html" ><center>XCOLOR</center></a>
+                <a href="packages_Beamer1.html"><center>BEAMER</center></a>
+                <a href="packages_Beamer2.html"><center>MORE ABOUT BEAMER</center></a>
+                <a href="packages_TOP5.html"><center>TOP5</center></a>
+            </div>
+
+
+<main>
+  <div class="title">fancyhdr</div>
+  <div class="indexgeneral">
+     <ol>
+        <div class="index"><a href="#firstpart"><li>What is the fancyhdr?</li></a></div>
+        <br>
+        <div class="index"><a href="#secondpart"><li>Simple use</li></a></div>
+        <br>
+        <div class="index"><a href="#thirdpart"><li>Examples</li></a></div>
+      </ol>
+  </div>
+  <hr>
+
+
+  <div class="title" id="Firstpart">What is the fancyhdr?</div>
+  <div class="text">The fancyhdr macro package allows you to customize in LATEX your page headers and footers in
+    an easy way. You can define:
+    <ul>
+      <li>three-part headers and footers</li>
+      <li>decorative lines in headers and footers</li>
+      <li>headers and footers wider than the width of the text</li>
+      <li>multi-line headers and footers</li>
+      <li>separate headers and footers for even and odd pages</li>
+      <li>different headers and footers for chapter pages</li>
+      <li>different headers and footer on pages with floats</li>
+    </ul>
+    Of course, you also have complete control over fonts, uppercase and lowercase displays, etc.
+  </div>
+  <br>
+  <br>
+
+
+
+  <div class="title" id="secondpart">Simple use of fancyhdr</div>
+  <div class="subtitle">Title page and information</div>
+  <div class="text"> To use this package in a LATEX document, place the file fancyhdr.sty in a directory/folder
+    where TEX can find it (normally in the input directory/folder), and include in the preamble of
+    your document after</div>
+    <div class="codebox" style="width: 200px;"><div class="paragraph"><b>CODE</b><hr>
+    <pre>\documentclass{...}</pre>
+    the commands:
+    <pre>\usepackage{fancyhdr}</pre>
+    <pre>\pagestyle{fancy}</pre></div>
+    <br><br></div>
+
+    We can visualize the page layout we can create with fancyhdr as follows:
+    <br>
+    <img src="../media/img/packages_fancyhdr1.png" alt="Fancyhdr screenshot" width="800" height="400">
+    <br>
+    The LeftHeader and LeftFooter are left justified; the CenteredHeader and CenteredFooter are
+    centered; the RightHeader and RightFooter are right justified.
+    We define each of the six “fields” and the two decorative lines separately.
+    <br><br>
+
+
+
+<div class="title" id="thirdpart"> Let's a pair of simple example</div>
+  <br>
+<div class="text">K. Grant is writing a report to Dean A. Smith, on “The performance of new graduates” so we want this type of layout:</div>
+      <img src="../media/img/packages_fancyhdr2.png" alt="Fancyhdr screenshot" width="800" height="400">
+
+      <br><br>where 3 is the page number. The title: The performance of new graduates is bold.  <br>  `1`
+      <br>
+      This is accomplished by these commands following <div class="codebox" style="width: 600px;"><div class="paragraph"><b>CODE</b><hr> <pre>\pagestyle{fancy}</pre>
+      <pre>
+        \lhead{}
+        \chead{}
+        \rhead{\textbf{The performance of new graduates}}
+        \lfoot{From: K. Grant}
+        \cfoot{To: Dean A. Smith}
+        \rfoot{\thepage}
+        \renewcommand{\headrulewidth}{0.4pt}
+        \renewcommand{\footrulewidth}{0.4pt}
+      </pre></div></div>
+        <pre>\thepage</pre> macro displays the current page number. <pre>\textbf</pre> puts it in bold face.)
+        This is now fine, except that the first page does not need all these headers and footers. To eliminate
+        all but the centered page number, issue the command
+        <pre>\thispagestyle{plain}</pre>
+        after the <pre>\begin{document}</pre> and the <pre>\maketitle</pre> commands.
+        Alternatively, issue
+        <pre>\thispagestyle{empty}</pre>
+        if you do not want any headers or footers.
+        In fact the standard LATEX classes have the command \maketitle defined in such a way that a
+        <pre>\thispagestyle{plain}</pre> is automatically issued. So if you do want the fancy layout on a page
+        containing \maketitle you must issue a \thispagestyle{fancy} after the \maketitle.
+  <br>
+  <br><br>
+
+
+
+  <footer>
+      <address>Page written by Andrea Di Micco</address>
+  </footer>
+</main>
+   </body>
+
+  </html>
