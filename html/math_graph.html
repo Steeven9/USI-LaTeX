@@ -21,12 +21,24 @@
         <a href="quiz.html">Quiz</a>
     </nav>
     <div class="sidenav">
-        <a href="general.html" id="firstsubpage">Getting Started</a> <!-- Put the class="active" on your subpage -->
-        <a href="basic.html">Basic Syntax</a>
-        <a href="graphics.html">Graphics</a>
-        <a href="equations.html" class="active" >Equations</a>
-        <a href="packages.html">Packages</a>
-        <a href="quiz.html" id="lastsubpage">Quiz</a>
+            <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+            <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+            <div class="subpage"><div class="subpagepadding">Title Section ↓</div>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 1</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 2</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 3</a></div>
+            <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+            <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Fonts</a>
+            <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+            <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Document Class</a>
+            <a href="syntax_TableOfContentsAndPageNumber.HTML" class="sidenavlink">Table of Contents<br>and Page Numbering</a>
+            <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+            <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+            <a href="syntax_bibManagement.HTML" class="sidenavlink" class="active">Bibliography Management</a>
+            <a href="syntax_biblatexStyles.HTML" class="sidenavlink">BibLaTeX Style</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">BibTeX Style</a>
     </div>
 
 
@@ -43,29 +55,33 @@
       <hr>
       </div>
 
-            <div class="text">In this section we will take a look at how to draw graph
+      <div class="text">In this section we will take a look at how to draw graph
             in Latex. this can be easily made in Latex, it's simple, fast, and the result
             is compact and clean. For drawing graph we will need to use two packages: TikZ and PGF,
              so before starting don't forget to add them to the Latex documen.</br>
             To add the packages write the following line before the start of the document</br>
             </br>
-            <code class="codebox">
+        <div class="codebox"><b>CODE</b><hr>
+          <code>
             \usepackage{tikz}</br>
             \usepackage{pgfplot}
           </code>
-          </div>
+        </div>
+      </div>
 
         <div class="subtitle" id="1">Drawing a Cartesian plane.</div>
           <div class="text">For drawing a Cartesian plane we need firs to create the environment
             for the code. ...</br>
           </br>
-          <code class="codebox">
+      <div class="codebox"><b>CODE</b><hr>
+        <code>
           \begin{tikzpicture}</br>
 	         \begin{axis}[option of the axis]</br>
           ...</br>
           \end{axis}</br>
           \end{tikzpicture}</br>
         </code>
+      </div>
           </br>
           We can customize the axis by adding commands between the parentesis:
            [option1, option2, option3,...]. We can choose the maximum and the minimal value to
@@ -76,17 +92,18 @@
           For example if we want to display a cartesian plane where the axis x and y
           go from -5 to 5 we can write:</br>
           </br>
-          <code class="codebox">
+      <div class="codebox"><b>CODE</b><hr>
+        <code>
           \begin{tikzpicture}</br>
 	         \begin{axis}[xmin=-5, xmax=5, ymin=-5, ymax=5, axis x line=middle, axis y line=middle]</br>
           </br>
           \end{axis}</br>
           \end{tikzpicture}</br>
-          </br>
         </code>
-          Te result will be:</br>
+      </div>
+          </br>
 
-          <img src="../media/img/cartesian_plane.png" style="width: 40%;">
+          <img src="../media/img/cartesian_plane.png" class="centerimagesbig" style="width: 40%; height: 40%;">
           </div>
 
         <div class="subtitle" id="2">Adding equation.</div>
@@ -97,24 +114,26 @@
           now the domain will go from -4 to 5. Now if we want to display the graph of the function
           F(x)=2x+2 we simply use the following code:</br>
         </br>
-        <code class="codebox">
+    <div class="codebox"><b>CODE</b><hr>
+      <code>
         \begin{tikzpicture}</br>
          \begin{axis}[xmin=-5, xmax=5, ymin=-5, ymax=5, axis x line=middle, axis y line=middle]</br>
         \addplot[domain=-5:5]{2*x+2};</br>
         \end{axis}</br>
         \end{tikzpicture}</br>
-        </br>
       </code>
-        Te result will be:</br>
+    </div>
+        </br>
 
-        <img src="../media/img/first_equation.png" style="width: 40%;">
+        <img src="../media/img/first_equation.png" class="centerimagesbig" style="width: 40%; height: 40%;">
       </br></br>
       We can also add more than one function in a single graph, to do this we just add another
       \addplot[]{}; in the same environment. When adding multiple function in a graph is better
       to distinguish them, Latex allow us to choose a color for each function. Now we will add
       two more function, one with a red line and one with a blue line:</br>
     </br>
-    <code class="codebox">
+  <div class="codebox"><b>CODE</b><hr>
+    <code>
       \begin{tikzpicture}</br>
        \begin{axis}[xmin=-5, xmax=5, ymin=-5, ymax=5, axis x line=middle, axis y line=middle]</br>
       \addplot[domain=-5:5]{2*x+2};</br>
@@ -122,11 +141,11 @@
       \addplot[domain=-5:5, color=blue]{2*x+2};</br>
       \end{axis}</br>
       \end{tikzpicture}</br>
-      </br>
     </code>
-      Te result will be:</br>
+  </div>
+      </br>
 
-      <img src="../media/img/second_equation.png" style="width: 40%;">
+      <img src="../media/img/second_equation.png" class="centerimagesbig" style="width: 40%; height: 40%;">
         </div>
 
           <div class="subtitle" id="3">Adding points.</div>
@@ -137,9 +156,10 @@
             point.So if we want to add four dot in the intersection of our function the code will
             be:</br>
           </br>
-          <code class="codebox">
+        <div class="codebox"><b>CODE</b><hr>
+          <code>
             \begin{tikzpicture}</br>
-             \begin{axis}[xmin=-5, xmax=5, ymin=-5, ymax=5, axis x line=middle, axis y line=middle]</br>
+            \begin{axis}[xmin=-5, xmax=5, ymin=-5, ymax=5, axis x line=middle, axis y line=middle]</br>
             \addplot[domain=-5:5]{2*x+2};</br>
             \addplot[domain=-5:5, color=red]{2*x+2};</br>
             \addplot[domain=-5:5, color=blue]{2*x+2};</br>
@@ -149,11 +169,11 @@
             \addplot[matk=*] coordinates {(0,2)};</br>
             \end{axis}</br>
             \end{tikzpicture}</br>
-            </br>
           </code>
-          Te result will be:</br>
+        </div>
+         </br>
 
-          <img src="../media/img/points_equation.png" style="width: 40%;">
+          <img src="../media/img/points_equation.png" class="centerimagesbig" style="width: 40%; height: 40%;">
           </div>
 
           <div class="subtitle" id="4">Adding text.</div>
@@ -161,17 +181,18 @@
             add: [title=Title goes here] after the: \begin{axis}. the code will look
           like this:</br>
         </br>
-        <code class="codebox">
+    <div class="codebox"><b>CODE</b><hr>
+      <code>
         \begin{tikzpicture}</br>
         \begin{axis}[title=Here goes the title]</br>
         \addplot[domain=0:5]{x+2};</br>
         \end{axis}</br>
         \end{tikzpicture}</br>
-        </br>
       </code>
-        te result will be:</br>
+    </div>
+        </br>
 
-        <img src="../media/img/title_graph.png" style="width: 40%;">
+        <img src="../media/img/title_graph.png" class="centerimagesbig" style="width: 40%; height: 40%;">
         </div>
 
 
@@ -181,7 +202,7 @@
                 put 2 dot where the function intersect with the x axis.</br>
               For the solution move the mouse over the black box on the right side. </p>
                 <div class="blackbox">
-                  <code class="codebox">
+                  <code>
                   \begin{tikzpicture}</br>
                   \begin{axis}[xmax=5, xmin=-5, ymax=5, ymin=-5, axis x line=middle, axis y line=middle]</br>
                   \addplot[domain=-5:5]{x^2-4};</br>

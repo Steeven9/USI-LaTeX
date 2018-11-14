@@ -11,16 +11,42 @@
 
 <body>
     <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html" class="active">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+        <a href="general_index.html" id="firstsubpage">Getting Started</a> <!-- Put the class="active" on your subpage -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html" id="lastsubpage">Quiz</a>
+    </div>
     <main>
-        <div class="titles">Latex in relation to math</div>
-        <div class="subtitles">Matrices</div>
+      <div class="title">
+        Index
+      </div>
+      <div class="indexgeneral"><ul>
+          <li><div class="index"><a href="NAMEOFTHISFILE.html#first">*NAME OF THE FIRST SUBTITLE*</a></div></li>
+          <li><div class="index"><a href="NAMEOFTHISFILE.html#second">*NAME OF THE SECOND SUBTITLE*</a></div></li>
+          <li><div class="index"><a href="NAMEOFTHISFILE.html#third">*NAME OF THE THIRD SUBTITLE*</a></div></li>
+      </ul>
+      <hr>
+      </div>
+        <div class="title">Latex in relation to math</div>
+        <div class="subtitle">Matrices</div>
         <div class="text">
         A matrix is a way to represent and manupulate linear transformations.
         <br>
         In general any linear transformation can be represented using matrices in
         the following way:<br>
-        <img src="../media/img/lintransf.png" style="width: 40%;"><br>
-        <img src="../media/img/matrix.png" style="width: 40%;"><br>
+        <img src="../media/img/lintransf.png" class="centerimagesbig"><br>
+        <img src="../media/img/matrix.png" class="centerimagesbig"><br>
         This said, i won't explain the math behind matrices any further and i will
         go on now with the Latex code necessary to replicate both the linear
         transformation and the matrix above.<br>
@@ -41,34 +67,40 @@
           after as beginning of the alignment. They might also be multiples point of
           alignement<br>
           I will now make an example to clarify:<br>
-          \begin{align}<br>
-          ax= a_1 +a_2+a_3+a_4\cdots a_n\\ <br>
-          y=b_1 + b_2 +b_3+b_4\cdots b_m\\<br>
-          a_n,b_n\in\mathbb{b}\quad m,n\in\mathbb{N}\\<br>
-          \end{align}<br>
+          <div class="codebox"><b>CODE</b><hr>
+              <p>\begin{align}<br>
+              ax= a_1 +a_2+a_3+a_4\cdots a_n\\ <br>
+              y=b_1 + b_2 +b_3+b_4\cdots b_m\\<br>
+              a_n,b_n\in\mathbb{b}\quad m,n\in\mathbb{N}\\<br>
+              \end{align}<br>
+            </p>
+          </div>
           This will result in three unaligned expressions, since we didn't put &
           to express where we want the alignment.
-          <br> <img src="../media/img/unaligned.png" style="width:40%;">
-          <br>
-          \begin{align}<br>
-          &x= a_1 +a_2+a_3+a_4\cdots a_n\\<br>
-          &y=b_1 + b_2 +b_3+b_4\cdots b_m\\<br>
-          &a_n,b_n\in\mathbb{b}\quad m,n\in\mathbb{N}\\<br>
-          \end{align}<br>
+          <img src="../media/img/unaligned.png" class="centerimagesbig">
+          <div class="codebox"><b>CODE</b><hr>
+              <p>\begin{align}<br>
+              &x= a_1 +a_2+a_3+a_4\cdots a_n\\<br>
+              &y=b_1 + b_2 +b_3+b_4\cdots b_m\\<br>
+              &a_n,b_n\in\mathbb{b}\quad m,n\in\mathbb{N}\\<br>
+              \end{align}<br>
+            </p>
+          </div>
           This one will align them by x for the first row, y for the second  and
           a_n for the third.
-          <img src="../media/img/align.png" style="width: 40%"><br>
-
-          \begin{align*}<br>
-          &x: & a_1 +a_2+a_3+a_4\cdots a_n\\<br>
-          &y: &b_1 + b_2 +b_3+b_4\cdots b_m\\<br>
-          &a_n,b_n\in\mathbb{R} & m,n\in\mathbb{N}\\<br>
-          \end{align*}<br>
+          <img src="../media/img/align.png" class="centerimagesbig"><br>
+          <div class="codebox"><b>CODE</b><hr>
+              \begin{align*}<br>
+              &x: & a_1 +a_2+a_3+a_4\cdots a_n\\<br>
+              &y: &b_1 + b_2 +b_3+b_4\cdots b_m\\<br>
+              &a_n,b_n\in\mathbb{R} & m,n\in\mathbb{N}\\<br>
+              \end{align*}<br>
+            </p>
+          </div>
           This last one will have 2 alignment, the first will be the same as for
           above, and the second alignment will be for a_1 in the first row, b_1
           in the second and m,n in the third.
-          <img src="../media/img/dalign.png" style="width:40%;">
-          <br>
+          <img src="../media/img/dalign.png" class="centerimagesbig">
           To remove the numbers that appear to the very right a * must be added
           after align both in the \begin and \end.
           \begin{align*}<br>
@@ -77,15 +109,20 @@
           and a table.<br>
           <h3>To sum up the important concepts:</h3>
           To align multiple expressions to 1 or multiple points the following
-          code is necessary.<br>
-          <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
-          \begin{align}<br>
-          0-th field (if any) & first field to align &second field to align...& n-th field to align\\<br>
-          0-th field (if any) & first field to align &second field to align...&b-th field to align\\<br>
-          ...<br>
-          \end{align}</div>
-          And <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
+          code is necessary.
+          <div class="codebox"><b>CODE</b><hr>
+              <p>\begin{align}<br>
+              0-th field (if any) & first field to align &second field to align...& n-th field to align\\<br>
+              0-th field (if any) & first field to align &second field to align...&b-th field to align\\<br>
+              ...<br>
+              \end{align}</p>
+          </div>
+          And <div class="codebox">
+            <b>CODE</b>
+            <hr>
+            <p>
             \begin{align*}...\end{align*}
+          </p>
           </div>
              is needed to remove the number that count
           the corrent expression.
@@ -97,81 +134,107 @@
           indicates the end of a row and the & symbols indicates that end of the
           element of that coloumn in that row. It is also worth noting that three
           different parenthesis can be made for the matrices.
-          Let's make an example to clarify:<br>
+          Let's make an example to clarify:
+          <div class="codebox">
+            <b>CODE</b>
+            <p>
           \begin{pmatrix}<br>
           a_{11}&a_{12}\\<br>
           a_{21}&a_{22}}\\<br>
           \end{pmatrix}<br>
+        </p>
+      </div>
           Here pmatrix indicates that we want round parenthesis, the end result
-          will be.<br>
-          <img src="../media/img/pmatrix.png" style="width:20%;"><br>
-          Of corse the members of the matrix can be any symbol or expression:<br>
+          will be.
+          <img src="../media/img/pmatrix.png" class="centerimagesbig"><br>
+          Of corse the members of the matrix can be any symbol or expression:
+          <div class="codebox">
+            <b>CODE</b>
+            <p>
           \begin{vmatrix}<br>
           a_{11}&a_{12}&\cdots&a_{1n}\\<br>
           a_{21}&a_{22}&\cdots&a_{2n}\\<br>
           \vdots &\vdots& \ddots&\vdots\\<br>
           \displaystyle\sum_{k=1}^n k&\cdots&
           \sin\epsilon&x^{\frac{\phi}{3}}\\<br>
-          \end{vmatrix}<br>
+          \end{vmatrix}
+        </p>
+      </div>
           That will give the following matrix that since it is a vmatrix will have
-          vertical parenthesis.<br>
-          <img src="../media/img/vmatrix.png" style="width: 40%;"><br>
+          vertical parenthesis.
+          <img src="../media/img/vmatrix.png" class="centerimagesbig">
           To obtain square brackets bmatrix must be used.
           <h3>To sum up the important concepts</h3>
           To make a matrix with square brackets:
-          <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
-          \begin{bmatrix}...\end{bmatrix}</div>
+          <div class="codebox">
+            <b>CODE</b>
+            <p>
+          \begin{bmatrix}...\end{bmatrix}
+        </p>
+        </div>
           To make a matrix with round brackets:
-          <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
-          \begin{pmatrix}...\end{pmatrix}</div>
+          <div class="codebox">
+            <b>CODE</b>
+            <p>
+          \begin{pmatrix}...\end{pmatrix}
+        </p>
+        </div>
           To make a matrix with vertical brackets:
-          <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
-          \begin{vmatrix}...\end{vmatrix}</div>
+          <div class="codebox">
+            <b>CODE</b>
+            <p>
+          \begin{vmatrix}...\end{vmatrix}
+        </p>
+      </div>
           To make a matrix with no brackets:
-          <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
-          \begin{matrix}...\end{matrix}</div>
+          <div class="codebox">
+            <b>CODE</b>
+            <p>
+          \begin{matrix}...\end{matrix}
+        </p>
+      </div>
           And matrix, similarly to tables, follow the form:
-          <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
+          <div class="codebox">
+            <b>CODE</b>
+            <p>
             \begin{matrix}<br>
             firstrow first element & firstrow second element & ...firstrow n-th element\\<br>
             2-ndrow first element & 2-ndrow second element & ...2-ndrow n-th element\\<br>
             ...<br>
             m-throw first element & m-throw second element & ...m-throw n-th element\\<br>
             \end{matrix}
+          </p>
           </div>
           <div class="subtitles">
-            Vectors</div>
+            Vectors
+          </div>
             It should be obvious that to make a vector it is enough to make a
             matrix with either only one coloumn or only one row, that said, there
             is a command to make the symbol of a vector, or namely, a letter with
             an arrow above it to indicate it is a vector.<br>
             Example:
-            <div style=" font-weight: 600; color:blue; font-size: 0.8em;">
+            <div class="codebox">
+              <b>CODE</b>
+              <p>
               $\vec{v}=<br>
               \begin{pmatrix}<br>
                     a1\\<br>
                     a2\\<br>
-                    \end{pmatrix}$<br>
+                    \end{pmatrix}$
+                    <p>
             </div>
             That will output<br>
-            <img src="../media/img/vector.png" style="width: 20%;">
+            <img src="../media/img/vector.png" class="centerimagesbig">
 
-
-
-
-
-
-
-
-        </thead>
-
-          </thead>
+        </div>
+        <div class="subtitle">
+          EXERCISES
         </div>
         <div class="exercises">
-            <p>To check that all this new concept are been understood i would
+            <p>To check that all these new concepts have been understood i would
             like to invite the reader to try and replicate the following expression
           in latex
-          <img src="../media/img/matrixexercise.png" style="width:40%;">
+          <img src="../media/img/matrixexercise.png" class="centerimagesbig">
         </p>
             <div class="blackbox">
               \begin{align*}<br>
@@ -191,12 +254,3 @@
 </body>
 
 </html>
-
-<!-- END BASE PAGE -->
-
-
-
-
-
-
-<!-- BLAXKBOX WITH LEFT TEXT -->

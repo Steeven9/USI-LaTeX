@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Drawing figures in Latex 2</title>
+    <meta name="author" content="Alessio Giovagnini">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+
+    <nav>
+        <a href="general_index.html" >Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html" class="active">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+            <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+            <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+            <div class="subpage"><div class="subpagepadding">Title Section ↓</div>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 1</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 2</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 3</a></div>
+            <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+            <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Fonts</a>
+            <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+            <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Document Class</a>
+            <a href="syntax_TableOfContentsAndPageNumber.HTML" class="sidenavlink">Table of Contents<br>and Page Numbering</a>
+            <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+            <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+            <a href="syntax_bibManagement.HTML" class="sidenavlink" class="active">Bibliography Management</a>
+            <a href="syntax_biblatexStyles.HTML" class="sidenavlink">BibLaTeX Style</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">BibTeX Style</a>
+    </div>
+
+    <main>
+            <div class="title">Drawin figures in LaTeX 2.</div>
+            <div class="indexgeneral"><ul>
+                <li><div class="index"><a href="math_geometry2.html#1">Drawing grids.</a></div></li>
+                <li><div class="index"><a href="math_geometry2.html#2">Filling figures.</a></div></li>
+                <li><div class="index"><a href="math_geometry2.html#3">Adding text.</a></div></li>
+                <li><div class="index"><a href="math_geometry2.html#4">Drawing Arrows.</a></div></li>
+                <li><div class="index"><a href="math_geometry2.html#5">Putting everything together.</a></div></li>
+                <li><div class="index"><a href="math_geometry2.html#6">Exercise.</a></div></li>
+            </ul>
+            <hr>
+            </div>
+
+            <div class="text">
+              Drawin in Latex usin the TikZ package can be sometime hard and time consuming, but the result
+              is guaranteed to be excellent and high quality. So in this section we will take a deeper look
+              at how to draw figures with TikZ.</br>
+              To start don't forget to add the package before the main document.</br>
+              </br>
+              <div class="codebox"><b>CODE</b><hr>
+                <code>
+                 \usepackage{tikz}
+                </code>
+              </div>
+            </br>
+            </div>
+
+            <div class="firstsubtitle" id="1">Drawing grids.</div>
+            <div class="text">
+              With Latex we can also draw grids as a background for our figures, to draw a grid we need to
+              set the parameters inside the [option] parentesis. With [step= x cm] we will set how large each
+              square will be, then we can choose the color and the thickness by simply adding them after the
+              "step", here is an example:</br>
+              </br>
+              <div class="codebox"><b>CODE</b><hr>
+                <code>
+                  \begin{tikzpicture}</br>
+                  \draw[step=1cm,black,very thin] (0,0) grid (5,5);</br>
+                  \end{tikzpicture}</br>
+                </code>
+              </div>
+              </br>
+              <img src="../media/img/math_grid.png" class="centerimagesbig" style="width: 25%; height: 25%;"></br>
+              </br>
+            </div>
+
+            <div class="subtitle" id="2">Filling figures.</div>
+            <div class="text">
+              It is possible to draw figures filled with a color, for example a red square or a blue sphere,
+              it's very simple: instead of starting our figure with "\draw", we start with "fill" and we
+              put the color inside the [option] parentesis.</br>
+              </br>
+              <div class="codebox"><b>CODE</b><hr>
+                <code>
+                  \begin{tikzpicture}</br>
+                  \draw[step=1cm,black,very thin] (0,0) grid (5,5);</br>
+                  \fill[blue] (1,1) rectangle (2,2);</br>
+                  \fill[red] (2,3) rectangle (4,4);</br>
+                  \end{tikzpicture}</br>
+                </code>
+              </div>
+             </br>
+              <img src="../media/img/math_grid2.png" class="centerimagesbig" style="width: 25%; height: 25%;"></br>
+            </br>
+            </div>
+
+            <div class="subtitle" id="3">Adding text</div>
+            <div class="text">
+              If we want to display some text on a figure we can daraw a node on a specific coordinate and
+              adding text to it. The code is quite simple: \draw (coordinate x,coordinate y) node{text};</br>
+              Here is an example where we add on top of a square its color:</br>
+              <div class="codebox"><b>CODE</b><hr>
+                <code>
+                  \begin{tikzpicture}</br>
+                  \draw[step=1cm,black,very thin] (0,0) grid (5,5);</br>
+                  \fill[blue] (0,1) rectangle (1,2);</br>
+                  \draw (0.5,2.5) node{blue};</br>
+                  \fill[red] (2,3) rectangle (3,4);</br>
+                  \draw (2.5,4.5) node{red};</br>
+                  \fill[green](3,0) rectangle (4,1);</br>
+                  \draw (3.5,1.5) node{green};</br>
+                  \end{tikzpicture}</br>
+                </code>
+              </div>
+              </br>
+              <img src="../media/img/math_squaretext.png" class="centerimagesbig" style="width: 25%; height: 25%;"></br>
+              </br>
+            </div>
+
+            <div class="subtitle" id="4">Drawing arrows.</div>
+            <div class="text">
+              In Latex we aren't limited just to straight line, we also draw arrows, this can be very useful if
+              we want to represent vector, drawing graph or point something. To draw an arrow we just need to add
+              inside the [option] the simbol: -></br>
+              The general formula is: \draw[->] (x1,y1) -- (x2,y2);</br>
+              <div class="codebox"><b>CODE</b><hr>
+                <code>
+                  \begin{tikzpicture}</br>
+                  \draw (1,1) circle (1cm);</br>
+                  \draw[thick,->] (2,2) -- (1,1);</br>
+                  \draw(2.5,2.2) node{center};</br>
+                  \end{tikzpicture}</br>
+                </code>
+              </div>
+             </br>
+             <img src="../media/img/math_arrow.png" class="centerimagesbig" style="width: 25%; height: 25%;"></br>
+           </br>
+            </div>
+
+            <div class="subtitle" id="5">Putting everything together.</div>
+            <div class="text">
+              With patience and some effort we can have great result, here are some more example to show just
+              a fraction of the possibility of shell:</br>
+              <div class="codebox"><b>CODE</b><hr>
+                <code>
+                  \begin{tikzpicture}</br>
+                  \draw[step=1cm,black,very thin] (0,0) grid (8,5);</br>
+                  \draw[thick,->](0,0) -- (8,0);</br>
+                  \draw[thick,->](0,0) -- (0,5);</br>
+                  \draw(8.5,0) node{time};</br>
+                  \draw(0,5.4) node{cost};</br>
+                  \draw[->] (0,0) -- (2,1) -- (3,3) -- (4,2) -- (5,1.5) -- (7,2) -- (8,2.5);</br>
+                  \draw(3,3.3) node{max};</br>
+                  \end{tikzpicture}</br>
+                </code>
+              </div>
+            </br>
+              <img src="../media/img/math_graphexample.png" class="centerimagesbig" style="width: 40%; height: 40%;"></br>
+            </br>
+            </br>
+            </br>
+            <div class="codebox"><b>CODE</b><hr>
+              <code>
+                \begin{tikzpicture}</br>
+                \fill[black](0,8) -- (1,8) -- (1,7.9) -- (0,7.9) --cycle;</br>
+                \fill[black](0,6.6) -- (1,6.6) parabola (1.5,6.8) -- (1.6,6.8) -- (1.5,6.5) -- (0,6.5);</br>
+                \fill[black](0.3,8) -- (0.5,8) -- (0.5,6.5) -- (0.3,6.5);</br>
+                \fill[black](1,6.7) -- (1.7,8) -- (1.8,8) -- (2.5,6.7) -- (2.3,6.7) -- (1.7,7.8) -- (1.1,6.7);</br>
+                \fill[black](1.3,7.1) -- (2.2,7.1) -- (2.1,7) --(1.2,7);</br>
+                \fill[black](2,8) -- (3.5,8) -- (3.5,7.9) -- (2,7.9);</br>
+                \fill[black](2.7,8) -- (2.9,8) -- (2.9,6.5) -- (2.7,6.5);</br>
+                \fill[black](2.3,6.6) -- (3.2,6.6) -- (3.2,6.5) -- (2.3,6.5);</br>
+                \fill[black](3.3,7.5) -- (3.3,6) -- (3.5,6) -- (3.5,7.5);</br>
+                \fill[black](3.1,7.5) -- (4.2,7.5) -- (4.2,7.4) -- (3.1,7.4);</br>
+                \fill[black](3.1,6) -- (4.2,6) -- (4.2,6.1) -- (3.1,6.1);</br>
+                \fill[black](3.3,6.8) -- (4,6.8) -- (4,6.7) -- (3.3,6.7);</br>
+                \fill[black](3.9,7) -- (4,7) -- (4,6.5) -- (3.9,6.5);</br>
+                \fill[black](4.2,6) -- (4.3,6) -- (4.3,6.3) -- (4.2,6.3);</br>
+                \fill[black](4.2,7.5) -- (4.3,7.5) -- (4.3,7.2) -- (4.2,7.2);</br>
+                \fill[black](4.3,6.3) -- (4.4,6.3) -- (5.6,8) -- (5.5,8);</br>
+                \fill[black](4.3,8) -- (4.5,8) -- (5.7,6.3) -- (5.5,6.3);</br>
+                \fill[black](4.1,6.3) -- (4.6,6.3) -- (4.6,6.4) -- (4.1,6.4);</br>
+                \fill[black](4.1,8) -- (4.6,8) -- (4.6,7.9) -- (4.1,7.9);</br>
+                \fill[black](5.4,6.3) -- (5.9,6.3) -- (5.9,6.4) -- (5.4,6.4);</br>
+                \fill[black](5.4,8) -- (5.9,8) -- (5.9,7.9) -- (5.4,7.9);</br>
+                \end{tikzpicture}</br>
+              </code>
+            </div>
+            <br>
+            <img src="../media/img/math_logolatex.png" class="centerimagesbig" style="width: 40%; height: 40%;"></br>
+            </div>
+            <div class="firstsubtitle" id="6">Exercise.</div>
+            <div class="text">
+              <div class="exercises">
+                  <p>Now try to reproduce this cilinder:</br>
+                    <img src="../media/img/math_cilinder.png" style="width: 50%;"></br>
+                    For the solution move te mouse over the black box on the right.</br></p>
+                  <div class="blackbox">
+                    <code>
+                      \begin{tikzpicture}<br>
+                      \draw(0,0) ellipse (2cm and 0.8cm);<br>
+                      \draw(-2,0) -- (-2,3);<br>
+                      \draw(2,0) -- (2,3);<br>
+                      \draw(0,3) ellipse (2cm and 0.8cm);<br>
+                      \draw(0,3) -- (2,3);<br>
+                      \draw(1,3.2) node{x};<br>
+                      \draw(2.2,1.5) node{h};<br>
+                      \end{tikzpicture}<br>
+                  </code>
+                  </div>
+              </div>
+            </div>
+
+            <footer>
+                <address>Page written by Alessio Giovagnini</address>
+            </footer>
+        </main>
+    </body>
+
+    </html>

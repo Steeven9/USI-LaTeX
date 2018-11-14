@@ -21,12 +21,24 @@
         <a href="quiz.html">Quiz</a>
     </nav>
     <div class="sidenav">
-        <a href="general.html" id="firstsubpage">Getting Started</a> <!-- Put the class="active" on your subpage -->
-        <a href="basic.html">Basic Syntax</a>
-        <a href="graphics.html">Graphics</a>
-        <a href="equations.html" class="active" >Equations</a>
-        <a href="packages.html">Packages</a>
-        <a href="quiz.html" id="lastsubpage">Quiz</a>
+            <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+            <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+            <div class="subpage"><div class="subpagepadding">Title Section ↓</div>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 1</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 2</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 3</a></div>
+            <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+            <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Fonts</a>
+            <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+            <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Document Class</a>
+            <a href="syntax_TableOfContentsAndPageNumber.HTML" class="sidenavlink">Table of Contents<br>and Page Numbering</a>
+            <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+            <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+            <a href="syntax_bibManagement.HTML" class="sidenavlink" class="active">Bibliography Management</a>
+            <a href="syntax_biblatexStyles.HTML" class="sidenavlink">BibLaTeX Style</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">BibTeX Style</a>
     </div>
 
     <main>
@@ -43,86 +55,102 @@
         package it can do even more. In this section we will explain how to draw basic figures
         using the Tikz package. To begin add the package before the document:</br>
         </br>
-        <code class="codebox">
-        \usepackage{tikz}
-      </code>
+      <div class="codebox"><b>CODE</b><hr>
+        <code>
+         \usepackage{tikz}
+        </code>
+      </div>
         </div>
 
         <div class="subtitle" id="1">Basic shapes.</div>
         <div class="text">Before starting to draw a figure we need to create the right environment,
           the code for drawing a figure must be insert between those lines:</br>
         </br>
-        <code class="codebox">
+    <div class="codebox"><b>CODE</b><hr>
+      <code>
         \begin{tikzpicture}</br>
         *The code goes here*</br>
         \end{tikzpicture}</br>
-        </br>
       </code>
+    </div>
+        </br>
         We can start by drawing a simple line, to do this use the command:</br>
         </br>
-        <code class="codebox">
-        \draw (0,0) -- (3,3);</br>
-      </code>
+      <div class="codebox"><b>CODE</b><hr>
+        <code>
+         \draw (0,0) -- (3,3);</br>
+        </code>
+      </div>
         </br>
         With this code Latex will draw a line that start at coordinates (0,0) and end at (3,3),
         the two dashes -- indicate that we want to draw a line, the result is:</br>
-        <img src="../media/img/math_line.png" style="width: 20%;"></br>
+        <img src="../media/img/math_line.png" class="centerimagesbig" style="width: 20%; height: 20%;"></br>
         We can draw multiples lines by adding coordinates, for example with this code:</br>
         </br>
-        <code class="codebox">
-        \draw (0,0) -- (1,1) -- (2,0) -- (3,1) -- (4,0) -- (5,1) -- (6,0);</br>
+      <div class="codebox"><b>CODE</b><hr>
+        <code>
+         \draw (0,0) -- (1,1) -- (2,0) -- (3,1) -- (4,0) -- (5,1) -- (6,0);</br>
+       </code>
+     </div>
         </br>
-      </code>
         We will draw a zig-zag line from left to right, this is the result:</br>
         </br>
-        <img src="../media/img/math_zig-zag.png" style="width: 20%;"></br>
+        <img src="../media/img/math_zig-zag.png" class="centerimagesbig" style="width: 25%; height: 25%;"></br>
       </br>
         Using the extention -- cycle will close the figure by drawing a line from the last coordinate
         to the first one, so for example to draw a triangle we can write:</br>
       </br>
-      <code class="codebox">
+      <div class="codebox"><b>CODE</b><hr>
+       <code>
         \draw (0,0) -- (3,0) -- (3,3) -- cycle;</br>
-      </br>
-    </code>
+       </code>
+      </div>
+        </br>
         With the cycle at the end Latex will draw a line from (3,3) to (0,0), and the result is:</br>
-        <img src="../media/img/math_triangle.png" style="width: 20%;"></br>
+        <img src="../media/img/math_triangle.png" class="centerimagesbig" style="width: 20%; height: 20%;"></br>
         Latex has also some predefine figure, so for drawing a rectangle we don't need to draw every
         single line, but we just have to set the left down corner and the right upper one:</br>
       </br>
-      <code class="codebox">
+    <div class="codebox"><b>CODE</b><hr>
+      <code>
         \draw (0,0) rectangle (5,3);</br>
+      </code>
+    </div>
       </br>
-    </code>
-        The result:</br>
-      </br>
-        <img src="../media/img/math_rectangle.png" style="width: 20%;"></br>
+        <img src="../media/img/math_rectangle.png" class="centerimagesbig" style="width: 20%; height: 20%;"></br>
       </br>
         We can also draw curve lines:</br>
       </br>
-      <code class="codebox">
+    <div class="codebox"><b>CODE</b><hr>
+      <code>
         \draw (0,0) parabola (4,3);</br>
+      </code>
+    </div>
       </br>
-    </code>
-      <img src="../media/img/math_parabola.png" style="width: 20%;"></br>
+      <img src="../media/img/math_parabola.png" class="centerimagesbig" style="width: 20%; height: 20%;"></br>
         Arcs are another possibiliti, in the final parentesis we add first the starting angle,
         then the ending angle and finally the radius:</br>
       </br>
-      <code class="codebox">
+      <div class="codebox"><b>CODE</b><hr>
+       <code>
         \draw (0,0) arc (30:120:4cm);</br>
-      </br>
-    </code>
-        <img src="../media/img/math_arc.png" style="width: 20%;"></br>
+       </code>
+     </div>
+     </br>
+        <img src="../media/img/math_arc.png" class="centerimagesbig" style="width: 20%; height: 20%;"></br>
       </br>
         Multiples figure can be combine to create more complex images, for example:</br>
       </br>
-      <code class="codebox">
+    <div class="codebox"><b>CODE</b><hr>
+      <code>
         \draw (0,0) ellipse (3cm and 0.5cm);</br>
         \draw (0,0) circle (3cm);</br>
         \draw (0,-0.5) -- (0,0.5);</br>
         \draw (-3,0) -- (3,0);</br>
-        </br>
       </code>
-        <img src="../media/img/math_figure2.png" style="width: 20%;"></br>
+    </div>
+      </br>
+        <img src="../media/img/math_figure2.png" class="centerimagesbig" style="width: 20%; height: 20%;"></br>
         </div>
 
         <div class="subtitle" id="2">Exercise.</div>
@@ -134,7 +162,7 @@
             For the solution move te mouse over the black box on the right.</br>
           </p>
             <div class="blackbox">
-              <code class="codebox">
+              <code>
               \draw (0,0) -- (4,0);</br>
               \draw (0,0) arc (180:90:2cm);</br>
               \draw (2,2) -- (4,2);</br>

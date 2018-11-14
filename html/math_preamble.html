@@ -11,9 +11,25 @@
 
 <body>
     <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html" class="active">Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+        <a href="general_index.html" id="firstsubpage">Getting Started</a> <!-- Put the class="active" on your subpage -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html" id="lastsubpage">Quiz</a>
+    </div>
     <main>
-        <div class="titles">Latex in relation to math</div>
-        <div class="subtitles">Preamble</div>
+        <div class="title">Latex in relation to math</div>
+        <div class="subtitle">Preamble</div>
         <div class="text">
           If at this point the user still doesn't understand why they should use
           latex to write academic papers, or if the user find it tedious to learn
@@ -28,14 +44,20 @@
           Word.<br>
           x = φ<sup>2</sup><br>
           It took roughly five seconds to do it using latex
-          (code: $x=\phi^2 $), and i guess it didn't take much longer to do <thead>
+          <div class="codebox"><b>CODE</b><hr>
+              <p>$x=\phi^2 $</p>
+          </div>
+             and i guess it didn't take much longer to do <thead>
             same for Word. But this was a simple expression.
             Let's now try something more complex:<br>
             F<sub>1</sub>=1, F<sub>2</sub>=1, F<sub>n</sub>=F<sub>n-1</sub>+F
             <sub>n-2</sub> &#8704;n&#8712;N,n&#8805;2<br>
             It still took only a few seconds to write it with Latex
-            (code: $F_1=1, F_2=1\quad F_n=F_{n-1}+F_{n-2} \quad\forall n\in
-            \mathbb{N}, n \geq 2$), with other programms this may take way longer
+            <div class="codebox"><b>CODE</b><hr>
+                <p>$F_1=1, F_2=1\quad F_n=F_{n-1}+F_{n-2} \quad\forall n\in
+                \mathbb{N}, n \geq 2$</p>
+            </div>
+            With other programms this may take way longer
             or even be impossible.<br>
             Now the appeal of using Latex for mathematical papers should be obvious.
             <br>
@@ -46,9 +68,9 @@
             <br>
             It is also worth noting that the packages amsmath and tikz are needed
             for the most complex things that will be shown in this section.<br>
-            <img src="../media/img/matrixex.png">
-            <img src="../media/img/geoex.png" style="width: 40%;">
-            <img src="../media/img/graphex.png" style="width: 40%;">
+            <img src="../media/img/matrixex.png" class="centerimagesbig">
+            <img src="../media/img/geoex.png" class="centerimagesbig">
+            <img src="../media/img/graphex.png" class="centerimagesbig">
             <br>
             Not only the basics necessary to write simple expressions will be
             explained but also more complex stuff, like how to make matrices,

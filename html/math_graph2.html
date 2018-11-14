@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Graph 2</title>
+    <title>Graphing in Latex 2</title>
     <meta name="author" content="Alessio Giovagnini">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
@@ -21,12 +21,24 @@
         <a href="quiz.html">Quiz</a>
     </nav>
     <div class="sidenav">
-        <a href="general.html" id="firstsubpage">Getting Started</a> <!-- Put the class="active" on your subpage -->
-        <a href="basic.html">Basic Syntax</a>
-        <a href="graphics.html">Graphics</a>
-        <a href="equations.html" class="active" >Equations</a>
-        <a href="packages.html">Packages</a>
-        <a href="quiz.html" id="lastsubpage">Quiz</a>
+            <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+            <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+            <div class="subpage"><div class="subpagepadding">Title Section ↓</div>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 1</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 2</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 3</a></div>
+            <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+            <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Fonts</a>
+            <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+            <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Document Class</a>
+            <a href="syntax_TableOfContentsAndPageNumber.HTML" class="sidenavlink">Table of Contents<br>and Page Numbering</a>
+            <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+            <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+            <a href="syntax_bibManagement.HTML" class="sidenavlink" class="active">Bibliography Management</a>
+            <a href="syntax_biblatexStyles.HTML" class="sidenavlink">BibLaTeX Style</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">BibTeX Style</a>
     </div>
 
     <main>
@@ -44,11 +56,13 @@
           three dimentional representation of functions with three variable. For this type
           of graph we still need the same packages as 2D graph, so add:</br>
         </br>
-        <code class="codebox">
+     <div class="codebox"><b>CODE</b><hr>
+        <code>
           \usepackage{tikz}</br>
           \usepackage{pgfplot}</br>
-        </br>
       </code>
+    </div>
+          </br>
           before starting the document.
         </div>
 
@@ -56,54 +70,59 @@
         <div class="text">Exactly like 2D graph, we need first to create the environment for plotting
           graphs, for that we write:</br>
         </br>
-        <code class="codebox">
-        \begin{tikzpicture}</br>
+      <div class="codebox"><b>CODE</b><hr>
+        <code>
+         \begin{tikzpicture}</br>
          \begin{axis}[option of the axis]</br>
-        ...</br>
-        \end{axis}</br>
-        \end{tikzpicture}</br>
+         ...</br>
+         \end{axis}</br>
+         \end{tikzpicture}</br>
+       </code>
+     </div>
         </br>
-      </code>
         Now we can insert our function in the environment. There is a small difference between the 2D
         plot and 3D: for the 3 dimension the code is: \addplot3[surf,]{function}; Here is an exemple:</br>
       </br>
-      <code class="codebox">
+  <div class="codebox"><b>CODE</b><hr>
+    <code>
       \begin{tikzpicture}</br>
       \begin{axis}</br>
       \addplot3[surf,]{x^2+y^2};</br>
       \end{axis}</br>
       \end{tikzpicture}</br>
-      </br>
     </code>
-      The result is:</br>
-      <img src="../media/img/3d_graph.png" style="width: 40%;">
+  </div>
+      </br>
+      <img src="../media/img/3d_graph.png" class="centerimagesbig" style="width: 40%; height: 40%;">
     </br>
       There is also the possibility to draw the function as a grid instead of a surface, change
       [surf,] to [mesh,]:</br>
     </br>
-    <code class="codebox">
+<div class="codebox"><b>CODE</b><hr>
+  <code>
     \begin{tikzpicture}</br>
     \begin{axis}</br>
     \addplot3[mash,]{x+10*y};</br>
     \end{axis}</br>
     \end{tikzpicture}</br>
-    </br>
   </code>
-    The result is:</br>
-      <img src="../media/img/3d_graph2.png" style="width: 40%;">
+</div>
+    </br>
+      <img src="../media/img/3d_graph2.png" class="centerimagesbig" style="width: 40%; height: 40%;">
     </br>
     We can change even the color, add in the option [colormap/cool]:</br>
   </br>
-  <code class="codebox">
-  \begin{tikzpicture}</br>
-  \begin{axis}</br>
-  \addplot3[surf, colormap/cool]{x*y};</br>
-  \end{axis}</br>
-  \end{tikzpicture}</br>
+<div class="codebox"><b>CODE</b><hr>
+  <code>
+   \begin{tikzpicture}</br>
+   \begin{axis}</br>
+   \addplot3[surf, colormap/cool]{x*y};</br>
+   \end{axis}</br>
+   \end{tikzpicture}</br>
+ </code>
+</div>
   </br>
-</code>
-  The result is:</br>
-  <img src="../media/img/3d_graph3.png" style="width: 40%;">
+  <img src="../media/img/3d_graph3.png" class="centerimagesbig" style="width: 40%; height: 40%;">
   </br>
   After the option colormap/ we can use other predefine extension, here are other possible
   parts: hot, hot2, jet, blackwhite, bluered, greenyellow, redyellow, violet.
@@ -113,21 +132,21 @@
   <div class="text">Latex can plot 3D graph not just from function, but also from coordinates
     to create a surface. Here is an example:</br>
     </br>
-    <code class="codebox">
-    \begin{tikzpicture}</br>
-    \begin{axis}</br>
-    \addplot3[surf,]</br>
-    coordinates {</br>
+    <div class="codebox"><b>CODE</b><hr>
+     <code>
+      \begin{tikzpicture}</br>
+      \begin{axis}</br>
+      \addplot3[surf,]</br>
+      coordinates {</br>
       (0,0,0) (0,1,0) (0,0.5,0)</br>
       (1,0,0) (1,1,1) (1,2,2)</br>
       (2,0,0) (2,1,1) (2,2,2)};</br>
       \end{axis}</br>
       \end{tikzpicture}</br>
-    </br>
-  </code>
-    This is the result:
-  </br>
-    <img src="../media/img/surface_graph.png" style="width: 40%;">
+    </code>
+   </div>
+      </br>
+    <img src="../media/img/surface_graph.png" class="centerimagesbig" style="width: 40%; height: 40%;">
 
   </div>
         </div>
@@ -137,7 +156,7 @@
             <p>Now try to display the function: f(x,y)=x+y^3  </br>
             for the solution move the mouse over the black box on the right </p>
             <div class="blackbox">
-              <code class="codebox">
+              <code>
               \begin{tikzpicture}</br>
               \begin{axis}</br>
               \addplot3[surf,]{x+y^3};</br>
