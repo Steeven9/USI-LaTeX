@@ -63,87 +63,213 @@
         <div class="text">
             <div class="subtitle">Content</div>
             <ol>
-                <li><a href="#Bibbibstyle">Biblatex bibliography styles</a></li>
-                <li><a href="#Bibcitestyle">Biblatex citation styles</a></li>
+                <li><a href="#IntroAndBasic">Introduction and Basic Usage</a></li>
+                <li><a href="#BibAndCite">Natbib bibliography styles and citation style</a></li>
             </ol>
             <hr>
         </div>
         <div class="text">
-            <div class="subtitle" id="Bibbibstyle">Biblatex bibliography styles</div>
+            <div class="subtitle" id="IntroAndBasic">Introduction and Basic Usage</div>
             <div class="text">
-                In this section we 
+                In this section we will go through how to make a bibliorgraphy using natbib.
+                <ol>
+                    <li>
+                        <div class="text">
+                            We will need to create a .bib file to store our bibliorgraphy source. We will use the file mentioned in <a href="syntax_bibManagement.html"> Bibliorgraphy Management</a>, section <a href="syntax_bibManagement.html#Customization">Customization</a>.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text">
+                            With the file set up, we can write this into out .tex file to create and example for natbib.
+
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text">
+                            Once you've finished this, your output should be:
+                        </div>
+                        <div class="latex">
+                                <div class="paragraph"><b>CODE</b><hr>
+                                    <code>
+                                        \documentclass{article}<br>
+                                        \usepackage[utf8]{inputenc}<br>
+                                        \usepackage[english]{babel}<br><br>
+
+                                        %Includes "References" in the table of contents<br>
+                                        \usepackage[nottoc]{tocbibind}<br>
+
+                                        %Import the natbib package and sets a bibliography style<br>
+                                        \usepackage[square,numbers]{natbib}<br>
+                                        \bibliographystyle{abbrvnat}<br>
+
+                                        %Title and author<br>
+                                        \title{Bibliography management:<br> \texttt{natbib} package}<br>
+                                        \author{Overleaf}<br>
+                                        \date { }<br><br>
+
+                                        \begin{document}<br><br>
+
+                                        \maketitle<br><br>
+
+                                        \tableofcontents<br><br>
+
+                                        \section{First Section}<br><br>
+
+                                        Let's cite! Einstein's journal paper <br>\citet{PhysRev.47.777}\\<br>
+                                        Let's cite more journal paper from Einstein \cite{einstein}\\<br>
+                                        Let's cite from my 2 most favorite book: Freakonomics \cite{fine2009economics} and Superforcasting \cite{tetlock2016superforecasting}\\<br>
+                                        Some few more citation to make to table more interesting:\\<br>
+                                        Deep Learning \cite{lecun2015deep}\\<br>
+                                        Introduction to Algorithm <br>\cite{manber1989introduction}\\<br><br>
+
+                                        \medskip<br><br>
+
+                                        %Imports the bibliography file "PhysRev.47.777e.bib"
+                                        \bibliography{PhysRev.47.777.bib}<br><br>
+
+                                        \end{document}<br>
+                                    </code>
+                                </div>
+                                <div class="object">
+                                    <object type="application/pdf" data="../docs/syntax_Natlib1.pdf" height="100%" width="100%"></object>
+                                </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="text">
+                            A few thing that is different from Biblatex:
+                        </div>
+                        <ul>
+                            <li>
+                                The options square and numbers in <code>\usepackage[square,numbers]{natbib}</code> enable squared brackets and numeric citations respectively.
+                            </li>
+                            <li>
+                                The styles abbrvnat is used here. The styling of biblatex and abbrvnat differs from each other extensively.
+                            </li>
+                            <li>
+                                The command <code>\citet</code> is used to extensively cite the source's author right on to the document.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <div class="text"></div>
             </div>
-            <p>
-                #TODO a fraking lot in here
-                numeric <br><br>
-                alphabetic  <br><br>
-                authoryear  <br><br>
-                authortitle <br><br>
-                verbose <br><br>
-                reading <br><br>
-                draft<br>
-                The draft style is intended for editing your document before the final version, since it makes easier to keep track of the cited sources.<br><br>
-                authoryear-icomp  <br><br>
-                apa <br><br>
-                bwl-FU  <br><br>
-                chem-acs   <br><br> 
-                chem-angew  <br><br>
-                chem-biochem   <br><br> 
-                chem-rsc <br><br>   
-                ieee  <br><br> 
-                mla <br><br>
-                musuos <br><br> 
-                nature  <br><br>
-                nejm   <br><br> 
-                phys   <br><br> 
-                science <br><br>
-                geschichtsfrkl  <br><br>
-                oscola<br><br>
-            </p>
             <hr>
         </div>
         <div class="text">
-            <h2 id="Bibcitestyle">Biblatex citation styles</h2>
-            <p>
-                #TODO a fraking lot in here too<br><br>
+            <div class="subtitle" id="BibAndCite">Natbib citation style</div>
+            <div class="text">
+                Natbib allows user to cite in several different style. For quick command that can help you choose what to cite, you can try these:
+            </div>
+            <div class="text">
+                <ul>
+                    <li>
+                        <div class="text">Textual citation</div>
+                        <div class="text"><code>\citet{}</code></div>
+                    </li>
+                    <li>
+                        <div class="text">Parenthetical citation</div>
+                    <div class="text"><code>\citep{}</code></div>
+                    </li>
+                    <li>
+                        <div class="text">Textual citation with every author's name printed</div>
+                    <div class="text"><code>\citet*{}</code></div>
+                    </li>
+                    
+                    <li>
+                        <div class="text">Parenthetical citation with every author's name printed</div>
+                        <div class="text"><code>\citep*{}</code></div>  
+                    </li>
+                    
+                    <li>
+                        <div class="text">Prints only the name of the authors</div>
+                        <div class="text"><code>\citeauthor{}</code></div>
+                    </li>
+                    <li>
+                        <div class="text">Prints only the year of the publication</div>
+                        <div class="text"><code>\citeyear{}</code></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="text">
+                We can also set citation style with our own preference choice. In this piece of code below, we added <code>\setcitestyle{authoryear,open={((},close={))}}</code> to modify the citation style, and this is the result:
+            </div>
+            <div class="text">
+                <div class="latex">
+                    <div class="paragraph"><b>CODE</b><hr>
+                        <code>
+                            \documentclass{article}<br>
+                            \usepackage[utf8]{inputenc}<br>
+                            \usepackage[english]{babel}<br><br>
 
-                The parameter citestyle=authoryear passed to the command that imports biblatex is the one that sets the citation style, in this case authoryear. The standard citation styles are:<br><br>
+                            %Includes "References" in the table of contents<br>
+                            \usepackage[nottoc]{tocbibind}<br>
 
-                numeric Implements a numeric citation scheme intended for in-text citations. Should be employed in conjunction with the numeric bibliography style.<br><br>
-                numeric-comp Compact variant of the numeric mode. Citations like [1, 2, 3] are replaced by [1-3].<br><br>
-                numeric-verb Verbose variant of the numeric style. Instead of [2, 5, 7] will print [2];[5];[7].<br><br>
-                alphabetic Alphabetic citation scheme similar to the standard alpha in style bibtex. To be used in conjunction with the alphabetic bibliography style.<br><br>
-                alphabetic-verb Verbose version of the alphabetic style. Instead of [Doe98, Doe95, Farn2004] will print [Doe98];[Doe95];[Farn2004].<br><br>
-                authoryear Implements the author-year citation scheme. To be used in conjunction with the author-year bibliography style.<br><br>
-                authoryear-comp Compact variant of the authoryear style. Prints the author only once if subsequent references passed to a single citation command share the same author. Prints Doe 1992, 1995 instead of Doe 1992, Doe 1995.<br><br>
-                authoryear-ibid A variant of the authoryear intended for footnote citations. Replaces repeated citations by the abbreviation ibidem.<br><br>
-                authoryear-icomp A style combining the features of authoryear-comp and authoryear-ibid
-                authortitle Implements the author-title scheme. Intended for citations given in footnotes.<br><br>
-                authortitle-comp Compact variant of authortitle. Instead of Doe, First title; Doe, Second title this will print Doe, First title, Second title.<br><br>
-                authortitle-ibid A variant of the authortitle intended for footnote citations. Replaces repeated citations by the abbreviation ibidem.<br><br>
-                authortitle-icomp A style combining authortitle-comp and authortitle-ibid.<br><br>
-                authortitle-terse Variant of authoritle that only prints the title if the bibliography contains more than one work of the respective author/editor.<br><br>
-                authortitle-tcomp Style combining authortitle-terse and authortitle-comp.<br><br>
-                authortitle-ticomp Style combining authortitle-icomp and authortitle-terse.<br><br>
-                verbose Citation style that prints a full citation when the entry is cited for the first time and a short version afterwards.<br><br>
-                reading Citation style that goes with the bibliography style by the same name. Loads the authortitle style.
-                There are other non-standard citation styles popular in different journals and thesis<br><br>
+                            %Import the natbib package and sets a bibliography style<br>
+                            \usepackage{natbib}<br>
+                            \bibliographystyle{abbrvnat}<br>
+                            \setcitestyle{authoryear,open={((},close={))}}<br><br>
 
-                In Sciences:<br><br>
-                American Chemical Society (ACS) style<br><br>
-                American Institute of Physics (AIP) style<br><br>
-                American Mathematical Society (AMS) style<br><br>
-                Vancouver system<br><br>
-                Institute of Electrical and Electronics Engineers (IEEE) style<br><br>
-                Nature style<br><br>
-                Science style<br><br>
-                In Humanities:<br><br>
-                Chicago Style<br><br>
-                Harvard referencing style<br><br>
-                MLA style<br><br>
-                In Socials:<br><br>
-                American Psychological Association (APA) style<br><br>
-            </p>
+                            %Title and author<br>
+                            \title{Bibliography management:<br> \texttt{natbib} package}<br>
+                            \author{Overleaf}<br>
+                            \date { }<br><br>
+
+                            \begin{document}<br><br>
+
+                            \maketitle<br><br>
+
+                            \tableofcontents<br><br>
+
+                            \section{First Section}<br><br>
+
+                            Let's cite! Einstein's journal paper <br>\citet{PhysRev.47.777}\\<br>
+                            Let's cite more journal paper from Einstein \cite{einstein}\\<br>
+                            Let's cite from my 2 most favorite book: Freakonomics \cite{fine2009economics} and Superforcasting \cite{tetlock2016superforecasting}\\<br>
+                            Some few more citation to make to table more interesting:\\<br>
+                            Deep Learning \cite{lecun2015deep}\\<br>
+                            Introduction to Algorithm <br>\cite{manber1989introduction}\\<br><br>
+
+                            \medskip<br><br>
+
+                            %Imports the bibliography file "PhysRev.47.777e.bib"
+                            \bibliography{PhysRev.47.777.bib}<br><br>
+
+                            \end{document}<br>
+                        </code>
+                    </div>
+                    <div class="object">
+                        <object type="application/pdf" data="../docs/syntax_Natlib2.pdf" height="100%" width="100%"></object>
+                    </div>
+                </div>
+            </div>
+            <div class="text">The command <code>\setcitestyle{authoryear,open={((},close={))}}</code> uses authoryear citation mode, with open and close parenthesis specify. Below is the list of possible parameter you can use for this command:</div>
+            <div class="text">
+                <ul>
+                    <li>
+                        Citation mode: authoryear, numbers or super.
+                    </li>
+                    <li>
+                        Brackets: round or square. You can manually set any other opening and closing characters with open={char} and close={char}.
+                    </li>
+                    <li>
+                        Citation separator: semicolon, comma.
+                    </li>
+                    <li>
+                        Separator between author and year: aysep{char}.
+                    </li>
+                    <li>
+                        Separator between years with common author: &lt;code&gt;yysep={char}.
+                    </li>
+                    <li>
+                        Text before post-note: notesep={text}.
+                    </li>
+                </ul>
+            </div>
+            
+             
+
             <hr>
         </div>
        <footer>

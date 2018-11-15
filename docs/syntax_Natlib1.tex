@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+%Includes "References" in the table of contents
+\usepackage[nottoc]{tocbibind}
+
+%Import the natbib package and sets a bibliography style
+\usepackage[square,numbers]{natbib}
+\bibliographystyle{abbrvnat}
+
+%Title and author
+\title{Bibliography management: \texttt{natbib} package}
+\author{Overleaf}
+\date { }
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{First Section}
+
+Let's cite! Einstein's journal paper \citet{PhysRev.47.777}\\
+Let's cite more journal paper from Einstein \cite{einstein}\\
+Let's cite from my 2 most favorite book: Freakonomics \cite{fine2009economics} and Superforcasting \cite{tetlock2016superforecasting}\\
+Some few more citation to make to table more interesting:\\
+Deep Learning \cite{lecun2015deep}\\
+Introduction to Algorithm \cite{manber1989introduction}\\
+
+\medskip
+
+%Imports the bibliography file "sample.bib"
+\bibliography{PhysRev.47.777.bib}
+
+\end{document}
+
