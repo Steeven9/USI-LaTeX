@@ -280,12 +280,12 @@ div.text a:hover, div.index a:hover {
   text-decoration: underline;
 }
 
-div.indexgeneral li a:link, div.indexgeneral li a:visited, div.indexgeneral li a:hover {
+div.indexgeneral li a:link, div.indexgeneral li a:visited, div.indexgeneral li a:hover, div.quotebox div.quote a:link, div.quotebox div.quote a:visited, div.quotebox div.quote a:hover {
   color: blue;
   text-decoration: none;
 }
 
-div.indexgeneral li a:hover {
+div.indexgeneral li a:hover, div.quotebox div.quote a:hover {
   text-decoration: underline;
 }
 /* END LINKS */
