@@ -542,6 +542,71 @@ div.formula{
 
 
 
+/* MEET THE TEAM */
+div.mttfirstbox, div.mttfirstboxbottom {
+  margin-left: 5%;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+div.mttfirstbox p, div.mttfirstboxbottom p {
+  flex-basis: 15%;
+  display: flex;
+  justify-content: center;
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+div.mttfirstboxbottom p{
+  font-weight: normal;
+}
+
+div.mttfirstbox img {
+  flex-basis: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 10%;
+  height: 10%;
+  max-width: 20%;
+}
+
+div.mttfirstbox div.mttfirstboxsub, div.mttfirstboxbottom div.mttfirstboxbottomsub {
+  flex-basis: 35%;
+}
+
+div.mttfirstboxsub, div.mttfirstboxbottomsub {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+div.mttfirstboxbottom{
+  margin-bottom: 3%;
+}
+
+div.mttfirstboxsub p, div.mttfirstboxbottomsub p {
+  flex-basis: 50%;
+  display: flex;
+}
+
+div.mttfirstboxsub img {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43%;
+  height: 100%;
+  max-width: 43%;
+}
+/* END OF MEET THE TEAM */
+
+
+
 /* ADDRESS */
 address{
   font-size: 0.9em;
@@ -990,6 +1055,10 @@ div.mainhomepagebox a:hover{
   .homepagenavigator a {
     padding: 1.25vh;
     font-size: 0.8vh;
+  }
+
+  div.mttfirstbox p, div.mttfirstboxbottom p {
+    font-size: 0.6em;
   }
 }
 
