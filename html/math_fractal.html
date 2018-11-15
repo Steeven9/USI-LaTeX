@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Fractals</title>
+    <meta name="author" content="Jacob_Salvi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <link rel="icon" href="../media/img/favicon.ico">
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html" class="active">Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+            <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+            <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+            <div class="subpage"><div class="subpagepadding">Title Section ↓</div>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 1</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 2</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 3</a></div>
+            <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+            <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Fonts</a>
+            <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+            <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Document Class</a>
+            <a href="syntax_TableOfContentsAndPageNumber.HTML" class="sidenavlink">Table of Contents<br>and Page Numbering</a>
+            <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+            <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+            <a href="syntax_bibManagement.HTML" class="sidenavlink" class="active">Bibliography Management</a>
+            <a href="syntax_biblatexStyles.HTML" class="sidenavlink">BibLaTeX Style</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">BibTeX Style</a>
+    </div>
+    <main>
+        <div class="title">How to make fractals.</div>
+        <div class="indexgeneral"><ul>
+            <li><div class="index"><a href="NAMEOFTHISFILE.html#first">*NAME OF THE FIRST SUBTITLE*</a></div></li>
+            <li><div class="index"><a href="NAMEOFTHISFILE.html#second">*NAME OF THE SECOND SUBTITLE*</a></div></li>
+            <li><div class="index"><a href="NAMEOFTHISFILE.html#third">*NAME OF THE THIRD SUBTITLE*</a></div></li>
+        </ul>
+        <hr>
+        </div>
+        <div class="firstsubtitle" id="first">Brief introduction to fractals</div>
+        <div class="text">
+          Fractals are self similar structures obtained by a recursive function repeated
+        indefinetly. Rescaling a portion of a fractals show the fractal itself.
+         Fractals are often found in nature and are thoroughly
+        studied in mathematics. <br>
+        Let's show an example of fractal to clarify. The koch snowflake can be
+        obtained by dividing a line in 3 equal segments and replacing the middle
+        one with an equilateral triangle, with side 1/3 of the line, and removing
+        the lower side of the triangle.<br>
+         This process can then be reused on all segments obtained from the last
+         iteration an indefinite number of times. The following image shows the
+         first 5 iteration of Koch's snowflake.
+         <img src="../media/img/math_koch.jpg" class="centerimagesbig"
+         style="width: 20%; height:20%;">
+         It should now be fairly clear what a fractal is.
+         </div>
+         <div class="subtitle" id="second">Fractals in Latex</div>
+         <div class="text">
+        To make a fractal in Latex the tikz package is needed and the
+        lindenmayersystems library must also be used.
+        <div class="codebox">
+          <b>CODE</b>
+          <p>
+            \usepackage{tikz}<br>
+            \usetikzlibrary{lindenmayersystems}
+            </p>
+            </div>
+            Let's now analyze the steps necessary to recreate a Koch'curve in
+            Latex.<br>
+            We need first to define such a curve (inside the document).
+            <div class="codebox">
+              <b>CODE</b>
+              <p>
+                \pgfdeclarelindenmayersystem{Koch}<br>
+                {\rule {F -> F+F--F+F}}
+                </p>
+                </div>
+
+            F means that we must take a step forward, + indicates to turn couterclockwise
+            by a certain angle, that will be defined briefly, and - indicates that
+             we need to turn by the same angle clockwise.
+            <br>
+            Now that the function is defined we can make the fractal. In this
+            step is also necessary to define the lenght  of a step, the angle,
+            the order (the iteration that has to be depicted) and an axiom.
+            <div class="codebox">
+              <b>CODE</b>
+              <p>
+                \begin{tikzpicture}<br>
+                \draw<br>
+                [l-system={Koch curve, step=2pt, angle=60, axiom=F, order=4}]<br>
+                lindenmayer system;<br>
+                \end{tikzpicture}<br>
+                </p>
+                </div>
+                And as expected this gives us.
+                <img src="../media/img/math_kochF.png" class="centerimagesbig"
+                style="width:40%; height: 40%;">
+                At this point it should be vlear how angle, step, and order work,
+                but axiom is most likely not clear yet. If only F is used then
+                the iteration will happen on a single line, if more than one is used
+                the fractal will be applied on multiples lines.<br>
+                To clarify let's make a couple of example. In the first i will set
+                the axiom to F++F++F, this will make our starting figure an equilateral
+                rectangle instead of a line, and the fractal will be developed internally.
+                <div class="codebox">
+                  <b>CODE</b>
+                  <p>
+                    \begin{tikzpicture}<br>
+                    \draw<br>
+                    [l-system={Koch curve, step=2pt, angle=60, axiom=F++F++F, order=4}]<br>
+                    lindenmayer system;<br>
+                    \end{tikzpicture}<br>
+                    </p>
+                    </div>
+                <img src="../media/img/math_kochint.png" class="centerimagesbig"
+                style="width:40%; height: 40%;">
+                If instead of F++F++F the axiom F--F--F is used the fractal will
+                still be applied to a triangle but it will be developed externally.
+                <div class="codebox">
+                  <b>CODE</b>
+                <p>
+                  \begin{tikzpicture}<br>
+                  \draw<br>
+                  [l-system={Koch curve, step=2pt, angle=60, axiom=F--F--F, order=4}]<br>
+                  lindenmayer system;<br>
+                  \end{tikzpicture}<br>
+                  </p>
+                  </div>
+              <img src="../media/img/math_kochext.png" class="centerimagesbig"
+              style="width:40%; height: 40%;">
+              If axiom is still cloudy as a concept I would advice the reader to
+              play around with it.
+              </div>
+        <div class="subtitle" id="second">Some examples of fractals</div>
+        <div class="text">
+        A couple example of fractals, and the code to make them, will now be shown.
+        <br>
+        Let's start with one of my favourite, Sierpinki's triangle, at the eight
+        iteration.
+        <div class="codebox">
+          <b>CODE</b>
+        <p>
+          \pgfdeclarelindenmayersystem{Sierpinski triangle}{<br>
+            \rule{F -> G-F-G}<br>
+            \rule{G -> F+G+F}}  <br>
+            \begin{tikzpicture}<br>
+            \draw <br>
+            [l-system={Sierpinski triangle, step=2pt, angle=60, axiom=F, order=6}]<br>
+            lindenmayer system -- cycle;<br>
+            \end{tikzpicture}<br>
+          </p>
+          </div>
+          <img src="../media/img/math_sierpinski.png" class="centerimagesbig"
+          style="width:40%; height: 40%;">
+          The other fractal that will be shown is the Hilbert's curve, at the fifth
+          iteration, and just for fun, let's color it blue.
+          <div class="codebox">
+            <b>CODE</b>
+            <p>
+              \pgfdeclarelindenmayersystem{Hilbert curve}{<br>
+                \rule{L -> +RF-LFL-FR+}<br>
+                \rule{R -> -LF+RFR+FL-}}<br>
+              \begin{tikzpicture}<br>
+              \draw [bottom color=blue, top color=blue]<br>
+              [l-system={Hilbert curve, axiom=L, order=5, step=8pt, angle=90}]<br>
+              lindenmayer system;<br>
+              \end{tikzpicture}<br>
+              </p>
+              </div>
+              <img src="../media/img/math_hilbert.png" class="centerimagesbig"
+              style="width:40%; height: 40%;">
+
+        </div>
+        <div class="exercises">
+            <p>
+              To test if all these new concepts have been understood i invite the
+              reader to try and replicate the following fractal. Hint, it is fairly
+              similar to Koch's snowflake.<br>
+              And if you hate yourself you can also try to reproduce the
+              Mandelbrot set in Latex.
+
+              <img src="../media/img/math_fractalex.png" class="centerimagesbig"
+              style="width:30%; height: 30%;">
+            </p>
+            <div class="blackbox">
+                <code>
+                  \pgfdeclarelindenmayersystem{fractal}{<br>
+                    \rule{F -> F+F-F-F+F }}<br>
+                    \begin{tikzpicture}<br>
+                    \draw<br>
+                    [l-system={fractal, step=2pt, angle=90, axiom=F, order=4}]<br>
+                    lindenmayer system;<br>
+                    \end{tikzpicture}<br>
+
+                </code>
+            </div>
+        </div>
+        <footer>
+            <address>Page written by Jacob Salvi</address>
+        </footer>
+    </main>
+</body>
+
+</html>
