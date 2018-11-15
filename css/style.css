@@ -522,15 +522,15 @@ div.formula{
   background-color: lightgrey;
   border: none;
   color: black;
-  padding: 15px 32px;
+  padding: 10px 20px;
   text-align: center;
-  border-radius: 15px;
+  border-radius: 20px;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 15px;
   margin: 4px 2px;
   cursor: pointer;
-  margin-left: 30em;
+  margin-left: 50em;
 }
 .buttonpage:hover{
   background-color: rgb(0, 174, 255);
@@ -767,7 +767,7 @@ div.mainhomepagebox a:hover{
   div.latex div.paragraph code{
     font-size: 1em;
   }
-  
+
   .homepagenavigator a {
     padding: 1.1vh;
     font-size: 1vh;
@@ -794,7 +794,7 @@ div.mainhomepagebox a:hover{
   div.text, div.longtext, div.standardbox{
     font-size: 0.9em;
   }
-  
+
   div.title{
     font-family: Roboto;
     font-size: 1.7em;
@@ -806,7 +806,7 @@ div.mainhomepagebox a:hover{
     padding-right: 2.5%;
     padding-top: 1%;
   }
-  
+
   div.firstsubtitle{
     font-family: Roboto;
     font-size: 1.3em;
@@ -818,7 +818,7 @@ div.mainhomepagebox a:hover{
     padding-right: 4%;
     padding-top: 1%;
   }
-  
+
   div.subtitle{
     font-family: Roboto;
     font-size: 1.3em;
@@ -839,7 +839,7 @@ div.mainhomepagebox a:hover{
   div.exercises p{
     font-size: 0.9em;
   }
-  
+
   div.exercises div.blackbox{
     font-size: 1.3em;
   }

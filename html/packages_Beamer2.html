@@ -16,19 +16,22 @@
           <a href="quiz.html">Quiz</a>
       </nav>
       <div class="sidenav">
-          <a href="packages_IntroNewcommands.html" id="firstsubpage"class="sidenavlink">PACKAGES INTRODUCTION</a>
-          <a href="packages_newcommands.html"class="sidenavlink">NEW COMMANDS</a>
-          <a href="packages_fancyhdr.HTML"class="sidenavlink">FANCYHDR</a>
-          <a href="packages_quotchap.html"class="sidenavlink">QUOTCHAP</a>
-          <a href="packages_todonotes.html"class="sidenavlink">TODONOTES</a>
-          <a href="packages_geometry.html"class="sidenavlink">GEOMETRY</a>
-          <a href="packages_geometry2.html"class="sidenavlink">MORE ABOUT GEOMETRY</a>
-          <a href="packages_hyperref_babel_xcolor.html"class="sidenavlink"class="active">HYPERREF</a>
-          <a href="packages_hyperref_babel_xcolor2.html"class="sidenavlink">BABEL</a>
-          <a href="packages_hyperref_babel_xcolor3.html" class="sidenavlink">XCOLOR</a>
-          <a href="packages_Beamer1.html"class="sidenavlink">BEAMER</a>
-          <a href="packages_Beamer2.html"class="sidenavlink">MORE ABOUT BEAMER</a>
-          <a href="packages_TOP5.html"class="sidenavlink">TOP5</a>
+          <a href="packages_index.html" id="firstsubpage"class="sidenavlink">Packages</a>
+           <a href="packages_IntroNewcommands.html" class="sidenavlink">Packages Introduction
+          <a href="packages_newcommands.html"class="sidenavlink">New Commands</a>
+          <a href="packages_fancyhdr.HTML"class="sidenavlink">Fancyhdr</a>
+          <a href="packages_quotchap.html"class="sidenavlink">Quotchap</a>
+          <a href="packages_todonotes.html"class="sidenavlink">Todonotes</a>
+          <div class="subpage"><div class="subpagepadding">Geometry</div>
+          <a href="packages_geometry2.html"class="subpagelink">Page 1</a>
+          <a href="packages_geometry.html"class="subpagelink">Page 2</a></div>
+          <a href="packages_hyperref_babel_xcolor.html"class="sidenavlink">Hyperref</a>
+          <a href="packages_hyperref_babel_xcolor2.html"class="sidenavlink">Babel</a>
+          <a href="packages_hyperref_babel_xcolor3.html" class="sidenavlink">Xcolor</a>
+          <div class="subpage"><div class="subpagepadding">Beamer</div>
+          <a href="packages_Beamer1.html"class="subpagelink"class="active">Page 1</a>
+          <a href="packages_Beamer2.html"class="subpagelink">Page 2</a></div>
+          <a href="packages_TOP5.html"class="sidenavlink">Top 5</a>
       </div>
 </body>
 
@@ -44,7 +47,7 @@
   <br>
   <div class="index"><a href="#fourthpart"><li>Animations</li></a></div>
   <br>
-  <div class="index"><a href="#fifthpart"><li>Columns, blocks and other options </li></a></div>
+  <div class="index"><a href="#fifthpart"><li>Columns and blocks</li></a></div>
 </ol>
 </div>
 <hr>
@@ -114,7 +117,7 @@ And the line you can add to your code to enable che change of the theme is this:
 
 
 <div class="title" id="fifthpart">
-Columns, blocks and other options</div>
+Columns and blocks</div>
 <div class="text"> There is a way to insert columns in a presentation like the example here written: </div>
 <div class="codebox"style="width: 600px;"><div class="paragraph"><b>CODE</b><hr><code>
 \begin{frame}<br>
@@ -133,7 +136,7 @@ right<br>
 \end{columns}<br>
 \end{frame}</code></div></div>
 <br><br><br>
-  <img src="../media/img/packages_beamer7.png" width="800" height="550"><br><br>
+  <img src="../media/img/packages_beamer7.png" width="500" height="350"><br><br>
 <div class="text"> An image can be put beside some text.
   The text can also be split and will be displayed above and under eachother.
   To have the image displayed you must put it in <strong> the same folder</strong> or even in a different folder but the correct <strong>path</strong>.
@@ -151,11 +154,34 @@ right<br>
      \end{columns}<br>
 \end{frame}<br>
 </code></div></div><br><br><br>
-<img src="../media/img/packages_beamer8.png" width="800" height="550"><br><br>
+<img src="../media/img/packages_beamer8.png" width="500" height="350"><br><br>
 <br>
 
 <div class="subtitle">Blocks</div>
 <div class="text">A block can be easily put in the LaTeX code and can be useful to distinguish between what you want to write about.</div>
+<div class="codebox"style="width: 600px;"><div class="paragraph"><b>CODE</b><hr><code>
+  \begin{frame}<br>
+<br>
+   \begin{block}{Block info title}<br>
+    Information text<br>
+   \end{block}<br>
+<br>
+   \begin{alertblock}{Alert block title}<br>
+   Alert Text<br>
+   \end{alertblock}<br>
+<br>
+   \begin{exampleblock}{Example block title}<br>
+   Example text<br>
+   \end{exampleblock}<br>
+<br>
+  \begin{definition}{Definition block title}<br>
+  Definition text<br>
+  \end{definition}<br>
+<br>
+\end{frame}
+</code></div></div>
+<img src="../media/img/packages_beamer9.png" width="300" height="250"><br><br>
+
 
 
 <a href="packages_Beamer1.html">
