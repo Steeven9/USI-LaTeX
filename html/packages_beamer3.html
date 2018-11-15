@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../media/img/favicon.ico">
+</head>
+<body>
+<meta name="author" content="Davide Trupia">
+<div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+<nav>
+          <a href="general_index.html">Getting Started</a>
+          <a href="syntax_index.html" >Basic Syntax</a>
+          <a href="graphics_index.html">Graphics</a>
+          <a href="equations_index.html">Equations</a>
+          <a href="packages_index.html"class="active">Packages</a>
+          <a href="quiz.html">Quiz</a>
+      </nav>
+      <div class="sidenav">
+          <a href="packages_index.html" id="firstsubpage"class="sidenavlink">Packages</a>
+           <a href="packages_IntroNewcommands.html" class="sidenavlink">Packages Introduction
+          <a href="packages_newcommands.html"class="sidenavlink">New Commands</a>
+          <a href="packages_fancyhdr.HTML"class="sidenavlink">Fancyhdr</a>
+          <a href="packages_quotchap.html"class="sidenavlink">Quotchap</a>
+          <a href="packages_todonotes.html"class="sidenavlink">Todonotes</a>
+          <div class="subpage"><div class="subpagepadding">Geometry</div>
+          <a href="packages_geometry2.html"class="subpagelink">Page 1</a>
+          <a href="packages_geometry.html"class="subpagelink">Page 2</a></div>
+          <a href="packages_hyperref_babel_xcolor.html"class="sidenavlink">Hyperref</a>
+          <a href="packages_hyperref_babel_xcolor2.html"class="sidenavlink">Babel</a>
+          <a href="packages_hyperref_babel_xcolor3.html" class="sidenavlink">Xcolor</a>
+          <div class="subpage"><div class="subpagepadding">Beamer</div>
+          <a href="packages_Beamer1.html"class="subpagelink">Page 1</a>
+          <a href="packages_Beamer2.html"class="subpagelink">Page 2</a>
+          <a href="packages_Beamer3.html"class="subpagelink">Page 3</a> </div>
+          <a href="packages_TOP5.html"class="sidenavlink">Top 5</a>
+      </div>
+</body>
+
+<main>
+<div class="title">BEAMER</div>
+<div class="indexgeneral">
+<ol>
+  <div class="index"><a href="../html/packages_Beamer1.html"><li>What is the Beamer?</li></a></div>
+  <br>
+  <div class="index"><a href="../html/packages_Beamer1.html"><li>Structure</li></a></div>
+  <br>
+  <div class="index"><a href="#thirdpart"><li>Styling features</li></a></div>
+  <br>
+  <div class="index"><a href="#fourthpart"><li>Animations</li></a></div>
+  <br>
+  <div class="index"><a href="#fifthpart"><li>Columns and blocks</li></a></div>
+</ol>
+</div>
+<hr>
+<div class="title" id="fifthpart">
+Columns and blocks</div>
+<div class="text"> There is a way to insert columns in a presentation like the example here written: </div>
+<div class="codebox"style="width: 600px;"><div class="paragraph"><b>CODE</b><hr><code>
+\begin{frame}<br>
+\begin{columns}<br>
+\begin{column}{0.3\textwidth}<br>
+some text\\<br>
+on\\<br>
+left<br>
+\end{column}<br>
+\begin{column}{0.3\textwidth}<br>
+\centering<br>
+some\\<br>
+text\\<br>
+right<br>
+\end{column}<br>
+\end{columns}<br>
+\end{frame}</code></div></div>
+<br><br><br>
+  <img src="../media/img/packages_beamer7.png" width="500" height="350"><br><br>
+<div class="text"> An image can be put beside some text.
+  The text can also be split and will be displayed above and under eachother.
+  To have the image displayed you must put it in <strong> the same folder</strong> or even in a different folder but the correct <strong>path</strong>.
+  Otherwise you will not have the image inserted. Here there is an example with the code that you can use:
+</div><br><br>
+<div class="codebox" style="width: 600px;"><div class="paragraph"><b>CODE</b><hr><code>
+  \begin{frame}{Example of text next to image}<br>
+     \begin{columns}[T]<br>
+     \begin{column}[T]{5cm}<br>
+     Some text above \\ some text under<br>
+     \end{column}<br>
+     \begin{column}[T]{2cm} <br>
+          \includegraphics[height=3cm]{imagepath.png}<br>
+     \end{column}<br>
+     \end{columns}<br>
+\end{frame}<br>
+</code></div></div><br><br><br>
+<img src="../media/img/packages_beamer8.png" width="500" height="350"><br><br>
+<br>
+
+<div class="subtitle">Blocks</div>
+<div class="text">A block can be easily put in the LaTeX code and can be useful to distinguish between what you want to write about.</div>
+<div class="codebox"style="width: 600px;"><div class="paragraph"><b>CODE</b><hr><code>
+  \begin{frame}<br>
+<br>
+   \begin{block}{Block info title}<br>
+    Information text<br>
+   \end{block}<br>
+<br>
+   \begin{alertblock}{Alert block title}<br>
+   Alert Text<br>
+   \end{alertblock}<br>
+<br>
+   \begin{exampleblock}{Example block title}<br>
+   Example text<br>
+   \end{exampleblock}<br>
+<br>
+  \begin{definition}{Definition block title}<br>
+  Definition text<br>
+  \end{definition}<br>
+<br>
+\end{frame}
+</code></div></div>
+<img src="../media/img/packages_beamer9.png" width="300" height="250"><br><br>
+
+
+
+<a href="packages_Beamer2.html">
+  <button class="buttonpage" style="margin-left: 1px;">
+    <i class="fa fa-chevron-circle-left">
+    PREVIOUS PAGE
+    </i></button></a>
+      <footer>
+          <address>Page written by Davide Trupia</address>
+      </footer>
+</main>
+</html>
