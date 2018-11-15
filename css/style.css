@@ -13,6 +13,10 @@ body.homepage{
   min-width: 643px;
 }
 
+body.history{
+  min-width: 1300px;
+}
+
 main{
     background-color: rgb(255, 255, 255);
     width: 74%;
@@ -271,12 +275,12 @@ div.bigspace{
 
 
 /* LINKS */
-div.text a:link, div.text a:visited, div.text a:hover, div.index a:link, div.index a:visited, div.index a:hover{
+div.text a:link, div.text a:visited, div.text a:hover, div.index a:link, div.index a:visited, div.index a:hover, div.subtitle a:link, div.subtitle a:visited, div.subtilte a:hover{
   color: blue;
   text-decoration: none;
 }
 
-div.text a:hover, div.index a:hover {
+div.text a:hover, div.index a:hover, div.subtitle a:hover {
   text-decoration: underline;
 }
 
@@ -693,6 +697,7 @@ div.homepagebox a:hover{
 .timelinetext {
   font-family: Roboto;
   font-size: 1.2em;
+  text-decoration: none;
   margin: 10px 0 0;
   padding: 0;
 }
@@ -701,7 +706,7 @@ div.homepagebox a:hover{
   font-family: Roboto;
   font-size: 1.2em;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   margin:0;
   padding: 0;
   color: black;
@@ -726,7 +731,7 @@ div.homepagebox a:hover{
 .timeline:before {
   content:  "";
   width: 2px;
-  height: 1900%;
+  height: 1930%;
   position: absolute;
   left: 50%;
   background: #c5c5c5;
