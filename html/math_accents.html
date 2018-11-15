@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Equations</title>
+    <meta name="author" content="*NAME_SURNAME*">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html"class="active">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+            <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+            <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+            <div class="subpage"><div class="subpagepadding">Title Section ↓</div>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 1</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 2</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 3</a></div>
+            <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+            <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Fonts</a>
+            <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+            <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Document Class</a>
+            <a href="syntax_TableOfContentsAndPageNumber.HTML" class="sidenavlink">Table of Contents<br>and Page Numbering</a>
+            <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+            <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+            <a href="syntax_bibManagement.HTML" class="sidenavlink" class="active">Bibliography Management</a>
+            <a href="syntax_biblatexStyles.HTML" class="sidenavlink">BibLaTeX Style</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">BibTeX Style</a>
+    </div>
+    <main>
+        <div class="title">Accents</div>
+        <div class="indexgeneral"><ul>
+            <li><div class="index"><a href="#accent">I. Accent in LaTeX</a></div></li>
+            <li><div class="index"><a href="#importance">II. The importance of Accent in Mathematical text</a></div></li>
+            <li><div class="index"><a href="#Test">III. Test Yourself</a></div></li>
+        </ul>
+        <hr>
+        </div>
+        <div class="firstsubtitle" id="accent">I. Accent in LaTeX</div>
+        <div class="text">In many case if no packages are used or a special version of LaTeX is used, LaTeX will not understand the simple letter 'á' with the acute accent, for this problem there are different command in order to fix that, like giving the code <code>\acute{a}</code> we actually get the letter 'a' with the acute accent (á).<br/>
+          This is only a simple example for fixing this problem, with the following codes you will be able to write also an accent that stand on top of a group of letters, like that: <code>\widehat{ABC}</code>, that stands for the angle in <code>B</code> of a triangle with <code>A, B</code> and <code>C</code> as vertices.<br/>
+          Here there are all the useful code for making all sort of accents in LaTeX:
+<br/>
+<br/>
+          <div class="latex">
+              <div class="paragraph"><b>CODE</b><hr>
+                  <code><ol>
+                    <li>$a' or a^{\prime}$</li>
+                    <li>$a''$</li>
+                    <li>$\hat{a}$</li>
+                    <li>$\bar{a}$</li>
+                    <li>$\grave{a}$</li>
+                    <li>$\acute{a}$</li>
+                    <li>$\dot{a}$</li>
+                    <li>$\ddot{a}$</li>
+                    <li>$\not{a}$</li>
+                    <li>$\mathring{a}$</li>
+                    <li>$\overrightarrow{AB}$</li>
+                    <li>$\overleftarrow{AB}$</li>
+                    <li>$a'''$</li>
+                    <li>$a''''$</li>
+                    <li>$\overline{aaa}$</li>
+                    <li>$\check{a}$</li>
+                    <li>$\breve{a}$</li>
+                    <li>$\vec{a}$</li>
+                    <li>$\dddot{a}$</li>
+                    <li>$\widetilde{AAA}$</li>
+                    <li>$\widehat{AAA}$</li>
+                    <li>$\stackrel\frown{AAA}$</li>
+                    <li>$\tilde{a}$</li>
+                    <li>$\underline{a}$</li>
+                  </ol></code></div>
+              <div class="object">
+                  <object type="application/pdf" data="../docs/math_accents.pdf" height="100%" width="100%"></object>
+              </div>
+
+          </div>
+<br/>
+<br/>
+
+        </div>
+        <div class="subtitle" id="importance">II. The importance of Accent in Mathematical text</div>
+        <div class="text">As we have seen before putting a 'big hat' above a gruop of letters is important in mathematic because it tells you which angle is considered, as we can see if we write something like that: <br/>
+<br/>
+<div class="codebox"><b>CODE</b><hr>
+    <code>$\widehat{ABC}$</code>
+</div>
+<br/>
+<br/>
+<img src="../media/img/math_angle.png" class="centerimagesbig">
+<br/>
+<br/>
+
+          we know that the angle of the triangle that is 23º is the angle <code>B</code>, which stands in-between the angle <code>A</code> and <code>C</code>.
+          <br/> Another important thing big arrow on the top of <code>AB</code> (number 11 and 12), this signify that <code>AB</code> is a vector.<br/>
+          This is just to show some example of the meaning of some mathematical accents.
+
+
+
+        </div>
+        <div class="subtitle" id="Test">III. Test Yourself</div>
+        <div class="text">Now try and guess which of the previous code stands for this type of accents:
+          <div class="exercises">
+              <p><img src="../media/img/math_test1.png" class="images"></p>
+              <div class="blackbox">
+                  $\hat{a}$
+              </div>
+              </div>
+<br/>
+<br/>
+
+
+        <div class="exercises">
+          <p><img src="../media/img/math_test2.png" class="images"></p>
+          <div class="blackbox">
+              $\bar{a}$
+          </div>
+          </div>
+
+
+
+
+        </div>
+
+        <footer>
+            <address>Page written by Sasha Bagnovini</address>
+        </footer>
+    </main>
+</body>
+
+</html>

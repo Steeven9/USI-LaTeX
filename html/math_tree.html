@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Tree</title>
+    <meta name="author" content="*JACOB_SALVI*">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html" class="active">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+        <a href="general_index.html" id="firstsubpage">Getting Started</a> <!-- Put the class="active" on your subpage -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html" id="lastsubpage">Quiz</a>
+    </div>
+    <main>
+      <div class="title">
+        Index
+      </div>
+      <div class="indexgeneral"><ul>
+          <li><div class="index"><a href="NAMEOFTHISFILE.html#first">*NAME OF THE FIRST SUBTITLE*</a></div></li>
+          <li><div class="index"><a href="NAMEOFTHISFILE.html#second">*NAME OF THE SECOND SUBTITLE*</a></div></li>
+          <li><div class="index"><a href="NAMEOFTHISFILE.html#third">*NAME OF THE THIRD SUBTITLE*</a></div></li>
+      </ul>
+      <hr>
+      </div>
+        <div class="title">Latex in relation to math</div>
+        <div class="subtitle">Matrices</div>
+        <div class="text">
+        Tree diagrams are handy to represent a hierarchical structure, they are used
+        in all fields, from phylogenetics to probability
+        <img src="../media/img/math_phylogenetic.png" class="centerimagesbig"
+         style="width: 40%; height: 40%;">
+        Altough they are not strictly part of mathematics since they are used often
+        in informatics we decided to show how to represent them in Latex.
+        The package "forest" is needed.<br>
+        A tree diagram consist of an element from wich 1 or more other elements
+        are derived, these elements could also divide in 1 or many others until an
+        element from wich nothing derives is reached. The following example represents
+        a general tree diagram.
+
+        <img src="../media/img/math_extree.png" class="centerimagesbig"
+         style="width: 40%; height: 40%;">
+         To make a tree we need to use:
+         <div class="codebox"><b>CODE</b><hr>
+             <p>\begin{forest}<br>
+             ...<br>
+             \end{forest}<br>
+           </p>
+         </div>
+         Before we dwell on the code needed to make a tree a couple of observations
+         are needed.<br>
+         The element following the root are considered from left to right.<br>
+         Every element of a tree can be considered as a root for a subtree, for
+         example a<sub>0</sub> in the last image can be considered as a root to
+         the following tree:
+         <img src="../media/img/math_subtree.png" class="centerimagesbig"
+          style="width: 20%; height: 20%;">
+        This said, let's make a tree step by step.<br>
+        The root must be inside square brackets that must also contain all elements
+        that derive from it. To start let's make a tree with a root and three following
+        elements.
+        <div class="codebox"><b>CODE</b><hr>
+            <p>\begin{forest}<br>
+            [Root<br>
+            [Left]<br>
+            [Center]<br>
+            [Right]<br>
+            ]<br>
+            \end{forest}<br>
+          </p>
+        </div>
+        <img src="../media/img/math_root.png" class="centerimagesbig"
+         style="width: 20%; height: 20%;">
+        To make a tree in wich some elements branches it is enough to replace
+        those elements with the desired subtree. This said let's modify our last
+        tree so that the center element has two subelements, center-left and
+        center-right.
+        <div class="codebox"><b>CODE</b><hr>
+            <p>\begin{forest}<br>
+            [Root<br>
+            [Left]<br>
+            [Center <br>
+            [center-left]<br>
+            [center-right]<br>
+            ]<br>
+            [Right]<br>
+            ]<br>
+            \end{forest}<br>
+          </p>
+        </div>
+        <img src="../media/img/math_centertree.png" class="centerimagesbig"
+         style="width: 20%; height: 20%;">
+         It should now be quite clear how to make any desired tree. This said,
+         there are still a couple of options that may come in handy.<br>
+         The first option will align all leaves:
+         <div class="codebox"><b>CODE</b><hr>
+             <p>\begin{forest}<br>
+               for tree={<br>
+      if n children=0{<br>
+        font=\itshape,<br>
+        tier=terminal,<br>
+      }{},<br>
+    }<br>
+  [Root<br>
+  [$a_1$<br>
+  [$b_1$]]<br>
+  [$a_2$<br>
+  [$b_1$<br>
+  [$c_1$]<br>
+  [$c_2$]<br>
+  [$c_3$]]]<br>
+  [$a_3$<br>
+  [$b_1$<br>
+  [$c_1$]<br>
+  [$c_2$<br>
+  [$d_1$]<br>
+  [$d_2$]]]]]<br>
+
+             \end{forest}<br>
+           </p>
+         </div>
+         <img src="../media/img/math_treealign.png" class="centerimagesbig"
+          style="width: 30%; height: 30%;">
+          We might want to put each element inside a figure, let's say a circle,
+          and let's change the color of the nodes as well.
+          This is possible with following code:
+          <div class="codebox"><b>CODE</b><hr>
+              <p>\begin{forest}<br>
+                for tree={draw,circle,dotted,blue<br>
+       if n children=0{<br>
+         font=\itshape,<br>
+         tier=terminal,<br>
+       }{},<br>
+     }<br>
+   [Root<br>
+   [$a_1$<br>
+   [$b_1$]]<br>
+   [$a_2$<br>
+   [$b_1$<br>
+   [$c_1$]<br>
+   [$c_2$]<br>
+   [$c_3$]]]<br>
+   [$a_3$<br>
+   [$b_1$<br>
+   [$c_1$]<br>
+   [$c_2$<br>
+   [$d_1$]<br>
+   [$d_2$]]]]]<br>
+
+              \end{forest}<br>
+            </p>
+          </div>
+          <img src="../media/img/math_bluetree.png" class="centerimagesbig"
+           style="width: 30%; height: 30%;">
+          One last option that might be interesting let us draw around a subtree,
+          this might be useful to highlight some part of our tree. To achive this
+          it is enough to add the following code after an element of the tree, it
+          will highlight that element and all elements that derive from it.
+          <div class="codebox"><b>CODE</b><hr>
+            <p>[Node,tikz={\node [draw,red,inner sep=0,fit to=tree]{};}...</p>
+            </div>
+            <img src="../media/img/math_treehigh.png" class="centerimagesbig"
+             style="width: 30%; height: 30%;">
+             This informations should suffice to make a decent tree diagram, but of
+             corse this is only the tip of the iceberg and many more options are avaible
+             to make even better diagrams.
+
+
+        <div class="subtitle">
+          EXERCISES
+        </div>
+        <div class="exercises">
+            <p>To check that all these new concepts have been understood i would
+            like to invite the reader to try and replicate the following diagram using
+            Latex.
+          <img src="../media/img/math_treeexercise.png" class="centerimagesbig"
+          style="width: 50%; height:50%;">
+        </p>
+            <div class="blackbox">
+              \begin{forest}<br>
+for tree={draw,<br>
+    if n children=0{<br>
+      font=\itshape,<br>
+      tier=terminal,}{},}<br>
+[Root<br>
+[$a_1$ ,tikz={\node [draw,circle,green,inner sep=0,fit to=tree]{};}<br>
+[$b_1$<br>
+[$d_1$]<br>
+[$d_2$]<br>
+[$d_3$]]]<br>
+[$a_2$<br>
+[$b_1$<br>
+[$d_4$]<br>
+[$c_1$<br>
+[$d_5$]<br>
+[$d_6$]]]]]<br>
+
+            </div>
+        </div>
+
+        <footer>
+            <address>Page written by Jacob Salvi</address>
+        </footer>
+    </main>
+</body>
+
+</html>

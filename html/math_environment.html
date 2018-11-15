@@ -1,0 +1,274 @@
+<!-- WARNING: WRITE ALL THE TEXT INSIDE THE MAIN AND NOT DIRECTLY ON THE BODY -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Mathematical Environment</title>
+    <meta name="author" content="Sasha Bagnovini">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html" class="active">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+            <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+            <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+            <div class="subpage"><div class="subpagepadding">Title Section ↓</div>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 1</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 2</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 3</a></div>
+            <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+            <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Fonts</a>
+            <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+            <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Document Class</a>
+            <a href="syntax_TableOfContentsAndPageNumber.HTML" class="sidenavlink">Table of Contents<br>and Page Numbering</a>
+            <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+            <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+            <a href="syntax_bibManagement.HTML" class="sidenavlink" class="active">Bibliography Management</a>
+            <a href="syntax_biblatexStyles.HTML" class="sidenavlink">BibLaTeX Style</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">BibTeX Style</a>
+    </div>
+    <main>
+        <div class="title">Mathematical Environment</div>
+        <div class="indexgeneral"><ul>
+            <li><div class="index"><a href="#Introduction">Introduction</a></div></li>
+            <li><div class="index"><a href="#Inline">I. Inline (within text) Formulas</a></div></li>
+            <li><div class="index"><a href="#display">II. Displayed Equations</a></div></li>
+            <li><div class="index"><a href="#numbered">III. Displayed and numbered</a></div></li>
+            <li><div class="index"><a href="#Test">IV. Test Yourself</a></div></li>
+        </ul>
+        <hr>
+        </div>
+        <div class="firstsubtitle" id="Introduction">Introduction</div>
+        <div class="text">There are different things that you can do to write mathematical text, since LaTeX needs to know when a part of your text is mathematical, you have to tell him when to use a different typeset for maths notation, since uses a different typeset from normal text.<br/>
+          Therefore, special environments have been declared for this purpose. They can be distinguished into three categories depending on how they are presented:<br/>
+          <dl>
+            <dt>I) Inline formulas</dt>
+            <dd>- Text formulas that are displayed inline, without creating a new line for the mathematical text.</dd>
+            <dt>II) Displayed</dt>
+            <dd>- Text formulas that are displayed in a line by themselves.</dd>
+            <dt>III) Displayed and numbered</dt>
+            <dd>- Text formulas that are displayed in a different line, the formula will be also autumatically numbered.</dd>
+          </dl> <br/>
+          Now we are going to see the three different categories with some examples with LaTeX.
+
+<br/>
+<br/>
+
+
+          <table id="customers">
+            <tr>
+              <th>Type</th>
+              <th>Inline (within text) formulas</th>
+              <th>Displayed equations</th>
+              <th>Displayed and automatically numbered equations</th>
+            </tr>
+            <tr>
+              <th>Environment</th>
+              <td><code>math</code></td>
+              <td><code>displaymath</code></td>
+              <td><code>equation</code></td>
+            </tr>
+            <tr>
+              <th>LaTeX shorthand</th>
+              <td><code>\(...\)</code></td>
+              <td><code>\[...\]</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>TeX shorthand</th>
+              <td><code>$...$</code></td>
+              <td><code>$$...$$</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Comment</th>
+              <td></td>
+              <td></td>
+              <td><code>equation*</code> <br/>doesn't numerate the equations, but requires the package amsmath</td>
+            </tr>
+          </table>
+          <br/> Is suggested to avoid use <code>$$...$$</code>, as it may cause problems, particularly with the AMS-LaTeX macros. Instead is raccomended to use <code>begin{equation}...end{equation}</code> or <code>begin{equation*}...end{equation*}</code>.
+
+        </div>
+
+        <div class="subtitle" id="Inline">I. Inline (within text) Formulas</div>
+        <div class="text"> When we write anything into LaTeX we use to say that we are in <i>text mode</i>, but when we want to write something like equations, we want to change <i>'mode'</i>, so we have to give laTeX the command to change it.<br/>
+          One possible way to 'change' this mode is to give the command <code>\begin{math} ... \end{math}</code> or <code>$...$</code>, where '<code>...</code>' stands for the formula.<br/>
+          One very simple example could be this:
+<br/>
+<br/>
+
+          <div class="codebox"><b>LaTeX input</b><hr>
+              <p><code>This is a sample text to see if this formula: <br/>
+                <font color=blue>\begin{math} <br/>
+                  5+4=9 <br/>
+                \end{math} </font><br/>
+                actually stays within text.</code></p>
+          </div>
+
+
+<br/>
+<br/>
+Or we can also use <code>$...$</code>:
+<br/>
+<br/>
+
+<div class="codebox"><b>LaTeX input</b><hr>
+    <p><code>This is a sample text to see if this formula: <font color=blue>$ 5+4=9 $</font>
+      actually stays within text.</code></p>
+</div>
+
+<br/>
+<br/>
+We can also use the <code>\(...\)</code> macro:
+<br/>
+<br/>
+
+<div class="codebox"><b>LaTeX input</b><hr>
+    <p><code>This is a sample text to see if this formula:
+      <font color=blue>\(5+4=9\)</font>
+      actually stays within text.</code></p>
+</div>
+
+<br/>
+<br/>
+All the 3 macros will lead to the same PDF output, since the 3 macros work the same way, this is the PDF that you should get:
+<br/>
+<br/>
+
+
+<img src="../media/img/math_$...$.png" class="centerimagesbig">
+
+
+
+        </div>
+        <div class="subtitle" id="display">II. Displayed Equations</div>
+        <div class="text">If we want that the Mathematical expression stands in a new line, we need to use the macros <code>\begin{displaymath}...\end{displaymath}</code>, <code>$$...$$</code> or <code>\begin{equation}...\end{equation}</code> if we want to numerate the different equations.<br/>
+          By using these macros the result would be an equation written and centered in a new line, and most of the time it will be also bigger the font of the equation.<br/>
+          Here there are some examples:
+
+<br/>
+<br/>
+
+          <div class="codebox"><b>LaTeX input</b><hr>
+              <p><code>This is a sample text to see if this formula: <br/>
+                <font color=blue>\begin{displaymath} <br/>
+                  5+4=9 <br/>
+                \end{displaymath} </font><br/>
+                actually displays in a new line.</code></p>
+          </div>
+
+<br/>
+<br/>
+We can also use <code>$$...$$</code>:
+<br/>
+<br/>
+
+
+            <div class="codebox"><b>LaTeX input</b><hr>
+                <p><code>This is a sample text to see if this formula: <br/>
+                  <font color=blue>$$ 5+4=9 $$</font><br/>
+                  actually displays in a new line.</code></p>
+            </div>
+
+<br/>
+<br/>
+Or the macro <code>\[...\]</code> as well:
+<br/>
+<br/>
+            <div class="codebox"><b>LaTeX input</b><hr>
+                <p><code>This is a sample text to see if this formula: <br/>
+                  <font color=blue>\[5+4=9\]</font><br/>
+                  actually displays in a new line.</code></p>
+            </div>
+
+<br/>
+<br/>
+We can actually see that all the three macros work the same way:
+<br/>
+<br/>
+
+
+
+<img src="../media/img/math_$$...$$.png" class="centerimagesbig">
+
+
+        </div>
+
+        <div class="subtitle" id="numbered">III. Displayed and numbered</div>
+        <div class="text">If we have to write a document containing an elevate number of mathematical expressions, using the macros <code>\begin{equation}...\end{equation}</code>, will be absolutely the best choice, since numbering all the equation will be much easier to recall the expressions later on in the document.
+
+<br/>
+<br/>
+
+          <div class="codebox"><b>LaTeX input</b><hr>
+              <p><code>This is a sample text to see if this formula: <br/>
+                <font color=blue>\begin{equation} <br/>
+                  5+4=9 <br/>
+                \end{equation} </font><br/>
+                actually displays in a new line and numbered itself.</code></p>
+          </div>
+
+<br/>
+<br/>
+If we have to write a document containing an elevate number of mathematical expressions, using the macros <code>\begin{equation}...\end{equation}</code>, will be absolutely the best choice, since numbering all the equation will be much easier to recall the expressions later on in the document.
+<br/>
+<br/>
+<img src="../media/img/math_begin-equation.png" class="centerimagesbig">
+<br/>
+<br/>
+        <div class="subtitle" id="Test">IV. Test Yourself</div>
+        <div class="text">This subsection is for revise everything you have learned in this section
+
+
+        </div>
+<br/>
+<br/>
+
+
+        <div class="exercises">
+            <p>Which macros would you use for an equation that stands in a different line? (3 possible solutions)
+            </p>
+            <div class="blackbox"><code>
+              1) \begin{displaymath}
+              ...
+              \end{displaymath} <br/>
+              2)$$ ... $$ <br/>
+              3)\[...\]
+            </code></div>
+        </div>
+<br/>
+<br/>
+        <div class="exercises">
+            <p>Which macros would you use for an equation that stands in the same line as the text? (3 possible solutions)
+            </p>
+            <div class="blackbox"><code>
+              1) \begin{math}
+              ...
+              \end{math} <br/>
+              2)$ ... $ <br/>
+              3)\(...\)
+            </code></div>
+        </div>
+
+        <footer>
+            <address>Page written by Sasha Bagnovini</address>
+        </footer>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Equations</title>
+    <meta name="author" content="Sasha Bagnovini">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html" class="active">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+            <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+            <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+            <div class="subpage"><div class="subpagepadding">Title Section ↓</div>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 1</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 2</a>
+            <a href="syntax_title_section.HTML" class="subpagelink">Page 3</a></div>
+            <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+            <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Fonts</a>
+            <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+            <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Document Class</a>
+            <a href="syntax_TableOfContentsAndPageNumber.HTML" class="sidenavlink">Table of Contents<br>and Page Numbering</a>
+            <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+            <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+            <a href="syntax_bibManagement.HTML" class="sidenavlink" class="active">Bibliography Management</a>
+            <a href="syntax_biblatexStyles.HTML" class="sidenavlink">BibLaTeX Style</a>
+            <a href="LINKSUBPAGE.HTML" class="sidenavlink">BibTeX Style</a>
+    </div>
+    <main>
+        <div class="title">Equations System</div>
+        <div class="indexgeneral"><ul>
+            <li><div class="index"><a href="#Introduction">Introduction</a></div></li>
+            <li><div class="index"><a href="#Simultaneous">I. Simultaneous Equations</a></div></li>
+            <li><div class="index"><a href="#Case">II. Case Definitions</a></div></li>
+            <li><div class="index"><a href="#Alignment">III. Alignment</a></div></li>
+            <li><div class="index"><a href="#Test">IV. Test Yourself</a></div></li>
+        </ul>
+        <hr>
+        </div>
+        <div class="firstsubtitle" id="Introduction">Introduction</div>
+        <div class="text">In this subsection we are going to explain you how to do an equations system, that is not so difficult, but you need to know how to properly use the macro <code>\begin{cases}...\end{cases}</code>.
+          For those who do know what an equations system is, here there is an example:
+
+<br/>
+<br/>
+<img src="../media/img/math_system.png" class="centerimagesbig">
+<br/>
+<br/>
+Before starting we need to remember that we need a package for let LateX understand the mathematical language that we are going to use in this substection, we need to use the command <code>\usepackage{amsmath}</code> at the beginning of the LaTeX document.
+
+          </div>
+
+
+        <div class="subtitle" id="Simultaneous">I. Simultaneous Equations</div>
+        <div class="text">When we want to write more equations at the same time that are connected, we need to put a big {-bracket in front of the 2 or more equations, this notation is called Equation System.<br/>
+          To write this notation in LaTeX is not that complicated, you only need to know how to use properly the macro <code>\begin{cases}...\end{cases}</code>. <br/>
+          Here is an example of a code for a similar equations system as the previous one:
+
+<br/>
+<br/>
+<div class="codebox"><b>CODE</b><hr>
+    <code>$$
+            \begin{cases}<br/>
+            3x + 5y + z = 3\\<br/>
+            7x - 2y + 4z = 4\\<br/>
+            -6x + 3y + 2z = 2<br/>
+            \end{cases}
+          $$
+    </code>
+</div>
+<br/>
+<br/>
+Obviously using the <code>\begin{cases}...\end{cases}</code> macro is not the only way to write an equations system, there are others, like the <code>\begin{array}...\end{array}</code>, and keep in mind that using this macro there is the possibility that LaTeX doesn't compile at all, for that you need to use another package, <code>\usepackage{array}</code>:
+<br/>
+<br/>
+<div class="codebox"><b>CODE</b><hr>
+    <code>
+    $$
+      \left\{<br/>
+        \begin{array}{lr}<br/>
+          3x + 5y + z = 3\\<br/>
+          7x - 2y + 4z = 4\\<br/>
+          -6x + 3y + 2z = 2<br/>
+        \end{array}<br/>
+      \right.
+    $$
+    </code>
+</div>
+<br/>
+<br/>
+Having the output that is like this:
+<br/>
+<br/>
+<img src="../media/img/math_system2.png" class="centerimagesbig">
+<br/>
+<br/>
+
+          </div>
+        <div class="subtitle" id="Case">II. Case Definitions</div>
+        <div class="text">The case definition is used when a definition has more than one case, one example could be this:
+<br/>
+<br/>
+<img src="../media/img/math_system3.png" class="centerimagesbig">
+<br/>
+<br/>
+This is the example of the sign function of x, where <code>f(x)</code> assumes the numbers <code>-1,0,1</code> as different values.<br/>
+The code for this tipe of function is very similar to the previous codes, you only need to add an <code>f(x) =</code> in front of the system.
+<br/>
+<br/>
+<div class="codebox"><b>CODE</b><hr>
+    <code>
+      $$
+        f(x) = sgn(x) =<br/>
+          \begin{cases}<br/>
+            1 & x > 0 \\<br/>
+            0 & x = 0 \\<br/>
+            -1 & x < 0 <br/>
+          \end{cases}
+      $$
+
+    </code>
+</div>
+
+
+          </div>
+
+          <div class="subtitle" id="Alignment">III. Alignment</div>
+          <div class="text">As we can see in the second code that has been written before, the alignment into the equations system is not the best one, say for example that we want everything aligned with the <code>=</code>, to look like this:
+<br/>
+<br/>
+<img src="../media/img/math_system4.png" class="centerimagesbig">
+<br/>
+<br/>
+This way the rusults appears much more visible than before.<br/>
+One way possible to do this would be to put <code>&</code> before the <code>=</code> sign:
+<br/>
+<br/>
+
+<div class="codebox"><b>CODE</b><hr>
+    <code>
+      $$\left\{<br/>
+        \begin{array}{lr}<br/>
+          3x + 5y + z &= 3\\<br/>
+          7x - 2y + 4z &= 4\\<br/>
+          -6x + 3y + 2z &= 2<br/>
+        \end{array}<br/>
+      \right.
+      $$
+
+    </code>
+</div>
+
+<br/>
+<br/>
+Obviously putting the <code>&</code> sign before any other number or sign will align this sign and numbers.
+            </div>
+
+            <div class="subtitle" id="Test">IV. Test Yourself</div>
+            <div class="text">Let's see how much you understand so far:
+              <br/>
+              <br/>
+
+
+                      <div class="exercises">
+                        <p>Which macros tou need to use in order to make an equations system in LaTeX?
+                          </p>
+                          <div class="blackbox"><code>
+                            1) \begin{cases}
+                            ...
+                            \end{cases} <br/>
+                            2)and \begin{array}
+                            ...
+                            \end{array}
+
+                          </code></div>
+                      </div>
+              <br/>
+              <br/>
+                      <div class="exercises">
+                          <p>Which Which simbol do you need to allign the equations system? where do you have to put it?
+                          </p>
+                          <div class="blackbox"><code>
+                            You need to use the symbol <code>&<code> and yoiu need to putit in front of the thing that you want to allign in each line.
+                          </code></div>
+                      </div>
+
+
+            </div>
+        <footer>
+            <address>Page written by Sasha Bagnovini</address>
+        </footer>
+    </main>
+</body>
+
+</html>
