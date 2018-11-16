@@ -576,6 +576,7 @@ div.mttfirstbox img {
   width: 10%;
   height: 10%;
   max-width: 20%;
+  border-radius: 100px;
 }
 
 div.mttfirstbox div.mttfirstboxsub, div.mttfirstboxbottom div.mttfirstboxbottomsub {
