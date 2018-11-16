@@ -2,33 +2,14 @@
 <html lang="en">
 
 <head>
-    <script type="text/javascript">
-      
-      function urlExists(url, callback) {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState === 4) {
-            callback(xhr.status < 400);
-          }
-        };
-        xhr.open('HEAD', url);
-        xhr.send();
-      }
-
-      urlExists(someUrl, function(exists) {
-          console.log('"%s" exists?', someUrl, exists);
-      });
-
-    </script>
     <meta charset="utf-8" />
     <title>Basic paragraphs and comments</title>
     <meta name="author" content="Marco Barabaschi">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
-    <link rel="icon" href="../media/img/favicon.ico">
 </head>
 
-<body onload="changeNav()">
+<body>
   <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
     <nav>
         <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
@@ -38,6 +19,22 @@
         <a href="packages_index.html">Packages</a>
         <a href="quiz.html">Quiz</a>
     </nav>
+    <div class="sidenav">
+        <a href="syntax_First_document.HTML" id="firstsubpage"><center>CREATE YOUR FIRST LATEX</center></a>
+        <a href="syntax_title_section.HTML"><center>TITLE SECTION</center></a>
+        <a href="syntax_basic_paragraphs_and_comments.HTML" class="active"><center>PARAGRAPH AND COMMENTS</center></a>
+        <a href="syntax_fonts_and_text_processing.HTML"><center>TEXT PROCESSING</center></a>
+        <a href="LINKSUBPAGE.HTML"><center>FONTS</center></a>
+        <a href="syntax_formatting.HTML"><center>FORMATTING</center></a>
+        <a href="syntax_lists.HTML"><center>LIST</center></a>
+        <a href="classes.HTML"><center>DOCUMENT CLASS</center></a>
+        <a href="syntax_TableOfContentsAndPageNumber.HTML"><center>TABLE OF CONTENT AND PAGE NUMBERING</center></a>
+        <a href="syntax_footnotes.HTML"><center>FOOTNOTE</center></a>
+        <a href="syntax_language_support.HTML"><center>LANGUAGE SUPPORT</center></a>
+        <a href="syntax_bibManagement.HTML"><center>BIBLIOGRPAHY MANAGMENT</center></a>
+        <a href="syntax_biblatexStyles.HTML"><center>BIBLATEX STYLES</center></a>
+        <a href="LINKSUBPAGE.HTML" id="lastsubpage"><center>BIBTEX STYLES</center></a>
+    </div>
   <main>
   <h1 class="Title">Basic paragraphs and comments</h1>
   <h2>Creating paragraphs and new lines</h2>
@@ -45,7 +42,7 @@
     want to keep a simple, basic format. In Latex, for example,
     if you want to start a new paragraph, you have to click the
     "Enter" key twice, and if you write on a new line and not
-    start a new paragraph, you can write a backslash (\\) two times,
+    start a new paragraph, you can write a backslash two times (\\),
     after the line previous to the new line. For example,</p>
     <blockquote><code><p>\documentclass{article}</p>
       <p><p>\title{My first Latex Document!}</p>
@@ -64,7 +61,7 @@
         document with new lines and paragraphs" height="700" width="600">
 <h2>Comments</h2>
   <p>We saw from the code and the  picture of the document, that a new line
-    goes simply down a line, while a paragraph gets indented.</p>
+    goes simply down a line, while a paragraph does the same, but gets indented.</p>
 
     <p>On Latex, it is also possible to insert comments (colored in red), useful
       for remembering what you meant in one of your lines of
@@ -91,8 +88,8 @@
 
 
   <p>As you may imagine, comments will not appear
-    on the actual Latex document. This is a very useful tool,
-    because it makes the coder remember what he meant with
+    on the actual Latex document, so the document for the code above will be the same as the first picture at the top of this page. This is a very useful tool,
+    because it makes the coder remember what he/she meant with
     a particular code, or line of code.
     Are you not so sure about remembering in the future what you have written, or what your code really means?
     Put a % and write your comment!</p>
