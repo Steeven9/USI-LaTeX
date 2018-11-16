@@ -11,7 +11,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 
 <head>
   <meta charset="utf-8" />
-  <title>lists in LaTeX</title>
+  <title>titles in LaTeX</title>
   <meta name="Federico Lagrasta" content="formatting in LaTeX">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
@@ -28,6 +28,8 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
   }
 
   .example > code{
+    word-wrap: break-word;
+    white-space: pre;
     padding-top: 4%;
     padding-right: 10%;
     grid-column: 1/2;
@@ -75,8 +77,13 @@ ul> li{
   margin-top: 0;
 }
 
+
+.latex  > .paragraph {
+white-space: pre;
+}
+
+
   </style>
-    <link rel="icon" href="../media/img/favicon.ico">
 </head>
 
 
@@ -84,90 +91,351 @@ ul> li{
 
 <body>
   <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
-    <nav>
-        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
-        <a href="syntax_index.html"class="active">Basic Syntax</a>
-        <a href="graphics_index.html">Graphics</a>
-        <a href="equations_index.html">Equations</a>
-        <a href="packages_index.html">Packages</a>
-        <a href="quiz.html">Quiz</a>
-    </nav>
+  <nav>
+      <a href="general_index.html" >Getting Started</a>  <!-- Move the class="active" to your group -->
+      <a href="syntax_index.html" class="active">Basic Syntax</a>
+      <a href="graphics_index.html">Graphics</a>
+      <a href="equations_index.html">Equations</a>
+      <a href="packages_index.html">Packages</a>
+      <a href="quiz.html">Quiz</a>
+  </nav>
+  <div class="sidenav">
+          <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+          <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+          <div class="subpage"><div class="subpagepadding">Title Section ↓</div>
+          <a href="syntax_title_section.HTML" class="subpagelink">Page 1</a>
+          <a href="syntax_title_section.HTML" class="subpagelink">Page 2</a>
+          <a href="syntax_title_section.HTML" class="subpagelink">Page 3</a></div>
+          <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+          <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+          <a href="LINKSUBPAGE.HTML" class="sidenavlink">Fonts</a>
+          <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+          <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+          <a href="LINKSUBPAGE.HTML" class="sidenavlink">Document Class</a>
+          <a href="syntax_TableOfContentsAndPageNumber.HTML" class="sidenavlink">Table of Contents<br>and Page Numbering</a>
+          <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+          <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+          <a href="syntax_bibManagement.HTML" class="sidenavlink" class="active">Bibliography Management</a>
+          <a href="syntax_biblatexStyles.HTML" class="sidenavlink">BibLaTeX Style</a>
+          <a href="LINKSUBPAGE.HTML" class="sidenavlink">BibTeX Style</a>
+  </div>
+
   <main>
 
-    <div class="titles">MAKE YOUR TITLE</div>
-    <div class="subtitles">INTRODUCTION TO /maketitle</div>
+    <div class="title">MAKE YOUR TITLE</div>
+
+
+
+    <div class="indexgeneral"><ul>
+        <li><div class="index"><a href="syntax_title_section.html#first">INTRODUCTION TO <code>\maketitle</code></a></div></li>
+        <li><div class="index"><a href="syntax_title_section.html#second">INTRODUCTION TO THE EXAMPLES</a></div></li>
+        <li><div class="index"><a href="syntax_title_section.html#third">EXAMPLE 1</a></div></li>
+        <li><div class="index"><a href="syntax_title_section.html#fourth">EXAMPLE 2</a></div></li>
+    </ul>
+    <hr>
+    </div>
+
+
+
+
+    <div class="subtitle" id="first">INTRODUCTION TO /maketitle</div>
     <div class="text">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  It's very easy to produce a simple title page with LaTeX just by calling <code>\maketitle</code> after setting up the following attributes will do the job
 
       <ul>
         <li>
-          <code>/title</code>
+          <code>/title</code>: Title of the page, inside  it <code>\thanks</code> footnotes can be set. More about footnotes on the footnote section.
         </li>
         <li>
-          <code>/author</code>
+          <code>/author</code>:Author of the page
         </li>
         <li>
-          <code>/date</code>
+          <code>/date</code>: You can either use <code>\today</code> as argument or personalize your date
         </li>
       </ul>
-    </div>
+  </div>
 
 
+  <div class="latex">
+    <div class="paragraph">
+
+      <code>
+
+\documentclass[a4paper,12pt]{article}
+
+\title{MAKING A BASIC TITLE PAGE}
+\author{Federico Lagrasta\\ \large{Università della Svizzera Italiana}}
+\date{\today}
+
+\begin{document}
+\pagenumbering{gobble} %removes page numbering
+\maketitle
+\newpage
+\pagenumbering{arabic} %page numbering starts on the next page
+\end{document}
+    </code>
+
+  </div>
 
 
+  <div class="object">
+  <object type="application/pdf" data="../docs/syntax_FL_ts_simplet.pdf " height="100%" width="100%"> </object>
+  </div>
+  </div>
 
-    <div class="subtitles">VARIOUS EXAMPLES</div>
-    <div class="text">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </div>
-
-<div class="subtitles">TITLE FOR A THESIS</div>
 <div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+    All that being said a title page is still a page like another and if you want a further degree of customization and are not so fluent in LaTeX you can always put it together with an external software and include it in your document via <code>\includepdf{your_title.pdf}</code> provided by the standard package <code>pdfpages</code>
+
+  </div>
+
+
+
+
+
+
+  <div class="subtitle" id="second" >INTRODUCTION TO THE EXAMPLES</div>
+  <div class="text">
+    Outside of <code>\maketitle</code> (which at any rate outputs consistent but not so stellar results)there really is no fixed way to make a title page since you are completely free to format it the way you want. That being said a title page is still a page like another and, if you want a further degree of customization and are not so fluent in LaTeX, you can always put it together with an external software including it in your document via <code>\includepdf{your_title.pdf}</code> provided by the standard package <code>pdfpages</code>. </br>
+
+    A few example will be provided as guidance and the methods employed to produce them analyzed. </br>
+    Some basic formatting notions will be required to understand the spacing in the next examples: you can find more about spacing in the <a href="./formatting.html">formatting section</a> </br>
+
+  </div>
+
+
+
+
+
+
+
+<div class="subtitle" id="third">EXAMPLE 1</div>
+<div class="text">
+<ul>
+<li>
+In this case we use <code>\documentclass[a4paper,12pt]{article}</code>  but using either <code>article</code>  or <code>report</code> won't affect the look of the title. The [a4paper,12pt] option is respectively setting the margins of the page and the font size. For further information about classes please refer to the <a href=""> class section</a>
+</li>
+
+<li>
+The package <code>graphicx</code>  is used to include images in our .pdf. The package <code>tabularx</code> is used provide a more flexible <code>\tabular</code> enviroment that, in the specific, takes care of overflow.
+</li>
+
+
+<li>
+  The title is inside a <code>titlepage</code> environment, this makes the title on a separate pages and turns of the page numbering for that page.
+</li>
+
+<li>
+The image is inline and NOT inside a <code>figure</code> enviroment because we don't want it to float. More about floats in the formatting section.
+</li>
+<li>
+
+
+<code> \raisebox{-\baselineskip}{\rule{\textwidth}{1px}} \rule{\textwidth}{1px}</code> creates the double horizontal line: <code>raisebox</code> is reducing the distance between the two by <code>\baselineskip </code>
+</li>
+
+<li>
+A <code>tabularx</code> enviroment is used to justify the names at the margins of the page since it allows to specify the whole widht of the table which, in this case, is exactly <code>\textwidth</code>. The second time a regular <code>tabular</code> is used. You can find more about table in the tables section.
+</li>
+
+<li>
+  <code>\vfill</code> simply fills the remaining vertical space of the page thus positioning the following text at the bottom margin of the page.
+</li>
+
+</ul>
+
+
+
+
 </div>
 
-    <div class="example">
 
-      <code>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </code>
+<div class="latex">
+<div class="paragraph">
 
-      <div>
-        <embed src="../docs/syntax_FL_CV15.pdf" />
-      </div>
+<code>
 
-    </div>
+\documentclass[a4paper,12pt]{article}
 
-    <div class="subtitles">TITLE FOR A BOOK</div>
-    <div class="text">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </div>
+\usepackage{graphicx}
+\usepackage{tabularx}
 
-        <div class="example">
+\begin{document}
 
-          <code>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </code>
+\begin{titlepage}
+\scshape
 
-          <div>
-            <embed src="../docs/syntax_FL_CV15.pdf" />
-          </div>
+\centering
+\includegraphics[width=3cm, keepaspectratio]{logo_usi.png} \par \vspace{0.1cm}
+\texttt{DEPARTMENT OF INFORMATICS}
+\vspace{1cm}
 
-        </div>
 
-        <div class="subtitles">TITLE FOR A PRESENTATION</div>
-        <div class="text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
+\raisebox{-\baselineskip}{\rule{\textwidth}{1px}}
+\rule{\textwidth}{1px}
+\vspace{0.2cm}
 
-            <div class="example">
+{\huge{{MAKING TITLES IN \LaTeX}}}\par \vspace{0.1cm}
+USE PHOTOSHOP, MAYBE DON'T: I'M NOT YOUR DAD
 
-              <code>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </code>
+\rule{\textwidth}{2px}
 
-              <div>
-                <embed src="../docs/syntax_FL_CV15.pdf" />
-              </div>
+\vspace{1cm}
 
-            </div>
+\begin{tabularx}{\textwidth}{X r}
+Author:  & Author:\\
+\large{FEDERICO LAGRASTA}   & \large{MARIO ROSSI} \\
+\end{tabularx}
+
+\vspace{1.3cm}
+
+\begin{tabular}{lp{1cm}l}
+supervised by & JULIEN  PROKOFIEV
+
+\end{tabular}
+
+\vfill
+\today
+
+\end{titlepage}
+
+\end{document}
+
+  </code>
+
+</div>
+
+
+<div class="object">
+<object type="application/pdf" data="../docs/syntax_FL_ts_title2.pdf" height="100%" width="100%"> </object>
+</div>
+</div>
+
+
+<div class="subtitle" id="fourth">EXAMPLE 2</div>
+<div class="text">
+<ul>
+<li>
+  The package <code>geometry</code> is used to change to eventually change the page size and margins. In this case the width of the page is left as the original <code>\geometry{textwidth=426pt}</code> but it could be easily changed to a wider size. More about the <code>geometry</code> package in the dedicated section.
+</li>
+
+<li>
+  The package <code>ragged2e</code> is used for a better justification of text thrugh the commands and enviroments <code>\centering, flushleft, flushright</code>.
+</li>
+<li>
+  The package <code>mathtools</code> (that also includes <code>asmath</code>) includes the command <code>\widthof</code>.
+</li>
+
+<li>
+ The package <code>multicol</code> is an efficent way to divide sections of the document in an arbitrary number of columns. We could aslo declare <code>twocolumns</code> as an optional argument of <code>\documentclass</code> but the package allows to define parts of pages on one column more easily.
+</li>
+
+<li>
+  The package <code>titlesec</code> allows to customize our section titles: <code>\titleformat{\section}{\fontsize{11}{15}\bfseries}{\Roman{section}}{1.5em}{USI }</code> sets the fontsize to <code>11pt</code> and bold whilst the numbering to capitalized roman (<code>\Roman</code>) and distanced an additional <code>1.5em</code> from the title of the <code>section</code>. "USI " is now added before every given <code>section</code> title.
+</li>
+
+<li>
+  The <code>minipage environment</code> is used to allign the logo with the title and information below. Remember to preceed the minipages with a <code>\noindent</code> instruction and put a <code>%</code> between them to remove the blank space otherwise they WILL overflow.
+</li>
+
+<li>
+  The width of the <code>tabularx</code> environment is set to <code>\widthof{\large{MAKING TITLES IN \LaTeX}}</code> to line up with the title.
+</li>
+
+<li>
+  The sections are inside <code>multicols</code> environment with two columns, the  <code>tiny</code> fontsize is just to show how multiple section will look on the page: never use a font that small in an actual document.
+</li>
+
+
+</ul>
+
+</div>
+
+<div class="latex">
+<div class="paragraph">
+
+  <code>
+
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{textwidth=426pt}
+\usepackage{tabularx, ragged2e}
+\usepackage{mathtools}
+\usepackage{blindtext}
+\usepackage{lipsum}
+\usepackage{multicol}
+\usepackage{titlesec}
+
+\titleformat{\section}{\fontsize{11}{15}\bfseries}{\Roman{section}}{1.5em}{USI }
+
+
+\begin{document}
+
+\scshape
+\centering{
+\onecolumn
+
+\noindent
+\begin{minipage}[]{0.7\textwidth}
+\large{MAKING TITLES IN \LaTeX}\par \vspace{0.1em}
+\footnotesize{AN HOPEFULLY DECENT GUIDE}\vspace{0.6em}
+\flushleft
+\begin{tabularx}{\widthof{\large{MAKING TITLES IN \LaTeX}}}{X l}
+Author:  & Federico Lagrasta\\
+Role: & Student at USI\\
+Supervisor: & Julien Prokofiev\\
+Date: & \today
+\end{tabularx}
+
+
+\end{minipage}% PUT THIS HERE!
+\begin{minipage}[]{0.3\textwidth}
+\flushright{
+\includegraphics[width=2cm, keepaspectratio]{logo_usi.png} \par \vspace{0.1cm}
+\texttt{DEPARTMENT OF INFORMATICS}
+}
+\end{minipage}
+
+%\vspace{1cm}
+
+
+\raisebox{-\baselineskip}{\rule{\textwidth}{1px}}
+\rule{\textwidth}{1px}\vspace{0.2cm}
+
+Abstract
+}
+\flushleft
+\footnotesize{\blindtext}
+
+\rule{\textwidth}{1px}\vspace{0.2cm}
+
+\begin{multicols}{2}
+\section{ONE}
+\tiny{\blindtext}
+
+\section{TWO}
+\tiny{\blindtext}
+
+\section{THREE}
+\tiny{\blindtext}
+\end{multicols}
+
+\end{document}
+
+  </code>
+
+</div>
+
+
+<div class="object">
+<object type="application/pdf" data="../docs/syntax_FL_ts_title3.pdf" height="100%" width="100%"> </object>
+</div>
+</div>
+
+
 
 
 

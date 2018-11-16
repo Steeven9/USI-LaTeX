@@ -11,63 +11,11 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 
 <head>
   <meta charset="utf-8" />
-  <title>lists in LaTeX</title>
-  <meta name="Federico Lagrasta" content="formatting in LaTeX">
+  <title>Language Support for LaTeX</title>
+  <meta name="Federico Lagrasta" content="language support for LaTeX">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
   <style>
-
-  .example{
-    margin:5%;
-    display:grid;
-    grid-template-columns: 2fr 3fr;
-    padding: 0;
-    grid-row-gap: 0em;
-    grid-column-gap: 1em;
-    grid-auto-rows:minmax(20em, 30em);
-  }
-
-  .example > code{
-    padding-top: 4%;
-    padding-right: 10%;
-    grid-column: 1/2;
-    grid-row: 1;
-    background-color: lightgrey;
-    overflow: auto;
-  }
-
-  .example > div{
-    grid-column: 2/3;
-    grid-row: 1;
-    background:red;
-  }
-
-  .example > div > embed{
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-  }
-
-
-
-
-  .grid1{
-    margin:5%;
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 0;
-    grid-row-gap: 0em;
-    grid-column-gap: 0.2em;
-    grid-auto-rows:minmax(20em, 30em);
-  }
-
-
-  .grid1 > div > embed{
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-  }
-
 
 
 ul> li{
@@ -75,8 +23,26 @@ ul> li{
   margin-top: 0;
 }
 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+th {
+    text-align: left;
+}
+
+.latex  > .paragraph {
+white-space: pre;
+}
+
+.codebox {
+white-space: pre;
+}
+
   </style>
-    <link rel="icon" href="../media/img/favicon.ico">
 </head>
 
 
@@ -84,48 +50,228 @@ ul> li{
 
 <body>
   <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
-    <nav>
-        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
-        <a href="syntax_index.html"class="active">Basic Syntax</a>
-        <a href="graphics_index.html">Graphics</a>
-        <a href="equations_index.html">Equations</a>
-        <a href="packages_index.html">Packages</a>
-        <a href="quiz.html">Quiz</a>
-    </nav>
+  <nav>
+      <a href="general_index.html" >Getting Started</a>  <!-- Move the class="active" to your group -->
+      <a href="syntax_index.html" class="active">Basic Syntax</a>
+      <a href="graphics_index.html">Graphics</a>
+      <a href="equations_index.html">Equations</a>
+      <a href="packages_index.html">Packages</a>
+      <a href="quiz.html">Quiz</a>
+  </nav>
+  <div class="sidenav">
+          <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+          <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+          <div class="subpage"><div class="subpagepadding">Title Section ↓</div>
+          <a href="syntax_title_section.HTML" class="subpagelink">Page 1</a>
+          <a href="syntax_title_section.HTML" class="subpagelink">Page 2</a>
+          <a href="syntax_title_section.HTML" class="subpagelink">Page 3</a></div>
+          <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+          <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+          <a href="LINKSUBPAGE.HTML" class="sidenavlink">Fonts</a>
+          <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+          <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+          <a href="LINKSUBPAGE.HTML" class="sidenavlink">Document Class</a>
+          <a href="syntax_TableOfContentsAndPageNumber.HTML" class="sidenavlink">Table of Contents<br>and Page Numbering</a>
+          <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+          <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+          <a href="syntax_bibManagement.HTML" class="sidenavlink" class="active">Bibliography Management</a>
+          <a href="syntax_biblatexStyles.HTML" class="sidenavlink">BibLaTeX Style</a>
+          <a href="LINKSUBPAGE.HTML" class="sidenavlink">BibTeX Style</a>
+  </div>
   <main>
 
-    <div class="titles">STANDARD LANGUAGE</div>
-    <div class="subtitles">FORMATTING & ADVANTAGES OF A PROPER TYPESETTING</div>
+
+<div class="title">LANGUAGE SUPPORT IN LaTeX</div>
+
+
+<div class="indexgeneral"><ul>
+    <li><div class="index"><a href="syntax_language_support.html#first">INPUTENC</a></div></li>
+    <li><div class="index"><a href="syntax_language_support.html#second">FONTENC</a></div></li>
+    <li><div class="index"><a href="syntax_language_support.html#third">SPECIAL CHARACTERS</a></div></li>
+    <li><div class="index"><a href="syntax_language_support.html#fourth">BABEL</a></div></li>
+    <li><div class="index"><a href="syntax_language_support.html#fifth">LANGUAGE SPECIFIC SOLUTIONS</a></div></li>
+</ul>
+<hr>
+</div>
+
+
+
+
+
+<div class="text">
+By default LaTeX is set to support the english language meaning that the document will be rearranged on compile to conform to its typesettings standards. Different languages have different typesseting convenctions and most definitely use more characters the 128 available in <code>ASCII</code> which is the native encoding for TeX. Different packages are commonly employed for language support.
+</div>
+
+<div class="subtitle" id="first">INPUTENC</div>
+<div class="text">
+The package <code>inputenc</code> tranlates inputs into TeX language generally composing them with <code>ASCII</code> and control sequences: for istance â wold be internally represented as \^a in with the ISO latin-1 encoding . With UTF-8 the representation gets more convoluted since complex characters such as the japanese kanji <ruby>東</ruby> need to be accomodated.</br>
+
+The syntax is <code>\usepackage[encoding]{inputenc}</code>: in pretty much all cases UTF-8 should be used (<code>\usepackage[utf8]{inputenc}</code>), the current distributions of LaTeX actually use UTF-8 by default but is still good practice to specify it in case your <code>.tex</code> file were to run on a machine with an older distribution. </br>
+
+Encodings other than UTF-8 can still be used but are there mostly for backwards compatibility, a few will be mentioned for historical reasons:
+
+<table>
+  <tr>
+    <td>
+      ASCII
+    </td>
+
+  <td>
+  The American Standard Code for Information Interchange is the first character encoding ever used, pubblished in 1963 it encoded each character in 7 bits + 1 parity bit for a total of 128 characters. </br/>The option for ASCII is (unsurprisingly) <code>[ascii]</code>
+  </td>
+  </tr>
+
+  <tr>
+    <td>
+      MAC OS Roman
+    </td>
+
+  <td>
+  Encoding used by Apple's PCs from 1981 to 2001. Not having a parity bit it could encode a total of 256 characters with the first 128 being the ASCII ones. The option for MAC OS Roman is <code>[applemac]</code>
+  </td>
+  </tr>
+
+  <tr>
+    <td>
+      UTF-8 UCS
+    </td>
+
+  <td>
+  The Universal Character Set is of variable lenght (1-4bytes) and can thus encode up to 2.000.000.000 characters (obviusly not all of them are in use as of now) the first 128 of those are still ASCII. Its flexibility made it today's most used character encoding system by far. The option for UTF-8 is <code>[utf8]</code>
+  </td>
+  </tr>
+</table>
+</div>
+
+
+
+    <div class="subtitle" id="second">FONTENC</div>
     <div class="text">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      The <code>fontenc</code> package takes the interpretations produced by <code>inputenc</code> and converts them in actual characters by using command sequences on an estamblished table of 128, 256 glyphs based on the chosen encoding. For istance â (if not already present in the current <code>fontenc</code> encoding) would be converted by inputenc into \^a then fontenc would read it and place the accent on the "a" glyph. </br>
+      The first encoding, written by Donald Knuth was <code>OT1</code> and used a table of 128 glyphs (as all encoding preceeded by O do): up until 2015 it was the default encoding. The latest LaTeX distributions employs T1 which, with 256 glyphs, covers most latin languages. </br>
+      Three encodings are dedicated to cyrillic languages due to the vast amount  of characters: <code>T2A</code>,<code>T2B</code>,<code>T2C</code> but they are all contained in the <code>X2</code> encoding.</br>
+      The package is called with the following syntax <code>\usepackage[encoding]{fontenc}</code>
     </div>
 
 
-
-
-
-<div class="subtitles">LANGUAGE SPECIFIC CHARACTERS: INPUTENC</div>
+<div class="subtitle" id="third">SPECIAL CHARACTERS</div>
 <div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Directly from the <a href="http://tug.ctan.org/macros/latex/doc/encguide.pdf">fontenc manual</a>, the following are command sequences to write special characters that, most likely, won't be available on a standard keyboard:
 </div>
 
-<div class="subtitles">TYPESETTING SUPPORT: BABEL AND FONTENC</div>
-<div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<div class="codebox">
+\‘ OT1,T1 `  (grave)
+\’ OT1,T1   ́  (acute)
+\^ OT1,T1 ˆ  (circumflex)
+\~ OT1,T1 ̃  (tilde)
+\" OT1,T1 ̈  (umlaut)
+\H OT1,T1  ̋  (Hungarian umlaut)
+\r OT1,T1  ̊  (ring)
+\v OT1,T1 ˇ  (haček)
+\u OT1,T1  ̆  (breve)
+\= OT1,T1 ̄  (macron)
+\. OT1,T1  ̇   (dot)
+\b OT1,T1  ̄ (underbar)
+\c OT1,T1  ̧   (cedilla)
+\d OT1,T1 . (dot under)
+\k T1  ̨   (ogonek)
+\AE OT1,T1 Æ
+\DH T1 Ð
+\DJ T1 Ð
+\L OT1,T1 Ł
+\NG T1 Ŋ
+\OE OT1,T1 Œ
+\O OT1,T1 Ø
+\SS OT1,T1 ß
+\TH T1 Þ
+\ae OT1,T1 æ
+\dh T1 ð
+\dj T1 đ
+\guillemotleft T1 «  (guillemet)
+\guillemotright T1 »  (guillemet)
+\guilsinglleft T1 ‹   (guillemet)
+\guilsinglright T1 ›   (guillemet)
+\i OT1,T1 ı
+\j OT1,T1 
+\l OT1,T1 ł
+\ng T1 ŋ
+\oe OT1,T1 œ
+\o OT1,T1 ø
+\quotedblbase T1 „
+\quotesinglbase T1 ‚
+\ss OT1,T1 ß
+\textasciicircum OT1,T1 ^
+\textasciitilde OT1,T1 ~
+\textbackslash OT1,T1 \
+\textbar OT1,T1 |
+\textbraceleft OT1,T1 {
+\textbraceright OT1,T1 }
+\textcompwordmark OT1,T1 (invisible)
+\textdollar OT1,T1 $
+\textemdash OT1,T1 —
+\textendash OT1,T1 –
+\textexclamdown OT1,T1 ¡
+\textgreater OT1,T1 >
+\textless OT1,T1 <
+\textquestiondown OT1,T1 ¿
+\textquotedbl T1 "
+\textquotedblleft OT1,T1 “
+\textquotedblright OT1,T1 ”
+\textquoteleft OT1,T1 ‘
+\textquoteright OT1,T1 ’
+\textregistered OT1,T1 ®
+\textsection OT1,T1  §
+\textsterling OT1,T1 £
+\texttrademark OT1,T1 ™
+\textunderscore OT1,T1 _
+\textvisiblespace OT1,T1 ␣
+\th T1 þ
+
 </div>
 
 
-<div class="subtitles">SPECIAL CHARACTERS</div>
+<div class="subtitle" id="fourth">BABEL</div>
 <div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</div>
-
-<div class="subtitles">LANGUAGE SPECIFIC SOLUTIONS</div>
-<div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  The <code>babel</code> package support specific typesettings for one or more languages. The syntax is <code>\includepackage[language]{babel}</code>. For more information about this package please consult the <a href="">relative section</a>
 </div>
 
 
+
+<div class="subtitle" id="fifth">LANGUAGE SPECIFIC SOLUTIONS</div>
+<div class="text">
+Some languages, like the japanese use over 50,000 different characters: <code>fontenc</code> with its puny tables can not deal with this: language specific solutions have to be found. </br>
+The package <code>CJK</code> can output chinese, japanese and korean:
+</div>
+
+<div class="latex">
+  <div class="paragraph">
+
+    <code>
+
+%\documentclass[UTF8]{ctexart} whole document
+\documentclass{article}
+
+\usepackage{CJKutf8}
+
+\begin{document}
+
+This package supports texts in Chinese Japanese and Korean:\par
+\begin{CJK}{UTF8}{min}{
+法84和リオカケ港側ト聞州つざドか購34打オナウカ聞載リ独止70援ざう実本短致召ゃ。前にきー芸多ドさッぐ月勧ぐひ問氏こま科大はよぞお触浜の向究らげて荒理ソコモ迎京改期ーちぞ詳面ヨホ録学輔チロ恵位セマレ訃傍剰えだン。26宿チソ間面アチウエ案抗ぎ力描ぽっば問件そんて屋85真チル文器ミスタネ初勝イテ件有こ稿勢りあ化志にッぱ販演危距告え。
+
+投ホ代判へ都7入ぴま都出ク円出あ別社ユワ断載ノ意中軍ド詳損付へす選棄メカ親策ホス社予ば回供権か報合でぼふ登国うゃも討当都殺幌いゅ。終トカ立35無著リぐ堀無ざクす駒一ユエメヲ情察変ぶづけべ中能やたま十製ハホノネ今9団す禁食加牟ネヘレヤ操26殺上得腕や。外スクテ空内トラス提捕読イやだぜ員村れ優政もびし読65苦コ光季かいクわ送者取ツ者員タスヲモ担知せふリ。}
+\end{CJK}
+
+\end{document}
+  </code>
+
+</div>
+
+
+<div class="object">
+<object type="application/pdf" data="../docs/syntax_FL_language_support1.pdf" height="100%" width="100%"> </object>
+</div>
+</div>
 
 
 

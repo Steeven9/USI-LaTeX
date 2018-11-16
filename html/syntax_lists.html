@@ -17,6 +17,11 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
   <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
   <style>
 
+  pre{
+    padding: 0%;
+    margin: 0;
+  }
+
   .example{
     margin:5%;
     display:grid;
@@ -28,6 +33,10 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
   }
 
   .example > code{
+    word-wrap: break-word;
+    white-space: pre;
+    border-radius: 1%;
+    border-top: 10%;
     padding-top: 4%;
     padding-right: 10%;
     grid-column: 1/2;
@@ -49,13 +58,16 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
   }
 
 
-ul> li{
-  margin: 1em 0;
-  margin-top: 0;
-}
+  ul> li{
+    margin: 1em 0;
+    margin-top: 0;
+  }
+
+  .latex  > .paragraph {
+  white-space: pre;
+  }
 
   </style>
-    <link rel="icon" href="../media/img/favicon.ico">
 </head>
 
 
@@ -63,70 +75,629 @@ ul> li{
 
 <body>
   <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
-    <nav>
-        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
-        <a href="syntax_index.html"class="active">Basic Syntax</a>
-        <a href="graphics_index.html">Graphics</a>
-        <a href="equations_index.html">Equations</a>
-        <a href="packages_index.html">Packages</a>
-        <a href="quiz.html">Quiz</a>
-    </nav>
+  <nav>
+      <a href="general_index.html" >Getting Started</a>  <!-- Move the class="active" to your group -->
+      <a href="syntax_index.html" class="active">Basic Syntax</a>
+      <a href="graphics_index.html">Graphics</a>
+      <a href="equations_index.html">Equations</a>
+      <a href="packages_index.html">Packages</a>
+      <a href="quiz.html">Quiz</a>
+  </nav>
+  <div class="sidenav">
+          <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+          <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+          <div class="subpage"><div class="subpagepadding">Title Section ↓</div>
+          <a href="syntax_title_section.HTML" class="subpagelink">Page 1</a>
+          <a href="syntax_title_section.HTML" class="subpagelink">Page 2</a>
+          <a href="syntax_title_section.HTML" class="subpagelink">Page 3</a></div>
+          <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+          <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+          <a href="LINKSUBPAGE.HTML" class="sidenavlink">Fonts</a>
+          <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+          <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+          <a href="LINKSUBPAGE.HTML" class="sidenavlink">Document Class</a>
+          <a href="syntax_TableOfContentsAndPageNumber.HTML" class="sidenavlink">Table of Contents<br>and Page Numbering</a>
+          <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+          <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+          <a href="syntax_bibManagement.HTML" class="sidenavlink" class="active">Bibliography Management</a>
+          <a href="syntax_biblatexStyles.HTML" class="sidenavlink">BibLaTeX Style</a>
+          <a href="LINKSUBPAGE.HTML" class="sidenavlink">BibTeX Style</a>
+  </div>
+
+
+
+
   <main>
 
     <div class="title">LISTS IN LaTeX</div>
-    <div class="subtitle">INTRODUCTION & BASIC SYNTAX</div>
+
+    <div class="indexgeneral"><ul>
+        <li><div class="index"><a href="syntax_lists.html#first">INTRODUCTION AND BASIC SYNTAX</a></div></li>
+        <li><div class="index"><a href="syntax_lists.html#second">A LIST FOR EACH NEED</a></div></li>
+        <li><div class="index"><a href="syntax_lists.html#third">NESTING LISTS</a></div></li>
+        <li><div class="index"><a href="syntax_lists.html#fourth">CUSTOMIZING BULLETS</a></div></li>
+        <li><div class="index"><a href="syntax_lists.html#fifth">SPACING IN LISTS</a></div></li>
+        <li><div class="index"><a href="syntax_lists.html#sixth">DEFINE YOUR OWN LIST ENVIRONMENT</a></div></li>
+    </ul>
+    <hr>
+    </div>
+
+
+
+    <div class="subtitle" id="first">INTRODUCTION & BASIC SYNTAX</div>
     <div class="text">
       Lists are a widely used enviroment in LaTeX, allowing to format a set of items in a well ordered manner. <br/>
       A list enviroment is started with the expression <code>\begin{*list type*}</code> and closed with <code>\end{*list type*}</code>, each item of the list is declared with <code>\item{put your content here}</code>.
+    </div>
+
+
+
+    <div class="subtitle" id="second">A LIST FOR EACH NEED</div>
+    <div class="text">
+      <ul style="  list-style-type: none;">
+        <li>
+          <b> ITEMIZE</b>: The <code>\begin{itemize}</code> envirmonment provides a classic bulleted list. It is mainly used to list items without a well defined order such as a grocery list.
+        </li>
+        <li>
+          <b>ENUMERATE</b>: The <code>\begin{enumerate}</code> envirmonment provides an ordered list where the bullets are replaced by the number of the item. It is mainly used to list items without a with a well defined order such as the steps of a recipe.
+        </li>
+        <li>
+          <b>DESCRIPTION</b>: The <code>\begin{desription}</code> envirmonment provides a properly formatted way to describe a set of items such as the different blends of coffee. Each item will be declared as follows: <code>\item[name of the item]{desciption of the item}</code>.
+        </li>
+      </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="latex">
+      <div class="paragraph">
+
+        <code>
+
+\documentclass[a4paper,12pt]{article}
+
+
+\begin{document}
+\section*{ITEMIZE}
+\begin{itemize}
+\item{bulbasaur}
+\item{charmander}
+\item{squirtle}
+\end{itemize}
+
+\section*{ENUMERATE}
+\begin{enumerate}
+\item{bulbasaur}
+\item{ivysaur}
+\item{venusaur}
+\end{enumerate}
+
+\section*{DESCRIPTION}
+\begin{description}
+\item[BULBASAUR]{He can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger. }
+\item[CHARMANDER]{The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is happy, and blazes when it is enraged. }
+\item[SQUIRTLE]{Its shell is not just for protection. Its rounded shape and the grooves on its surface minimize resistance in water, enabling SQUIRTLE to swim at high speeds.}
+\end{description}
+
+\end{document}
+      </code>
+
+    </div>
+
+
+    <div class="object">
+    <object type="application/pdf" data="../docs/syntax_FL_DEI.pdf" height="100%" width="100%"> </object>
+    </div>
+    </div>
+
+
+
+    <div class="subtitle" id="third">NESTING LISTS</div>
+    <div class="text">
+      LaTeX provides 4 nested levels  of nesting for lists (they can be increased with the package <code>enumitem}</code>): declaring a new list enviroment inside a list envirmonment will nest the former. Different bullets will replace the standard ones depending on the level of nesting, likewise different enumeration styles will be employed inside nested <code>\begin{enumerate}</code> environments.
+    </div>
+
+
+
+
+
+
+    <div class="latex">
+      <div class="paragraph">
+
+        <code>
+
+\documentclass[a4paper,12pt]{article}
+
+\begin{document}
+
+\section*{NESTED LIST}
+
+\begin{enumerate}
+\item{BULBASAUR}
+\begin{description}
+\item[POKEDEX ENTRY]{He can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger. }
+\item[MOVESET]\hfill
+\begin{itemize}
+\item{Growth}
+\item{Sleep powder}
+\item{Giga drain}
+\item{Sludge Bomb}
+\end{itemize}
+\end{description}
+\item{IVYSAUR}
+\begin{description}
+\item[POKEDEX ENTRY]{To support its bulb, Ivysaur's legs grow sturdy. If it spends more time lying in the sunlight, the bud will soon bloom into a large flower.  }
+\item[MOVESET]\hfill
+\begin{itemize}
+\item{Knock off}
+\item{Syntheis}
+\item{Giga drain}
+\item{Sludge Bomb}
+\end{itemize}
+\end{description}
+\item{VENUSAUR}
+\begin{description}
+\item[POKEDEX ENTRY]{Venusaur's flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower's aroma soothes the emotions of people.  }
+\item[MOVESET]\hfill
+\begin{itemize}
+\item{Hidden power fire}
+\item{Syntheis}
+\item{Giga drain}
+\item{Sludge Bomb}
+\end{itemize}
+\end{description}
+\end{enumerate}
+
+
+
+\end{document}
+      </code>
+
+    </div>
+
+
+    <div class="object">
+    <object type="application/pdf" data="../docs/syntax_FL_nestedls.pdf" height="100%" width="100%"> </object>
+    </div>
+    </div>
+
+
+
+
+    <div class="subtitle" id="fourth">CUSTOMIZING BULLETS</div>
+    <div class="text">
+      The optional argument of each  <code>item[option]{your item}</code> allows to personalize the bullets one by one, anything can be used as a bulled including images with the following syntax:  <code>item[{\includeimage{image_adress}}]{your item}</code>. <br/>
+
+      Please notice that, by default, the image will be alligned with the item but in most cases you'll want to adjust its vertical allignment: you can do so through <code>\raisebox</code>. <br/>
+
+      Avoid spaces between <code>[]</code> unless you want to actually introduce spaces in your bullet. <br/>
+
+      It is also possible to customize different parameters of lists through the use of the <code>enumitem</code> package: the bullets can be set with as shown below [label={your bullet}].
+        </div>
+
+
+
+
+        <div class="latex">
+          <div class="paragraph">
+
+            <code>
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+\begin{document}
+
+
+%  \includegraphics[scale=0.05]{./pikachu.png} is our image
+
+
+\section*{CUSTOMIZED BULLETS:}
+
+\subsection*{ONE BY ONE}
+\begin{itemize}
+\item[\&]{bulbasaur}
+\item[ ]{charmander}
+\item[*]{squirtle}
+\item [{\includegraphics[width=0.5cm]{./pikachu.png}} ] {pikachu: missplaced bullet caused by the space left before closing [\,]}
+\item [ {\includegraphics[width=0.5cm]{./pikachu.png}}] {pikachu}: misspaced because alligned with the item
+\item [{\raisebox{-0.25\height}{\includegraphics[width=0.5cm]{./pikachu.png}}}] {pikachu}
+\end{itemize}
+
+
+\section*{ALL WITH THE ENUMITEM PACKAGE }
+
+\begin{itemize}[label={\raisebox{-0.25\height}{\includegraphics[width=0.5cm]{./pokeball.png}}}]
+\item {bulbasaur}
+\item {charmander}
+\item {squirtle}
+\item {pikachu}
+\end{itemize}
+
+\end{document}
+          </code>
+
+        </div>
+
+
+        <div class="object">
+        <object type="application/pdf" data="../docs/syntax_FL_ls_customize1.pdf" height="100%" width="100%"> </object>
+        </div>
+        </div>
+
+
+
+
+    <div class="subtitle" id="fifth">SPACING IN LISTS</div>
+    <div class="text">
+      <table>
+        <tr>
+          <th>
+            HORIZONTAL SPACING ATTRIBUTES
+          </th>
+          <th>
+            DESCRIPTION
+          </th>
+        </tr>
+
+        <tr>
+          <td>
+            leftmargin
+          </td>
+          <td>
+            Increases the left margin of the list.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            rightmargin
+          </td>
+          <td>
+            Increases the right margin of the list
+          </td>
+        </tr>
+        <tr>
+          <td>
+            listparindent
+          </td>
+          <td>
+            Sets the indentation for new paragraphs in a list
+          </td>
+        </tr>
+        <tr>
+          <td>
+            labelwidth
+          </td>
+          <td>
+            Sets the space taken by the label, useful if you have labels of different width and want to allign the items set it to <code>\widthof{LONGEST_LABLE}</code> (<code>\widthof</code> belong to the <code>\mathtools</code> package).
+          </td>
+        </tr>
+        <tr>
+          <td>
+            labelsep
+          </td>
+          <td>
+            Increases the horizontal spacing between the item and the label.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            itemindent
+          </td>
+          <td>
+            Sets the item indentation.
+          </td>
+        </tr>
+
+      </table>
+
+</div>
+
+
+
+<div class="latex">
+  <div class="paragraph">
+
+    <code>
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyvrb}
+\usepackage{mathtools}
+\DefineShortVerb{\@}
+
+\begin{document}
+
+
+
+\section*{SAMPLE LIST}
+\begin{itemize}[]
+\item {just a sample list \par
+new paragraph}
+\item {item}
+\end{itemize}
+
+\begin{itemize}[label={BULLET}]
+\item {just a sample list \par
+new paragraph}
+\item {with a custom bullet}
+\end{itemize}
+
+
+\section*{LEFTMARGIN}
+
+\begin{itemize}[leftmargin=5em]
+\item {this list has a leftmargin}
+\item {increased by  5em \par
+new paragraph}
+\end{itemize}
+
+\begin{itemize}[leftmargin=-5em]
+\item {this list has a leftmargin}
+\item {decreased by  5em}
+\end{itemize}
+
+\section*{RIGHTMARGIN}
+\begin{itemize}[rightmargin=0em]
+\raggedleft
+\item {just a sample list}
+\item {alligned to the right}
+\end{itemize}
+
+\begin{itemize}[rightmargin=5em]
+\raggedleft
+\item {this list has a right margin}
+\item {increased by 5em}
+\end{itemize}
+
+
+\section*{ITEMINDENT}
+\begin{itemize}[itemindent=5em]
+\item {indents the items}
+\item {by a further 5em \par
+new paragraph}
+\end{itemize}
+
+
+\section*{LISTPARINDENT}
+\begin{itemize}[listparindent=5em]
+\item {nothing happens here \par
+  the new paragraph indented by 5em
+}
+\item {item}
+\end{itemize}
+
+\section*{LABELWIDTH}
+
+\begin{description}[labelwidth=\widthof{LONGER LABEL}]
+\item[LABEL] {nothing happens here \par
+  the new paragraph indented by 5em
+}
+
+\item[LONGER LABEL]{nothing happens here \par
+  new paragraph
+}
+\end{description}
+
+\section*{LABELSEP}
+\begin{itemize}[label={BULLET}, labelsep=5em]
+\item {the bullet is shifted to the left by 5em \par
+  new paragraph
+}
+\end{itemize}
+
+
+\end{document}
+  </code>
+
+</div>
+
+
+<div class="object">
+<object type="application/pdf" data="../docs/syntax_FL_ls_hspacing.pdf" height="100%" width="100%"> </object>
+</div>
+</div>
+
+
+<div class="text">
+      <table>
+        <tr>
+          <th>
+            VERICAL SPACING ATTRIBUTES
+          </th>
+          <th>
+            DESCRIPTION
+          </th>
+        </tr>
+        <tr>
+          <td>
+            topsep
+          </td>
+          <td>
+            Vertical space added both below and on top of the list
+          </td>
+        </tr>
+        <tr>
+          <td>
+            partopsep
+          </td>
+          <td>
+            Vertical space below and on top of the list but only if preceeded by <code>\par</code>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            parsep
+          </td>
+          <td>
+            Vertical space added between different paragraphs of list items
+          </td>
+        </tr>
+        <tr>
+          <td>
+            itemsep
+          </td>
+          <td>
+            Verical space between each item of the list.
+          </td>
+        </tr>
+      </table>
 
 
     </div>
 
 
 
-</div>
 
-<div class="subtitles">A LIST FOR EACH NEED</div>
+    <div class="latex">
+      <div class="paragraph">
+
+        <code>
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyvrb}
+\DefineShortVerb{\@}
+\begin{document}
+
+
+\section*{SAMPLE LIST}
+\begin{itemize}[]
+\item {just a sample list}
+\item {item}
+\end{itemize}
+
+\section*{VERTICAL SPACING}
+
+\subsection*{ITEMSEP}
+\begin{itemize}[itemsep=2em]
+\item {the distance between these two}
+\item {items is now increased by @2em@}
+\end{itemize}
+
+\subsection*{PARSEP}
+\begin{itemize}[parsep=2em]
+\item {adds @2em@ vertical spacing to a new paragraph
+
+This is a new paragraph
+}
+\item {still a sample list}
+\end{itemize}
+
+\subsection*{TOPSEP}
+\begin{itemize}[]
+\item {just a sample list}
+\item {still a sample list}
+\end{itemize}
+
+\begin{itemize}[topsep=3em]
+\item {3em vertical space added}
+\item {on top and below the list with @topsep@}
+\end{itemize}
+
+\begin{itemize}[]
+\item {just a sample list}
+\item {still a sample list}
+\end{itemize}
+
+\subsection*{PARTOPSEP}
+\begin{itemize}[]
+\item {a new paragraph always start after a list}
+\item {hence the use of @\hrulefill@}
+\end{itemize}
+\hrulefill
+
+\begin{itemize}[partopsep=3em]
+\item {when precedeed by a paragraph break either with @\par@}
+\item {or a vertical space it acts like @\topsep@}
+\end{itemize}
+
+\begin{itemize}[]
+\item {just a sample list}
+\item {still a sample list}
+\end{itemize}
+\hrulefill
+\begin{itemize}[partopsep=3em]
+\item {when it's not}
+\item {it does nothing}
+\end{itemize}
+\begin{itemize}[]
+\item {just a sample list}
+\item {still a sample list}
+\end{itemize}
+
+\end{document}
+      </code>
+
+    </div>
+
+
+    <div class="object">
+    <object type="application/pdf" data="../docs/syntax_FL_ls_vspacing.pdf" height="100%" width="100%"> </object>
+    </div>
+    </div>
+
+
+  <div class="subtitle" id="sixth">DEFINE YOUR OWN LIST ENVIRONMENT</div>
 <div class="text">
-  <ul style="  list-style-type: none;">
-    <li>
-      <b> ITEMIZE</b>:Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </li>
-    <li>
-      <b>ENUMERATE</b>:Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </li>
-    <li>
-      <b>DESCRIPTION</b>:Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </li>
-  </ul>
+We have seen how to customize a single list but, were it to be used multiple times, instead of changing properties for each istance it would be practical to have a new list environment with said properties:  <code>\newlist{list_name}{list_type}{max_nesting_lv}</code> allows to define an entirely new list. <br/>
+
+The command <code>\setlist{list_name, nesting_lv}{attribute1=value_of_attribute,attribute2=value_of_attribute}</code> allows to modify (or set) attributes of lists (even the standard ones such as <code>description</code>).
 </div>
 
-<div class="example">
 
-  <code>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<div class="latex">
+  <div class="paragraph">
+
+    <code>
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+\begin{document}
+
+
+%  \includegraphics[scale=0.05]{./pikachu.png} is our image
+%  \includegraphics[scale=0.05]{./pokeball.png} is another image
+
+
+\section*{DEFINE NEW LISTS}
+
+A new list with a pokéballs as bullets.  You can still redefine properties for each element while writing the list: pikachu has been assigned its own bullet.
+
+\newlist{pokelist}{itemize}{1}
+\setlist[pokelist,1]{label={\raisebox{-0.25\height}{\includegraphics[width=0.5cm]{./pokeball.png}}}}
+
+
+\begin{pokelist}
+\item{bulbasaur}
+\item{charmander}
+\item{squirtle}
+\item [{\raisebox{-0.25\height}{\includegraphics[width=0.5cm]{./pikachu.png}}}] {pikachu}
+\end{pokelist}
+
+\end{document}
   </code>
 
-  <div>
-    <embed src="../docs/syntax_FL_CV15.pdf" />
-  </div>
-
 </div>
 
 
-<div class="subtitles">NESTING LISTS</div>
-<div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<div class="object">
+<object type="application/pdf" data="../docs/syntax_FL_ls_customize4.pdf" height="100%" width="100%"> </object>
+</div>
 </div>
 
-<div class="subtitles">CUSTOMIZING LISTS</div>
-<div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</div>
-
-<div class="subtitles">COMMON ISSUES</div>
-<div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</div>
 
 
     <footer>

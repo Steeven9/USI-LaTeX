@@ -11,7 +11,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 
 <head>
   <meta charset="utf-8" />
-  <title>lists in LaTeX</title>
+  <title>formatting LaTeX</title>
   <meta name="Federico Lagrasta" content="formatting in LaTeX">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
@@ -28,7 +28,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
   }
 
   .example > code{
-    padding-top: 4%;
+    padding-top: 1%;
     padding-right: 10%;
     grid-column: 1/2;
     grid-row: 1;
@@ -51,18 +51,22 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 
 
 
-  .grid1{
-    margin:5%;
+  .example2{
+    margin-left: 5%;
+    margin-right: 5%;
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     padding: 0;
-    grid-row-gap: 0em;
-    grid-column-gap: 0.2em;
-    grid-auto-rows:minmax(20em, 30em);
+    grid-gap: 1em;
+    height: 700px;
   }
 
 
-  .grid1 > div > embed{
+  .example2 > div{
+    background:red;
+  }
+
+  .example2 > div > embed{
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -70,13 +74,35 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 
 
 
+  /*ul {
+    list-style-type: none;
+  }
+
+
 ul> li{
   margin: 1em 0;
   margin-top: 0;
 }
+*/
+
+.latex  > .paragraph {
+white-space: pre;
+}
+
+
+table{
+  margin: 2%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
 
   </style>
-    <link rel="icon" href="../media/img/favicon.ico">
 </head>
 
 
@@ -84,112 +110,406 @@ ul> li{
 
 <body>
   <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
-    <nav>
-        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
-        <a href="syntax_index.html"class="active">Basic Syntax</a>
-        <a href="graphics_index.html">Graphics</a>
-        <a href="equations_index.html">Equations</a>
-        <a href="packages_index.html">Packages</a>
-        <a href="quiz.html">Quiz</a>
-    </nav>
+  <nav>
+      <a href="general_index.html" >Getting Started</a>  <!-- Move the class="active" to your group -->
+      <a href="syntax_index.html" class="active">Basic Syntax</a>
+      <a href="graphics_index.html">Graphics</a>
+      <a href="equations_index.html">Equations</a>
+      <a href="packages_index.html">Packages</a>
+      <a href="quiz.html">Quiz</a>
+  </nav>
+  <div class="sidenav">
+          <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+          <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+          <div class="subpage"><div class="subpagepadding">Title Section ↓</div>
+          <a href="syntax_title_section.HTML" class="subpagelink">Page 1</a>
+          <a href="syntax_title_section.HTML" class="subpagelink">Page 2</a>
+          <a href="syntax_title_section.HTML" class="subpagelink">Page 3</a></div>
+          <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+          <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+          <a href="LINKSUBPAGE.HTML" class="sidenavlink">Fonts</a>
+          <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+          <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+          <a href="LINKSUBPAGE.HTML" class="sidenavlink">Document Class</a>
+          <a href="syntax_TableOfContentsAndPageNumber.HTML" class="sidenavlink">Table of Contents<br>and Page Numbering</a>
+          <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+          <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+          <a href="syntax_bibManagement.HTML" class="sidenavlink" class="active">Bibliography Management</a>
+          <a href="syntax_biblatexStyles.HTML" class="sidenavlink">BibLaTeX Style</a>
+          <a href="LINKSUBPAGE.HTML" class="sidenavlink">BibTeX Style</a>
+  </div>
   <main>
 
-    <div class="titles">FORMATTING IN LaTeX</div>
-    <div class="subtitles">FORMATTING & ADVANTAGES OF A PROPER TYPESETTING</div>
-    <div class="text">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <div class="title">FORMATTING IN LaTeX</div>
+
+    <div class="indexgeneral"><ul>
+        <li><div class="index"><a href="syntax_formatting.html#first">FORMATTING & ADVANTAGES OF A PROPER TYPESETTING</a></div></li>
+        <li><div class="index"><a href="syntax_formatting.html#second">GEOMETRY OF THE PAGE</a></div></li>
+        <li><div class="index"><a href="syntax_formatting.html#third">INDENTATION OF PARAGRAPHS</a></div></li>
+        <li><div class="index"><a href="syntax_formatting.html#fourth">LINEWIDTH & TEXTWIDTH</a></div></li>
+        <li><div class="index"><a href="syntax_formatting.html#fifth">HORIZONTAL AND VERTICAL SPACING</a></div></li>
+        <li><div class="index"><a href="syntax_formatting.html#sixth">THE MINIPAGE ENVIRONMENT</a></div></li>
+          <li><div class="index"><a href="syntax_formatting.html#seventh">FLOAT ENVIRONMENTS</a></div></li>
+          <li><div class="index"><a href="syntax_formatting.html#eight">WRAPPING FLOATS</a></div></li>
+    </ul>
+    <hr>
     </div>
 
 
 
-</div>
 
-<div class="subtitles">THE MAIN DOCUMENT CLASSES</div>
-<div class="text">
-  More at...
-</div>
-<div class="text">
-  <ul style="  list-style-type: none;">
-    <li>
-      <b>ARTICLE</b>:Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </li>
-    <li>
-      <b>BEAMER</b>:Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </li>
-    <li>
-      <b>BOOK</b>:Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </li>
-  </ul>
-</div>
 
-<div class="grid1">
+
+
+    <div class="subtitle" id="first">FORMATTING & ADVANTAGES OF A PROPER TYPESETTING</div>
+    <div class="text">
+      In general it is reffered as format of a document the layout of its pages and more generally the overall style of its text. Behind the scenes numerous typesetting standards operate to ensure readability, and arguably beauty, of a single page.<br/>
+      If the meaning and importance of formatting wasn't clear we have some examples below:
+    </div>
+<br/>
+<div class="example2">
+
   <div>
-    <embed src="../docs/syntax_FL_CV15.pdf" />
+    <embed src="../docs/syntax_FL_formatting3.pdf"/>
   </div>
 
+
   <div>
-    <embed src="../docs/syntax_FL_CV15.pdf" />
-  </div>
-  <div>
-    <embed src="../docs/syntax_FL_CV15.pdf" />
+    <embed src="../docs/syntax_FL_ts_title2.pdf"/>
   </div>
 
 </div>
 
-<div class="subtitles">COMPILING A PAGE</div>
+<div class="example2">
+  <div>
+    <embed src="../docs/syntax_FL_formatting2.pdf"/>
+  </div>
+
+  <div>
+    <embed src="../docs/syntax_FL_formatting1.pdf"/>
+  </div>
+</div>
 <div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 </div>
 
-<div class="subtitles">MANAGING SPACING IN LATEX</div>
+<div class="subtitle" id="second">GEOMETRY OF THE PAGE</div>
 <div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</div>
+ Writing a page doesn't simply mean filling it with thext to the brim: each object needs take its own space following determinate criterias in general each page will have lateral margins and a footer/header space. The <code>geometry</code> package allows you to modify at your leasure the layout of the page: you can learn more about it in the <a href="">relative section</a> </br>
 
-
-<div class="subtitles">THE MINIPAGE ENVIRONMENT</div>
-<div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</div>
-
-<div class="subtitles">POSITIONING & FLOAT ENVIRONMENTS</div>
-<div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</div>
-
-
-<div class="subtitles">WRAPPING FLOATS</div>
-<div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ There are many pre-made layouts in LaTeX called document classes : you can learn more about document classes in the <a href="">relative section </a>
 </div>
 
 
-
-<div class="subtitles">FONT FAMILIES</div>
+<div class="subtitle" id="third">INDENTATION OF PARAGRAPHS</div>
 <div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  The indentation of paragraphs is set by the hiddent <code>parindent</code> parameter: you can change it (or set to 0) for the whole document by putting the following in your preamble: <code>\setlength\parindent{indentation}</code>. You can set the indentation of a specicific paragraph to 0 by preceeding it with <code>\noindent</code>
+</div>
+
+<div class="subtitle" id="fourth">LINEWIDTH & TEXTWIDTH</div>
+<div class="text">
+  Is often necessary to have one element span a certain portion of the page in this case we often use:
 <ul>
   <li>
-    Sans serif
+    <code>\linewidth</code>: represents the width of a line of text in the current enviroment
   </li>
   <li>
-    Serif
+    <code>\textwidht</code>: is a constant representing the widht of the whole body of the page
+
   </li>
   <li>
-    Monospace
+    code>\widthof</code>: determines the size of a certain element
   </li>
 </ul>
+
 </div>
 
-<div class="subtitles">FONT SIZE</div>
-<div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<div class="latex">
+  <div class="paragraph">
+
+    <code>
+
+\documentclass[a4paper,12]{article}
+
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{mathtools}
+
+\begin{document}
+
+\twocolumn[%here is still 1 column
+\centering \huge{TEXT} \par \vspace{-1em}
+\rule{\widthof{\huge{TEXT}}}{1px}
+]{%
+\blindtext   \par\noindent
+\rule{\linewidth}{1px}
+\rule{\textwidth}{1px}
+}
+\end{document}
+  </code>
+
 </div>
 
-<div class="subtitles">FONT STYLE</div>
-<div class="text">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<div class="object">
+<object type="application/pdf" data="../docs/syntax_FL_formatting6.pdf " height="100%" width="100%"> </object>
 </div>
+</div>
+
+<div class="subtitle" id="fifth">HORIZONTAL AND VERTICAL SPACING></div>
+<div class="text">
+  You can use <code>\hspace{space}</code> and <code>\vspace{space}</code> to respectively add horizontal and vertical spaces in LaTeX, <code>\hfill</code> and <code>\vfill</code> will add a space to fill the current line/column. There are also macros to add fixed spaces for istance <code>\,</code> is equivalent to <code>\hspace{0.16667em}</code>
+</div>
+
+
+<div class="latex">
+  <div class="paragraph">
+
+    <code>
+
+\documentclass[a4paper,12]{article}
+
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{mathtools}
+\usepackage{fancyvrb}
+\DefineShortVerb{\@}
+\setlength\parindent{0em}%no indentation
+
+
+\begin{document}
+\section*{HORIZONTAL SPACING}
+
+
+AB
+
+A\,B
+
+A\;B
+
+A\quad B
+
+\rule{\widthof{A\quad B}}{1px}
+
+A\hspace{5em}B
+
+
+A \hfill B
+
+
+\section*{VERTICAL SPACING}
+A
+
+B
+
+C
+
+A  \vspace{1em}
+
+B \vspace{5em}
+
+C
+
+\vfill
+
+D I'm here!
+
+\end{document}
+  </code>
+
+</div>
+
+
+<div class="object">
+<object type="application/pdf" data="../docs/syntax_FL_formatting7.pdf " height="100%" width="100%"> </object>
+</div>
+</div>
+
+<div class="subtitle" id="sixth">THE MINIPAGE ENVIRONMENT </div>
+<div class="text">
+The minipage environment is part of the standard distribution and comes very handy when you need to allign two or more objects: when called it a new column with width equal to a fraction of the original page. </br>
+ Minipages are not floats and to be properly alligned the spacing between them must be 0 (you can simply comment it out with <code>%</code>), the first minipage should be also preceeded by a <code>\noindent</code>.
+</div>
+ <div class="latex">
+   <div class="paragraph">
+
+     <code>
+
+\documentclass[a4paper,12]{article}
+
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{mathtools}
+
+
+
+
+\begin{document}
+
+
+\noindent\begin{minipage}{0.3333\textwidth}
+\blindtext
+\end{minipage}
+%
+\begin{minipage}{0.3333\textwidth}
+\includegraphics[width=\linewidth]{logo_USI.png}
+\end{minipage}%
+%
+\begin{minipage}{0.3333\textwidth}
+\blindtext
+\end{minipage}
+
+\noindent\blindtext
+
+\newpage
+
+\begin{minipage}{0.5\textwidth}
+\includegraphics[width=\linewidth]{logo_USI.png}
+\end{minipage}%
+%
+\begin{minipage}{0.5\textwidth}
+\blindtext
+\end{minipage}
+
+\end{document}
+   </code>
+
+ </div>
+
+
+ <div class="object">
+ <object type="application/pdf" data="../docs/syntax_FL_formatting5.pdf " height="100%" width="100%"> </object>
+ </div>
+ </div>
+
+
+</div>
+
+<div class="subtitle" id="seventh">FLOAT ENVIRONMENTS</div>
+<div class="text">
+Floats is a generic term used to indicate unbreakeable entities separated from the standard stream of text. When dealing with a float LaTeX will attempt to position it where most conforming with the typesetting standards, while this most often retains good results in some case it won't result in  the desidered output. </br>
+The following tags can be used to "suggest" where a float should be positioned:
+
+<table>
+  <tr>
+    <th>
+      TAG
+    </th>
+    <th>
+      MEANING
+    </th>
+  </tr>
+
+  <tr>
+    <td>
+      h
+    </td>
+    <td>
+      Tries placing the float in the position it was actually declared in the text stream
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      t
+    </td>
+    <td>
+      Tries placing the float at the top of the page
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      b
+    </td>
+    <td>
+      Tries placing the float at the bottom of the page
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      p
+    </td>
+    <td>
+      Will place the float on a separate page with other floats
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      !
+    </td>
+    <td>
+      Alone will allow LaTeX to ignore some paramethers,such as the total number of floats allowed on a page, in placing the float. When combined with the other tags (ex:<code>h!</code>) it will essentially strengthen them
+    </td>
+  </tr>
+</table> </br>
+
+If the tags are still not enough it's possible to set the absolute position of a flot with the <code>textpos</code> package with the following syntax:<code>\begin{picture}{x_pos, y_pos}</code> but usually not advised.
+
+</div>
+
+<div class="latex">
+  <div class="paragraph">
+
+    <code>
+
+\documentclass[a4paper,12]{article}
+
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{mathtools}
+
+
+
+
+\begin{document}
+
+
+\noindent\begin{minipage}{0.3333\textwidth}
+\blindtext
+\end{minipage}
+%
+\begin{minipage}{0.3333\textwidth}
+\includegraphics[width=\linewidth]{logo_USI.png}
+\end{minipage}%
+%
+\begin{minipage}{0.3333\textwidth}
+\blindtext
+\end{minipage}
+
+\noindent\blindtext
+
+\newpage
+
+\begin{minipage}{0.5\textwidth}
+\includegraphics[width=\linewidth]{logo_USI.png}
+\end{minipage}%
+%
+\begin{minipage}{0.5\textwidth}
+\blindtext
+\end{minipage}
+
+\end{document}
+  </code>
+
+</div>
+
+
+<div class="object">
+<object type="application/pdf" data="../docs/syntax_FL_formatting8.pdf " height="100%" width="100%"> </object>
+</div>
+</div>
+
+
+<div class="subtitle" id="eight">WRAPPING FLOATS</div>
+<div class="text">
+It's possible to wrap floats with text in the following manner
+</div>
+
+
+
 
 
 
