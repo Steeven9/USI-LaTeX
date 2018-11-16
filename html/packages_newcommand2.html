@@ -3,8 +3,8 @@
     <head>
             <link rel="stylesheet" href="../css/style.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          <link rel="icon" href="../media/img/favicon.ico">
-</head>
+
+      </head>
    <body>
      <meta name="author" content="Renato Iannace">
     <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
@@ -36,6 +36,7 @@
         <a href="packages_TOP5.html"class="sidenavlink">Top 5</a>
     </div>
 
+
    </body>
 <main>
   <div class="title">Latex Packages</div>
@@ -60,19 +61,29 @@
 
   <div class="subtitle" id="second"> How to create a new environment </div>
   <div class="text">
-    Again \newenvironment can have an optional argument. When the \begin{name} command (which starts the environment) is encountered,
+    \newenvironment can have an optional argument. When the \begin{name} command  is encountered,
     the material specified in the before argument is processed before the text in the environment gets processed.
-    The material in the after argument gets processed when the \end{name} command (which ends the environment) is encountered.
+    The material in the after argument gets processed when the \end{name} command is encountered.
     The optional num and default arguments are used the same way as in the \newcommand command.
-    LaTeX makes sure that you do not define an environment that already exists.
-    If you ever want to change an existing environment, you can use the \renewenvironment command.
-    It uses the same syntax as the \newenvironment command.
-    The example below illustrates the usage of the \newenvironment command:
+    Obviusly you can not define an environment that already exists.
+    But ff you want to change an existing environment, you can use the command \renewenvironment.
+    It has the same syntax as the \newenvironment command.
+    The usega of \newenvironment is shown in the example below.
  </div>
+
+<br><br><br><br>
 
   <div style="padding-left:40px">
   <img src="../media/img/packages_newenviroment_2.png" alt="Image">
   </div>
+
+<br><br><br><br>
+
+  <div style="padding-left:40px">
+  <img src="../media/img/packages_newenviroment_2_result.png" alt="Image" width="600">
+  </div>
+
+<br><br>
 
   <div class="subtitle" id="third"> Extra Space </div>
     <div class="text">
@@ -83,37 +94,49 @@
     The end block is a bit more tricky as special processing occurs at the end of an environment.
     With the \ignorespacesafterend LaTeX will issue an \ignorespaces after the special ‘end’ processing has occurred.
   </div>
+  <br><br><br><br>
 
   <div style="padding-left:40px">
   <img src="../media/img/packages_newenviroment_3.png" alt="Image">
   </div>
-  <br> <br>
+  <br> <br><br>
+  <div style="padding-left:40px">
+  <img src="../media/img/packages_newenviroment_3_result.png" alt="Image">
+  </div>
+
+  <br> <br><br>
   <div class="text">
     or you can do it in this way!
   </div>
   <br> <br>
-  <div style="padding-left:40px">
+  <div style="padding-left:50px">
   <img src="../media/img/packages_newenviroment_4.png" alt="Image">
   </div>
 
+  <br> <br><br>
+
+  <div style="padding-left:40px">
+  <img src="../media/img/packages_newenviroment_4_result.png" alt="Image">
+  </div>
 
   <div class="subtitle" id="fourth"> New commands within new environment </div>
   <div class="text">
-    New commands can be declared within newenvironment.
-    Commands declared within the newenvironment refer to their arguments by doubling the # character.
+    New commands can be declared inside the newenvironment.
+    Commands declared inside the newenvironment refer to their arguments by doubling the # character.
     In the following example, a new environment is declared along with a nested command:
   </div>
-
-  <div style="padding-left:40px">
+<br> <br>
+  <div style="padding-left:50px">
   <img src="../media/img/packages_newenviroment_5.png" alt="Image">
   </div>
 
-  <a href="packages_newcommands.html">
-    <button class="buttonpage" style="margin-left: 1px;">
-      <i class="fa fa-chevron-circle-left">
-      PREVIOUS PAGE
-      </i></button></a>
+
    <br>
+   <a href="packages_newcommands.html">
+     <button class="buttonpage" style="margin-left: 1px;">
+       <i class="fa fa-chevron-circle-left">
+       PREVIOUS PAGE
+       </i></button></a>
   <footer>
       <address>Page written by Renato Iannace</address>
   </footer>
