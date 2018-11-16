@@ -20,56 +20,77 @@
         <a href="quiz.html">Quiz</a>
     </nav>
     <div class="sidenav">
-        <a href="syntax_First_document.HTML" id="firstsubpage"><center>CREATE YOUR FIRST LATEX</center></a>
-        <a href="syntax_title_section.HTML"><center>TITLE SECTION</center></a>
-        <a href="syntax_basic_paragraphs_and_comments.HTML"><center>PARAGRAPH AND COMMENTS</center></a>
-        <a href="syntax_fonts_and_text_processing.HTML"><center>TEXT PROCESSING</center></a>
-        <a href="LINKSUBPAGE.HTML"><center>FONTS</center></a>
-        <a href="syntax_formatting.HTML"><center>FORMATTING</center></a>
-        <a href="syntax_lists.HTML"><center>LIST</center></a>
-        <a href="classes.HTML"><center>DOCUMENT CLASS</center></a>
-        <a href="syntax_TableOfContentsAndPageNumber.HTML"><center>TABLE OF CONTENT AND PAGE NUMBERING</center></a>
-        <a href="syntax_footnotes.HTML"><center>FOOTNOTE</center></a>
-        <a href="syntax_language_support.HTML"><center>LANGUAGE SUPPORT</center></a>
-        <a href="syntax_bibManagement.HTML"><center>BIBLIOGRPAHY MANAGMENT</center></a>
-        <a href="syntax_biblatexStyles.HTML"><center>BIBLATEX STYLES</center></a>
-        <a href="LINKSUBPAGE.HTML" id="lastsubpage"><center>BIBTEX STYLES</center></a>
-        <a href="syntax_more_on_fonts.HTML" class="active"><center>MORE ON FONTS</center></a>
-
+            <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+            <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+            <a href="syntax_title_section.HTML" class="sidenavlink">Title Section</a>
+            <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+            <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+            <a href="syntax_more_on_fonts.HTML" class="sidenavlinkactive">Fonts</a>
+            <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+            <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+            <div class="subpage"><div class="subpagepadding">Document type in Latex↓</div>
+            <a href="syntax_classes.HTML" class="subpagelink">Document Class</a>
+            <a href="syntax_classes_comparison.HTML" class="subpagelink">Document Classes Comparison</a>
+            <a href="syntax_classes_option.HTML" class="subpagelink">Document Classes Options</a>   
+            </div>
+            <a href="syntax_command.HTML" class="sidenavlink">Command</a>
+            <a href="syntax_TableOfContents.HTML" class="sidenavlink">Table of Contents</a>
+            <a href="syntax_pageNumbering.HTML" class="sidenavlink">Page Numbering</a>
+            <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+            <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+            <div class="subpage"><div class="subpagepadding">Bibliography ↓</div>
+            <a href="syntax_bibManagement.HTML" class="subpagelink">Bibliography Management With Biblatex</a>
+            <a href="syntax_BibManagementNatbib.HTML" class="subpagelink">Bibliography Management With Natbib</a>  
+            </div>
     </div>
     <main>
-    <h1 class="Title">More on fonts</h1>
-    <h2>Introduction and font sizes</h2>
-    <p>Latex's syntax for setting the font size and style is fairly simple. For example:</p>
-    <code><blockquote><p>\documentclass{article}</p>
-      <p>\begin{document}</p>
-      <p>This is a very simple example, {\LARGE in which this text is set on a pretty
-      large font size}, and {\textsc this one, instead, has a different font.}</p>
-      <br>
-      <p>\end{document}</p></blockquote></code>
-      <p>The document now looks like this:</p>
-      <center><img src="../media/img/intro_fonts.png" alt="The
-        document with text features" height="950" width="600"></center>
-      <p>The font sizes you set in the section you want your text to be in,
+    <div class="title">More on fonts</div>
+    <div class="subtitle">Introduction and font sizes</div>
+    <div class="text">Latex's syntax for setting the font size and style is fairly simple. For example:</div>
+
+      <div class="latex">
+          <div class="paragraph"><b>CODE</b><hr>
+            <code><p>\documentclass{article}</p>
+                  <p>\begin{document}</p>
+                  <p>This is a very simple example, {\LARGE in which this text is set on a pretty
+                  large font size}, and {\textsc this one, instead, has a different font.}</p>
+                  <br>
+                  <p>\end{document}</p>
+            </code>
+          </div>
+          <div class="object">
+              <object type="application/pdf" data="../docs/syntax_more_font1.pdf" height="100%" width="100%"></object>
+          </div>
+      </div>
+
+      <div class="text">The font sizes you set in the section you want your text to be in,
         are relative, and not absolute, meaning that they DO NOT relate to
         the general configuration of text size.
-        Another example of (relative) text configuration is shown below:</p>
-        <code><blockquote><p>\documentclass{article}</p>
-          <p>\begin{document}</p>
-          <p>This is a very simple example, {\LARGE in which this text is set on a pretty
-            large font size}, and {\footnotesize this one, instead, is set on a pretty
-            small one.}</p>
-            <br>
-          <p>\end{document}</p></blockquote></code>
+        Another example of (relative) text configuration is shown below:</div>
+        <div class="text"></div>
+        <div class="text"></div>
+      <div class="latex">
+          <div class="paragraph"><b>CODE</b><hr>
+              <code>
+                <p>\documentclass{article}</p>
+                <p>\begin{document}</p>
+                <p>This is a very simple example, {\LARGE in which this text is set on a pretty
+                  large font size}, and {\footnotesize this one, instead, is set on a pretty
+                  small one.}</p>
+                  <br>
+              <p>\end{document}</p></code>
+          </div>
+          <div class="object">
+              <object type="application/pdf" data="../docs/syntax_more_font2.pdf" height="100%" width="100%"></object>
+          </div>
+        </div>
 
-
-        <center><img src="../media/img/fonts.png" alt="Different fonts" height="950" width="550"></center>
-        <p>From the picture above, it can be noticed that there are different types
-          of fonts on the Latex document.</p>
-          <h2>Fonts families</h2>
-          <p>Latex standard size font is the serif typeface, also known as Times New
+        <div class="text">From the picture above, it can be noticed that there are different types
+          of fonts on the Latex document.</div>
+          <div class="subtitle">Fonts families</div>
+          <div class="text">Latex standard size font is the serif typeface, also known as Times New
             Roman, as you may notice from the document example. Other typefaces can be
-            changed through some code you will have to insert. For example:</p>
+            changed through some code you will have to insert. For example:</div>
             <code><blockquote><p>\documentclass{article}</p>
               <p>\begin{document}</p>
               <p>You are going to see a very interesting thing now, how
@@ -80,34 +101,81 @@
                 sentence, to the end of the document.</p>
                 <br>
                 <p>\end{document}</p></blockquote></code>
-                <center><img src="../media/img/different_font_styles.png" alt="Different font styles" height="950" width="550"></center>
-                  <p>In order to set a sans font as default on the Latex document,
-                    the code to insert is:</p>
-                    <code><blockquote><p>\renewcommand{\familydefault}{\sfdefault}</p>
-                    </blockquote></code>
-                    <p>If you instead, want to set the roman font as default on the Latex document,
-                      the code to insert is:
-                      <code><blockquote><p>\renewcommand{\familydefault}{\rmdefault}</p>
-                      </blockquote></code>
-                      <h2>The Reference Guide</h2>
-                      <h3>Font sizes</h3>
-                      <p>There are several choices of font sizes in Latex, and below
-                        there all the possibile combinations, from the smallest to largest fonts:</p>
-                        <ol><p>\tiny</p>
-                          <p>\scriptsize</p>
-                          <p>\footnotesize</p>
-                          <p>\small</p>
-                          <p>\normalsize</p>
-                          <p>\large</p>
-                          <p>\Large</p>
-                          <p>\LARGE</p>
-                          <p>\huge</p>
-                          <p>\Huge</p></ol>
-                          <center><img src="../media/img/different_fonts.png" alt="Different font sizes" height="950" width="600"></center>
+        <div class="latex">
+          <div class="paragraph"><b>CODE</b><hr>
+            <code><p>\documentclass{article}</p>
+              <p>\begin{document}</p>
+              <p>You are going to see a very interesting thing now, how
+                \textsc{this sentence changed its style.}
+                \sffamily
+                This, instead, is another interesting point. Here, you are changing the absolute
+                (so not relative) word style. This means that you are changing the font style from this
+                sentence, to the end of the document.</p>
+                <br>
+                <p>\end{document}</p></code>
+          </div>
+          <div class="object">
+              <object type="application/pdf" data="../docs/syntax_more_font3.pdf" height="100%" width="100%"></object>
+          </div>
+        </div>
+        <div class="text">In order to set a sans font as default on the Latex document,
+          the code to insert is:</div>
+          <code><blockquote><p>\renewcommand{\familydefault}{\sfdefault}</p>
+          </blockquote></code>
+          <div class="text">If you instead, want to set the roman font as default on the Latex document,
+            the code to insert is:
+            <code><blockquote><p>\renewcommand{\familydefault}{\rmdefault}</div>
+            </blockquote></code>
+            <div class="subtitle">The Reference Guide Font Size</div>
+            <div class="text">There are several choices of font sizes in Latex, and below
+              there all the possibile combinations, from the smallest to largest fonts:</div>
+              <ol><p>\tiny</p>
+                <p>\scriptsize</p>
+                <p>\footnotesize</p>
+                <p>\small</p>
+                <p>\normalsize</p>
+                <p>\large</p>
+                <p>\Large</p>
+                <p>\LARGE</p>
+                <p>\huge</p>
+                <p>\Huge</p></ol>
+                
+
+      <div class="latex">
+          <div class="paragraph"><b>CODE</b><hr>
+            <code>
+              \documentclass{article}<br><br>
+
+              \begin{document}<br><br>
+
+              \tiny{tiny}<br><br>
+
+              \scriptsize{scriptsize}<br><br>
+
+              \footnotesize{footnotesize}<br><br>
+
+              \small{small}<br><br>
+
+              \normalsize{normalsize}<br><br>
+
+              \large{large}<br><br>
+
+              \Large{Large}<br><br>
+
+              \LARGE{LARGE}<br><br>
+
+              \huge{huge}<br><br>
+
+              \Huge{Huge}<br><br>
 
 
-
-
+              \end{document}<br>
+            </code>
+          </div>
+          <div class="object">
+              <object type="application/pdf" data="../docs/syntax_more_font4.pdf" height="100%" width="100%"></object>
+          </div>
+        </div>
 
         <footer>
             <address>Page written by Marco Barabaschi</address>

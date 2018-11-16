@@ -19,83 +19,101 @@
         <a href="packages_index.html">Packages</a>
         <a href="quiz.html">Quiz</a>
     </nav>
-        <div class="sidenav">
+    <div class="sidenav">
             <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
             <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+            <a href="syntax_title_section.HTML" class="sidenavlink">Title Section</a>
             <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlinkactive">Paragraph and Comments</a>
             <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
-            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Fonts</a>
+            <a href="syntax_more_on_fonts.HTML" class="sidenavlink">Fonts</a>
             <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
             <a href="syntax_lists.HTML" class="sidenavlink">List</a>
-            <a href="LINKSUBPAGE.HTML" class="sidenavlink">Document Class</a>
+            <div class="subpage"><div class="subpagepadding">Document type in Latex↓</div>
+            <a href="syntax_classes.HTML" class="subpagelink">Document Class</a>
+            <a href="syntax_classes_comparison.HTML" class="subpagelink">Document Classes Comparison</a>
+            <a href="syntax_classes_option.HTML" class="subpagelink">Document Classes Options</a>   
+            </div>
+            <a href="syntax_command.HTML" class="sidenavlink">Command</a>
             <a href="syntax_TableOfContents.HTML" class="sidenavlink">Table of Contents</a>
             <a href="syntax_pageNumbering.HTML" class="sidenavlink">Page Numbering</a>
             <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
             <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
             <div class="subpage"><div class="subpagepadding">Bibliography ↓</div>
             <a href="syntax_bibManagement.HTML" class="subpagelink">Bibliography Management With Biblatex</a>
-            <a href="syntax_BibManagementNatbib.HTML" class="subpagelink">Bibliography Management With Natbib</a>
-            
+            <a href="syntax_BibManagementNatbib.HTML" class="subpagelink">Bibliography Management With Natbib</a>  
             </div>
     </div>
   <main>
-  <h1 class="Title">Basic paragraphs and comments</h1>
-  <h2>Creating paragraphs and new lines</h2>
-   <p>In very important documents, such as scientific ones, you do not
+  <div class="title">Basic paragraphs and comments</div>
+  <div class="subtitle">Creating paragraphs and new lines</div>
+   <div class="text">In very important documents, such as scientific ones, you do not
     want to keep a simple, basic format. In Latex, for example,
     if you want to start a new paragraph, you have to click the
     "Enter" key twice, and if you write on a new line and not
     start a new paragraph, you can write a backslash two times (\\),
-    after the line previous to the new line. For example,</p>
-    <blockquote><code><p>\documentclass{article}</p>
-      <p><p>\title{My first Latex Document!}</p>
-      <p>\author{Bob Malcom}</p>
-      <p>\date{November 2, 2018}</p>
-      <br>
-      <p>\begin{document}</p>
-      <p>\maketitle</p>
-      <p>Hello World! This is a very simple, Latex document. \\</p>
-      <p>This is a new line \\</p>
-      <p>This is another line.</p>
-      <br>
-      <p>This is a new paragraph.</p></code></blockquote>
+    after the line previous to the new line. For example: </div><br><br>
+      <div class="latex">
+                                <div class="paragraph"><b>CODE</b><hr>
+                                    <code>
+                                        <code><p>\documentclass{article}</p>
+                                          <p><p>\title{My first Latex Document!}</p>
+                                          <p>\author{Bob Malcom}</p>
+                                          <p>\date{November 2, 2018}</p>
+                                          <br>
+                                          <p>\begin{document}</p>
+                                          <p>\maketitle</p>
+                                          <p>Hello World! This is a very simple, Latex document. \\</p>
+                                          <p>This is a new line \\</p>
+                                          <p>This is another line.</p>
+                                          <br>
+                                          <p>This is a new paragraph.</p></code>
+                                    </code>
+                                </div>
+                                <div class="object">
+                                    <object type="application/pdf" data="../docs/syntax_basic_para_comment1.pdf" height="100%" width="100%"></object>
+                                </div>
+                        </div>
+                        <br><br>  
+<div class="subtitle">Comments</div>
+  <div class="text">We saw from the code and the  picture of the document, that a new line
+    goes simply down a line, while a paragraph does the same, but gets indented.</div>
 
-      <img src="../media/img/syntax_doc2.png" alt="The
-        document with new lines and paragraphs" height="700" width="600">
-<h2>Comments</h2>
-  <p>We saw from the code and the  picture of the document, that a new line
-    goes simply down a line, while a paragraph does the same, but gets indented.</p>
-
-    <p>On Latex, it is also possible to insert comments (colored in red), useful
+    <div class="text">On Latex, it is also possible to insert comments (colored in red), useful
       for remembering what you meant in one of your lines of
       code. Very simply, you type the symbol "%", and start writing the
-    comment. When you are finished with the comment, you  press the "Enter" key. Below, for example:</p>
-    <blockquote><code><p>\documentclass{article}</p>
-      <p>\title{My first Latex Document!}</p>
-      <p>\author{Bob Malcom}</p>
-      <p>\date{November 2, 2018}</p>
-      <br>
-      <p>\begin{document}</p>
-      <p>\maketitle %Title inserted</p>
-      Hello World! This is a very simple
-      Latex document. \\ %This is a text, containing the command that lets the following text go down the next line</p>
-      <p>This is a new line \\ %This is a text, containing the command
-        that lets the following text go down the next line</p>
-      <p>This is another new line. %This is a text, containing the command
-        that creates a new paragraph (double "Enter" key)</p>
-      <br>
-      <p>This is a new paragraph. %Final text (in new paragraph)</p>
-      <p>\end{document}</p></code></blockquote>
+    comment. When you are finished with the comment, you  press the "Enter" key. Below, for example:</div>
+    <br><br>
+      <div class="latex">
+                                <div class="paragraph"><b>CODE</b><hr>
+                                    <code><p>\documentclass{article}</p>
+                                    <p>\title{My first Latex Document!}</p>
+                                    <p>\author{Bob Malcom}</p>
+                                    <p>\date{November 2, 2018}</p>
+                                    <br>
+                                    <p>\begin{document}</p>
+                                    <p>\maketitle %Title inserted</p>
+                                    Hello World! This is a very simple
+                                    Latex document. \\ %This is a text, containing the command that lets the following text go down the next line</p>
+                                    <p>This is a new line \\ %This is a text, containing the command
+                                      that lets the following text go down the next line</p>
+                                    <p>This is another new line. %This is a text, containing the command
+                                      that creates a new paragraph (double "Enter" key)</p>
+                                    <br>
+                                    <p>This is a new paragraph. %Final text (in new paragraph)</p>
+                                    <p>\end{document}</p></code>
+                                </div>
+                                <div class="object">
+                                    <object type="application/pdf" data="../docs/syntax_basic_para_comment2.pdf" height="100%" width="100%"></object>
+                                </div>
+                        </div>
+                        <br><br>
 
-
-
-
-  <p>As you may imagine, comments will not appear
+  <div class="text">As you may imagine, comments will not appear
     on the actual Latex document, so the document for the code above will be the same as the first picture at the top of this page. This is a very useful tool,
     because it makes the coder remember what he/she meant with
     a particular code, or line of code.
     Are you not so sure about remembering in the future what you have written, or what your code really means?
-    Put a % and write your comment!</p>
+    Put a % and write your comment!</div>
   <footer>
     <address>Page written by Marco Barabaschi</address>
   </footer>
