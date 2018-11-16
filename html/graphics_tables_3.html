@@ -1,0 +1,283 @@
+<!-- WARNING: WRITE ALL THE TEXT INSIDE THE MAIN AND NOT DIRECTLY ON THE BODY -->
+<!-- NOTE: THE WHITE SPACE ON THE LEFT OF THE PAGE IS A PLACE-HOLDERS FOR THE NAVIGATOR -->
+<!-- NOTE: SINCE THE NAVIGATORS HAVE NOT BEEN CREATED YET, THEY WILL BE ADDED TO THE TEMPLATE ON A LATER TIME
+AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN -->
+<!-- NOTE: BE AWARE OF THE FACT THAT IN THE FUTURE WILL BE ADDED A BOX FOR THE CODES -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Graphics: tables - Positioning</title>
+    <meta name="author" content="Maxim Ryakhovskiy">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html" class="active">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+            <a href="graphics_index.html" class="sidenavlink">Graphics</a>
+            <div class="subpage"><div class="subpagepadding">Image ↓</div>
+            <a href="graphics_images_1.html" class="subpagelink">How to add images</a>
+            <a href="graphics_images_2.html" class="subpagelink">Image positioning</a>
+            <a href="graphics_images_3.html" class="subpagelink">How to add captions and a label to an image</a>
+            <a href="graphics_images_4.html" class="subpagelink">How to rotate and scale back an image</a></div>
+            <div class="subpage"><div class="subpagepadding">Charts ↓</div>
+            <a href="graphics_charts_1.html" class="subpagelink">Introduction & SmartDiagram</a>
+            <a href="graphics_charts_2.html" class="subpagelink">TikZ: Simple Drawings</a>
+            <a href="graphics_charts_3.html" class="subpagelink">TikZ: Advanced Commands</a>
+            <a href="graphics_charts_4.html" class="subpagelink">PGFPlots</a></div>
+            <div class="subpage"><div class="subpagepadding">Tables ↓</div>
+            <a href="graphics_tables_1.html" class="subpagelink">Environment</a>
+            <a href="graphics_tables_2.html" class="subpagelink">Cell spanning</a>
+            <a href="graphics_tables_3.html" class="subpagelinkactive">Positioning</a>
+            <a href="graphics_tables_4.html" class="subpagelink">Coloring</a></div>
+            <div class="subpage"><div class="subpagepadding">Vector drawing ↓</div>
+            <a href="graphics_vectordrawing_1.html"class="subpagelink">Latexdraw</a>
+            <a href="graphics_vectordrawing_2.html" class="subpagelink">Putting things together</a></div>
+    </div>
+    <main>
+        <div class="title">Positioning</div>
+        <div class="indexgeneral"><ul>
+            <li><div class="index"><a href="graphics_tables_1.html">Position of the table in the page</a></div></li>
+            <li><div class="index"><a href="graphics_tables_2.html">Position of the content in the cell</a></div></li>
+            <li><div class="index"><a href="graphics_tables_3.html">Alignment</a></div></li>
+            <li><div class="index"><a href="graphics_tables_4.html">Rotating</a></div></li>
+        </ul>
+        <hr>
+        </div>
+        <div class="firstsubtitle">Position of the table in the page</div>
+        <div class="text"> In order to set the position of a table, it is necessary to insert [<i>spec</i>] after the table enviroment:<code>\begin{table}[<i>spec</i>]</code>.
+          <ul>
+            <li><code>h</code> - placing the table <i>here</i>.</li>
+            <li><code>t</code> - placing the table at the <i>top</i> of the page.</li>
+            <li><code>b</code> - placing the table at the <i>bottom</i> of the page.</li>
+            <li><code>P</code> - placing the table in a special page.(only for tables)</li>
+            <li><code>!</code> - adding this symbol, it will override the internal LaTeX setting.</li>
+            <li><code>H</code> - placing the table at precise position; same funcion as <code>h!</code>. <b>Note</b>: requries <code>\usepackage{float}</code>.</li>
+          </ul>
+
+  <div class="latex">
+    <div class="paragraph"><b>CODE</b><hr>
+      <code>\lipsum[1]<br>
+        \begin{table}<br>
+        \begin{tabular}{ccc}<br>
+        1 & table & example\\<br>
+        2 & table & example\\<br>
+        3 & table & example\\<br>
+        4 & table & example\\<br>
+        \end{tabular}<br>
+        \end{table}<br><br>
+
+        \lipsum[2]<br>
+        \begin{table}[h]<br>
+        \begin{tabular}{ccc}<br>
+        12 & table & example\\<br>
+        2 & table & example\\<br>
+        3 & table & example\\<br>
+        4 & table & example\\<br>
+        \end{tabular}<br>
+        \end{table}<br><br>
+
+        \begin{table}[b]<br>
+        \begin{tabular}{ccc}<br>
+        12 & table & example\\<br>
+        22 & table & example\\<br>
+        3 & table & example\\<br>
+        4 & table & example\\<br>
+        \end{tabular}<br>
+        \end{table}<br>
+      </code>
+    </div>
+    <div class="object">
+      <object type="application/pdf" data="../docs/graphics_example_table_pos.pdf" height="100%" width="100%"></object>
+    </div>
+  </div><br><br>
+
+<div class="text">
+  The <code>\lipsum{<i>num</i>}</code> is used to generate <i>Lorem ipsum</i> text (the <code>\usepackage{lipsum}</code> is needed).<br>
+  The first column must be placed after the second paragraph, but it is above. In order to avoid this effect, the <i>spec</i> <code>h</code> is needed.
+  The latter will place the table in the correct place, as in the second example. The last table uses <i>spec</i> <code>b</code>, in fact it is situated at the bottom of the page.<br><br>
+  There is an option to place the table and figures surrounded by a text. The <code>\usepackage{wrapfig}</code> is required.</div><br><br>
+
+<div class="latex">
+  <div class="paragraph"><b>CODE</b><hr>
+    <code>\lipsum[1]<br>
+\begin{wraptable}{l}{3cm}<br>
+\begin{tabular}{|rr|}\hline<br>
+1example & table \\<br>
+example & table \\<br>
+example & table \\<br>
+example & table \\<br>
+example & table \\\hline<br>
+\end{tabular}<br>
+\end{wraptable}<br>
+\lipsum[1-2]<br>
+</code>
+</div>
+<div class="object">
+<object type="application/pdf" data="../docs/graphics_example_table_wrap.pdf" height="100%" width="100%"></object>
+</div>
+</div><br><br>
+
+  <div class="text">
+    Instead of <code>\begin{table}</code>, <code>\begin{wraptable}{<i>alignment</i>}{<i>width</i>}</code> is used. The table can be placed in center, left or right respect to the text, by using attributes:
+    <code>c</code>, <code>l</code> and <code>r</code>.
+        </div>
+
+        <div class="subtitle" id="Align">Alignment</div>
+        <div class="text">This section speaks about the alignment of the table in the page.</div><br><br>
+
+          <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+              <code>\begin{tabular}{rr}<br>
+                example & table \\<br>
+                example & table \\<br>
+                example & table \\<br>
+                example & table \\<br>
+                example & table \\<br>
+                \end{tabular}<br><br>
+
+                \begin{tabular}{rrl}<br>
+                example & table   & table\\<br>
+                example & table  & table \\<br>
+                example & table   & table\\<br>
+                example & table  & table \\<br>
+                example & table   & table\\<br>
+                \end{tabular}<br>
+                \end{center}<br>
+                \lipsum [1]\medskip<br>
+                <br>
+                \centering{<br>
+                \begin{tabular}{rr}<br>
+                  4example & table \\<br>
+                  example & table \\<br>
+                  \end{tabular}} <br>
+          </code>
+          </div>
+          <div class="object">
+          <object type="application/pdf" data="../docs/graphics_example_pos_table_page.pdf" height="100%" width="100%"></object>
+          </div>
+        </div><br><br>
+
+        <div class="text">
+          First method, to put the content to the center: is to include the tabular enviroment inside the <code>\begin{center}</code> enviroment.
+          Second method is to use command <code>\centering{<i>content</i>}</code>, where, in this case, the <i>content</i> is the table.
+        </div>
+
+        <div class="subtitle">Position of the content in the cell</div>
+        <div class="text">This subsection is a summary of commands and attributes seen in following sections: <a href="graphics_tables1p#Simple">Environment: Building a simple table</a>
+          are presented basic attributes <code>c, l, r</code>, which determine the alignment of the content in the cell. Then, in section <a href="graphics_tables1p#Special_columns">Environment: Special columns</a> are introduced special columns, which also affect the rest of the row, e.g. <code>p{<i>width</i>}, m{<i>width</i>}, b{<i>width</i>}</code>.
+          Meanwhile, entire subsection <a href="graphics_tables2p">Cell spanning</a> is dedicated to the position of the content in the table.<br>
+          The new table type requries <code>\usepackage{array}</code> and <code>\usepackage[thinlines]{easytable}</code>. The general command of a new table is <code>\begin{TAB}(<i>orientation</i>, <i>stretch</i>, <i>stretch</i>)[<i>width</i>]{<i>horizontal alignment</i>}{<i>vertical alignment</i>}</code>. The <i>orientation</i> is the form of the table,
+          the two <i>stretch</i> commands change their behaviour, because it depends on the <i>orientation</i>. The <i>width</i> increases the size of the table. <i>Horizontal alignment</i> and <i>vertical alignment</i> are used to determine the alignment
+          of the columns and of the rows. The first one determine the number of column and its horizontal alignment by <code>l r c</code> attributes. The second command is used to decide the number of rows and their alignment by using <code>t, c, b</code> attributes.
+        </div><br><br>
+
+          <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+              <code>\centering{<br>
+\begin{TAB}(c,2cm,1cm)[10pt]{|r|c|}{|c|c|c|} <br>
+hi, my name is what & Slim Shady\\ <br>
+my name is how & Slim Shady \\<br>
+my name is "tiki-tiki" &  Slim Shady \\<br>
+\end{TAB}}<br>
+\vspace{2cm}<br><br>
+
+\begin{TAB}(l,5cm,2.5cm)[5pt]{|r|c|}{|b|c|t|}<br>
+hi, my name is what & Slim Shady\\ <br>
+my name is how & Slim Shady \\<br>
+my name is "tiki-tiki" &  Slim Shady \\<br>
+\end{TAB}<br>
+          </code>
+          </div>
+          <div class="object">
+          <object type="application/pdf" data="../docs/graphics_example_goodtable.pdf" height="100%" width="100%"></object>
+          </div>
+        </div><br><br>
+
+        <div class="text">
+The first table, has <code>c</code> as <i>orientation</i>, in fact the two stretch instructions have no effect. In order to enlarge the table, change the value of the <i>width</i>. Also, the first
+column is vertically aligned to the right and the second to the center. Meanwhile, all the rows has center alignment.<br>
+The second table has <code>l</code> as <i>orientation</i>, in fact the next two attributes controls the widht and the height of the table. Every row has a different attribute in order to show possible combinations.
+</div><br><br>
+
+<div class="latex">
+  <div class="paragraph"><b>CODE</b><hr>
+    <code>\centering{<br>
+      \begin{TAB}(l,3cm,1cm)[10pt]{|r|c}{|c|cc|}<br>
+      hi, my name is what & Slim Shady\\ <br>
+      my name is how & Slim Shady \\<br>
+      my name is "tiki-tiki" &  Slim Shady \\<br>
+      \end{TAB}}<br>
+      \vspace{2cm}<br><br>
+
+      \begin{TAB}(l,2cm,3cm)[10pt]{|c|c|}{|c|c|c|b|}<br>
+      hi, my name is what & \multicolumn{1}{l}{Slim Shady}\\ <br>
+      my name is how & \multirow{2}{*}{Slim Shady} \\ <br>
+      my name is "tiki-tiki" &   \\<br>
+      example & table\\ <br>
+      \end{TAB}<br>
+</code>
+</div>
+<div class="object">
+<object type="application/pdf" data="../docs/graphics_example_goodtable1.pdf" height="100%" width="100%"></object>
+</div>
+</div><br><br>
+
+  <div class="text">
+    The first table shows how to manage with the lines, because <code>\hline</code> and <code>\cline</code> inside the <i>TAB</i> enviroment are not supported.<br>
+    The second table shows, that the <code>\multicolumn</code> and <code>\multirow</code> have no effect on the table.
+  </div>
+  <br>
+  <br>
+
+        <div class="subtitle" id="Rotating">Rotating</div>
+        <div class="text">This subsection speaks about rotaing of a table. The first table in the example requires <code>\usepackage{adjustbox}</code> and the second one <code>\usepackage[graphicx]{realboxes}</code>.
+        </div><br><br>
+
+          <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+              <code>\begin{adjustbox}{angle=250}<br>
+    \begin{tabular}{cc}\hline<br>
+    example & First Second\\ \hline<br>
+    table & Second Second\\ \hline<br>
+    \end{tabular}<br>
+    \end{adjustbox}<br>
+    \vspace{3cm}<br><br>
+
+    \Rotatebox{90}{<br>
+    \begin{tabular}{|rl|}\hline<br>
+    First First &example\\ \hline<br>
+    Second First & table\\ \hline<br>
+    \end{tabular}}<br>
+          </code>
+          </div>
+          <div class="object">
+          <object type="application/pdf" data="../docs/graphics_example_rotate_table.pdf" height="100%" width="100%"></object>
+          </div>
+        </div>
+        <br>
+        <br>
+
+        <div class="text">
+The first table uses enviroment of <i>adjustbox</i>. In this case, the vertical lines cannot be added. While, the second table is rotated and there are no problem with lines.
+        </div>
+
+        <footer>
+            <address>Page written by Maxim Ryakhovskiy</address>
+        </footer>
+    </main>
+</body>
+
+</html>

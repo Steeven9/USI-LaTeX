@@ -10,52 +10,135 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 
 <head>
     <meta charset="utf-8" />
-    <title>XFIG</title>
+    <title>Putting things together</title>
     <meta name="author" content="CARLO_BETTELINI">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../media/img/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
     <link rel="icon" href="../media/img/favicon.ico">
 </head>
 
 <body>
     <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html"class="active">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+            <a href="graphics_index.html" class="sidenavlink">Graphics</a>
+            <div class="subpage"><div class="subpagepadding">Image ↓</div>
+            <a href="graphics_images_1.html" class="subpagelink">How to add images</a>
+            <a href="graphics_images_2.html" class="subpagelink">Image positioning</a>
+            <a href="graphics_images_3.html" class="subpagelink">How to add captions and a label to an image</a>
+            <a href="graphics_images_4.html" class="subpagelink">How to rotate and scale back an image</a></div>
+            <div class="subpage"><div class="subpagepadding">Charts ↓</div>
+            <a href="graphics_charts_1.html" class="subpagelink">Introduction & SmartDiagram</a>
+            <a href="graphics_charts_2.html" class="subpagelink">TikZ: Simple Drawings</a>
+            <a href="graphics_charts_3.html" class="subpagelink">TikZ: Advanced Commands</a>
+            <a href="graphics_charts_4.html" class="subpagelink">PGFPlots</a></div>
+            <div class="subpage"><div class="subpagepadding">Tables ↓</div>
+            <a href="graphics_tables_1.html" class="subpagelink">Environment</a>
+            <a href="graphics_tables_2.html" class="subpagelink">Cell spanning</a>
+            <a href="graphics_tables_3.html" class="subpagelink">Positioning</a>
+            <a href="graphics_tables_4.html" class="subpagelink">Coloring</a></div>
+            <div class="subpage"><div class="subpagepadding">Vector drawing ↓</div>
+            <a href="graphics_vectordrawing_1.html" class="subpagelink">Latexdraw</a>
+            <a href="graphics_vectordrawing_2.html" class="subpagelinkactive">Putting things together</a></div>
+    </div>
     <main>
-        <div class="title">XFIG</div>
-          <div class="text">Xfig is another tool which allows to include vector drawing in LaTeX.</div>
-        <div class="subtitle">How to install xfig</div>
-        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dolor eros, elementum et mattis vel,
-          ornare id est. Nulla facilisi. Etiam pretium aliquet est in iaculis. Vestibulum euismod dictum molestie.
-          In varius tortor faucibus finibus eleifend. Duis eu rhoncus lorem,
-          sit amet vulputate elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        <div class="title">Putting things together</div>
+        <div class="indexgeneral"><ul>
+            <li><div class="index"><a href="graphics_tables1p.html#Simple">Building a simple table</a></div></li>
+            <li><div class="index"><a href="graphics_tables1p.html#Adding_lines">Adding lines</a></div></li>
+            <li><div class="index"><a href="graphics_tables1p.html#Special_columns">Special columns</a></div></li>
+            <li><div class="index"><a href="graphics_tables1p.html#Borders">Borders</a></div></li>
+            <li><div class="index"><a href="graphics_tables1p.html#Size">Size of the table</a></div></li>
+</ul>
+        <hr>
+        </div>
+        <div class="subtitle">Inserting Ti<i>k</i>Z diagrams in a table</div>
+        <div class="text">The biggest problem here is to make the diagram fit inside the table. To do so,
         </div>
 
-        <div class="exercises">
-              <p>Example</p>
-              <img src="..." class="images">
+        <br><br>
+        <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+              <code>\documentclass{article}<br>
+                \begin{document}<br>
+                \begin{table}<br>
+                \begin{tabular}{lcr}<br>
+                table & long table & not so long table \\<br>
+                1 & 123456789000 & 3.14 \\<br>
+                \end{tabular}<br>
+                \end{table}<br>
+                \end{document}
+              </code>
+            </div>
+            <div class="object">
+              <object type="application/pdf" data="../docs/graphics_experiment.pdf"  height="100%" width="100%"></object>
+            </div>
+        </div><br><br>
+
+        <div class="subtitle">Inserting an image in a Ti<i>k</i>Z diagram</div>
+        <div class="text">If you try including an image inside a Ti<i>k</i>Z diagram, you're probably going to meet the following problem.
+          The program does not recognize the inputs as commands and confuses them for items. So what you get is a mess.</div><br><br>
+
+          <div class="object">
+            <object type="application/pdf" data="../docs/graphics_experiment.pdf"  height="100%" width="50%"></object>
+          </div><br><br>
+
+           <div class="text">The first thing I tried was using pgfplots package. In the result the image was moved on the right and it was rather small.
+             On an attempt to scale it, I discovered that the image is bounded to the Item, so it is not possible to scale it independently from the diagram.
+             So I tried using the package <code>\usepackage{overpic}</code>.
         </div>
 
-        <div class="subtitle">Interface</div>
-        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dolor eros, elementum et mattis vel,
-            ornare id est. Nulla facilisi. Etiam pretium aliquet est in iaculis. Vestibulum euismod dictum molestie.
-            In varius tortor faucibus finibus eleifend. Duis eu rhoncus lorem,
-            sit amet vulputate elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-        </div>
-
-        <div class="exercises">
-                <p>Example</p>
-                <img src="..." class="images">
+        <br><br>
+        <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+              <code>\begin{overpic}<br>
+                [width=\textwidth]{Leslie_Lamport.png}<br>
+                \end{overpic}
+              </code>
+            </div>
+            <div class="object">
+              <object type="application/pdf" data="../docs/graphics_foto_incastrata.pdf"  height="100%" width="100%"></object>
+            </div>
+        </div><br><br>
         </div>
 
         <div class="subtitle">fig2dev</div>
-        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dolor eros, elementum et mattis vel,
-              ornare id est. Nulla facilisi. Etiam pretium aliquet est in iaculis. Vestibulum euismod dictum molestie.
-              In varius tortor faucibus finibus eleifend. Duis eu rhoncus lorem,
-              sit amet vulputate elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        <div class="text"><div class="text margin50 line1-5">
+           <div>Question 1: How to color a row?</div>
+           <div id="answQuestion1" class="margin20 red"></div>
+           <label><input type="radio" name="question1"><span class="vMid"> <code>\rowcolor{red} coloring & content & content & content \\</code> </span></label><br> <!-- right answer  -->
+           <label><input type="radio" name="question1"><span class="vMid"> <code> coloring & content & content & content \\ \rowcolor{red}</code> </span></label><br>
+           <label><input type="radio" name="question1"><span class="vMid"> <code>\begin{tabular}{c \rowcolor{red}{c} c c}</code></span></label><br>
+           <label><input type="radio" name="question1"><span class="vMid"> All the options above are false</span></label>
+       </div>
         </div>
 
-        <div class="exercises">
-                  <p>Example</p>
-                  <img src="..." class="images">
+        <br><br>
+        <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+              <code>\documentclass{article}<br>
+                \begin{document}<br>
+                \begin{table}<br>
+                \begin{tabular}{lcr}<br>
+                table & long table & not so long table \\<br>
+                1 & 123456789000 & 3.14 \\<br>
+                \end{tabular}<br>
+                \end{table}<br>
+                \end{document}
+              </code>
+            </div>
+            <div class="object">
+              <object type="application/pdf" data="../docs/graphics_experiment.pdf"  height="100%" width="100%"></object>
+            </div>
+        </div><br><br>
         </div>
 
         <div class="subtitle">Export your draw</div>
@@ -65,10 +148,24 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
               sit amet vulputate elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
         </div>
 
-        <div class="exercises">
-              <p>Example</p>
-              <img src="..." class="images">
-        </div>
+        <br><br>
+        <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+              <code>\documentclass{article}<br>
+                \begin{document}<br>
+                \begin{table}<br>
+                \begin{tabular}{lcr}<br>
+                table & long table & not so long table \\<br>
+                1 & 123456789000 & 3.14 \\<br>
+                \end{tabular}<br>
+                \end{table}<br>
+                \end{document}
+              </code>
+            </div>
+            <div class="object">
+              <object type="application/pdf" data="../docs/graphics_experiment.pdf"  height="100%" width="100%"></object>
+            </div>
+        </div><br><br>
 
         <footer>
             <address>Page written by Carlo Bettelini</address>

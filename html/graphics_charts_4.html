@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>PGFPlots</title>
+    <meta name="author" content="Tommaso Rodolfo Masera">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html" class="active">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+            <a href="graphics_index.html" class="sidenavlink">Graphics</a>
+            <div class="subpage"><div class="subpagepadding">Image ↓</div>
+            <a href="graphics_images_1.html" class="subpagelink">How to add images</a>
+            <a href="graphics_images_2.html" class="subpagelink">Image positioning</a>
+            <a href="graphics_images_3.html" class="subpagelink">How to add captions and a label to an image</a>
+            <a href="graphics_images_4.html" class="subpagelink">How to rotate and scale back an image</a></div>
+            <div class="subpage"><div class="subpagepadding">Charts ↓</div>
+            <a href="graphics_charts_1.html" class="subpagelink">Introduction & SmartDiagram</a>
+            <a href="graphics_charts_2.html" class="subpagelink">TikZ: Simple Drawings</a>
+            <a href="graphics_charts_3.html" class="subpagelink">TikZ: Advanced Commands</a>
+            <a href="graphics_charts4.html" class="subpagelinkactive">PGFPlots</a></div>
+            <div class="subpage"><div class="subpagepadding">Tables ↓</div>
+            <a href="graphics_tables_1.html" class="subpagelink">Environment</a>
+            <a href="graphics_tables_2.html" class="subpagelink">Cell spanning</a>
+            <a href="graphics_tables3.html" class="subpagelink">Positioning</a>
+            <a href="graphics_tables4.html" class="subpagelink">Coloring</a></div>
+            <div class="subpage"><div class="subpagepadding">Vector drawing ↓</div>
+            <a href="graphics_vectordrawing_1.html" class="subpagelink">Latexdraw</a>
+            <a href="graphics_vectordrawing2.html" class="subpagelink">Putting things together</a></div>
+    </div>
+    <main>
+        <div class="title">PGFPlots</div>
+        <div class="firstsubtitle">Drawing with PGFPlots</div>
+        <div class="text">
+          On our last section on charts and drawing with LaTeX, we are going to
+          take a look at PGFPlots since, as we have previously stated, it is the
+          package both Ti<i>k</i>Z and SmartDiagram are based on. <br>
+          We won't go in detail with this package as it is really complex and hard
+          to learn. We will simply give you an example of what you can do with the package
+          even though the possibilites are infinite if mastered.
+        </div>
+
+        <div class="subtitle">Drawing a 2D plot</div>
+        <div class="text">
+          Last but not least, we'll attempt to explain and draw step by step a 2D
+          plot with PGFPlots.
+        </div><br><br>
+
+        <div class="latex">
+          <div class="paragraph"><b>CODE</b> <br> <hr>
+            <code>
+              \documentclass[a4paper]{article} <br>
+              \title{2D Plot: Step 1} <br> <br>
+
+              \usepackage{pgfplots} <br> <br>
+
+              \begin{document} <br>
+              \maketitle <br> <br>
+
+              \begin{center} <br>
+              \begin{tikzpicture} <br> <br>
+
+              \begin{axis}[ymin=0, xlabel=Time Spent On Learning Ti\emph{k}Z and PGFPlots, ylabel=My Skills With \LaTeX] <br> <br>
+
+              \addplot[color=red, mark=none] {x}; <br> <br>
+
+              \end{axis} <br>
+              \end{tikzpicture} <br>
+              \end{center} <br> <br>
+
+              \end{document} <br>
+            </code>
+          </div>
+          <div class="object">
+            <object type="application/pdf" data="../docs/graphics_plot_step_1.pdf" width="600" height="768">
+            </object>
+          </div>
+        </div><br><br>
+
+        <div class="text">
+          Here we have our first plot, as you can already see we've used a
+          <code>tikzpicture</code> like in Ti<i>k</i>Z. This is because, as we've already
+          said, these packages are all connected and they're simply higher or lower level
+          languages based on the same principles. <br>
+          Other than the <code>tikzpicture</code>, we now have an new environment:
+          the <code>axis</code> environment. <br>
+          The behaviour of PGFPlots is quite similar to that of Ti<i>k</i>Z.
+          You give a command and then specify the options. As this package includes many,
+          many options, we will only go through the ones we use. <br>
+          First of all, after the <code>axis</code> environment we specified
+          the minimum y of our plot with the <code>ymin</code> option (there also exists a <code>ymax</code> option and the same goes for x).
+          Then we labeled our two axes with the <code>xlabel</code> and <code>ylabel</code> options. <br>
+          Finally we drew our plot with the new <code>\addplot</code> command, which takes
+          options as well as mathematical functions along with specific coordinates;
+          we will see that in the following examples.
+          The options we used so far are <code>color</code> to choose our color and
+          <code>mark</code> to decide the marks along our line, we set it to <code>none</code>
+          to get a simple line. This is also something we'll see soon.
+          PGFPlots also allows you to draw more plots on the same <code>axis</code> environment:
+        </div><br><br>
+
+        <div class="latex">
+          <div class="paragraph"><b>CODE</b> <br> <hr>
+            <code>
+              \documentclass[a4paper]{article} <br>
+              \title{2D Plot: Step 2} <br>
+              \date{} <br> <br>
+
+              \usepackage{pgfplots} <br> <br>
+
+              \begin{document} <br>
+              \maketitle <br> <br>
+
+              \begin{center} <br>
+              \begin{tikzpicture} <br> <br>
+
+              \begin{axis} <br>
+              [ymin=0, <b>xmin=0, xmax=10, ymax=10</b>, xlabel=Time Spent On Learning Ti\emph{k}Z and PGFPlots, ylabel=My Skills With \LaTeX] <br> <br>
+
+              \addplot[color=red, mark=none] coordinates {(0,0) (10,10)}; <br> <br>
+
+              <b>\addplot[color=green, mark=x] <br>
+              coordinates {(0,0) (0.2,0.5) (1,0.8) (2,1.5) (3,2.5) (4,2.7) (5,3.2) (6,3.5) (7,3.8) (8,4.2) (9,4.5) (10,5)}; </b> <br> <br>
+
+              \end{axis} <br>
+              \end{tikzpicture} <br>
+              \end{center} <br> <br>
+
+              \end{document}
+            </code>
+          </div>
+          <div class="object">
+            <object type="application/pdf" data="../docs/graphics_plot_step_2.pdf" width="600" height="768">
+            </object>
+          </div>
+        </div><br><br>
+
+        <div class="text">
+          You can add as many plots as you want with <code>\addplot</code>.
+          We didn't do much now, we just changed the mark of our second plot and
+          we specified its coordinates. <br>
+          We also added the minimum and maximum values x and y as well as changed the
+          first function to a simple line mimicking the behaviour of the function
+          f(x)=x.
+          Now we'll move on to writing legends:
+        </div><br><br>
+
+        <div class="latex">
+          <div class="paragraph"><b>CODE</b> <br> <hr>
+            <code>
+              \documentclass[a4paper]{article} <br>
+              \title{2D Plot: Step 3} <br>
+              \date{} <br> <br>
+
+              \usepackage{pgfplots} <br> <br>
+
+              \begin{document} <br>
+              \maketitle <br> <br>
+
+              \begin{center} <br>
+              \begin{tikzpicture}[scale=1.5] <br> <br>
+
+              \begin{axis} <br>
+              [ymin=0, xmin=0, xmax=10, ymax=10, xlabel=Time Spent On Learning Ti\emph{k}Z and PGFPlots, ylabel=My Skills With \LaTeX] <br> <br>
+
+              \addplot[color=red, mark=none] coordinates {(0,0) (10,10)}; <br> <br>
+
+              \addplot[color=green, mark=x] <br>
+              coordinates {(0,0) (0.2,0.5) (1,0.8) (2,1.5) (3,2.5) (4,2.7) (5,3.2) (6,3.5) (7,3.8) (8,4.2) (9,4.5) (10,5)}; <br> <br>
+
+              <b>\legend {Expected Result, Actual Result}</b> <br> <br>
+
+              \end{axis} <br>
+              \end{tikzpicture} <br>
+
+              \end{center} <br> <br>
+
+              \end{document}
+            </code>
+          </div>
+          <div class="object">
+            <object type="application/pdf" data="../docs/graphics_plot_step_3.pdf" width="600" height="768">
+            </object>
+          </div>
+        </div><br><br>
+
+        <div class="text">
+          Adding a legend was also fairly simple, we have the <code>\legend</code>
+          command which does the job for us. <br>
+          We won't cover anymore about the package because it only gets tougher and
+          the aim of this website is to attempt and make things easier (not harder) on
+          newcomers to LaTeX. This was just an overview of the capabilities of the package.
+          Remember that you can give any mathematical function to <code>\addplot</code>.
+          A straight line was the easiest example and, as you've seen, it quite resembles
+          Ti<i>k</i>Z when it comes down to drawing lines. <br>
+          But there is much more to be discovered about this package so don't give up
+          if you can't understand much about it at first. Everyone has been there and,
+          ultimately, they got what they wanted from it. <br>
+        </div>
+
+        <footer>
+            <address>Page written by Tommaso Rodolfo Masera</address>
+        </footer>
+    </main>
+</body>
+
+</html>

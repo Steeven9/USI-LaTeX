@@ -1,0 +1,129 @@
+<!-- WARNING: WRITE ALL THE TEXT INSIDE THE MAIN AND NOT DIRECTLY ON THE BODY -->
+<!-- NOTE: THE WHITE SPACE ON THE LEFT OF THE PAGE IS A PLACE-HOLDERS FOR THE NAVIGATOR -->
+<!-- NOTE: SINCE THE NAVIGATORS HAVE NOT BEEN CREATED YET, THEY WILL BE ADDED TO THE TEMPLATE ON A LATER TIME
+AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN -->
+<!-- NOTE: BE AWARE OF THE FACT THAT IN THE FUTURE WILL BE ADDED A BOX FOR THE CODES -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Graphics: tables - coloring</title>
+    <meta name="author" content="Maxim Ryakhovskiy">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html" class="active">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+            <a href="graphics_index.html" class="sidenavlink">Graphics</a>
+            <div class="subpage"><div class="subpagepadding">Image ↓</div>
+            <a href="graphics_images_1.html" class="subpagelink">How to add images</a>
+            <a href="graphics_images_2.html" class="subpagelink">Image positioning</a>
+            <a href="graphics_images_3.html" class="subpagelink">How to add captions and a label to an image</a>
+            <a href="graphics_images_4.html" class="subpagelink">How to rotate and scale back an image</a></div>
+            <div class="subpage"><div class="subpagepadding">Charts ↓</div>
+            <a href="graphics_charts_1.html" class="subpagelink">Introduction & SmartDiagram</a>
+            <a href="graphics_charts_2.html" class="subpagelink">TikZ: Simple Drawings</a>
+            <a href="graphics_charts_3.html" class="subpagelink">TikZ: Advanced Commands</a>
+            <a href="graphics_charts4.html" class="subpagelink">PGFPlots</a></div>
+            <div class="subpage"><div class="subpagepadding">Tables ↓</div>
+            <a href="graphics_tables_1.html" class="subpagelink">Environment</a>
+            <a href="graphics_tables_2.html" class="subpagelink">Cell spanning</a>
+            <a href="graphics_tables3.html" class="subpagelink">Positioning</a>
+            <a href="graphics_tables4.html" class="subpagelinkactive">Coloring</a></div>
+            <div class="subpage"><div class="subpagepadding">Vector drawing ↓</div>
+            <a href="graphics_vectordrawing_1.html"class="subpagelink">Latexdraw</a>
+            <a href="graphics_vectordrawing2.html" class="subpagelink">Putting things together</a></div>
+    </div>
+    <main>
+        <div class="title">Coloring</div>
+        <div class="indexgeneral"><ul>
+            <li><div class="index"><a href="graphics_tables4p.html#color_cell">Coloring a table</a></div></li>
+            <li><div class="index"><a href="graphics_tables4p.html#color_alt">Alternate coloring</a></div></li>
+        </ul>
+        <hr>
+        </div>
+        <div class="firstsubtitle" id="color_cell">Coloring a table</div>
+        <div class="text"> This subsection explains how to color a row, a column and a single cell. It is possible to find many color combinations <a href="http://latexcolor.com/">here</a>. In order to
+          use an imported color, it is necessary to add the definition of the color before <code>\begin{document}</code>. Two packages are needed: <code>\usepackage{colortbl}</code> and <code>\usepackage[table]{xcolor}</code>.
+        </div><br><br>
+
+          <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+              <code>\definecolor{cambridgeblue}{rgb}{0.64, 0.76, 0.68}<br>
+\definecolor{chromeyellow}{rgb}{1.0, 0.65, 0.0}<br>
+\newcolumntype{a}{>{\columncolor{chromeyellow}}c}<br>
+\begin{document}<br><br>
+
+\begin{center}<br>
+\begin{tabular}{|c | c | c | c | l}<br>
+example &\cellcolor{red} 12312312 & example & \multicolumn{2} {r|} {\cellcolor{pink}tables rule the world}\\ \hline<br>
+\rowcolor{cambridgeblue} coloring& table long & very bad coloring & example table & 123456789 \\<br>
+\end{tabular}<br>
+\vspace{2cm}<br>
+<br>
+\begin{tabular}{|a| c | c | }\hline<br>
+example & table & colours \\<br>
+example & colours & table \\<br>
+example & table & colours \\<br>
+example & colours & table \\<br>
+example & table & colours \\<br>
+example & colours & table \\<br>
+\end{tabular}<br>
+\end{center}<br>
+              </code>
+          </div>
+            <div class="object">
+              <object type="application/pdf" data="../docs/graphics_example_color.pdf" height="100%" width="100%"></object>
+          </div>
+        </div><br><br>
+
+        <div class="text">  In the first table, the command <code>\cellcolor{<i>colour</i>}</code> is used to color a single cell. In order to color a multiple column, the command <code>\cellcolor</code> must
+          be placed inside the brackets with <i>content</i> and before it. For coloring a row, it is necessary to use the command <code>\rowcolor{<i>color</i>}</code>, where the <i>color</i> is a color of the row and to put it before the row.<br>
+          In order to change the color of a column, it is necessary to define a new type of column by <code>\newcolumntype{<i>name</i>}{>{\columncolor{<i>color</i>}}<i>alignment</i>}</code>,
+          where the <i>name</i> is the casual name choosen by user, the <i>color</i> is a color of the background and <i>alignment</i> is the alignment of the the column. See table number two as an example.
+        </div>
+
+        <div class="subtitle" id="color_alt">Alternate coloring</div>
+        <div class="text">This subsections explains how to create a table with alternating coloring. The command <code>\rowcolors{<i>starting row</i>}{<i>color odd rows</i>}{<i>color even rows</i>}</code> is applied. Where the
+        <i>starting row</i> is a number of a row, from which starts the the alternating coloring, the <i>color odd rows</i> is a color which will be applied only for odd rows and <i>color even rows</i> is the same but for even rows.
+      </div><br><br>
+
+          <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+              <code>\rowcolors{1}{gray!25}{green}<br>
+               \begin{tabular}{|c|c|}<br>
+                 Table example & Table example\\<br>
+                 example color & example color\\<br>
+             example color & example color\\<br>
+             example color & example color\\<br>
+                 example color & example color\\<br>
+               \end{tabular}<br>
+              </code>
+          </div>
+            <div class="object">
+              <object type="application/pdf" data="../docs/graphics_example_alt_col.pdf" height="100%" width="100%"></object>
+          </div>
+          </div><br><br>
+
+          <div class="text">
+In this example, the alternating coloring starts from the first row and the two colors are light grey and green.
+</div>
+        <footer>
+            <address>Page written by Maxim Ryakhovskiy</address>
+        </footer>
+    </main>
+</body>
+
+</html>

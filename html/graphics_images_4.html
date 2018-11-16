@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>HOW TO ROTATE AND SCALE BACK AN IMAGE</title>
+    <title>How to rotate and resize an image</title>
     <meta name="author" content="LEONARDO CINO">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
@@ -13,23 +13,36 @@
 <body>
     <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
     <nav>
-        <a href="general_index.html" class="active">Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
         <a href="syntax_index.html">Basic Syntax</a>
-        <a href="graphics_index.html">Graphics</a>
+        <a href="graphics_index.html" class="active">Graphics</a>
         <a href="equations_index.html">Equations</a>
         <a href="packages_index.html">Packages</a>
         <a href="quiz.html">Quiz</a>
     </nav>
     <div class="sidenav">
-        <a href="general.html" id="firstsubpage">Getting Started</a> <!-- Put the class="active" on your subpage -->
-        <a href="basic.html">Basic Syntax</a>
-        <a href="graphics.html">Graphics</a>
-        <a href="equations.html">Equations</a>
-        <a href="packages.html">Packages</a>
-        <a href="quiz.html" id="lastsubpage">Quiz</a>
+            <a href="graphics_index.html" class="sidenavlink">Graphics</a>
+            <div class="subpage"><div class="subpagepadding">Image ↓</div>
+            <a href="graphics_images_1.html" class="subpagelink">How to add images</a>
+            <a href="graphics_images_2.html" class="subpagelink">Image positioning</a>
+            <a href="graphics_images_3.html" class="subpagelink">How to add captions and a label to an image</a>
+            <a href="graphics_images_4.html" class="subpagelinkactive">How to rotate and scale back an image</a></div>
+            <div class="subpage"><div class="subpagepadding">Charts ↓</div>
+            <a href="graphics_charts_1.html" class="subpagelink">Introduction & SmartDiagram</a>
+            <a href="graphics_charts_2.html" class="subpagelink">TikZ: Simple Drawings</a>
+            <a href="graphics_charts_3.html" class="subpagelink">TikZ: Advanced Commands</a>
+            <a href="graphics_charts_4.html" class="subpagelink">PGFPlots</a></div>
+            <div class="subpage"><div class="subpagepadding">Tables ↓</div>
+            <a href="graphics_tables_1.html" class="subpagelink">Environment</a>
+            <a href="graphics_tables_2.html" class="subpagelink">Cell spanning</a>
+            <a href="graphics_tables_3.html" class="subpagelink">Positioning</a>
+            <a href="graphics_tables_4.html" class="subpagelink">Coloring</a></div>
+            <div class="subpage"><div class="subpagepadding">Vector drawing ↓</div>
+            <a href="graphics_vectordrawing_1.html"class="subpagelink">Latexdraw</a>
+            <a href="graphics_vectordrawing_2.html" class="subpagelink">Putting things together</a></div>
     </div>
     <main>
-        <div class="title">How to rotate and scale back an image</div>
+        <div class="title">How to rotate and resize an image</div>
         <div class="indexgeneral"><ul>
             <li><div class="index"><a href="NAMEOFTHISFILE.html#first">HOW TO ROTATE AN IMAGE</a></div></li>
             <li><div class="index"><a href="NAMEOFTHISFILE.html#second">HOW TO RESIZE AN IMAGE</a></div></li>
@@ -54,25 +67,26 @@
                           </code>
                           </div>
                           <div class="object">
-                          <object type="application/pdf" data="../docs/graphics_rotating-image.png" width="500" height="768"></object>
-                        </div>
-                      </div><br><br>
+                          <object type="application/pdf" data="../docs/graphics_latex rotating images 2.pdf" height="100%" width="100%"></object>
+                          </div>
+                          </div><br><br>
 
-        <div class="subtitle" id="second">HOW TO RESIZE AN IMAGE</div>
+        <div class="subtitle">How to resize an image</div>
         <div class="text">To resize an image on Latex it is necessary to set the width and height values in the <strong>\includegraphics</strong> command.
-           You can also use the "scale" option that allows you to zoom in or out to reduce the size of an image.</div><br><br>
+                          You can also use the "scale" option that allows you to zoom in or out to reduce the size of an image. Furthermore you
+                          can set the values of angle to rotate the picture.</div><br><br>
 
-           <div class="latex">
-             <div class="paragraph"><b>CODE</b><hr>
+                          <div class="latex">
+                            <div class="paragraph"><b>CODE</b><hr>
                           <code>\begin{figure}[h]<br>
-                                \includegraphics[height=6cm, width=5cm, angle=30, scale=1.5]{USI-LOGO.png}<br>
+                                \includegraphics[<mark>height=6cm</mark>, <mark>width=5cm</mark>, <mark>angle=30</mark>, <mark>scale=1.5</mark>.]{USI-LOGO.png}<br>
                                 \end{figure}<br>
                           </code>
                           </div>
                           <div class="object">
-                          <object type="application/pdf" data="../docs/graphics_rotating-image.png" width="500" height="768"></object>
-                        </div>
-                      </div><br><br>
+                          <object type="application/pdf" data="../docs/graphics_resize-images-html .pdf" height="100%" width="100%"></object>
+                          </div>
+                          </div><br><br>
 
         <div class="subtitle"></div>
         <div class="text"></div>

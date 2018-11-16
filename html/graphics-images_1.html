@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>How to add images</title>
+    <meta name="author" content="LEONARDO CINO">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <link rel="icon" href="../media/img/favicon.ico">
+</head>
+
+<body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
+        <a href="syntax_index.html">Basic Syntax</a>
+        <a href="graphics_index.html"class="active">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+            <a href="graphics_index.html" class="sidenavlink">Graphics</a>
+            <div class="subpage"><div class="subpagepadding">Image ↓</div>
+            <a href="graphics_images_1.html" class="subpagelinkactive">How to add images</a>
+            <a href="graphics_images_2.html" class="subpagelink">Image positioning</a>
+            <a href="graphics_images_3.html" class="subpagelink">How to add captions and a label to an image</a>
+            <a href="graphics_images_4.html" class="subpagelink">How to rotate and scale back an image</a></div>
+            <div class="subpage"><div class="subpagepadding">Charts ↓</div>
+            <a href="graphics_charts_1.html" class="subpagelink">Introduction & SmartDiagram</a>
+            <a href="graphics_charts_2.html" class="subpagelink">TikZ: Simple Drawings</a>
+            <a href="graphics_charts_3.html" class="subpagelink">TikZ: Advanced Commands</a>
+            <a href="graphics_charts_4.html" class="subpagelink">PGFPlots</a></div>
+            <div class="subpage"><div class="subpagepadding">Tables ↓</div>
+            <a href="graphics_tables_1.html" class="subpagelink">Environment</a>
+            <a href="graphics_tables_2.html" class="subpagelink">Cell spanning</a>
+            <a href="graphics_tables_3.html" class="subpagelink">Positioning</a>
+            <a href="graphics_tables_4.html" class="subpagelink">Coloring</a></div>
+            <div class="subpage"><div class="subpagepadding">Vector drawing ↓</div>
+            <a href="graphics_vectordrawing_1.html" class="subpagelink">Latexdraw</a>
+            <a href="graphics_vectordrawing_2.html" class="subpagelink">Putting things together</a></div>
+    </div>
+    <main>
+        <div class="title">How to add images</div>
+        <div class="indexgeneral"><ul>
+            <li><div class="index"><a href="NAMEOFTHISFILE.html#first">Introduction</a></div></li>
+            <li><div class="index"><a href="NAMEOFTHISFILE.html#second">Types of images</a></div></li>
+            <li><div class="index"><a href="NAMEOFTHISFILE.html#second">Il conmando \includegraphics</a></div></li>
+
+        </ul>
+        <hr>
+        </div>
+        <div class="firstsubtitle" id="first">Introduction</div>
+        <div class="text">In LATEX the images that you want to insert in the document are recalled through links to external files.
+                    It is also possible to create images, which will become vectorial, with LATEX commands, even if this
+                    opportunity requires an in-depth knowledge of the language.
+                    To add an image you must know its location and write its path inside the braces after the <strong>\includegraphics</strong> command.
+                    </div>
+
+                    <div class="codebox"><b>WARNING!</b><hr>
+                 <span style="font-family:Arial;">An important advice for the organizational purposes of the work: it will be very convenient to prepare a folder
+                    for all the figures and images to be inserted, in order to keep the work space organised.</span>
+                  </div>
+
+        <div class="subtitle" id="second">Types of images</div>
+        <div class="text">There are two types of figures:
+        <br><br>
+          1.Vector (generally indicated for graphs)
+          <ul>
+            <li><strong>.pdf</strong> (portable document file)</li>
+            <li><strong>.eps</strong> (encapsulated postcript)</li>
+            <li><strong>.ps</strong> (postcript)</li>
+          </ul>
+          <br><br>
+          2.Bitmap (generally indicated for images)
+          <ul>
+            <li><strong>.png</strong> (portable network graphics)</li>
+            <li><strong>.jpeg</strong> o <strong>.jpg</strong> (joint photographic experts group)</li>
+            <li><strong>.tiff</strong> o <strong>.tif</strong> (tagged image file format)</li>
+            </li>
+         </ul>
+         </div>
+
+        <div class="subtitle">Il comando \includegraphics</div>
+        <div class="text">The \includegraphics command is undoubtedly the most important command of the graphicx package and is the one
+         that allows you to insert an image into the document.
+         The \includegraphics command accepts the name of a file as a mandatory parameter; this file contains the image
+         that will have to be inserted in the document and, in most cases.
+         Ad \ includegraphics can also be passed a list of optional parameters, which will be given a broad description
+         in the "Image positioning" paragraph, which \ includegraphics simply does `and examine the file
+         containing the image to be included, process any options, determine the space to be reserved for the image to be inserted and
+         make sure that all the necessary information is present in the file that LATEX will generate.Usually, the \includegraphics command is used
+         within the environment figures to create a figure (which in the final document will be positioned according
+         to certain aesthetic options and rules) with, eventually, a caption.
+         </div><br><br>
+
+        <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+              <code>\begin{figure}[h]<br>
+                    \includegraphics[width=12cm]{../media/img/USI-LOGO.png<br>
+                    \end{figure}<br></code>
+              </code>
+            </div>
+            <div class="object">
+              <object type="application/pdf" data="../docs/graphics_adding-images copy.pdf"  height="100%" width="100%"></object>
+            </div>
+        </div><br><br>
+
+        <footer>
+            <address>Page written by LEONARDO CINO</address>
+        </footer>
+    </main>
+</body>
+
+</html>
