@@ -87,8 +87,23 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
         <div class="text">If you try including an image inside a Ti<i>k</i>Z diagram, you're probably going to meet the following problem.
           The program does not recognize the inputs as commands and confuses them for items. So what you get is a mess.</div><br><br>
 
-          <div class="object">
-            <object type="application/pdf" data="../docs/graphics_experiment.pdf"  height="100%" width="50%"></object>
+          <br><br>
+          <div class="latex">
+              <div class="paragraph"><b>CODE</b><hr>
+                <code>\documentclass{article}<br>
+                  \begin{document}<br>
+                  \begin{table}<br>
+                  \begin{tabular}{lcr}<br>
+                  table & long table & not so long table \\<br>
+                  1 & 123456789000 & 3.14 \\<br>
+                  \end{tabular}<br>
+                  \end{table}<br>
+                  \end{document}
+                </code>
+              </div>
+              <div class="object">
+                <object type="application/pdf" data="../docs/graphics_experiment.pdf"  height="100%" width="100%"></object>
+              </div>
           </div><br><br>
 
            <div class="text">The first thing I tried was using pgfplots package. In the result the image was moved on the right and it was rather small.
@@ -105,7 +120,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
               </code>
             </div>
             <div class="object">
-              <object type="application/pdf" data="../docs/graphics_foto_incastrata.pdf"  height="100%" width="100%"></object>
+              <object type="application/pdf" data="../docs/graphics_not_working_pic.pdf"  height="100%" width="100%"></object>
             </div>
         </div><br><br>
         </div>
