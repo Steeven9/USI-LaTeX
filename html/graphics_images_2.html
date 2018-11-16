@@ -38,20 +38,22 @@
             <a href="graphics_tables_3.html" class="subpagelink">Positioning</a>
             <a href="graphics_tables_4.html" class="subpagelink">Coloring</a></div>
             <div class="subpage"><div class="subpagepadding">Vector drawing ↓</div>
-            <a href="graphics_vectordrawing_1.html"class="subpagelink">Latexdraw</a>
+            <a href="graphics_vectordrawing_1.html" class="subpagelink">Latexdraw</a>
             <a href="graphics_vectordrawing_2.html" class="subpagelink">Putting things together</a></div>
     </div>
     <main>
         <div class="title">Image positioning</div>
+
         <div class="indexgeneral"><ul>
-            <li><div class="index"><a href="NAMEOFTHISFILE.html#first">HOW TO PLACE IMAGES</a></div></li>
-            <li><div class="index"><a href="NAMEOFTHISFILE.html#second">FIGURE ENVIRONMENT</a></div></li>
-            <li><div class="index"><a href="NAMEOFTHISFILE.html#third">HOW TO SET THE FLOAT</a></div></li>
-            <li><div class="index"><a href="NAMEOFTHISFILE.html#fourth">EXAMPLE</a></div></li>
+            <li><div class="index"><a href="graphics_images_2.html#first">How to place images</a></div></li>
+            <li><div class="index"><a href="graphics_images_2.html#second">Figure enviroment</a></div></li>
+            <li><div class="index"><a href="graphics_images_2.html#third">How to set the float</a></div></li>
+            <li><div class="index"><a href="graphics_images_2.html#fourth">Example</a></div></li>
         </ul>
         <hr>
         </div>
-        <div class="firstsubtitle">How to place images</div>
+
+        <div class="firstsubtitle" id="first">How to place images</div>
         <div class="text">
           When we want to insert images into our documents, we often find ourselves faced with the need to give them
           a logical place or even to fix their disposition.
@@ -62,7 +64,7 @@
           To avoid this behavior it is necessary to set the float of the figure in its environment as we will see later.</div><br><br>
         <img src="../media/img/graphics_screen-esempio-sbagliato.png" style="width: 60%">
 
-      <div class="subtitle" id="first">Figure environment</div>
+      <div class="subtitle" id="second">Figure environment</div>
       <div class="text">Usually the <strong>\includegraphics</strong> command is used within the {figure} environment
                 to create a figure, which will be a moving object within the document that LATEX will position in order
                 to make the layout more pleasant.
@@ -82,7 +84,7 @@
         </div>
       </div>
 
-        <div class="subtitle">How to set the float</div>
+        <div class="subtitle" id="third">How to set the float</div>
         <div class="text">To place the image in the right position it is necessary to set the float value for the figure environment.
            To do this you need to set the float by adding  <strong>[h!]</strong> after the command <strong>"\begin{figure}"</strong>.
            In brackets it is possible to put a preference for the final position of the object on the page.
@@ -111,7 +113,7 @@
            </div>
          </div>
 
-       <div class="subtitle">Multiple figures</div>
+       <div class="subtitle" id="fourth">Multiple figures</div>
        <div class="text">
          Using the package<strong>/subfigure</strong>
          it is possible to combine or overlap several subfigures in the same figure, below the basic code:

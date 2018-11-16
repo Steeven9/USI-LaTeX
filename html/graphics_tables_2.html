@@ -2,14 +2,14 @@
 <!-- NOTE: THE WHITE SPACE ON THE LEFT OF THE PAGE IS A PLACE-HOLDERS FOR THE NAVIGATOR -->
 <!-- NOTE: SINCE THE NAVIGATORS HAVE NOT BEEN CREATED YET, THEY WILL BE ADDED TO THE TEMPLATE ON A LATER TIME
 AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN -->
-<!-- NOTE: BE AWARE OF THE FACT THAT IN THE FUTURE WILL BE ADDED A BOX FOR THE S -->
+<!-- NOTE: BE AWARE OF THE FACT THAT IN THE FUTURE WILL BE ADDED A BOX FOR THE CODES -->
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <title>Tables, cell spanning</title>
+    <title>Graphics: tables - Cell spanning</title>
     <meta name="author" content="Maxim Ryakhovskiy">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
@@ -17,7 +17,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 </head>
 
 <body>
-    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
     <nav>
         <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
         <a href="syntax_index.html">Basic Syntax</a>
@@ -27,150 +27,198 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
         <a href="quiz.html">Quiz</a>
     </nav>
     <div class="sidenav">
-            <a href="graphics_index" id="firstsubpage"><center>GRAPHICS</center></a>
-            <a href="graphics_charts_1.html"><center>CHARTS</center></a>
-            <a href="graphics_tables_1.html"><center>TABLES</center></a>
-            <a href="graphics_images_1.html"><center>IMAGES</center></a>
-            <a href="graphics_vectordrawing_1.html"><center>VECTOR DRAWING</center></a>
+            <a href="graphics_index.html" class="sidenavlink">Graphics</a>
+            <div class="subpage"><div class="subpagepadding">Image ↓</div>
+            <a href="graphics_images_1.html" class="subpagelink">How to add images</a>
+            <a href="graphics_images_2.html" class="subpagelink">Image positioning</a>
+            <a href="graphics_images_3.html" class="subpagelink">How to add captions and a label to an image</a>
+            <a href="graphics_images_4.html" class="subpagelink">How to rotate and scale back an image</a></div>
+            <div class="subpage"><div class="subpagepadding">Charts ↓</div>
+            <a href="graphics_charts_1.html" class="subpagelink">Introduction & SmartDiagram</a>
+            <a href="graphics_charts_2.html" class="subpagelink">TikZ: Simple Drawings</a>
+            <a href="graphics_charts_3.html" class="subpagelink">TikZ: Advanced Commands</a>
+            <a href="graphics_charts_4.html" class="subpagelink">PGFPlots</a></div>
+            <div class="subpage"><div class="subpagepadding">Tables ↓</div>
+            <a href="graphics_tables_1.html" class="subpagelink">Environment</a>
+            <a href="graphics_tables_2.html" class="subpagelinkactive">Cell spanning</a>
+            <a href="graphics_tables_3.html" class="subpagelink">Positioning</a>
+            <a href="graphics_tables_4.html" class="subpagelink">Coloring</a></div>
+            <div class="subpage"><div class="subpagepadding">Vector drawing ↓</div>
+            <a href="graphics_vectordrawing_1.html"class="subpagelink">Latexdraw</a>
+            <a href="graphics_vectordrawing_2.html" class="subpagelink">Putting things together</a></div>
     </div>
     <main>
         <div class="title">Cell spanning</div>
         <div class="indexgeneral"><ul>
-            <li><div class="index"><a href="graphics_tables2p.html#Multicolumns">Multicolumns</a></div></li>
-            <li><div class="index"><a href="graphics_tables2p.html#Multirows">Multirows</a></div></li>
-            <li><div class="index"><a href="graphics_tables2p.html#Empty_column">Empty column</a></div></li>
-            <li><div class="index"><a href="graphics_tables2p.html#Combining">Combining</a></div></li>
+            <li><div class="index"><a href="graphics_tables_2.html#first">Multicolumns</a></div></li>
+            <li><div class="index"><a href="graphics_tables_2.html#second">Multirows</a></div></li>
+            <li><div class="index"><a href="graphics_tables_2.html#third">Empty column</a></div></li>
+            <li><div class="index"><a href="graphics_tables_2.html#fourth">Combining</a></div></li>
         </ul>
         <hr>
         </div>
-        <div class="firstsubtitle">Multicolumns</div>
-        <div class="text">The <code>multicolumn</code> is an important option used in the tables. The general command is <code>\multicolumn{<i>num_of_colunm</i>}{<i>align</i>}{<i>content</i>}</code>,
-          where the <i>num_of_colunm</i> is the number of columns over which the multicolumn will be placed, <i>align</i> is a definition of the columns, e.g. <code>p,c,l,r, |</code>; and <i>content</i>
+        <div class="firstsubtitle" id="first">Multicolumns</div>
+        <div class="text">The <code>\multicolumn</code> is an important option used in the tables. The general command is <code>\multicolumn{<i>num_of_colunm</i>}{<i>align</i>}{<i>content</i>}</code>,
+          where the <i>num_of_colunm</i> is the number of columns over which the multicolumn will be placed, <i>align</i> is a input of tabular enviroment, e.g. <code>p,c,l,r, |</code>; and <i>content</i>
           is the content of the cell.</div><br><br>
 
           <div class="latex">
-            <div class="paragraph"><b>CODE</b><hr>
+            <div class="paragraph"><b> Code</b><hr>
               <code>\begin{tabular}{|l|r|}\hline<br>
-                \multicolumn{2}{|c|}{Examples}\\\hline<br>
-                1 & example\\\hline<br>
-                2 & example1\\\hline<br>
-                3 & example22\\\hline<br>
-                4 & example444\\\hline<br>
-                5 & example5\\\hline<br>
-                \multicolumn{1}{|r}{6} & 6\\\hline<br>
-                \end{tabular}<br></code><br>
+\multicolumn{2}{|c|}{Examples}\\\hline<br>
+1 & example\\\hline<br>
+2 & example1\\\hline<br>
+3 & example22\\\hline<br>
+4 & example444\\\hline<br>
+5 & example5\\\hline<br>
+\multicolumn{1}{|r}{6} & 6\\\hline<br>
+\end{tabular}<br><br>
 
-                <code>
-                  \begin{tabular}{|l|r|c|}\hline<br>
-                  \multicolumn{3}{|p{2cm}}{Examples}\\\hline<br>
-                  1 & example & table\\\hline<br>
-                  2 & example1 & table\\\hline<br>
-                  3 & example22 & table\\\hline<br>
-                  \multicolumn{2}{|p{2cm}|}{multicolumn is used here} & table\\\hline<br>
-                  5 & example5 & table\\\hline<br>
-                  \multicolumn{3}{c}{ending}\\<br>
-                  \end{tabular}
-                </code>
+\begin{tabular}{|l|r|c|}\hline<br>
+\multicolumn{3}{|p{2cm}}{Examples}\\\hline<br>
+1 & example & table\\\hline<br>
+2 & example1 & table\\\hline<br>
+3 & example22 & table\\\hline<br>
+\multicolumn{2}{|p{2cm}|}{multicolumn is used here} & table\\\hline<br>
+5 & example5 & table\\\hline<br>
+\multicolumn{3}{c}{ending}\\<br>
+\end{tabular}</code>
           </div>
             <div class="object">
-              <object type="application/pdf" data="../docs/graphics_multicol.pdf" height="100%" width="100%"></object>
+              <object type="application/pdf" data="../docs/example_multicol.pdf" height="100%" width="100%"></object>
           </div>
           </div><br><br>
 
-          <div class="text">
-            In the first table, the <code>multicolumn</code> is used, over the first 2 columns, with center alignment. Also, the two <code>|</code> symbols
-            were added, in order to get the vertical lines in that cell. In the last row, the <code>multicolumn</code> is used over one row, in order to cancel one vertical line in that cell.<br>
-            The second table shows some examples of using <code>multicolumn</code> command.
+<div class="text">In the first table, the <code>\multicolumn</code> is used, over the first 2 columns, with the center alignment. Also, the two <code>|</code> symbols
+were added, in order to get the vertical lines in that cell. In the last row, the <code>\multicolumn</code> is used over one row, in order to cancel one vertical line in that cell.<br>
+The second table shows some examples of using <code>\multicolumn</code> command.
         </div>
-        <div class="subtitle">Multirows</div>
-        <div class="text">The <code>\multirow</code> perform the same operation as <code>multicolumn</code> but with the rows. The new command requries the <code>\usepackage{multirow}</code>.
-          General command is <code>\multirow{<i>num_of_rows</i>}{<i>widht</i>}{<i>content</i>}</code>, where the <i>num_of_rows</i> is the number of rows, over that will overlay the <code>\multirow</code>.
-          The <i>widht</i> is the wisth of the row, use <code>*</code> if you want to mantain the same width as before.</div><br><br>
 
+        <div class="subtitle" id="second">Multirows</div>
+        <div class="text">The <code>\multirow</code> perform the same operation as <code>\multicolumn</code> but with the rows. The new command requries <code>\usepackage{multirow}</code>.
+          General command is <code>\multirow{<i>num_of_rows</i>}{<i>widht</i>}{<i>content</i>}</code>, where the <i>num_of_rows</i> is the number of rows, over which will overlay the <code>\multirow</code>.
+          The <i>widht</i> is the width of the row. <b>Note</b>: use <code>*</code> to mantain the same width as the other cells in the column.</div><br><br>
           <div class="latex">
-            <div class="paragraph"><b>CODE</b><hr>
+            <div class="paragraph"><b> Code</b><hr>
               <code>\usepackage{multirow}<br>
-                \begin{document}<br>
-                \begin{table}<br>
-                \begin{tabular}{|l|c|c|r|}\hline<br>
-                example & big example & 1234 &  \multirow{2}{*}{multirow01}\\ \hline<br>
-                example & big example & 123 & \\\hline<br>
-                example & big example & 123455 & my table\\\hline<br>
-                \multirow{3}{3cm}{multirow02 not very long text} & example & big example & 1234 \\\hline<br>
-                test & example & big example & 1234\\\hline<br>
-                111 & example & big example & 1234\\\hline<br>
-                \end{tabular}<br>
-                \end{table}<br><br>
+\begin{document}<br>
+\begin{table}<br>
+\begin{tabular}{|l|c|c|r|}\hline<br>
+example & big example & 1234 &  \multirow{2}{*}{multirow01}\\ \hline<br>
+example & big example & 123 & \\\hline<br>
+example & big example & 123455 & my table\\\hline<br>
+\multirow{3}{3cm}{multirow02 not very long text} & example & big example & 1234 \\\hline<br>
+test & example & big example & 1234\\\hline<br>
+111 & example & big example & 1234\\\hline<br>
+\end{tabular}<br>
+\end{table}<br><br>
 
-                \begin{table}<br>
-                \begin{tabular}{|l|c|c|r|}\hline<br>
-                example & big example & 1234 &  \multirow{2}{*}{multirow01} \\ \cline{1-3}<br>
-                example & big example & 123 & \\\hline<br>
-                  example & big example & 123455 & my table\\\hline<br>
-                  \multirow{3}{3cm}{multirow02 not very long tex} & example & big example & 1234 \\\cline{2-4}<br>
-                  & example & big example & 1234\\\cline{2-4}<br>
-                  & example & big example & 1234\\\hline<br>
-                  \end{tabular}<br>
-                  \end{table}<br>
+\begin{table}<br>
+\begin{tabular}{|l|c|c|r|}\hline<br>
+example & big example & 1234 &  \multirow{2}{*}{multirow01} \\ \cline{1-3}<br>
+example & big example & 123 & \\\hline<br>
+example & big example & 123455 & my table\\\hline<br>
+\multirow{3}{3cm}{multirow02 not very long tex} & example & big example & 1234 \\\cline{2-4}<br>
+  & example & big example & 1234\\\cline{2-4}<br>
+ & example & big example & 1234\\\hline<br>
+\end{tabular}<br>
+\end{table}<br>
               </code>
           </div>
             <div class="object">
-              <object type="application/pdf" data="../docs/graphics_multirow.pdf" height="100%" width="100%"></object>
+              <object type="application/pdf" data="../docs/example_multirow.pdf" height="100%" width="100%"></object>
           </div>
           </div><br><br>
 
-          <div class="text">
-            The first example shows a non appropriate use of <code>\multirow</code>. In the first two rows there is an <code>\hline</code>, which
-            draws the line over all the width of the table. In order to avoid the effect in the first lines of the first table, the <code>\cline</code>
-            is used, as shown in the second table.<br>
-            In the last lines of the first table, the content is overflowed. So, the content of the following rows in selected column
-            must be empty. In the example above, the multirow is performed over 3 rows, so the two next lower rows of the same column must be empty, as shown
-            in the second table.
+          <div class="text">The fisrt example shows a non appropriate use of <code>\multirow</code>. In the first two rows there is an <code>\hline</code>, which
+          draws the line over all the width of the table. In order to avoid the effect in the first lines of the first table, the <code>\cline</code>
+          is used, as shown in the second table.<br>
+          In the last lines of the first table, the content is overflowed. So, the content of the following rows in selected column
+          must be empty. In the example above, the multirow is performed over 3 rows, so the two next lower rows of the same column must be empty, as shown
+          in the second table.
         </div>
-        <div class="subtitle" id="Empty_column">Empty column</div>
-        <div class="text">The easiest to create an empty column is not to insert anything inside the two <code>& &</code>.
-          In this section, the new type of column is introduced: <code>@{}</code>.
+
+        <div class="subtitle" id="third">Empty column</div>
+        <div class="text">The easiest way to create an empty column is to insert nothing inside the two <code>& &</code>. In this section, the new type of column is introduced: <code>@{<i>content</i>}</code>. This
+          symbol is used to insert a constant content in one column, putting a content inside the brackets. In order to get an emoty column using <code>@{<i>content</i>}</code>, leave the brackets empty.<br>
+If you are using LaTeX version before 4.15, in order to fix the error shown in the section <a href="graphics_tables1p.html#Spacing">Enviroment: spacing</a>, it is necessary to create an
+empty column: <code>@{}m{<i>width</i>}@{}</code>.
+  The <code>m</code> attribute will align the content of all cells vertically in the middle, add one empty column <code>m{<i>width</i>}</code> to the tabular enviroment.<br></div><br><br>
+
+        <div class="latex">
+          <div class="paragraph"><b> Code</b><hr>
+            <code>\begin{table}<br>
+\setlength{\tabcolsep}{20pt}<br>
+\renewcommand{\arraystretch}{4}<br>
+\centering{<br>
+\begin{tabular}{| l | r | c|}\hline<br>
+table & example &  example \\ \hline<br>
+example& not long example & table \\ \hline<br>
+123456789 & table &  empty \\ \hline<br>
+\end{tabular}}<br>
+\end{table}<br><br>
+
+\begin{table}[h]<br>
+\setlength{\tabcolsep}{20pt}<br>
+\renewcommand{\arraystretch}{4}<br>
+\centering{<br>
+\begin{tabular}{| l | r | c|@{}m{0cm}@{}}\hline<br>
+table & example &  example &\\ \hline<br>
+example& not long example & table &\\ \hline<br>
+123456789 & table &  empty &\\ \hline<br>
+\end{tabular}}<br>
+\end{table}<br>
+            </code>
         </div>
-        <div class="subtitle" id="Combining">Combining</div>
-        <div class="text">In this section, an example of combining of <code>\multirow</code> and <code>\multicolumn</code> will be shown.
+          <div class="object">
+            <object type="application/pdf" data="../docs/example_emptycol.pdf" height="100%" width="100%"></object>
+        </div>
         </div><br><br>
 
+<div class="text">Both tables are equal, the unique difference is the empty column in the second one, which is used to put the content almost in the middle. The tabular enviroment
+in the second table is <code>\begin{tabular}{| l | r | c|@{}m{0cm}@{}}</code>.
+        Also, it is necessary to add <code>&</code> after the last column containing content. The last empty cell must not contain anything.<br>
+        After the latest update(4.15), the <code>\usepackage[table]{xcolor}</code> is needed. The better version of this table
+         is shown in the page <a href="graphics_tables3p.html#Pos_cell">Positioning: Position of the content in the cell</a>.
+         </div>
+
+        <div class="subtitle" id="fourth">Combining</div>
+        <div class="text">In this section, an example of combining of <code>\multirow</code> and <code>\multicolumn</code> will be shown.</div><br><br>
           <div class="latex">
-            <div class="paragraph"><b>CODE</b><hr>
+            <div class="paragraph"><b> Code</b><hr>
               <code>\usepackage{multirow}<br>
           \begin{document}<br>
           \begin{table}<br>
           \begin{tabular}{|l|c|c|r|}\hline<br>
-          example & big example & \multicolumn{2}{c} {\multirow{2}{*}{multirow01} }\\ \cline{1-2}<br>
-          example & big example   & & \\\hline<br>
-          example & big example & 123455 & my table\\\hline<br>
-          \multirow{3}{*}{multirow02 very large} & example & big example & 1234 \\\hline<br>
-          & example & big example & 1234\\\hline<br>
-          & example & big example & 1234\\\hline<br>
-          \end{tabular}<br>
-          \end{table}<br><br>
+example & big example & \multicolumn{2}{c} {\multirow{2}{*}{multirow01} }\\ \cline{1-2}<br>
+example & big example   & & \\\hline<br>
+example & big example & 123455 & my table\\\hline<br>
+\multirow{3}{*}{multirow02 very large} & example & big example & 1234 \\\hline<br>
+  & example & big example & 1234\\\hline<br>
+ & example & big example & 1234\\\hline<br>
+\end{tabular}<br>
+\end{table}<br><br>
 
-          \begin{table}<br>
-          \begin{tabular}{|l|c|c|r|}\hline<br>
-          example & big example & \multicolumn{2}{c|} {\multirow{2}{*}{multirow01} }\\ \cline{1-2}<br>
-          example & big example   & \multicolumn{1}{c}{}& \\\hline<br>
-          example & big example & 123455 & my table\\\hline<br>
-          \multirow{3}{*}{multirow02 very large} & example & big example & 1234 \\\hline<br>
-          & example & big example & 1234\\\hline<br>
-          & example & big example & 1234\\\hline<br>
-          \end{tabular}<br>
-          \end{table}
+\begin{table}<br>
+\begin{tabular}{|l|c|c|r|}\hline<br>
+example & big example & \multicolumn{2}{c|} {\multirow{2}{*}{multirow01} }\\ \cline{1-2}<br>
+example & big example   & \multicolumn{1}{c}{}& \\\hline<br>
+example & big example & 123455 & my table\\\hline<br>
+\multirow{3}{*}{multirow02 very large} & example & big example & 1234 \\\hline<br>
+  & example & big example & 1234\\\hline<br>
+ & example & big example & 1234\\\hline<br>
+\end{tabular}<br>
+\end{table}
               </code>
           </div>
             <div class="object">
-              <object type="application/pdf" data="../docs/graphics_combo.pdf" height="100%" width="100%"></object>
+              <object type="application/pdf" data="../docs/example_combo.pdf" height="100%" width="100%"></object>
           </div>
           </div><br><br>
 
-          <div class="text">
-            The goal is to put "multirow01" inside the last 2 cells of first 2 rows. So the command <code>\multirow</code> is put inside the <code>\multicolumn</code>.
-            It is better to use * for width of the <code>\multirow</code>. In order to repair the hole in the rigth corner, the specification <code>{c|}<\code> is used for <code>\multicolumn</code>.
-            While, to cut the vertical line in the middle of the row, the <code>\multicolumn{1}{c}{}</code> is used.
+<div class="text">The goal is to put "multirow01" inside the last 2 cells of the first 2 rows. So, the command <code>\multirow</code> is put inside the <code>\multicolumn</code>.
+It is better to use * for width of the <code>\multirow</code>. In order to repair the hole in the rigth corner, the specification <code>{c|}</code> is used for <code>\multicolumn</code>.
+While, to cut the vertical line in the middle of the row, the <code>\multicolumn{1}{c}{}</code> is used.
         </div>
 
         <footer>

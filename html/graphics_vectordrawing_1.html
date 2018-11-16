@@ -50,7 +50,15 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
     </div>
     <main>
         <div class="title">How to draw with latexdraw</div>
-        <br>
+        <div class="indexgeneral"><ul>
+            <li><div class="index"><a href="graphics_vectordrawing_1.html#first">How to install LaTeX Draw</a></div></li>
+            <li><div class="index"><a href="graphics_vectordrawing_1.html#second">Time to draw</a></div></li>
+            <li><div class="index"><a href="graphics_vectordrawing_1.html#third">How to import your draw in LaTeX</a></div></li>
+            <li><div class="index"><a href="graphics_vectordrawing_1.html#fourth">Export your draw</a></div></li>
+        </ul>
+        <hr>
+        </div>
+
           <div class="text">Do you need to add figures or draws to your LaTeX document? The easiest way is by using latexdraw.
               Vector tools allow users to include good graphics in LaTeX. LaTeXDraw is a free PDPTricks code. Since it is developed in JAVA it can be used
               with any system.
@@ -58,7 +66,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
         </div>
         <br>
         <br>
-        <div class="firstsubtitle">How to install LaTeX Draw</div>
+        <div class="firstsubtitle" id="first">How to install LaTeX Draw</div>
         <div class="text">You can find the program <a href="http://latexdraw.sourceforge.net/">here</a>.
           Once you download it, open the installer.jar to install the program. The program will create a <i>templates</i> folder in <i>/Users/Shared/latexdraw</i>.
         </div>
@@ -67,7 +75,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
         <br>
         <br>
         <br>
-        <div class="subtitle">Time to draw</div>
+        <div class="subtitle" id="second">Time to draw</div>
         <div class="text">The first time you open the program, you will find yourself facing a vast grid. This grid is the interface where you can draw or place shapes.
            The grid can be adjusted by clicking on the little grid button on the left side of the item bar.
            You can add templates by clicking on <i>Draw->Templates</i>. This can help you understanding how the items works.<br>
@@ -88,7 +96,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
            <img src="../media/img/graphics_latexdraw_test.png" style="width: 30%"><br>
            <br>
         </div>
-        <div class="subtitle">How to import your draw in LaTeX</div>
+        <div class="subtitle" id="third">How to import your draw in LaTeX</div>
         <div class="text">When you're finished drawing on LaTeXDraw, export your document as PSPTricks in a .tex file.
           To do so, click on <i>File->Export as...->PSTricks code</i>.<br>
           Now, create a new .tex file on LaTeX.
@@ -115,7 +123,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
           Place the pspicture inside TeXtoEPS to have your PDF with the correct bounding box for the picture.
         </div>
 
-        <div class="subtitle">Export your draw</div>
+        <div class="subtitle" id="fourth">Export your draw</div>
         <div class="text">Open your terminal, go to the right folder and execute the following command on your shell:<br>
           <br>
           <i>latex myfigure.tex<br>

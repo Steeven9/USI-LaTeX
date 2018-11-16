@@ -13,6 +13,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
     <meta name="author" content="Maxim Ryakhovskiy">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <link rel="icon" href="../media/img/favicon.ico">
 </head>
 
 <body>
@@ -49,14 +50,14 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
     <main>
         <div class="title">Positioning</div>
         <div class="indexgeneral"><ul>
-            <li><div class="index"><a href="graphics_tables_1.html">Position of the table in the page</a></div></li>
-            <li><div class="index"><a href="graphics_tables_2.html">Position of the content in the cell</a></div></li>
-            <li><div class="index"><a href="graphics_tables_3.html">Alignment</a></div></li>
-            <li><div class="index"><a href="graphics_tables_4.html">Rotating</a></div></li>
+            <li><div class="index"><a href="graphics_tables_3.html#first">Position of the table in the page</a></div></li>
+            <li><div class="index"><a href="graphics_tables_3.html#second">Alignment</a></div></li>
+            <li><div class="index"><a href="graphics_tables_3.html#third">Position of the content in the cell</a></div></li>
+            <li><div class="index"><a href="graphics_tables_3.html#fourth">Rotating</a></div></li>
         </ul>
         <hr>
         </div>
-        <div class="firstsubtitle">Position of the table in the page</div>
+        <div class="firstsubtitle" id="first">Position of the table in the page</div>
         <div class="text"> In order to set the position of a table, it is necessary to insert [<i>spec</i>] after the table enviroment:<code>\begin{table}[<i>spec</i>]</code>.
           <ul>
             <li><code>h</code> - placing the table <i>here</i>.</li>
@@ -135,7 +136,7 @@ example & table \\\hline<br>
     <code>c</code>, <code>l</code> and <code>r</code>.
         </div>
 
-        <div class="subtitle" id="Align">Alignment</div>
+        <div class="subtitle" id="second">Alignment</div>
         <div class="text">This section speaks about the alignment of the table in the page.</div><br><br>
 
           <div class="latex">
@@ -175,7 +176,7 @@ example & table \\\hline<br>
           Second method is to use command <code>\centering{<i>content</i>}</code>, where, in this case, the <i>content</i> is the table.
         </div>
 
-        <div class="subtitle">Position of the content in the cell</div>
+        <div class="subtitle" id="third">Position of the content in the cell</div>
         <div class="text">This subsection is a summary of commands and attributes seen in following sections: <a href="graphics_tables1p#Simple">Environment: Building a simple table</a>
           are presented basic attributes <code>c, l, r</code>, which determine the alignment of the content in the cell. Then, in section <a href="graphics_tables1p#Special_columns">Environment: Special columns</a> are introduced special columns, which also affect the rest of the row, e.g. <code>p{<i>width</i>}, m{<i>width</i>}, b{<i>width</i>}</code>.
           Meanwhile, entire subsection <a href="graphics_tables2p">Cell spanning</a> is dedicated to the position of the content in the table.<br>
@@ -242,7 +243,7 @@ The second table has <code>l</code> as <i>orientation</i>, in fact the next two 
   <br>
   <br>
 
-        <div class="subtitle" id="Rotating">Rotating</div>
+        <div class="subtitle" id="fourth">Rotating</div>
         <div class="text">This subsection speaks about rotaing of a table. The first table in the example requires <code>\usepackage{adjustbox}</code> and the second one <code>\usepackage[graphicx]{realboxes}</code>.
         </div><br><br>
 

@@ -13,6 +13,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
     <meta name="author" content="Maxim Ryakhovskiy">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <link rel="icon" href="../media/img/favicon.ico">
 </head>
 
 <body>
@@ -36,25 +37,25 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
             <a href="graphics_charts_1.html" class="subpagelink">Introduction & SmartDiagram</a>
             <a href="graphics_charts_2.html" class="subpagelink">TikZ: Simple Drawings</a>
             <a href="graphics_charts_3.html" class="subpagelink">TikZ: Advanced Commands</a>
-            <a href="graphics_charts4.html" class="subpagelink">PGFPlots</a></div>
+            <a href="graphics_charts_4.html" class="subpagelink">PGFPlots</a></div>
             <div class="subpage"><div class="subpagepadding">Tables ↓</div>
             <a href="graphics_tables_1.html" class="subpagelink">Environment</a>
             <a href="graphics_tables_2.html" class="subpagelink">Cell spanning</a>
-            <a href="graphics_tables3.html" class="subpagelink">Positioning</a>
-            <a href="graphics_tables4.html" class="subpagelinkactive">Coloring</a></div>
+            <a href="graphics_tables_3.html" class="subpagelink">Positioning</a>
+            <a href="graphics_tables_4.html" class="subpagelinkactive">Coloring</a></div>
             <div class="subpage"><div class="subpagepadding">Vector drawing ↓</div>
             <a href="graphics_vectordrawing_1.html"class="subpagelink">Latexdraw</a>
-            <a href="graphics_vectordrawing2.html" class="subpagelink">Putting things together</a></div>
+            <a href="graphics_vectordrawing_2.html" class="subpagelink">Putting things together</a></div>
     </div>
     <main>
         <div class="title">Coloring</div>
         <div class="indexgeneral"><ul>
-            <li><div class="index"><a href="graphics_tables4p.html#color_cell">Coloring a table</a></div></li>
-            <li><div class="index"><a href="graphics_tables4p.html#color_alt">Alternate coloring</a></div></li>
+            <li><div class="index"><a href="graphics_tables_4.html#first">Coloring a table</a></div></li>
+            <li><div class="index"><a href="graphics_tables_4.html#second">Alternate coloring</a></div></li>
         </ul>
         <hr>
         </div>
-        <div class="firstsubtitle" id="color_cell">Coloring a table</div>
+        <div class="firstsubtitle" id="first">Coloring a table</div>
         <div class="text"> This subsection explains how to color a row, a column and a single cell. It is possible to find many color combinations <a href="http://latexcolor.com/">here</a>. In order to
           use an imported color, it is necessary to add the definition of the color before <code>\begin{document}</code>. Two packages are needed: <code>\usepackage{colortbl}</code> and <code>\usepackage[table]{xcolor}</code>.
         </div><br><br>
@@ -95,7 +96,7 @@ example & colours & table \\<br>
           where the <i>name</i> is the casual name choosen by user, the <i>color</i> is a color of the background and <i>alignment</i> is the alignment of the the column. See table number two as an example.
         </div>
 
-        <div class="subtitle" id="color_alt">Alternate coloring</div>
+        <div class="subtitle" id="second">Alternate coloring</div>
         <div class="text">This subsections explains how to create a table with alternating coloring. The command <code>\rowcolors{<i>starting row</i>}{<i>color odd rows</i>}{<i>color even rows</i>}</code> is applied. Where the
         <i>starting row</i> is a number of a row, from which starts the the alternating coloring, the <i>color odd rows</i> is a color which will be applied only for odd rows and <i>color even rows</i> is the same but for even rows.
       </div><br><br>

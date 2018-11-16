@@ -15,22 +15,47 @@
     <nav>
         <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
         <a href="syntax_index.html">Basic Syntax</a>
-        <a href="graphics_index.html" class="active">Graphics</a>
+        <a href="graphics_index.html"class="active">Graphics</a>
         <a href="equations_index.html">Equations</a>
         <a href="packages_index.html">Packages</a>
         <a href="quiz.html">Quiz</a>
     </nav>
     <div class="sidenav">
-            <a href="graphics_index" id="firstsubpage"><center>GRAPHICS</center></a>
-            <a href="graphics_charts_1.html"><center>CHARTS</center></a>
-            <a href="graphics_tables_1.html"><center>TABLES</center></a>
-            <a href="graphics_images_1.html"><center>IMAGES</center></a>
-            <a href="graphics_vectordrawing_1.html"><center>VECTOR DRAWING</center></a>
+            <a href="graphics_index.html" class="sidenavlink">Graphics</a>
+            <div class="subpage"><div class="subpagepadding">Image ↓</div>
+            <a href="graphics_images_1.html" class="subpagelink">How to add images</a>
+            <a href="graphics_images_2.html" class="subpagelink">Image positioning</a>
+            <a href="graphics_images_3.html" class="subpagelink">How to add captions and a label to an image</a>
+            <a href="graphics_images_4.html" class="subpagelink">How to rotate and scale back an image</a></div>
+            <div class="subpage"><div class="subpagepadding">Charts ↓</div>
+            <a href="graphics_charts_1.html" class="subpagelinkactive">Introduction & SmartDiagram</a>
+            <a href="graphics_charts_2.html" class="subpagelink">TikZ: Simple Drawings</a>
+            <a href="graphics_charts_3.html" class="subpagelink">TikZ: Advanced Commands</a>
+            <a href="graphics_charts_4.html" class="subpagelink">PGFPlots</a></div>
+            <div class="subpage"><div class="subpagepadding">Tables ↓</div>
+            <a href="graphics_tables_1.html" class="subpagelink">Environment</a>
+            <a href="graphics_tables_2.html" class="subpagelink">Cell spanning</a>
+            <a href="graphics_tables_3.html" class="subpagelink">Positioning</a>
+            <a href="graphics_tables_4.html" class="subpagelink">Coloring</a></div>
+            <div class="subpage"><div class="subpagepadding">Vector drawing ↓</div>
+            <a href="graphics_vectordrawing_1.html" class="subpagelink">Latexdraw</a>
+            <a href="graphics_vectordrawing_2.html" class="subpagelink">Putting things together</a></div>
     </div>
     <main>
+      <div class="title">Introduction & SmartDiagram</div>
+      
+      <div class="indexgeneral">
+        <ul>
+          <li><div class="index"><a href="graphics_charts_1.html#first">Simple charts, drawings and diagrams</a></div></li>
+          <li><div class="index"><a href="graphics_charts_1.html#second">SmartDiagram</a></div></li>
+          <li><div class="index"><a href="graphics_charts_1.html#third">Circular Diagram</a></div></li>
+          <li><div class="index"><a href="graphics_charts_1.html#fourth">Flow Diagram</a></div></li>
+          <li><div class="index"><a href="graphics_charts_1.html#fifth">Constellation Diagram</a></div></li>
+        </ul>
+        <hr>
+      </div>
 
-        <div class="title">Introduction & SmartDiagram</div>
-        <div class="firstsubtitle">Simple charts, drawings and diagrams</div>
+        <div class="firstsubtitle" id="first">Simple charts, drawings and diagrams</div>
 
         <div class="text">In this part of the graphics section we plan on covering
            the basics of the following packages:
@@ -76,7 +101,7 @@
 
         </div>
 
-        <div class="subtitle">SmartDiagram</div>
+        <div class="subtitle" id="second">SmartDiagram</div>
 
         <div class="text">With that said, let's get right into business, starting off from the
             top of our list with our first drawing package: "SmartDiagram".
@@ -163,7 +188,7 @@
          you will then be able to find the specific ones in
          their respective diagram section.
         </div>
-            <div class="subtitle">Circular Diagram</div>
+            <div class="subtitle" id="third">Circular Diagram</div>
 
             <div class="text">The following example shows you how LaTeX compiles the basic <code>\smartdiagram[circular diagram]</code> command:
             </div>
@@ -267,7 +292,7 @@
             it only flips the arrow direction.
             </div>
 
-            <div class="subtitle">
+            <div class="subtitle" id="fourth">
               Flow Diagram
             </div>
 
@@ -359,7 +384,7 @@
             the beginning of the diagram. Additionally we defined a uniform color
             for the first 4 items.
           </div>
-            <div class="subtitle">
+            <div class="subtitle" id="fifth">
               Constellation Diagram
             </div>
 

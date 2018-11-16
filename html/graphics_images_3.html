@@ -13,9 +13,9 @@
 <body>
     <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
     <nav>
-        <a href="general_index.html" class="active">Getting Started</a>  <!-- Move the class="active" to your group -->
+        <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group -->
         <a href="syntax_index.html">Basic Syntax</a>
-        <a href="graphics_index.html">Graphics</a>
+        <a href="graphics_index.html" class="active">Graphics</a>
         <a href="equations_index.html">Equations</a>
         <a href="packages_index.html">Packages</a>
         <a href="quiz.html">Quiz</a>
@@ -43,9 +43,10 @@
     </div>
     <main>
         <div class="title">How to add captions and a label to an image</div>
+
         <div class="indexgeneral"><ul>
-            <li><div class="index"><a href="NAMEOFTHISFILE.html#first">HOW TO ADD A CAPTION</a></div></li>
-            <li><div class="index"><a href="NAMEOFTHISFILE.html#second">HOW TO ADD A LABEL</a></div></li>
+            <li><div class="index"><a href="graphics_images_3.html#first">How to add a caption</a></div></li>
+            <li><div class="index"><a href="graphics_images_3.html#second">How to add a label</a></div></li>
         </ul>
         <hr>
         </div>
@@ -69,7 +70,7 @@
                           </div>
                         </div><br><br>
 
-        <div class="subtitle">How to add a label</div>
+        <div class="subtitle" id="second">How to add a label</div>
         <div class="text">Figures, just as many other elements in a LATEX document
                           (equations, tables, plots, etc) can be referenced within the text.
                           This is very easy, just add a label to the figure environment, then later use that label to refer the picture.
