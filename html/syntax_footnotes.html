@@ -34,7 +34,7 @@
             <a href="LINKSUBPAGE.HTML" class="sidenavlink">Document Class</a>
             <a href="syntax_TableOfContents.HTML" class="sidenavlink">Table of Contents</a>
             <a href="syntax_pageNumbering.html" class="sidenavlink">Page numbering</a>
-            <a href="syntax_footnotes.HTML" class="sidenavlink" class="active">Footnotes</a>
+            <a href="syntax_footnotes.HTML"class="sidenavlinkactive">Footnotes</a>
             <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
             <a href="syntax_bibManagement.HTML" class="sidenavlink" class="active">Bibliography Management</a>
             <a href="syntax_biblatexStyles.HTML" class="sidenavlink">BibLaTeX Style</a>
@@ -58,7 +58,18 @@
     <br>
     <div class="latex">
             <div class="paragraph"><b>CODE</b><hr>
-                <code>This is a test to check if the footnote\footnote{it works} works.
+                <code>\documentclass{article}
+                    <br>
+                    \begin{document}
+                    <br>
+                    <br>
+                    \section{Footnotes}
+                    <br>
+                    <br>
+                    This is a test to check if the footnote\footnote{it works} works.
+                    <br>
+                    <br>
+                    \end{document}
                 </code>
             </div>
             <div class="object">
@@ -73,7 +84,18 @@
     <br>
     <div class="latex">
             <div class="paragraph"><b>CODE</b><hr>
-                <code>This is a test to check if the footnote \footnote[10]{it works} works.
+                <code>\documentclass{article}
+                    <br>
+                    \begin{document}
+                    <br>
+                    <br>
+                    \section{Footnotes}
+                    <br>
+                    <br>
+                    This is a test to check if the footnote \footnote[10]{it works} works.
+                    <br>
+                    <br>
+                    \end{document}
                 </code>
             </div>
             <div class="object">
@@ -90,11 +112,22 @@
     <br>
     <div class="latex">
             <div class="paragraph"><b>CODE</b><hr>
-                <code>This is a test to check if the footnote \footnote[10]{it works} works.
-                        The footnote text\footnotemark can be written in a new line.
-                        <br>
-                        <br>
-                        \footnotetext{second footnote}
+                <code>\documentclass{article}
+                    <br>
+                    \begin{document}
+                    <br>
+                    <br>
+                    \section{Footnotes} 
+                    <br>
+                    <br>  
+                    This is a test to check if the footnote \footnote[10]{it works} works.
+                    The footnote text\footnotemark can be written in a new line. \\
+                    <br>
+                    <br>
+                    \footnotetext{second footnote}
+                    <br>
+                    <br>
+                    \end{document}
                 </code>
             </div>
             <div class="object">
@@ -109,7 +142,15 @@
     <br>
     <div class="latex">
             <div class="paragraph"><b>CODE</b><hr>
-                <code>This is a test to check if the footnote \footnote[10]{it works} works.
+                <code>\documentclass{article}
+                        <br>
+                        \begin{document}
+                        <br>
+                        <br>
+                        \section{Footnotes} 
+                        <br>
+                        <br>
+                        This is a test to check if the footnote \footnote[10]{it works} works.
                         The footnote text\footnotemark can be written in a new line.
                         <br>
                         <br>
@@ -121,6 +162,9 @@
                         <br>
                         <br>
                         \footnotetext{the same footnote}
+                        <br>
+                        <br>
+                        \end{document}
                 </code>
             </div>
             <div class="object">
@@ -134,7 +178,19 @@
     <br>
     <div class="latex">
             <div class="paragraph"><b>CODE</b><hr>
-                <code>This is a test to see if the footnote\footnote{\label{test}first} label works.</code>
+                <code>\documentclass{article}
+                        <br>
+                        \begin{document}
+                        <br>
+                        <br>
+                        \section{Footnotes} 
+                        <br>
+                        <br>
+                    This is a test to see if the footnote\footnote{\label{test}first} label works.
+                    <br>
+                    <br>
+                    \end{document}
+                </code>
             </div>
             <div class="object">
                 <object type="application/pdf" data="../docs/syntax_footnotes5.pdf" height="100%" width="100%"></object>
@@ -146,7 +202,21 @@
     <br>
     <div class="latex">
             <div class="paragraph"><b>CODE</b><hr>
-                <code>I want to refer to a footnote\ref{test}.</code>
+                <code>\documentclass{article}
+                        <br>
+                        \begin{document}
+                        <br>
+                        <br>
+                        \section{Footnotes} 
+                        <br>
+                        <br>
+                        This is a test to see if the footnote\footnote{\label{test}first} label works.\\
+                        <br>
+                        I want to refer to a footnote\ref{test}.
+                        <br>
+                        <br>
+                        \end{document}
+                    </code>
             </div>
             <div class="object">
                 <object type="application/pdf" data="../docs/syntax_footnotes6.pdf" height="100%" width="100%"></object>
@@ -170,7 +240,15 @@
     <br>
     <div class="latex">
             <div class="paragraph"><b>CODE</b><hr>
-                <code>This is a test to check if the footnote \footnote[10]{it works} works.
+                <code>\documentclass{article}
+                        <br>
+                        \begin{document}
+                        <br>
+                        <br>
+                        \section{Footnotes} 
+                        <br>
+                        <br>
+                        This is a test to check if the footnote \footnote[10]{it works} works.
                         The footnote text\footnotemark can be written in a new line.
                         <br>
                         <br>
@@ -188,6 +266,9 @@
                         <br>
                         <br>
                         Testing footnote in Roman\footnote{footnote in Roman numerals}
+                        <br>
+                        <br>
+                        \end{document}
                 </code>
             </div>
             <div class="object">

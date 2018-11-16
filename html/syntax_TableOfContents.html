@@ -61,7 +61,13 @@
         <br>
             <div class="latex">
                 <div class="paragraph"><b>CODE</b><hr>
-                    <code>\tableofcontents
+                    <code>\documentclass{article}
+                        <br>
+                        <br>
+                        \begin{document}
+                        <br>
+                        <br>
+                        \tableofcontents
                         <br>
                         <br>
                         \section{Section}
@@ -81,6 +87,8 @@
                         neque pharetra sollicitudin.  Praesent imperdietmi nec ante. 
                         Donec ullamcorper, felis non sodales...
                         <br>
+                        <br>
+                        \end{document}
                     </code>
                 </div>
                 <div class="object">
@@ -94,7 +102,22 @@
         <br>
         <div class="latex">
             <div class="paragraph"><b>CODE</b><hr>
-                <code>\begin{figure} 
+                <code>\documentclass{article}
+                    <br>
+                    <br>
+                    \begin{document}
+                    <br>
+                    <br>
+                    \begin{appendix}
+                    <br>
+                    \listoffigures
+                    <br>
+                    \listoftables
+                    <br>
+                    \end{appendix}
+                    <br>
+                    <br>
+                    \begin{figure} 
                     <br>
                     \caption{Figure example}
                     <br>
@@ -108,9 +131,7 @@
                     \end{table}
                     <br>
                     <br>
-                    \listoffigures
-                    <br>
-                    \listoftables
+                    \end{document}
                 </code>
             </div>
             <div class="object">
@@ -131,7 +152,10 @@
         <br>
         <div class="latex">
                 <div class="paragraph"><b>CODE</b><hr>
-                        <code>\setcounter{tocdepth}{1}
+                        <code>\documentclass{article}
+                            <br>
+                            <br>
+                            \setcounter{tocdepth}{1}
                             <br>
                             <br>
                             \begin{document}
@@ -153,6 +177,9 @@
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam 
                             lobortisfacilisis sem. Nullam nec mi et neque pharetra sollicitudin.
                             Praesent imperdietmi nec ante. Donec ullamcorper, felis non sodales... 
+                            <br>
+                            <br>
+                            \end{document}
                         </code>
                 </div>
                 <div class="object">
@@ -167,7 +194,10 @@
         <br>
         <div class="latex">
                 <div class="paragraph"><b>CODE</b><hr>
-                    <code>     \setcounter{tocdepth}{1}
+                    <code>\documentclass{article}
+                        <br>
+                        <br>
+                             \setcounter{tocdepth}{4}
                             <br>
                             <br>
                             \begin{document}
@@ -197,6 +227,9 @@
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam
                             lobortisfacilisis sem. Nullam nec mi et neque pharetra sollicitudin. 
                             Praesent imperdietmi nec ante. Donec ullamcorper, felis non sodales...
+                            <br>
+                            <br>
+                            \end{document}
                     </code>
                 </div>
                 <div class="object">
@@ -213,7 +246,10 @@
         <br>
         <div class="latex">
                 <div class="paragraph"><b>CODE</b><hr>
-                    <code> \setcounter{tocdepth}{2}
+                    <code> \documentclass{article}
+                        <br>
+                        <br>
+                        \setcounter{tocdepth}{2}
                         <br>
                         \usepackage{setspace}
                         <br>
@@ -253,7 +289,12 @@
                         <br>
                         <br>
                         \subsection{Subsection two}
-                        Lorem ipsum dolor sit amet...     
+                        <br>
+                        <br>
+                        Lorem ipsum dolor sit amet...   
+                        <br>
+                        <br>
+                        \end{document}  
                     </code>
                 </div>
                 <div class="object">
