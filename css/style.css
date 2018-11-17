@@ -25,7 +25,7 @@ main{
     padding-top: 1%;
 }
 
-/* LOGO */
+/* LOGO (by Aron Dalle Pezze) */
 .logolink img{
   width: 100%;
   height: auto;
@@ -46,7 +46,7 @@ main{
 
 
 
-/* TOP NAVIGATOR */
+/* TOP NAVIGATOR (by Aron Dalle Pezze) */
 nav {
   margin-left: auto;
   margin-right: auto;
@@ -81,7 +81,7 @@ nav a.active{
 
 
 
-/*SIDE NAVIGATOR*/
+/* SIDE NAVIGATOR (by Aron Dalle Pezze) */
 .sidenav {
   float: left;
   margin-top: 1.5%;
@@ -166,11 +166,11 @@ nav a.active{
 .sidenav a.sidenavlinkactive, .sidenav div.subpage a.subpagelinkactive, #firstsubpage:active{
   background-color: rgb(0, 174, 255);
 }
-/*END OF SIDE NAVIGATOR*/
+/* END OF SIDE NAVIGATOR */
 
 
 
-/* FONT STYLES FOR TEXTS AND TITLES */
+/* FONT STYLES FOR TEXTS AND TITLES (by Aron Dalle Pezze) */
 @font-face {
   font-family: Roboto;
   src: url("../media/fonts/Roboto/Roboto-Regular.ttf");
@@ -274,7 +274,7 @@ div.bigspace{
 
 
 
-/* LINKS */
+/* LINKS (by Aron Dalle Pezze) */
 div.text a:link, div.text a:visited, div.text a:hover, div.index a:link, div.index a:visited, div.index a:hover, div.subtitle a:link, div.subtitle a:visited, div.subtilte a:hover{
   color: blue;
   text-decoration: none;
@@ -296,7 +296,7 @@ div.indexgeneral li a:hover, div.quotebox div.quote a:hover {
 
 
 
-/* IMAGES STRUCTURE */
+/* IMAGES STRUCTURE (by Davide Trupia) */
 .images{
   width: auto;
   height: 10vw;
@@ -365,7 +365,7 @@ table{
 
 
 
-/* QUOTE BOX */
+/* QUOTE BOX (by Aron Dalle Pezze) */
 div.quotebox {
   margin-top: 1%;
   margin-left: 5%;
@@ -398,7 +398,7 @@ div.quotebox div.quote{
 
 
 
-/* CODE BOX */
+/* CODE BOX (by Aron Dalle Pezze) */
 div.codebox {
   margin-top: 1%;
   margin-left: 5%;
@@ -419,7 +419,7 @@ div.codebox code{
 
 
 
-/* CODE WITH LaTeX PDF FILE */
+/* CODE WITH LaTeX PDF FILE (by Aron Dalle Pezze) */
 div.latex {
   width: 100%;
   margin-left: 5%;
@@ -452,7 +452,7 @@ div.latex div.object {
 
 
 
-/* BLACKBOX WITH TEXT ON THE LEFT */
+/* BLACKBOX WITH TEXT ON THE LEFT (by Aron Dalle Pezze) */
 div.exercises{
   width: 100%;
   display: flex;
@@ -508,7 +508,7 @@ div.exercises div.blackbox img{
 
 
 
-/* MATH FORMULA */
+/* MATH FORMULA (by Aron Dalle Pezze) */
 div.formula{
   padding-bottom: 10px;
   padding-left: 5%;
@@ -521,7 +521,7 @@ div.formula{
 
 
 
-/* NEXT PAGE BUTTON */
+/* NEXT PAGE BUTTON (by Davide Trupia) */
 .buttonpage {
   background-color: lightgrey;
   border: none;
@@ -546,7 +546,7 @@ div.formula{
 
 
 
-/* MEET THE TEAM */
+/* MEET THE TEAM (by Aron Dalle Pezze) */
 div.mttfirstbox, div.mttfirstboxbottom {
   margin-left: 5%;
   width: 80%;
@@ -566,6 +566,7 @@ div.mttfirstbox p, div.mttfirstboxbottom p {
 
 div.mttfirstboxbottom p{
   font-weight: normal;
+  text-align: center;
 }
 
 div.mttfirstbox img {
@@ -612,7 +613,7 @@ div.mttfirstboxsub img {
 
 
 
-/* ADDRESS */
+/* ADDRESS (by Aron Dalle Pezze) */
 address{
   font-size: 0.9em;
   font-family: Roboto;
@@ -623,41 +624,6 @@ address{
   padding-bottom: 0.5%;
 }
 /* END ADDRESS */
-
-
-
-/* BOXES FOR HOMPAGES */
-/* div.homepagebox {
-  margin-left: 5%;
-  margin-right: 10%;
-  width: 85%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-div.homepagebox a {
-  flex-basis: 47%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 5vw;
-  text-decoration: none;
-  padding: 1px;
-  border-radius: 25px;
-  background-color: grey;
-  color: white;
-  transition: background-color 0.5s;
-  margin-bottom: 2%;
-  font-size: 1.1em;
-}
-
-div.homepagebox a:hover{
-  background-color: rgb(0, 174, 255);
-  border-radius: 25px;
-  transition: background-color 0.5s;
-} */
-/* END BOXES FOR HOMPAGES */
 
 
 
@@ -818,7 +784,7 @@ div.homepagebox a:hover{
 
 
 
-/* MAIN HOMEPAGE */
+/* MAIN HOMEPAGE (by Aron Dalle Pezze) */
 .firstbackground {
   background-image: url("../media/img/homepagebackground1.png");
   background-attachment: fixed;
@@ -915,7 +881,7 @@ div.mainhomepagebox a:hover{
 
 
 
-/* HOMEPAGE TOP NAVIGATOR */
+/* HOMEPAGE TOP NAVIGATOR (by Aron Dalle Pezze) */
 .homepagenavigator {
   margin-left: auto;
   margin-right: auto;
@@ -952,7 +918,7 @@ div.mainhomepagebox a:hover{
 
 
 
-/* RESPONSIVITY */
+/* RESPONSIVITY (by Aron Dalle Pezze) */
 @media (max-width: 1024px)
 {
   div.latex div.paragraph {
