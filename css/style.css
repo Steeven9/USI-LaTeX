@@ -266,6 +266,11 @@ div.index{
   margin-bottom: 0.5%;
 }
 
+div.midspace{
+  padding-top: 20vw;
+
+}
+
 div.bigspace{
   padding-top: 40vw;
 
@@ -330,6 +335,14 @@ div.indexgeneral li a:hover, div.quotebox div.quote a:hover {
   margin-left: auto;
   margin-right: auto;
   border: 2px solid black;
+}
+
+.groupphoto{
+  width: 80%;
+  height: auto;
+  margin-left: 5%;
+  margin-right: 15%;
+  border-radius: 25px;
 }
 /* END IMAGES STRUCTURE */
 
@@ -698,7 +711,7 @@ address{
 .timeline:before {
   content:  "";
   width: 2px;
-  height: 1930%;
+  height: 2000%;
   position: absolute;
   left: 50%;
   background: #c5c5c5;
