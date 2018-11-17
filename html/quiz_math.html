@@ -283,6 +283,12 @@
                             localStorage.currentTotal = parseInt(localStorage.currentTotal)+total;
 
                             document.getElementById('subButton').innerHTML = "Next";
+
+                            for (var i=0; i<document.getElementsByTagName('input').length; i++) {
+                                if (document.getElementsByTagName('input')[i].type=="radio") {
+                                    document.getElementsByTagName('input')[i].disabled = true;
+                                }                                
+                            }
                         },
                         error:function(msg){
                             alert("Something went wrong.");

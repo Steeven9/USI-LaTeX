@@ -187,6 +187,12 @@
                             document.getElementById('totalScore').classList.remove("hide");
 
                             document.getElementById('subButton').innerHTML = "Start over";
+
+                            for (var i=0; i<document.getElementsByTagName('input').length; i++) {
+                                if (document.getElementsByTagName('input')[i].type=="radio") {
+                                    document.getElementsByTagName('input')[i].disabled = true;
+                                }                                
+                            }
                         },
                         error:function(msg){
                             alert("Something went wrong.");
