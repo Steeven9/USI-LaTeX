@@ -13,7 +13,7 @@
 <body>
     <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
     <nav>
-        <a href="general_index.html">Getting Started</a>
+        <a href="general_index.html" >Getting Started</a>  <!-- Move the class="active" to your group -->
         <a href="syntax_index.html">Basic Syntax</a>
         <a href="graphics_index.html">Graphics</a>
         <a href="equations_index.html" class="active">Equations</a>
@@ -21,12 +21,25 @@
         <a href="quiz.html">Quiz</a>
     </nav>
     <div class="sidenav">
-        <a href="general.html" id="first">Getting Started</a>
-        <a href="basic.html">Basic Syntax</a>
-        <a href="graphics.html">Graphics</a>
-        <a href="equations.html">Equations</a>
-        <a href="packages.html">Packages</a>
-        <a href="quiz.html" id="last">Quiz</a>
+
+            <a href="equations_index.html" class="sidenavlink">Preamble</a>
+            <a href="math_graph.html" class="sidenavlink">Drawing 2D graph</a>
+            <a href="math_graph2.html" class="sidenavlink">Drawing 3D graph</a>
+            <div class="subpage"><div class="subpagepadding">Drawing geometry figures</div>
+            <a href="math_geometry.html" class="subpagelink">Page 1</a>
+            <a href="math_geometry2.html" class="subpagelink">Page 2</a>
+            </div>
+            <a href="math_matrix.html" class="sidenavlink">Matrix</a>
+            <a href="math_fractal.html" class="sidenavlink">Fractal</a>
+            <a href="math_tree.html" class="sidenavlink">Tree</a>
+            <a href="math_writing_notes.html" class="sidenavlink">Writing notes</a>
+            <a href="math_symbols.html" class="sidenavlink">Symbols</a>
+            <a href="math_induction.html" class="sidenavlink">Induction</a>
+            <a href="math_basics.html" class="sidenavlink" class="active">Basics</a>
+            <a href="math_equations_system.html" class="sidenavlink">Equations system</a>
+            <a href="math_environment.html" class="sidenavlink">Math environment</a>
+            <a href="math_accents.html" class="sidenavlink">Accents</a>
+            <a href="math_venn_diagrams.html" class="sidenavlink">Venn diagrams</a>
     </div>
     <main>
 
@@ -70,7 +83,7 @@
         <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
 
         <img src="../media/img/math_basics_fractions.png" class="centerimagesbig">
-        
+
         <!-- END FRACTIONS -->
 
         <!-- BEGIN EXPONENTIATIONS -->
@@ -78,10 +91,10 @@
         <div class="subtitle" id="Exponentiations">Exponentiations (Superscript) - <code>a^{}</code></div>
         <div class="text">The exponentiations is an operation that associates to a pair of numbers
           <i>a</i> and <i>n</i>, called respectively <i>base</i> and <i>exponent</i>, the number
-          given by the product of <i>n</i> factors equal to <i>a</i>. This function can also be used as superscript 
-          of something.<br> In LaTeX we write <code>a^{b}</code>, where <code>a</code> is the <i>base</i> and 
+          given by the product of <i>n</i> factors equal to <i>a</i>. This function can also be used as superscript
+          of something.<br> In LaTeX we write <code>a^{b}</code>, where <code>a</code> is the <i>base</i> and
           <code>b</code> the <i>exponent</i>.</div>
-        
+
         <!-- CODE BOX -->
 
         <div class="codebox"><b>CODE</b><hr>
@@ -91,7 +104,7 @@
         <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
 
         <img src="../media/img/math_basics_exponentiations.png" class="centerimagessmall">
-  
+
 
         <!-- END EXPONENTIATIONS -->
 
@@ -112,7 +125,7 @@
         <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
 
         <img src="../media/img/math_basics_subscripts.png" class="centerimagessmall">
-  
+
 
         <!-- END SUBSCRIPTS -->
 
@@ -135,7 +148,7 @@
         <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
 
         <img src="../media/img/math_basics_roots.png" class="centerimagessmall">
-  
+
         <!-- END ROOTS -->
 
         <!-- BEGIN LOGARITHMS -->
@@ -172,7 +185,7 @@
         the two lower and higher <i>limits</i> and a <i>function</i>.<br>
         To build a product in LaTeX we write <code>\prod_{b}^{x=a}f(k)</code>, which means the product
         for <code>x</code> ranging from <code>a</code> to <code>b</code> of <code>f(k)</code>.</div>
-        
+
         <!-- CODE BOX -->
 
         <div class="codebox"><b>CODE</b><hr>
@@ -203,7 +216,7 @@
         <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
 
         <img src="../media/img/math_basics_limits.png" class="centerimagesbig">
-  
+
         <!-- END LIMITS -->
 
         <!-- BEGIN DERIVATIVES -->
@@ -211,7 +224,7 @@
         <div class="subtitle" id="Derivatives">Derivatives - <code>\frac{\mathrm{d} }{\mathrm{d} x}</code></div>
         <div class="text">The derivative is the measure of how much the growth of a function changes as its
           argument changes.<br>
-          We use this syntax in LaTeX: <code>\frac{\mathrm{d} f}{\mathrm{d} x}</code>, where <code>f</code> is 
+          We use this syntax in LaTeX: <code>\frac{\mathrm{d} f}{\mathrm{d} x}</code>, where <code>f</code> is
           the function that we want to derive.</div>
 
         <!-- CODE BOX -->
@@ -223,7 +236,7 @@
         <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
 
         <img src="../media/img/math_basics_derivatives.png" class="centerimagesbig">
-  
+
         <!-- END DERIVATIVES -->
 
         <!-- BEGIN INTEGRALS -->
@@ -232,7 +245,7 @@
         <div class="text">The integral is an operator that, in the case of a function of a single variable,
           associates to the function the area under the graph within a given interval <code>[a, b]</code> in the domain.<br>
           There are two type of integrals: the undefided and the defined. In LaTeX we write the first as <code>\int</code>
-          and the second as <code>\int_{a}^{b}</code>, where <code>a</code> is the beginning of the considered 
+          and the second as <code>\int_{a}^{b}</code>, where <code>a</code> is the beginning of the considered
           graph and <code>b</code> the end.</div>
 
         <!-- CODE BOX -->
@@ -244,14 +257,14 @@
         <!-- END OF CODE WITH PDF OF LATEX DOCUMENT -->
 
         <img src="../media/img/math_basics_integrals.png" class="centerimagesbig">
-  
+
         <!-- END INTEGRALS -->
 
         <!-- BEGIN EXERCISES -->
 
         <div class="subtitle">Exercises</div>
         <div class="exercises">
-            <p>1) Write the steps to find the hypotenuse length of a 4cm base right triangle and 3cm high by using 
+            <p>1) Write the steps to find the hypotenuse length of a 4cm base right triangle and 3cm high by using
               the Pitagora Theorem.<br>Then, in a second line, multiply it by the logarithm of base 10 of 100.</p>
             <div class="blackbox">
                 <code>$$\sqrt{4^{2}+3^{2}} = 5//<br>
