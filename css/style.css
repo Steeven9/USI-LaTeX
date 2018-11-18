@@ -272,7 +272,7 @@ div.midspace{
 }
 
 div.bigspace{
-  padding-top: 40vw;
+  padding-top: 30vw;
 
 }
 /* END FONT STYLES */
@@ -280,12 +280,12 @@ div.bigspace{
 
 
 /* LINKS (by Aron Dalle Pezze) */
-div.text a:link, div.text a:visited, div.text a:hover, div.index a:link, div.index a:visited, div.index a:hover, div.subtitle a:link, div.subtitle a:visited, div.subtilte a:hover{
+div.text a:link, div.text a:visited, div.text a:hover, div.index a:link, div.index a:visited, div.index a:hover, div.subtitle a:link, div.subtitle a:visited, div.subtilte a:hover, div.quotebox a:link, div.quotebox a:visited, div.quotebox a:hover{
   color: blue;
   text-decoration: none;
 }
 
-div.text a:hover, div.index a:hover, div.subtitle a:hover {
+div.text a:hover, div.index a:hover, div.subtitle a:hover, div.quotebox a:hover {
   text-decoration: underline;
 }
 
