@@ -53,33 +53,30 @@
 </a></div></li>
             <li><div class="index"><a href="#letter">Letter</a></div></li>
         </ul><hr></div>
-        
-<br>
-<br>
 
 <div class="subtitle" id="id1">Article/Book/Report/Letter - Without twocolumn package</div>
-
+<br>
   <div class="latex">
           <div class="paragraph">
             <b>CODE</b>
             <hr>
-            <p>
-            <br>\documentclass <b> {article} {book} {report} {letter}</b>
+            <code>
+            <br>\documentclass<b>{article}{book}{report}{letter}</b>
             <br>\usepackage {xcolor}
             <br>\usepackage {geometry}
             <br>\usepackage [most] {tcolorbox}
             <br>\geometry {margin=0pt}
             <br>\newtcolorbox {bgbox} [1] [] {nobeforeafter, sharp corners, #1}
-            <br>\begin {document}
-            <br>\noindent
-            <br>\begin{bgbox} [height=\paperheight,
+            <br><br>\begin {document}
+            <br><br>\noindent
+            <br><br>\begin{bgbox} [height=\paperheight,
             <br>colback=black,width=0.35\textwidth,rightrule=0pt]
             <br>\end {bgbox}%
             <br>\begin{bgbox}
             <br>[height=\paperheight, colback=white, width=0.65\textwidth]
-            <br>\section* {Canto 1 -  Incipit - Inferno}
+            <br><br>\section* {Canto 1 -  Incipit - Inferno}
             <br>
-              <i>
+              
               Nel mezzo del cammin di nostra vita\\
               <br>ché la diritta via era smarrita.\\
               <br>Ahi quanto a dir qual era è cosa dura\\
@@ -92,16 +89,16 @@
               <br>tant’era pien di sonno a quel punto\\
               <br>che la verace via abbandonai.\\
               <br>....
-             </i>
+             
               <br>\end {bgbox}
-              <br>\end {document}
-            </p>
+              <br><br>\end {document}
+            </code>
            </div>
             <div class="object">
               <object type="application/pdf" data="../docs/syntax_two_column.pdf" height="100%" width="100%"> </object>
             </div>
   </div>
-
+<br>
 
 
 
@@ -123,17 +120,17 @@ For this reason it works also for the letter class, which doesn't support twocol
 <div class="text">
  In this way we can easily represent an universal output for each class.
 </div>
-
+<br>
 <div class="latex">
         <div class="paragraph">
           <b>CODE</b>
           <hr>
-          <p>
-            <br>\documentclass [twocolumn] <b>{article} {book} {report} </b>
-            <br>\begin {document}
-            <br>\section* {Canto 1 -  Incipit - Inferno}
+          <code>
+            \documentclass[twocolumn]<b>{article}{book}{report} </b>
+            <br><br>\begin {document}
+            <br><br>\section* {Canto 1 -  Incipit - Inferno}
             <br>
-             <i>Nel mezzo del cammin di nostra vita\\
+            Nel mezzo del cammin di nostra vita\\
             <br>ché la diritta via era smarrita.\\
             <br>Ahi quanto a dir qual era è cosa dura\\
             <br>esta selva selvaggia e aspra e forte\\
@@ -143,9 +140,9 @@ For this reason it works also for the letter class, which doesn't support twocol
             <br>Io non so ben ridir com’i’ v’intrai,\\
             <br>tant’era pien di sonno a quel punto\\
             <br>che la verace via abbandonai.\\
-            <br>.... </i>
-            <br>\end{document}
-           </p>
+            <br>.... 
+            <br><br>\end{document}
+             </code>
          </div>
           <div class="object">
             <object type="application/pdf" data="../docs/syntax_two_column_comp.pdf" height="100%" width="100%"> </object>
@@ -160,17 +157,17 @@ For this reason it works also for the letter class, which doesn't support twocol
 <div class="text">
 The Letter class does not support [two column]
 </div>
-
+<br>
 </div>
 <div class="latex">
         <div class="paragraph">
           <b>CODE</b>
           <hr>
-           <p>
-             <br>\documentclass [twocolumn] <b>{letter} </b>
+           <code>
+             \documentclass[twocolumn]<b>{letter} </b>
              <br>\begin {document}
              <br> <br>
-              <i>Nel mezzo del cammin di nostra vita\\
+              Nel mezzo del cammin di nostra vita\\
              <br>ché la diritta via era smarrita.\\
              <br>Ahi quanto a dir qual era è cosa dura\\
              <br>esta selva selvaggia e aspra e forte\\
@@ -187,9 +184,9 @@ The Letter class does not support [two column]
              <br> <b>anima fia a ciò più di me degna:</b>\\
              <br> <b>con lei ti lascerò nel mio partire;</b>\\
              <br> <b>ché quello imperador che là sù regna,</b>\\
-            </i>
+            <br>
              <br>\end{document}
-           </p>
+          </code>
          </div>
           <div class="object">
             <object type="application/pdf" data="../docs/syntax_two_column_letter.pdf" height="100%" width="100%"> </object>

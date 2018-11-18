@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
      <nav>
         <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
         <a href="syntax_index.html"class="active">Basic Syntax</a>
@@ -66,18 +67,19 @@ Most of the LaTeX commands are simple words preceded by a special character.
 <div class="text">
 New commands are defined by \newcommand statement, let's see an example of the simplest usage.
 </div>
+<br>
 
 <div class="latex">
  <div class="paragraph">
    <div class="codebox"><b>CODE - NEW COMMAND</b><hr>
-          <code><br>\documentclass{article}
+          <code>\documentclass{article}
                 <br>\title{Hello World}
                 <br>\date{November 9, 2018}
-                <br>\begin{document}
-                <br>\maketitle
+                <br><br>\begin{document}
+                <br><br>\maketitle
                 <b><br>\newcommand{\proof}{example of a new command}
                 <br>proof</b>
-                <br>\end{document}
+                <br><br>\end{document}
           </code>
    </div>
   </div>
@@ -87,7 +89,7 @@ New commands are defined by \newcommand statement, let's see an example of the s
                   width="100%" height="100%"> </object>
     </div>
 </div>
-
+<br>
 <div class="text">
 <b> base structure for a new command:  </b>\newcommand{⟨name⟩}[⟨number of arguments⟩]{⟨definition⟩}
 <ul>
@@ -106,14 +108,14 @@ New commands are defined by \newcommand statement, let's see an example of the s
 <div class="latex">
   <div class="paragraph">
     <div class="codebox"><b>CODE - NEW COMMAND</b><hr>
-                 <code><br>\documentclass{article}
+                 <code>\documentclass{article}
                        <br>\title{Hello World}
                        <br>\date{November 9, 2018}
-                       <br>\begin{document}
-                       <br>\maketitle
+                       <br><br>\begin{document}
+                       <br><br>\maketitle
                        <br><b>\newcommand{\plants} [1]{\textit{#1}}
                        <br>\plants{Rose}</b>
-                       <br>\end{document}
+                       <br><br>\end{document}
                  </code>
      </div>
     </div>

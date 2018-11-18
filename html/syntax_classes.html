@@ -11,6 +11,7 @@
 </head>
 
 <body>
+        <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
      <nav>
         <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
         <a href="syntax_index.html"class="active">Basic Syntax</a>
@@ -60,71 +61,63 @@
    The first command determines the global processing format for the entire document.
    Its syntax is:
  <br>
- <br> \documentclass [option] {class}
- <br> \documentclass [option1, option2, etc.] {class}
+ <br> <code>\documentclass [option] {class}</code>
+ <br> <code>\documentclass [option1, option2, etc.] {class}</code>
  <br>
  <br>
-    The \documentclass command takes an argument (class), which describe the type of document Where some value of class must be given, while [options] may be omitted if default values are acceptable.
+    The <code>\documentclass</code> command takes an argument (class), which describe the type of document Where some value of class must be given, while <code>[options]</code> may be omitted if default values are acceptable.
  <br> The most common classes are:
  <ul>
-        <li><b> Article </b>, for articles (usually scientific), short reports, documents, ...</li>
-        <li><b> Book </b>, for book.</li>
-        <li><b> Report </b>, for longer reports, thesis, small book, ...</li>
-        <li><b> Letter </b>, for letters.</li>
+        <li><b> Article</b>, for articles (usually scientific), short reports, documents, ...</li>
+        <li><b> Book</b>, for book.</li>
+        <li><b> Report</b>, for longer reports, thesis, small book, ...</li>
+        <li><b> Letter</b>, for letters.</li>
         </ul>
         There are many other non-standard classes for the most diverse documents:
         there are memos (which allows a lot of freedom in customizing the document), topsis and suftesi (for thesis and doctoral thesis)
         and <b>beamer</b> for presentations.
 </div>
-<br>
-<br>
-
-<br>
-<br>
 <div class="subtitle" id="article">Article</div>
 <div class="text">
     Article is the most common class as well as the most flexible.
 </div>
-
+<br>
 <div class="latex">
  <div class="paragraph">
   <div class="codebox"><b>CODE</b><hr>
-      <code><br>\documentclass{article}
+      <code>\documentclass{article}
             <br>\title{Hello World}
             <br>\date{November 9, 2018}
-            <br>\begin{document}
-            <br>\maketitle
+            <br><br>\begin{document}
+            <br><br>\maketitle
             <br>Hello world, content
-            <br>\end{document} </code>
+            <br><br>\end{document} </code>
    </div>
   </div>
 <div class=object>
-  <object type=""
-            <type=application/pdf data="../docs/syntax_hworld_a.pdf"
-              width="100%" height="100%"> </object>
+  <object type="application/pdf" data="../docs/syntax_hworld_a.pdf" width="100%" height="100%"> </object>
 </div>
 </div>
 
 
 <div class="subtitle" id="book">Book</div>
 <div class="text">
-    If you want to realize a book, this class will give you all you need.
+    If you want to make a book, this class will give you all you need.
 </div>
+<br>
     <div class="latex">
      <div class="paragraph">
       <div class="codebox"><b>CODE</b><hr>
-          <code><br>\documentclass{book}
+          <code>\documentclass{book}
                 <br>\title{Hello World}
                 <br>\date{November 9, 2018}
-                <br>\begin{document}
-                <br>\maketitle
-                <br>\end{document} </code>
+                <br><br>\begin{document}
+                <br><br>\maketitle
+                <br><br>\end{document} </code>
        </div>
       </div>
     <div class=object>
-      <object type=""
-                <type=application/pdf data="../docs/syntax_hworld_b.pdf"
-                  width="100%" height="100%"> </object>
+      <object type="application/pdf"data="../docs/syntax_hworld_b.pdf" width="100%" height="100%"> </object>
     </div>
     </div>
 
@@ -134,38 +127,36 @@
 <div class="text">
     You can use report class for reports.
 </div>
-
+<br>
 <div class="latex">
  <div class="paragraph">
   <div class="codebox"><b>CODE</b><hr>
-      <code><br>\documentclass{report}
+      <code>\documentclass{report}
             <br>\title{Hello World}
             <br>\date{November 9, 2018}
-            <br>\begin{document}
-            <br>\maketitle
-            <br>\end{document} </code>
+            <br><br>\begin{document}
+            <br><br>\maketitle
+            <br><br>\end{document} </code>
    </div>
   </div>
 <div class=object>
-  <object type=""
-            <type=application/pdf data="../docs/syntax_hworld_r.pdf"
-              width="100%" height="100%"> </object>
+  <object type="application/pdf" data="../docs/syntax_hworld_r.pdf" width="100%" height="100%"> </object>
 </div>
     </div>
 
     <div class="subtitle" id="letter">Letter</div>
     <div class="text">
-        Letter class is used for all kind of letter document.
+        Letter class is used for all kinds of letter document.
     </div>
-
+<br>
 <div class="latex">
  <div class="paragraph">
    <div class="codebox"><b>CODE</b><hr>
-          <code><br>\documentclass {letter}
+          <code>\documentclass {letter}
                 <br>\signature {Mr Smith}
                 <br>\address {Fox Books,\\ Times Square, NYC.}
-                <br>\begin{document}
-                <br>\begin{letter} {Bobbo Vieri,\\ Via Giuseppe Buffi 13, \\6900 Lugano,
+                <br><br>\begin{document}
+                <br><br>\begin{letter} {Bobbo Vieri,\\ Via Giuseppe Buffi 13, \\6900 Lugano,
                 <br>\opening{Dear Bob}
                 <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -177,13 +168,12 @@
                   deserunt mollit anim id est laborum.
                 <br>\closing{Yours truly,}
                 <br>\end{letter}
-                <br>\end{document}
+                <br><br>\end{document}
           </code>
    </div>
   </div>
     <div class=object>
-      <object type=""
-                <type=application/pdf data="../docs/syntax_hworld_l.pdf"
+      <object type="application/pdf" data="../docs/syntax_hworld_l.pdf"
                   width="100%" height="100%"> </object>
     </div>
 </div>

@@ -60,11 +60,16 @@
 
       <div class="latex">
         <div class="paragraph"><b>CODE</b><hr>
-          <code><p>\documentclass{article}</p>
+          <code>\documentclass{article}
           <br>
-          <p>\begin{document}</p>
-          <p>Hello World! This is a very simple, Latex document.</p>
-          <p>\end{document}</p></code>
+          <br>
+          \begin{document}
+          <br>
+          <br>
+          Hello World! This is a very simple, Latex document.
+          <br>
+          <br>
+          \end{document}</code>
         </div>
         <div class="object">
             <object type="application/pdf" data="../docs/syntax_first_doc1.pdf" height="100%" width="100%"></object>
@@ -75,13 +80,14 @@
 
 
         <div class="subtitle" id="preamble">The preamble</div>
-        <div class="text">As shown above, the text you write is written after the "\begindocument" section,
+        <div class="text">As shown above, the text you write is written after the <code>\begindocument\</code> section,
         but before it, there is the <b>preamble</b>, which is the section where
         you define the document type, load packages and insert parameters.</div>
-        <div class="text">On this section, it is even possible to put the \title{First Latex Document},
-        \author{Name} and \date{November 2nd}. When you want to insert
-        this information on the actual page, the code that you should insert, after the \begin{document} section, is
-        \maketitle.</div>
+        <div class="text">On this section, it is even possible to put the <code>\title{First Latex Document}</code>,
+        <code>\author{Name}</code> and <code>\date{November 2nd}</code>. When you want to insert
+        this information on the actual page, the code that you should insert, after the <code>\begin{document}</code> section, is
+        <code>\maketitle.</code></div>
+        <br>
         <div class="latex">
           <div class="paragraph"><b>CODE</b><hr>
             <code>
