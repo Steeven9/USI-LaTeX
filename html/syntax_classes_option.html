@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>LaTeX Document Class Option</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+    <meta name="author" content="*Giulio_Catanese*">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../media/img/favicon.ico">
+</head>
+
+<body>
+         <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <nav>
+        <a href="general_index.html">Getting Started</a>
+        <a href="syntax_index.html"class="active">Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="equations_index.html">Equations</a>
+        <a href="packages_index.html">Packages</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+    <div class="sidenav">
+            <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+            <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+            <a href="syntax_title_section.HTML" class="sidenavlink">Title Section</a>
+            <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+            <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+            <a href="syntax_more_on_fonts.HTML" class="sidenavlink">Fonts</a>
+            <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+            <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+            <div class="subpage"><div class="subpagepadding">Document type in Latex↓</div>
+            <a href="syntax_classes.HTML" class="subpagelink">Document Class</a>
+            <a href="syntax_classes_comparison.HTML" class="subpagelink">Document Classes Comparison</a>
+            <a href="syntax_classes_option.HTML" class="subpagelinkactive">Document Classes Options</a>   
+            </div>
+            <a href="syntax_command.HTML" class="sidenavlink">Command</a>
+            <a href="syntax_TableOfContents.HTML" class="sidenavlink">Table of Contents</a>
+            <a href="syntax_pageNumbering.HTML" class="sidenavlink">Page Numbering</a>
+            <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+            <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+            <div class="subpage"><div class="subpagepadding">Bibliography ↓</div>
+            <a href="syntax_bibManagement.HTML" class="subpagelink">Bibliography Management With Biblatex</a>
+            <a href="syntax_BibManagementNatbib.HTML" class="subpagelink">Bibliography Management With Natbib</a>  
+            </div>
+    </div>
+  <main>
+  <h1>Document Class Options</h1>
+
+<br>
+<br>
+<div class="text">
+  <table border="1">
+          <tr>
+            <th><b>Option</b></th>
+            <th>Article</th>
+            <th>Book</th>
+            <th>Report</th>
+            <th>Letter</th>
+          </tr>
+
+          <tr>
+          <td><b>10pt, 11pt, 12pt</b></td>
+          <td>default</td>
+          <td>default</td>
+          <td>default</td>
+          <td>default</td>
+          </tr>
+          <tr>
+            <td><b>letter paper </b></td>
+            <td>default</td>
+            <td>default</td>
+            <td>default</td>
+            <td>default</td>
+          </tr>
+          <tr>
+            <td><b>a4paper </b></td>
+            <td>supported</td>
+            <td>supported</td>
+            <td>supported</td>
+            <td>supported</td>
+          </tr>
+          <tr>
+            <td><b>a5paper</b></td>
+            <td>supported</td>
+            <td>supported</td>
+            <td>supported</td>
+            <td>supported</td>
+          </tr>
+          <tr>
+            <td><b>b5paper</b></td>
+            <td>supported</td>
+            <td>supported</td>
+            <td>supported</td>
+            <td>supportedt</td>
+          </tr>
+          <tr>
+            <td><b>notitlepage </b></td>
+            <td>default</td>
+            <td>supported</td>
+            <td>supported</td>
+            <td>not supported</td>
+          </tr>
+          <tr>
+            <td><b>titlepage</b> </td>
+            <td>supported</td>
+            <td>default</td>
+            <td>default</td>
+            <td>not supported</td>
+          </tr>
+          <tr>
+            <td><b>openright</b></td>
+            <td>not supported</td>
+            <td>default</td>
+            <td>supported</td>
+            <td>not supported</td>
+          </tr>
+          <tr>
+            <td><b> openany </b></td>
+            <td>not supported</td>
+            <td>supported</td>
+            <td>default</td>
+            <td>not supported</td>
+          </tr>
+          <tr>
+            <td><b>onecolumn </b></td>
+            <td>supported</td>
+            <td>supported</td>
+            <td>supported</td>
+            <td>default</td>
+          </tr>
+          <tr>
+            <td><b>twocolumn </b></td>
+            <td>supported</td>
+            <td>default</td>
+            <td>supported</td>
+            <td>not supported</td>
+          </tr>
+          <tr>
+           <td><b>oneside</b></td>
+           <td>default</td>
+           <td>supported</td>
+           <td>default</td>
+          <td>supported</td>
+          </tr>
+           <tr>
+            <td><b>twoside</b></td>
+            <td>default</td>
+            <td>default</td>
+            <td>default</td>
+            <td>default</td>
+           </tr>
+       </table>
+
+
+         <ul>
+           <li><b>10pt, 11pt, 12pt</b>
+            <br>The default is 10pt, which means that this is the value assumed
+              if no size option is specified. All other font size declarations are
+              relative to this standard size, so that the section titles,
+              footnotes, and so on will all change size automatically if a
+              different basic font size is selected.
+           </li>
+           <br><br>
+             They define the dimensions of the sheet.
+           <li><b>letterpaper (11 × 8.5 in)</b>
+             <br> It corresponds to the default setting for the article class,
+             in the US format.</li>
+           <li><b>legalpaper (14 × 8.5 in) (21.6 x 35.6 cm)</b>
+             <br>US Standard legal paper size.</li>
+           <li><b>executivepaper (10.5 × 7.25 in) (36.7 x 18.4 cm)</b>
+             <br>US Standard executive paper size. </li>
+           <li><b>a4paper (29.7 × 21 cm) (11.7 x 8.3 in) </b>
+            <br>The A series paper sizes are defined in ISO 216.</li>
+           <li><b>a5paper (21 × 14.8 cm) (8.3 x 5.8 in)</b>
+             <br>The A series paper sizes are defined in ISO 216.</li>
+           <li><b>b5paper (25 × 17.6 cm) (9.8 x 6.9 in)</b>
+             <br>The B series paper sizes are defined in ISO 216.</li>
+           <br><br>
+             <li><b>one column</b>
+              <br>Default option for article, report and letter classes. </li>
+             <li><b>two column</b>
+              <br>The twocolumn option allows you to compose the
+                  entire document on two columns. It is the default of Book
+                  class.</li>
+             <li><b>oneside</b>
+              <br>Specifies a document that will consist of a single facade.
+                  It is a default oprion for article and report classes.</li>
+             <li><b>twoside</b>
+              <br>Specifies a document that will consist of a double facade.
+                  It is a default oprion for book class.
+            </li>
+             <br><br>
+             <li><b>titlepage</b>
+             <br>It is a default option for book and report classes. It
+                 specifies a new page after the document title </li>
+             <li><b>notitlepage</b>
+              <br>It is a default option for article class. It
+                  specifies no title page</li>
+                </ul>
+                  <br><br>
+</div>
+
+                     <div class="latex">
+                      <div class="paragraph">
+                        <div class="codebox"><b>CODE - NOTITLEPAGE - SECTION</b><hr>
+                               <code><br>\documentclass[notitlepage]{report}
+                                     <br>\title{Hello World}
+                                     <br>\date{November 9, 2018}
+                                     <br>\maketitle
+                                     <br>\begin{document}
+                                   <br><br>\chapter{New Page}
+                                     <br><br>Nel mezzo del cammin di nostra vita\\
+                                         <br>ché la diritta via era smarrita.\\
+                                         <br>Ahi quanto a dir qual era è cosa dura\\
+                                         <br>esta selva selvaggia e aspra e forte\\
+                                         <br>Tant’è amara che poco è più morte;\\
+                                         <br>ma per trattar del ben ch’i’ vi trovai,\\
+                                         <br>...
+                               <br><br>\end{document}
+                               </code>
+                        </div>
+                      </div>
+                    <div class=object>
+                          <object type=""
+                                    <type=application/pdf data="../docs/syntax_option_openany.pdf"
+                                      width="100%" height="100%"> </object>
+                    </div>
+                  </div>
+
+                  <br><br>
+
+                     <div class="latex">
+                      <div class="paragraph">
+                        <div class="codebox"><b>CODE - NOTITLEPAGE - CHAPTER</b><hr>
+                               <code><br>\documentclass [openany]{book}
+                                     <br>\begin{document}
+                                   <br><br>\chapter {First chapter}
+                                     <br><br>Nel mezzo del cammin di nostra vita\\
+                                         <br>ché la diritta via era smarrita.\\
+                                         <br>Ahi quanto a dir qual era è cosa dura\\
+                                         <br>esta selva selvaggia e aspra e forte\\
+                                         <br>Tant’è amara che poco è più morte;\\
+                                         <br>ma per trattar del ben ch’i’ vi trovai,\\
+                                   <br><br>\chapter{Second chapter}
+                                     <br><br>Nel mezzo del cammin di nostra vita\\
+                                         <br>ché la diritta via era smarrita.\\
+                                         <br>Ahi quanto a dir qual era è cosa dura\\
+                                         <br>esta selva selvaggia e aspra e forte\\
+                                         <br>Tant’è amara che poco è più morte;\\
+                                         <br>ma per trattar del ben ch’i’ vi trovai,\\
+                               <br><br>\end{document}
+                               </code>
+                        </div>
+                      </div>
+                    <div class=object>
+                          <object type=""
+                                    <type=application/pdf data="../docs/syntax_option_openany.pdf"
+                                      width="100%" height="100%"> </object>
+                    </div>
+                  </div>
+
+<div class="text">
+            <br><br>
+            <ul>
+            <li><b>openright</b>
+             <br>The openright option, predefined in the book class,
+                   always starts a chapter on a right page. This option is not
+                   available in the article class </li>
+            <li><b>openany</b>
+             <br>The openany option, predefined in the report class,
+                 starts a chapter in the next page available. This option is not
+                 available in the article class, because \chapter command is not
+                 defined in that class.</li>
+         </ul>
+</div>
+
+<div class="latex">
+ <div class="paragraph">
+   <div class="codebox"><b>CODE - OPENRIGHT</b><hr>
+          <code><br>\documentclass [openright]{report}
+                <br>\begin{document}
+              <br><br>\chapter {First chapter}
+                <br><br>Nel mezzo del cammin di nostra vita\\
+                    <br>ché la diritta via era smarrita.\\
+                    <br>Ahi quanto a dir qual era è cosa dura\\
+                    <br>esta selva selvaggia e aspra e forte\\
+                    <br>Tant’è amara che poco è più morte;\\
+                    <br>ma per trattar del ben ch’i’ vi trovai,\\
+              <br><br>\chapter{Second chapter}
+                <br><br>Nel mezzo del cammin di nostra vita\\
+                    <br>ché la diritta via era smarrita.\\
+                    <br>Ahi quanto a dir qual era è cosa dura\\
+                    <br>esta selva selvaggia e aspra e forte\\
+                    <br>Tant’è amara che poco è più morte;\\
+                    <br>ma per trattar del ben ch’i’ vi trovai,\\
+          <br><br>\end{document}
+          </code>
+   </div>
+ </div>
+   <div class=object>
+     <object type=""
+               <type=application/pdf data="../docs/Syntax_option_openright.pdf"
+                 width="100%" height="100%"> </object>
+   </div>
+</div>
+
+
+
+<br><br>
+
+   <div class="latex">
+    <div class="paragraph">
+      <div class="codebox"><b>CODE - OPENANY</b><hr>
+             <code><br>\documentclass [openany]{book}
+                   <br>\begin{document}
+                 <br><br>\chapter {First chapter}
+                   <br><br>Nel mezzo del cammin di nostra vita\\
+                       <br>ché la diritta via era smarrita.\\
+                       <br>Ahi quanto a dir qual era è cosa dura\\
+                       <br>esta selva selvaggia e aspra e forte\\
+                       <br>Tant’è amara che poco è più morte;\\
+                       <br>ma per trattar del ben ch’i’ vi trovai,\\
+                 <br><br>\chapter{Second chapter}
+                   <br><br>Nel mezzo del cammin di nostra vita\\
+                       <br>ché la diritta via era smarrita.\\
+                       <br>Ahi quanto a dir qual era è cosa dura\\
+                       <br>esta selva selvaggia e aspra e forte\\
+                       <br>Tant’è amara che poco è più morte;\\
+                       <br>ma per trattar del ben ch’i’ vi trovai,\\
+             <br><br>\end{document}
+             </code>
+      </div>
+    </div>
+  <div class=object>
+        <object type=""
+                  <type=application/pdf data="../docs/syntax_option_openany.pdf"
+                    width="100%" height="100%"> </object>
+  </div>
+</div>
+
+
+
+
+
+
+
+        <footer>
+            <address>Page written by Giulio Catanese</address>
+        </footer>
+    </main>
+</body>
+</html>

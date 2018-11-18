@@ -19,21 +19,29 @@
         <a href="packages_index.html">Packages</a>
         <a href="quiz.html">Quiz</a>
     </nav>
-    <div class="sidenav">
-        <a href="syntax_First_document.HTML" id="firstsubpage"><center>CREATE YOUR FIRST LATEX</center></a>
-        <a href="syntax_title_section.HTML"><center>TITLE SECTION</center></a>
-        <a href="syntax_basic_paragraphs_and_comments.HTML"><center>PARAGRAPH AND COMMENTS</center></a>
-        <a href="syntax_fonts_and_text_processing.HTML"><center>TEXT PROCESSING</center></a>
-        <a href="LINKSUBPAGE.HTML"><center>FONTS</center></a>
-        <a href="syntax_formatting.HTML"><center>FORMATTING</center></a>
-        <a href="syntax_lists.HTML"><center>LIST</center></a>
-        <a href="classes.HTML" class="active"><center>DOCUMENT CLASS</center></a>
-        <a href="syntax_TableOfContentsAndPageNumber.HTML"><center>TABLE OF CONTENT AND PAGE NUMBERING</center></a>
-        <a href="syntax_footnotes.HTML"><center>FOOTNOTE</center></a>
-        <a href="syntax_language_support.HTML"><center>LANGUAGE SUPPORT</center></a>
-        <a href="syntax_bibManagement.HTML"><center>BIBLIOGRPAHY MANAGMENT</center></a>
-        <a href="syntax_biblatexStyles.HTML"><center>BIBLATEX STYLES</center></a>
-        <a href="LINKSUBPAGE.HTML" id="lastsubpage"><center>BIBTEX STYLES</center></a>
+        <div class="sidenav">
+            <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
+            <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
+            <a href="syntax_title_section.HTML" class="sidenavlink">Title Section</a>
+            <a href="syntax_basic_paragraphs_and_comments.HTML" class="sidenavlink">Paragraph and Comments</a>
+            <a href="syntax_fonts_and_text_processing.HTML" class="sidenavlink">Text Processing</a>
+            <a href="syntax_more_on_fonts.HTML" class="sidenavlink">Fonts</a>
+            <a href="syntax_formatting.HTML" class="sidenavlink">Formatting</a>
+            <a href="syntax_lists.HTML" class="sidenavlink">List</a>
+            <div class="subpage"><div class="subpagepadding">Document type in Latex↓</div>
+            <a href="syntax_classes.HTML" class="subpagelinkactive">Document Class</a>
+            <a href="syntax_classes_comparison.HTML" class="subpagelink">Document Classes Comparison</a>
+            <a href="syntax_classes_option.HTML" class="subpagelink">Document Classes Options</a>   
+            </div>
+            <a href="syntax_command.HTML" class="sidenavlink">Command</a>
+            <a href="syntax_TableOfContents.HTML" class="sidenavlink">Table of Contents</a>
+            <a href="syntax_pageNumbering.HTML" class="sidenavlink">Page Numbering</a>
+            <a href="syntax_footnotes.HTML" class="sidenavlink">Footnotes</a>
+            <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
+            <div class="subpage"><div class="subpagepadding">Bibliography ↓</div>
+            <a href="syntax_bibManagement.HTML" class="subpagelink">Bibliography Management With Biblatex</a>
+            <a href="syntax_BibManagementNatbib.HTML" class="subpagelink">Bibliography Management With Natbib</a>  
+            </div>
     </div>
   <main>
   <h1>Document Class</h1>
@@ -52,6 +60,7 @@
         <li><b> Article </b>, for articles (usually scientific), short reports, documents, ...</li>
         <li><b> Book </b>, for book.</li>
         <li><b> Report </b>, for longer reports, thesis, small book, ...</li>
+        <li><b> Letter </b>, for letters.</li>
         </ul>
         There are many other non-standard classes for the most diverse documents:
         there are memos (which allows a lot of freedom in customizing the document), topsis and suftesi (for thesis and doctoral thesis)
@@ -59,54 +68,7 @@
 </div>
 <br>
 <br>
-<div class="text">
-  <table border="1">
-          <tr>
-            <th><b>Option</b></th>
-            <th>Article</th>
-            <th>Book</th>
-            <th>Report</th>
-            <th>Letter</th>
-          </tr>
 
-          <tr>
-          <td>10pt, 11pt, 12pt</td>
-          <td>default</td>
-          <td>default</td>
-          <td>default</td>
-          <td>default</td>
-          </tr>
-
-          <tr>
-            <td>one column </td>
-            <td>supported</td>
-            <td>supported</td>
-            <td>supported</td>
-            <td>default</td>
-          </tr>
-          <tr>
-            <td>two column </td>
-            <td>supported</td>
-            <td>default</td>
-            <td>supported</td>
-            <td>not supported</td>
-          </tr>
-          <tr>
-            <td>letter paper </td>
-            <td>default</td>
-            <td>default</td>
-            <td>default</td>
-            <td>default</td>
-          </tr>
-          <tr>
-            <td>title page </td>
-            <td>supported</td>
-            <td>default</td>
-            <td>default</td>
-            <td>not supported</td>
-          </tr>
-       </table>
-</div>
 <br>
 <br>
 <h2>Article</h2>
@@ -114,54 +76,111 @@
     Article is the most common class as well as the most flexible.
 </div>
 
-    <div class="exercises">
-            <p>
-            <br>\documentclass{article}
+<div class="latex">
+ <div class="paragraph">
+  <div class="codebox"><b>CODE</b><hr>
+      <code><br>\documentclass{article}
             <br>\title{Hello World}
+            <br>\date{November 9, 2018}
             <br>\begin{document}
             <br>\maketitle
             <br>Hello world, content
-            <br>\end{document} </p>
-            <img src="../media/img/syntax_hello-world-article.png" class="images">
-        </div>
-
+            <br>\end{document} </code>
+   </div>
+  </div>
+<div class=object>
+  <object type=""
+            <type=application/pdf data="../docs/syntax_hworld_a.pdf"
+              width="100%" height="100%"> </object>
+</div>
+</div>
 
 
 <h2>Book</h2>
 <div class="text">
-    Book is the most common class as well as the most flexible.
+    If you want to realize a book, this class will give you all you need.
 </div>
-<div class="exercises">
-        <p>
-        <br>\documentclass{book}
-        <br>\title{Hello World}
-        <br>\begin{document}
-        <br>\maketitle
-        <br>\end{document} </p>
-    <img src="../media/img/syntax_hello-world-book.png" class="images">
+    <div class="latex">
+     <div class="paragraph">
+      <div class="codebox"><b>CODE</b><hr>
+          <code><br>\documentclass{book}
+                <br>\title{Hello World}
+                <br>\date{November 9, 2018}
+                <br>\begin{document}
+                <br>\maketitle
+                <br>\end{document} </code>
+       </div>
+      </div>
+    <div class=object>
+      <object type=""
+                <type=application/pdf data="../docs/syntax_hworld_b.pdf"
+                  width="100%" height="100%"> </object>
     </div>
+    </div>
+
 
 
 <h2>Report</h2>
 <div class="text">
-    Report is the most common class as well as the most flexible.
+    You can use report class for reports.
 </div>
 
-<div class="exercises">
-        <p>
-        <br>\documentclass{report}
-        <br>\title{Hello World}
-        <br>\date{November 9, 2018}
-        <br>\begin{document}
-        <br>\maketitle
-        <br>\end{document} </p>
-    <img src="../media/img/syntax_hello-world-report.png" class="images">
+<div class="latex">
+ <div class="paragraph">
+  <div class="codebox"><b>CODE</b><hr>
+      <code><br>\documentclass{report}
+            <br>\title{Hello World}
+            <br>\date{November 9, 2018}
+            <br>\begin{document}
+            <br>\maketitle
+            <br>\end{document} </code>
+   </div>
+  </div>
+<div class=object>
+  <object type=""
+            <type=application/pdf data="../docs/syntax_hworld_r.pdf"
+              width="100%" height="100%"> </object>
+</div>
     </div>
 
+    <h2>Letter</h2>
+    <div class="text">
+        Letter class is used for all kind of letter document.
+    </div>
 
-        <footer>
-            <address>Page written by Giulio Catanese</address>
-        </footer>
+<div class="latex">
+ <div class="paragraph">
+   <div class="codebox"><b>CODE</b><hr>
+          <code><br>\documentclass {letter}
+                <br>\signature {Mr Smith}
+                <br>\address {Fox Books,\\ Times Square, NYC.}
+                <br>\begin{document}
+                <br>\begin{letter} {Bobbo Vieri,\\ Via Giuseppe Buffi 13, \\6900 Lugano,
+                <br>\opening{Dear Bob}
+                <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna
+                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                 ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                 Duis aute irure dolor in reprehenderit in voluptate velit
+                  esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                  occaecat cupidatat non proident, sunt in culpa qui officia
+                  deserunt mollit anim id est laborum.
+                <br>\closing{Yours truly,}
+                <br>\end{letter}
+                <br>\end{document}
+          </code>
+   </div>
+  </div>
+    <div class=object>
+      <object type=""
+                <type=application/pdf data="../docs/syntax_hworld_l.pdf"
+                  width="100%" height="100%"> </object>
+    </div>
+</div>
+
+<footer>
+ <address>Page written by Giulio Catanese</address>
+</footer>
     </main>
 </body>
 </html>
