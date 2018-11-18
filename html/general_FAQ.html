@@ -18,12 +18,12 @@ BREAK -->
     <title>FAQ</title>
     <meta name="author" content="Julian Prokofiev">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
     <link rel="icon" href="../media/img/favicon.ico">
 </head>
 
 <body>
-    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
     <nav>
         <a href="general_index.html" class="active">Getting Started</a>  <!-- Move the class="active" to your group -->
         <a href="syntax_index.html">Basic Syntax</a>
@@ -33,19 +33,35 @@ BREAK -->
         <a href="quiz.html">Quiz</a>
     </nav>
     <div class="sidenav">
-      <a href="general_index.html" id="firstsubpage" class="sidenavlink">Getting Started</a>
-      <a href="general_installation.html" class="sidenavlink">Installation</a>
-      <a href="general_history.html" class="sidenavlink">History</a>
-      <a href="general_latex_compatibility.html" class="sidenavlink">LaTeX Compatibility</a>
-      <a href="general_tex.html" class="sidenavlink">TeX</a>
-      <a href="general_latex3project.html" class="sidenavlink">LaTeX3 Project</a>
-      <a href="general_faq.html" class="sidenavlinkactive">Frequently Asked Question</a>
-      <a href="general_sources.html" class="sidenavlink">Sources & Credits</a>
-  </div>
+        <a href="general_index.html" id="firstsubpage" class="sidenavlink">Getting Started</a>
+        <a href="general_installation.html" class="sidenavlink">Installation</a>
+        <a href="general_history.html" class="sidenavlink">History</a>
+        <a href="general_latex_compatibility.html" class="sidenavlink">LaTeX Compatibility</a>
+        <a href="general_tex.html" class="sidenavlink">TeX</a>
+        <a href="general_latex3project.html" class="sidenavlink">LaTeX3 Project</a>
+        <a href="general_faq.html" class="sidenavlinkactive">Frequently Asked Questions</a>
+        <a href="general_sources.html" class="sidenavlink">Sources & Credits</a>
+    </div>
     <main>
         <div class="title">Frequently Asked Questions</div>
-        <div class="subtitle">-------------</div>
-        <div class="subtitle">
+        <div class="indexgeneral">
+           <ul>
+            <div class="index"><a href="#01"><li>What is LaTeX?</li></a></div>
+              <div class="index"><a href="#02"><li>
+              What is the purpose of this website?</li></a></div>
+              <div class="index"><a href="#03"><li>
+              Why use LaTeX instead of Microsoft Word/Google Docs/etc.?</li></a></div>
+              <div class="index"><a href="04"><li>
+                I've never used LaTeX before, and need to re-format a research paper
+                into LaTeX in one afternoon. What should I learn first?</li></a></div>
+              <div class="index"><a href="#05"><li>
+                Can I do it faster?</li></a></div>
+              <div class="index"><a href="#06"><li>
+                Who created this website anyway?</li></a></div>
+           </ul>
+        </div>
+        <hr>
+        <div class="firstsubtitle" id="01">
           What is LaTeX?
         </div>
         <div class="text">Roughly speaking, LaTeX is a programming language in the
@@ -55,43 +71,111 @@ BREAK -->
         </div>
         <div class="text">While LaTeX's ability to quickly format math
           equations is a major reason for this, the language can also be used to
-          publish <a href="#">books</a>, <a href="#">presentations</a>, 
+          publish <a href="#">books</a>, <a href="#">presentations</a>,
           <a href="https://wiki.haskell.org/wikiupload/8/85/TMR-Issue13.pdf">
           and even write a program to pilot a Mars Rover</a> (though not recommended).
         </div>
-        <div class="subtitle">
+        <div class="subtitle" id="02">
+          What is the purpose of this website?
+          </div>
+        <div class="text">
+          A team of Informatics students at Universita della Svizzera italiana
+          (<a href="https://www.usi.ch/en">USI</a> for short) have been tasked to
+          assemble a beginner's guide to LaTeX in the form of a website. We hope
+          our work proves useful to you!
+          </div>
+        <div class="subtitle" id="03">
           Why use LaTeX instead of Microsoft Word/Google Docs/etc.?
         </div>
-        <div class="text">*TEXT*</div>
-       <div class="subtitle">
+        <div class="text">
+          To give Word and its contemporaries due credit, they does look less scary
+          than LaTeX (at first). These applications are designed to be easily
+          interactible on the graphical level; all that's needed to make a table
+          bigger is a click and drag of the table corner. This is a design paradigm
+          referred to as <a href="https://en.wikipedia.org/wiki/WYSIWYG">WYSIWYG</a>.
+        </div>
+        <div class="text">
+          By and large, these programs start breaking down when your document gets
+          large. Word, for example, starts slowing down and crashing as your report
+          accumulates more equations, figures, and images. LaTeX avoids this problem
+          entirely by handling only the code, and producing an output (compiling)
+          separately.
+          Other significant advantages include:
+          <ol>
+            <li><b>Ease of reformatting.</b>
+              <ul>
+                <li>LaTeX's default style is already easy to read, and future
+                modification takes a fraction of the time that it would take in
+                Word or elsewhere. Font sizes are relative, new sections can be
+                made to always start on a new page, image resizing and placement
+                is generally "auto-corrected" by the compiler (it has good
+                judgment)... the list goes on.
+                </li>
+              </ul>
+            </li>
+            <li><b>Bibliographical management.</b>
+              <ul>
+                <li>Given the usual attributes for a source citation, e.g. author,
+                  year published, date of access, etc.), LaTeX has a package that
+                  instantly produces a bibliography in MLA, APA, or other specified
+                  style. Check out our guide
+                  <a href="html/packages_index.html">here</a>.
+                </li>
+              </ul>
+            </li>
+            <li><b>Fantastic equation editing.</b>
+              Rather than using default text to typset an equation, LaTeX can
+              produce beautiful equations, matrices, 2D & 3D graphs, all without
+              slowing down your computer (ahem, Microsoft Equation Editor). Check
+              out another homecooked guide of ours
+              <a href="math_preamble.html">here</a>.
+            </li>
+            <li><b>Modularity.</b>
+              <ul>
+                <li>If there is a need for it, there's almost certainly a LaTeX
+                  extension (called a package) already created for it. Check out
+                  some of our favorites <a href="packages_index.html">here</a>.
+                </li>
+              </ul>
+            </li>
+            <li><b>Did I mention it's free?</b>
+            </li>
+        </div>
+       <div class="subtitle" id="04">
          I've never used LaTeX before, and need to re-format a research paper
          into LaTeX in one afternoon. What should I learn first?
        </div>
        <div class="text">
-         <a href="#">
-           Check out this sweet example.
-           </a>
+         <b>Step one:</b> Breathe! This is totally doable.
+         </div>
+         <div class="text">
+          <b>Step two:</b> Use our guide! This website is built to be accessible
+          to a typical Bachelors student, and the website sections build on one
+          another nicely. Start at the
+          <a href="general_installation.html">installation guide</a> to determine
+          how to get LaTeX running on your computer shortly, begin with our
+          <a href="syntax_First_document.html">basic syntax</a> section, and proceed
+          from there. Skimming through our whole website to get to the sections
+          most necessary for you takes 30 minutes at most, with maybe an equal
+          amount of time needed to copy, paste, and modify our example code. :-)
        </div>
-      <div class="subtitle">
+      <div class="subtitle" id="05">
         Can I do it faster?
       </div>
       <div class="text">
-        <a href="#">Link</a>
-        to a YouTube tutorial we like.
+        For those that learn better by following along a video, we recommend
+        Michelle Krummel's tutorial on
+        <a href="https://www.youtube.com/playlist?list=PL1D4EAB31D3EBC449">
+        How to Format a Math Paper</a>
+        on YouTube, at just under 25 minutes.
       </div>
-      <div class="subtitle">
-        Frequent Question #5
-      </div>
-      <div class="text">
-      blah blah blah
-      </div>
-      <div class="subtitle">
-      Frequent Question #6
+      <div class="subtitle" id="06">
+        Who created this website anyway?
       </div>
       <div class="text">
-      <a href="#">Link</a>
-      blahdiblahblahdah
+      <a href="general_sources.html">:-)</a>
       </div>
+
 
 
 
