@@ -85,15 +85,15 @@ white-space: pre;
   <main>
 
 
-<div class="title">LANGUAGE SUPPORT IN LaTeX</div>
+<div class="title">Language Support in LaTeX</div>
 
 
 <div class="indexgeneral"><ul>
-    <li><div class="index"><a href="syntax_language_support.html#first">INPUTENC</a></div></li>
-    <li><div class="index"><a href="syntax_language_support.html#second">FONTENC</a></div></li>
-    <li><div class="index"><a href="syntax_language_support.html#third">SPECIAL CHARACTERS</a></div></li>
-    <li><div class="index"><a href="syntax_language_support.html#fourth">BABEL</a></div></li>
-    <li><div class="index"><a href="syntax_language_support.html#fifth">LANGUAGE SPECIFIC SOLUTIONS</a></div></li>
+    <li><div class="index"><a href="syntax_language_support.html#first">Inputenc</a></div></li>
+    <li><div class="index"><a href="syntax_language_support.html#second">Fontenc</a></div></li>
+    <li><div class="index"><a href="syntax_language_support.html#third">Special Character</a></div></li>
+    <li><div class="index"><a href="syntax_language_support.html#fourth">Babel</a></div></li>
+    <li><div class="index"><a href="syntax_language_support.html#fifth">Language Specific Solution</a></div></li>
 </ul>
 <hr>
 </div>
@@ -103,14 +103,15 @@ white-space: pre;
 
 
 <div class="text">
-By default LaTeX is set to support the english language meaning that the document will be rearranged on compile to conform to its typesettings standards. Different languages have different typesseting convenctions and most definitely use more characters the 128 available in <code>ASCII</code> which is the native encoding for TeX. Different packages are commonly employed for language support.
+By default LaTeX is set to support the english language meaning that the document will be rearranged on compile to conform to its typesettings standards. Different languages have different typessetting convenctions and most definitely use more characters the 128 available in <code>ASCII</code> (which is the native encoding for TeX).</br>
+ The following packages are commonly employed for language support:
 </div>
 
-<div class="subtitle" id="first">INPUTENC</div>
+<div class="subtitle" id="first">Inputenc</div>
 <div class="text">
-The package <code>inputenc</code> tranlates inputs into TeX language generally composing them with <code>ASCII</code> and control sequences: for istance â wold be internally represented as \^a in with the ISO latin-1 encoding . With UTF-8 the representation gets more convoluted since complex characters such as the japanese kanji <ruby>東</ruby> need to be accomodated.</br>
+The package <code>inputenc</code> tranlates inputs into TeX language, generally composing them with <code>ASCII</code> and control sequences: for istance â wold be internally represented as \^a  with the ISO latin-1 encoding . With UTF-8 the representation gets more convoluted since complex characters such as the japanese kanji <ruby>東</ruby> need to be accomodated.</br>
 
-The syntax is <code>\usepackage[encoding]{inputenc}</code>: in pretty much all cases UTF-8 should be used (<code>\usepackage[utf8]{inputenc}</code>), the current distributions of LaTeX actually use UTF-8 by default but is still good practice to specify it in case your <code>.tex</code> file were to run on a machine with an older distribution. </br>
+The syntax is <code>\usepackage[encoding]{inputenc}</code>: in pretty much all cases UTF-8 should be used (<code>\usepackage[utf8]{inputenc}</code>), the current distributions of LaTeX actually uses UTF-8 by default but is still good practice to specify it in case your <code>.tex</code> file were to run on a machine with an older distribution. </br>
 
 Encodings other than UTF-8 can still be used but are there mostly for backwards compatibility, a few will be mentioned for historical reasons:
 
@@ -141,7 +142,7 @@ Encodings other than UTF-8 can still be used but are there mostly for backwards 
     </td>
 
   <td>
-  The Universal Character Set is of variable lenght (1-4bytes) and can thus encode up to 2.000.000.000 characters (obviusly not all of them are in use as of now) the first 128 of those are still ASCII. Its flexibility made it today's most used character encoding system by far. The option for UTF-8 is <code>[utf8]</code>
+  The Universal Character Set is of variable lenght (1-4bytes) and can thus encode up to 2.000.000.000 characters (obviusly not all of them are in use as of now), the first 128 of those are still ASCII. Its flexibility made it today's most used character encoding system by far. The option for UTF-8 is <code>[utf8]</code>
   </td>
   </tr>
 </table>
@@ -149,18 +150,18 @@ Encodings other than UTF-8 can still be used but are there mostly for backwards 
 
 
 
-    <div class="subtitle" id="second">FONTENC</div>
+    <div class="subtitle" id="second">Fontenc</div>
     <div class="text">
-      The <code>fontenc</code> package takes the interpretations produced by <code>inputenc</code> and converts them in actual characters by using command sequences on an estamblished table of 128, 256 glyphs based on the chosen encoding. For istance â (if not already present in the current <code>fontenc</code> encoding) would be converted by inputenc into \^a then fontenc would read it and place the accent on the "a" glyph. </br>
+      The <code>fontenc</code> package takes the interpretations produced by <code>inputenc</code> and converts them in actual characters by using command sequences on an estamblished table of 128, 256 glyphs based on the chosen encoding. For istance â (if not already present in the current <code>fontenc</code> encoding) would be converted by inputenc into \^a, then fontenc would read it and place the accent on the "a" glyph. </br>
       The first encoding, written by Donald Knuth was <code>OT1</code> and used a table of 128 glyphs (as all encoding preceeded by O do): up until 2015 it was the default encoding. The latest LaTeX distributions employs T1 which, with 256 glyphs, covers most latin languages. </br>
       Three encodings are dedicated to cyrillic languages due to the vast amount  of characters: <code>T2A</code>,<code>T2B</code>,<code>T2C</code> but they are all contained in the <code>X2</code> encoding.</br>
-      The package is called with the following syntax <code>\usepackage[encoding]{fontenc}</code>
+      The package is called with the following syntax <code>\usepackage[encoding]{fontenc}</code>.
     </div>
 
 
-<div class="subtitle" id="third">SPECIAL CHARACTERS</div>
+<div class="subtitle" id="third">Special Characters</div>
 <div class="text">
-Directly from the <a href="http://tug.ctan.org/macros/latex/doc/encguide.pdf">fontenc manual</a>, the following are command sequences to write special characters that, most likely, won't be available on a standard keyboard:
+Directly from the <a target="_blank" href="http://tug.ctan.org/macros/latex/doc/encguide.pdf">fontenc manual</a>, the following are command sequences to write special characters that, most likely, won't be available on a standard keyboard:
 </div>
 
 <div class="codebox">
@@ -234,16 +235,16 @@ Directly from the <a href="http://tug.ctan.org/macros/latex/doc/encguide.pdf">fo
 </div>
 
 
-<div class="subtitle" id="fourth">BABEL</div>
+<div class="subtitle" id="fourth">Babel</div>
 <div class="text">
-  The <code>babel</code> package support specific typesettings for one or more languages. The syntax is <code>\includepackage[language]{babel}</code>. For more information about this package please consult the <a href="">relative section</a>
+  The <code>babel</code> package supports specific typesettings for one or more languages. The syntax is <code>\includepackage[language]{babel}</code>. For more information about this package please consult the <a href="./packages_hyperref_babel_xcolor.html">relative section</a>
 </div>
 
 
 
-<div class="subtitle" id="fifth">LANGUAGE SPECIFIC SOLUTIONS</div>
+<div class="subtitle" id="fifth">Language Specific Solution</div>
 <div class="text">
-Some languages, like the japanese use over 50,000 different characters: <code>fontenc</code> with its puny tables can not deal with this: language specific solutions have to be found. </br>
+Some languages, like the japanese, use over 50,000 different characters: <code>fontenc</code> with its tables can't really deal with this without external support: language specific solutions have to be found. </br>
 The package <code>CJK</code> can output chinese, japanese and korean:
 </div>
 

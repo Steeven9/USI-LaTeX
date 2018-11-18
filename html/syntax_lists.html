@@ -83,7 +83,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
       <a href="packages_index.html">Packages</a>
       <a href="quiz.html">Quiz</a>
   </nav>
-  <div class="sidenav">
+    <div class="sidenav">
             <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
             <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
             <a href="syntax_title_section.HTML" class="sidenavlink">Title Section</a>
@@ -109,26 +109,24 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
     </div>
 
 
-
-
   <main>
 
-    <div class="title">LISTS IN LaTeX</div>
+    <div class="title">List in LaTeX</div>
 
     <div class="indexgeneral"><ul>
-        <li><div class="index"><a href="syntax_lists.html#first">INTRODUCTION AND BASIC SYNTAX</a></div></li>
-        <li><div class="index"><a href="syntax_lists.html#second">A LIST FOR EACH NEED</a></div></li>
-        <li><div class="index"><a href="syntax_lists.html#third">NESTING LISTS</a></div></li>
-        <li><div class="index"><a href="syntax_lists.html#fourth">CUSTOMIZING BULLETS</a></div></li>
-        <li><div class="index"><a href="syntax_lists.html#fifth">SPACING IN LISTS</a></div></li>
-        <li><div class="index"><a href="syntax_lists.html#sixth">DEFINE YOUR OWN LIST ENVIRONMENT</a></div></li>
+        <li><div class="index"><a href="syntax_lists.html#first">Introduction and basic syntax of a list</a></div></li>
+        <li><div class="index"><a href="syntax_lists.html#second">A list for each need</a></div></li>
+        <li><div class="index"><a href="syntax_lists.html#third">Nesting lists</a></div></li>
+        <li><div class="index"><a href="syntax_lists.html#fourth">Customizing bullets</a></div></li>
+        <li><div class="index"><a href="syntax_lists.html#fifth">Spacing in lists</a></div></li>
+        <li><div class="index"><a href="syntax_lists.html#sixth">Define your own list environment</a></div></li>
     </ul>
     <hr>
     </div>
 
 
 
-    <div class="subtitle" id="first">INTRODUCTION & BASIC SYNTAX</div>
+    <div class="subtitle" id="first">Introduction and basic syntax of a list</div>
     <div class="text">
       Lists are a widely used enviroment in LaTeX, allowing to format a set of items in a well ordered manner. <br/>
       A list enviroment is started with the expression <code>\begin{*list type*}</code> and closed with <code>\end{*list type*}</code>, each item of the list is declared with <code>\item{put your content here}</code>.
@@ -136,17 +134,17 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 
 
 
-    <div class="subtitle" id="second">A LIST FOR EACH NEED</div>
+    <div class="subtitle" id="second">A list for each need</div>
     <div class="text">
       <ul style="  list-style-type: none;">
         <li>
           <b> ITEMIZE</b>: The <code>\begin{itemize}</code> envirmonment provides a classic bulleted list. It is mainly used to list items without a well defined order such as a grocery list.
         </li>
         <li>
-          <b>ENUMERATE</b>: The <code>\begin{enumerate}</code> envirmonment provides an ordered list where the bullets are replaced by the number of the item. It is mainly used to list items without a with a well defined order such as the steps of a recipe.
+          <b>ENUMERATE</b>: The <code>\begin{enumerate}</code> envirmonment provides an ordered list where the bullets are replaced by the number of the item. It is mainly used to list items a with a well defined order such as the steps of a recipe.
         </li>
         <li>
-          <b>DESCRIPTION</b>: The <code>\begin{desription}</code> envirmonment provides a properly formatted way to describe a set of items such as the different blends of coffee. Each item will be declared as follows: <code>\item[name of the item]{desciption of the item}</code>.
+          <b>DESCRIPTION</b>: The <code>\begin{desription}</code> envirmonment provides a properly formatted way to describe a set of items such as the different blends of coffee. Each item will be declared as follows: <code>\item[name_of_the_item]{desciption_of_the_item}</code>.
         </li>
       </ul>
     </div>
@@ -202,9 +200,9 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 
 
 
-    <div class="subtitle" id="third">NESTING LISTS</div>
+    <div class="subtitle" id="third">Nesting lists</div>
     <div class="text">
-      LaTeX provides 4 nested levels  of nesting for lists (they can be increased with the package <code>enumitem}</code>): declaring a new list enviroment inside a list envirmonment will nest the former. Different bullets will replace the standard ones depending on the level of nesting, likewise different enumeration styles will be employed inside nested <code>\begin{enumerate}</code> environments.
+      LaTeX has 4 levels  of nesting for lists (they can be increased with the package <code>enumitem}</code>): declaring a new list enviroment inside another list envirmonment will nest the former. Different bullets will replace the standard ones depending on the level of nesting, likewise different enumeration styles will be employed inside nested <code>enumerate</code> environments.
     </div>
 
 
@@ -275,7 +273,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 
 
 
-    <div class="subtitle" id="fourth">CUSTOMIZING BULLETS</div>
+    <div class="subtitle" id="fourth">Customizing bullets</div>
     <div class="text">
       The optional argument of each  <code>item[option]{your item}</code> allows to personalize the bullets one by one, anything can be used as a bulled including images with the following syntax:  <code>item[{\includeimage{image_adress}}]{your item}</code>. <br/>
 
@@ -283,7 +281,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 
       Avoid spaces between <code>[]</code> unless you want to actually introduce spaces in your bullet. <br/>
 
-      It is also possible to customize different parameters of lists through the use of the <code>enumitem</code> package: the bullets can be set with as shown below [label={your bullet}].
+      It is also possible to customize different parameters of lists through the use of the <code>enumitem</code> package: the bullets can be set as shown below <code>[label={your bullet}]</code>.
         </div>
 
 
@@ -340,11 +338,11 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 
 
 
-    <div class="subtitle" id="fifth">SPACING IN LISTS</div>
+    <div class="subtitle" id="fifth">Spacing in lists</div>
     <div class="text">
       <table>
         <tr>
-          <th>
+          <th width="17%">
             HORIZONTAL SPACING ATTRIBUTES
           </th>
           <th>
@@ -381,7 +379,7 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
             labelwidth
           </td>
           <td>
-            Sets the space taken by the label, useful if you have labels of different width and want to allign the items set it to <code>\widthof{LONGEST_LABLE}</code> (<code>\widthof</code> belong to the <code>\mathtools</code> package).
+            Sets the space taken by the label. If you have labels of different width and want to allign the items set it to <code>\widthof{LONGEST_LABLE}</code> (<code>\widthof</code> belong to the <code>\mathtools</code> package).
           </td>
         </tr>
         <tr>
@@ -481,8 +479,8 @@ new paragraph}
 
 \section*{LABELWIDTH}
 
-\begin{description}[labelwidth=\widthof{LONGER LABEL}]
-\item[LABEL] {nothing happens here \par
+\begin{description}[labelwidth=\widthof{\textbf{LONGER LABEL}}]
+\item[LABEL] {alligned with \textbf{LONGER LABLE} \par
   the new paragraph indented by 5em
 }
 
@@ -508,13 +506,13 @@ new paragraph}
 <div class="object">
 <object type="application/pdf" data="../docs/syntax_FL_ls_hspacing.pdf" height="100%" width="100%"> </object>
 </div>
-</div>
+</div> </br>
 
 
 <div class="text">
       <table>
         <tr>
-          <th>
+          <th width="17%">
             VERICAL SPACING ATTRIBUTES
           </th>
           <th>
@@ -534,7 +532,7 @@ new paragraph}
             partopsep
           </td>
           <td>
-            Vertical space below and on top of the list but only if preceeded by <code>\par</code>
+            Vertical space below and on top of the list but only if preceeded by <code>\par</code>. Notice that ending a list will always start a new paragraph.
           </td>
         </tr>
         <tr>
@@ -651,11 +649,11 @@ This is a new paragraph
     </div>
 
 
-  <div class="subtitle" id="sixth">DEFINE YOUR OWN LIST ENVIRONMENT</div>
+  <div class="subtitle" id="sixth">Define your own list environment</div>
 <div class="text">
 We have seen how to customize a single list but, were it to be used multiple times, instead of changing properties for each istance it would be practical to have a new list environment with said properties:  <code>\newlist{list_name}{list_type}{max_nesting_lv}</code> allows to define an entirely new list. <br/>
 
-The command <code>\setlist{list_name, nesting_lv}{attribute1=value_of_attribute,attribute2=value_of_attribute}</code> allows to modify (or set) attributes of lists (even the standard ones such as <code>description</code>).
+The command <code>\setlist{list_name, nesting_lv}{attribute1=value_of_attribute,attribute2=value_of_attribute}</code> allows to modify (or set) attributes of lists.
 </div>
 
 

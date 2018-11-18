@@ -118,7 +118,7 @@ th, td {
       <a href="packages_index.html">Packages</a>
       <a href="quiz.html">Quiz</a>
   </nav>
-  <div class="sidenav">
+    <div class="sidenav">
             <a href="syntax_index.HTML" id="firstsubpage" class="sidenavlink">Basic Syntax</a>
             <a href="syntax_First_document.HTML" class="sidenavlink">Create your first LaTeX</a>
             <a href="syntax_title_section.HTML" class="sidenavlink">Title Section</a>
@@ -147,14 +147,14 @@ th, td {
     <div class="title">FORMATTING IN LaTeX</div>
 
     <div class="indexgeneral"><ul>
-        <li><div class="index"><a href="syntax_formatting.html#first">FORMATTING & ADVANTAGES OF A PROPER TYPESETTING</a></div></li>
-        <li><div class="index"><a href="syntax_formatting.html#second">GEOMETRY OF THE PAGE</a></div></li>
-        <li><div class="index"><a href="syntax_formatting.html#third">INDENTATION OF PARAGRAPHS</a></div></li>
-        <li><div class="index"><a href="syntax_formatting.html#fourth">LINEWIDTH & TEXTWIDTH</a></div></li>
-        <li><div class="index"><a href="syntax_formatting.html#fifth">HORIZONTAL AND VERTICAL SPACING</a></div></li>
-        <li><div class="index"><a href="syntax_formatting.html#sixth">THE MINIPAGE ENVIRONMENT</a></div></li>
-          <li><div class="index"><a href="syntax_formatting.html#seventh">FLOAT ENVIRONMENTS</a></div></li>
-          <li><div class="index"><a href="syntax_formatting.html#eight">WRAPPING FLOATS</a></div></li>
+        <li><div class="index"><a href="syntax_formatting.html#first">Formatting & advantages of a proper typesetting</a></div></li>
+        <li><div class="index"><a href="syntax_formatting.html#second">Geometry of page</a></div></li>
+        <li><div class="index"><a href="syntax_formatting.html#third">Indentation of paragraphs</a></div></li>
+        <li><div class="index"><a href="syntax_formatting.html#fourth">Linewidth and textwidth</a></div></li>
+        <li><div class="index"><a href="syntax_formatting.html#fifth">Horizontal & textwidth</a></div></li>
+        <li><div class="index"><a href="syntax_formatting.html#sixth">The minipage environment</a></div></li>
+          <li><div class="index"><a href="syntax_formatting.html#seventh">Float environment</a></div></li>
+          <li><div class="index"><a href="syntax_formatting.html#eight">Wrapping floats</a></div></li>
     </ul>
     <hr>
     </div>
@@ -165,10 +165,10 @@ th, td {
 
 
 
-    <div class="subtitle" id="first">FORMATTING & ADVANTAGES OF A PROPER TYPESETTING</div>
+    <div class="subtitle" id="first">Formatting & advantages of a proper typesetting</div>
     <div class="text">
       In general it is reffered as format of a document the layout of its pages and more generally the overall style of its text. Behind the scenes numerous typesetting standards operate to ensure readability, and arguably beauty, of a single page.<br/>
-      If the meaning and importance of formatting wasn't clear we have some examples below:
+      If the importance of formatting wasn't clear yet, we have some examples below:
     </div>
 <br/>
 <div class="example2">
@@ -197,22 +197,24 @@ th, td {
 
 </div>
 
-<div class="subtitle" id="second">GEOMETRY OF THE PAGE</div>
+<div class="subtitle" id="second">Geometry of page</div>
 <div class="text">
- Writing a page doesn't simply mean filling it with thext to the brim: each object needs take its own space following determinate criterias in general each page will have lateral margins and a footer/header space. The <code>geometry</code> package allows you to modify at your leasure the layout of the page: you can learn more about it in the <a href="">relative section</a> </br>
+ Writing a page doesn't simply mean filling it with text to the brim: each object needs take its own space following determinate criterias, in general each page will have lateral margins and a footer/header space.</br>
 
- There are many pre-made layouts in LaTeX called document classes : you can learn more about document classes in the <a href="">relative section </a>
+ The <code>geometry</code> package allows you to alter the layout of certain elements of the page: you can learn more about it in the <a href="./packages_geometry2.html">relative section</a> </br>
+
+ There are many pre-made layouts in LaTeX called document classes : you can learn more about document classes in the <a href="./syntax_classes.html">relative section </a>
 </div>
 
 
-<div class="subtitle" id="third">INDENTATION OF PARAGRAPHS</div>
+<div class="subtitle" id="third">Indentation of paragraphs</div>
 <div class="text">
-  The indentation of paragraphs is set by the hiddent <code>parindent</code> parameter: you can change it (or set to 0) for the whole document by putting the following in your preamble: <code>\setlength\parindent{indentation}</code>. You can set the indentation of a specicific paragraph to 0 by preceeding it with <code>\noindent</code>
+  The indentation of paragraphs is set by the hidden <code>parindent</code> parameter: you can change it (or set to 0) for the whole document by putting the following in your preamble: <code>\setlength\parindent{indentation}</code>. You can instead set the indentation of a specific paragraph to 0 by preceeding it with <code>\noindent</code>
 </div>
 
-<div class="subtitle" id="fourth">LINEWIDTH & TEXTWIDTH</div>
+<div class="subtitle" id="fourth">Linewidth and textwidth</div>
 <div class="text">
-  Is often necessary to have one element span a certain portion of the page in this case we often use:
+  It is often necessary to have one element span a certain portion of the page, in this case we can use:
 <ul>
   <li>
     <code>\linewidth</code>: represents the width of a line of text in the current enviroment
@@ -222,7 +224,7 @@ th, td {
 
   </li>
   <li>
-    code>\widthof</code>: determines the size of a certain element
+    <code>\widthof</code>: determines the size of a certain element
   </li>
 </ul>
 
@@ -260,9 +262,9 @@ th, td {
 </div>
 </div>
 
-<div class="subtitle" id="fifth">HORIZONTAL AND VERTICAL SPACING></div>
+<div class="subtitle" id="fifth">Horizontal & textwidth</div>
 <div class="text">
-  You can use <code>\hspace{space}</code> and <code>\vspace{space}</code> to respectively add horizontal and vertical spaces in LaTeX, <code>\hfill</code> and <code>\vfill</code> will add a space to fill the current line/column. There are also macros to add fixed spaces for istance <code>\,</code> is equivalent to <code>\hspace{0.16667em}</code>
+  You can use <code>\hspace{space}</code> and <code>\vspace{space}</code> to respectively add horizontal and vertical spaces in LaTeX, <code>\hfill</code> and <code>\vfill</code> will add a space to fill the current line/column. There are also macros to add fixed spaces, for istance <code>\,</code> is equivalent to <code>\hspace{0.16667em}</code>
 </div>
 
 
@@ -329,10 +331,10 @@ D I'm here!
 </div>
 </div>
 
-<div class="subtitle" id="sixth">THE MINIPAGE ENVIRONMENT </div>
+<div class="subtitle" id="sixth">The minipage environment</div>
 <div class="text">
-The minipage environment is part of the standard distribution and comes very handy when you need to allign two or more objects: when called it a new column with width equal to a fraction of the original page. </br>
- Minipages are not floats and to be properly alligned the spacing between them must be 0 (you can simply comment it out with <code>%</code>), the first minipage should be also preceeded by a <code>\noindent</code>.
+The minipage environment is part of the standard distribution and comes very handy when you need to allign two or more objects: when called it starts a new column of width equal to a fraction of the original page. The syntax is as follows: <code>\begin{minipage}{width}</code>. </br>
+ To be properly alligned the spacing between minipages must be 0 (you can simply comment it out with <code>%</code>), the first minipage should also be preceeded by a <code>\noindent</code>.
 </div>
  <div class="latex">
    <div class="paragraph">
@@ -389,9 +391,9 @@ The minipage environment is part of the standard distribution and comes very han
 
 </div>
 
-<div class="subtitle" id="seventh">FLOAT ENVIRONMENTS</div>
+<div class="subtitle" id="seventh">Float environment</div>
 <div class="text">
-Floats is a generic term used to indicate unbreakeable entities separated from the standard stream of text. When dealing with a float LaTeX will attempt to position it where most conforming with the typesetting standards, while this most often retains good results in some case it won't result in  the desidered output. </br>
+Floats is a generic term used to indicate unbreakeable entities separated from the standard stream of text. When dealing with a float LaTeX will attempt to position it where most conforming with the typesetting standards, while this most often retains good results in some cases it won't be the desidered output. </br>
 The following tags can be used to "suggest" where a float should be positioned:
 
 <table>
@@ -445,12 +447,26 @@ The following tags can be used to "suggest" where a float should be positioned:
       !
     </td>
     <td>
-      Alone will allow LaTeX to ignore some paramethers,such as the total number of floats allowed on a page, in placing the float. When combined with the other tags (ex:<code>h!</code>) it will essentially strengthen them
+      Alone will allow LaTeX to ignore some paramethers, such as the total number of floats allowed on a page, in placing the float. When combined with the other tags (ex:<code>h!</code>) it will essentially strengthen them
     </td>
   </tr>
 </table> </br>
 
-If the tags are still not enough it's possible to set the absolute position of a flot with the <code>textpos</code> package with the following syntax:<code>\begin{picture}{x_pos, y_pos}</code> but usually not advised.
+If the tags are still not enough it's possible to set the absolute position of a flot with the <code>textpos</code> package using the following syntax:<code>\begin{textblock}{blockwidth}[x_block_shift, y_block_shift](x_pos, y_pos)</code> where:
+<ul>
+  <li>
+    <code>blockwidth</code> is the width of the block
+  </li>
+  <li>
+    <code>x_block_shift, y_block_shift</code> shift the anchor point of the box in block units: <code>[1,1]</code> would result in the block being moved of 1 block width to the left and up
+  </li>
+  <li>
+    <code>x_pos, y_pos</code> are the positions on the x/y axis in 16th of pagewidth and pageheight that ,by default, are anchored on the top left corner of the page
+  </li>
+</ul>
+
+Absolute positioning should be your very last resort.
+
 
 </div>
 
@@ -464,36 +480,86 @@ If the tags are still not enough it's possible to set the absolute position of a
 \usepackage{graphicx}
 \usepackage{blindtext}
 \usepackage{mathtools}
-
-
+\usepackage{fancyvrb}
+\DefineShortVerb{\@}
+\setlength\parindent{0em}%no indentation
+\usepackage[absolute,overlay]{textpos}
 
 
 \begin{document}
-
-
-\noindent\begin{minipage}{0.3333\textwidth}
-\blindtext
-\end{minipage}
-%
-\begin{minipage}{0.3333\textwidth}
-\includegraphics[width=\linewidth]{logo_USI.png}
-\end{minipage}%
-%
-\begin{minipage}{0.3333\textwidth}
-\blindtext
-\end{minipage}
-
-\noindent\blindtext
-
+\section*{INLINE FIGURE}
+\blindtext \includegraphics[width=0.1\linewidth]{logo_USI.png} \blindtext
 \newpage
 
-\begin{minipage}{0.5\textwidth}
-\includegraphics[width=\linewidth]{logo_USI.png}
-\end{minipage}%
-%
-\begin{minipage}{0.5\textwidth}
-\blindtext
-\end{minipage}
+
+
+\section*{FLOATING FIGURE}
+\blindtext%
+\begin{figure}\includegraphics[width=0.1\linewidth]{logo_USI.png} \end{figure}
+\blindtext%
+\newpage
+
+\section*{FLOATING FIGURE WITH "h!" TAG}
+\blindtext%
+\begin{figure}[h!]\includegraphics[width=0.1\linewidth]{logo_USI.png} \end{figure}
+\blindtext%
+\newpage
+
+\section*{FLOATS WITH ABSOLUTE POSITION}
+
+\begin{textblock}{3}[0,0](0,0){%
+\large{This float has a width of 3/16 of the page (the measures are in 16th of the page)and is positioned at the top-left corner}
+}
+\end{textblock}
+
+\begin{textblock}{3}[1,0](16,0){%
+\large{This float has a width of 3/16 of the page (the measures are in 16th of the page)and is positioned at the top-right corner.
+
+[1,0] is used to shift is anchor point of 1 box width to the left.}
+}
+\end{textblock}
+
+
+\begin{textblock}{4}[0,1](0,16){%
+\large{This float (text +image) has a width of 4/16 of the page (the measures are in 16th of the page)and is positioned at the bottom-left corner.
+
+
+
+[0,1] is used to shift its anchor point of 1 box width height up.
+
+You can also add images such as this one:
+}
+
+\includegraphics[width=0.5\linewidth]{logo_USI.png}
+}
+\end{textblock}
+
+
+
+\begin{textblock}{4}[1.0,1.0](16,16){%
+\large{This float has a width of 5/16 of the page and is positioned at the bottom-right corner of the page.
+
+ [1.0,1.0] is used to shift the anchor point of the box of 1 box width and 1 box height from the right corner otherwise it would be completely outside the page.}
+}
+\end{textblock}
+
+\begin{textblock}{2}[0.5,0.5](8,8){%
+\large{This float has a width of 3/16 of the page and is positioned at the center of the page}
+}
+\end{textblock}
+
+
+
+\begin{textblock*}{5cm}(100pt,8cm){%
+\large{With @\begin{textblock*}@ you can use units instead of absolute positions: this block has a width of 5cm, and is distant 100pt/8cm on the x/y axys  }
+}
+\end{textblock*}
+
+
+
+\null\newpage %if using only textboxes in a page add \null before \newpage
+
+
 
 \end{document}
   </code>
@@ -501,18 +567,62 @@ If the tags are still not enough it's possible to set the absolute position of a
 </div>
 
 
+
+
 <div class="object">
-<object type="application/pdf" data="../docs/syntax_FL_formatting8.pdf " height="100%" width="100%"> </object>
+  <object type="application/pdf" data="../docs/syntax_FL_formatting8.pdf " height="100%" width="100%"> </object>
 </div>
 </div>
 
 
-<div class="subtitle" id="eight">WRAPPING FLOATS</div>
+<div class="subtitle" id="eight">Wrapping floats</div>
 <div class="text">
-It's possible to wrap floats with text in the following manner
+It's possible to wrap floats with text by using the package <code>wrapfig</code>,  the syntax is as follows: <br/>
+ <code>\begin{wrapfigure}{position_tag}{width} \includegraphics[]{your_figure} \end{wrapfigure}</code> </br>
+the vertical spaces can simply be reduced (or added) by using <code>\vspace{space}</code>.
+</div>
+
+<div class="latex">
+  <div class="paragraph">
+
+    <code>
+
+\documentclass[a4paper,12]{article}
+
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{wrapfig}
+\usepackage{caption}
+
+
+\begin{document}
+
+
+
+\blindtext
+\begin{wrapfigure}{h}{0.35\linewidth}
+\vspace{-5pt}
+\begin{center}
+\includegraphics[width=0.35\linewidth]{logo_USI.png}
+\end{center}
+\vspace{-0pt} %you can use a negative\vspace to reduce the spacing
+\caption*{WRAPPED FLOAT :)}
+\vspace{-0pt} %you can use a negative\vspace to reduce the spacing
+\end{wrapfigure}
+\blindtext
+
+\end{document}
+  </code>
+
 </div>
 
 
+
+
+<div class="object">
+  <object type="application/pdf" data="../docs/syntax_FL_formatting9.pdf " height="100%" width="100%"> </object>
+</div>
+</div>
 
 
 
