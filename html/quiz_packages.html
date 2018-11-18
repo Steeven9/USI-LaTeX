@@ -126,7 +126,7 @@
 
         <script>
             function submit() {
-                if (document.getElementById('subButton').innerHTML=="Next") {
+                if (document.getElementById('subButton').innerHTML=="Start over") {
                     location.href = "quiz_general.html";   
                 } else {
                     $.ajax({
@@ -165,7 +165,7 @@
 
                             document.getElementById('score').classList.remove("hide");
 
-                            var totalGrade = (parseInt(localStorage.currentPoints)+points)*100/(parseInt(localStorage.currentTotal)+total);
+                            var totalGrade = ((parseInt(localStorage.currentPoints)+points)*100/(parseInt(localStorage.currentTotal)+total)).toFixed(2);
                             var totalScore = (parseInt(localStorage.currentPoints)+points)+"/"+(parseInt(localStorage.currentTotal)+total)+" ("+totalGrade+"%). ";
 
                             localStorage.currentPoints = 0;
