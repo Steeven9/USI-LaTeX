@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
+    <title>Bonus 1</title>
     <script>
         function check() {
             var url = document.getElementById("url").value; // trakes the texbox value
@@ -10,12 +11,10 @@
             // var functionResult = urlExists(url);
             // console.log(functionResult); // logs the result of the function urlExists to the console
             var result = urlExists(url, function(exists) {
-                                console.log(url + " exists ? " +   exists);
-                                result.textContent = url + " exists ? " +   exists;
-                            }
-            );
-            
-            
+                    console.log(url + " exists ? " +   exists);
+                    result.textContent = url + " exists ? " +   exists;
+                }
+            );  
         }
 
         // stackoverflow fucntion  https://stackoverflow.com/questions/1591401/javascript-jquery-check-broken-links
@@ -24,11 +23,11 @@
         function urlExists(url,callback) {
             var xhr = new XMLHttpRequest(); // create a new XMLHttpRequest object (more info: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
             xhr.onreadystatechange = function() { // An EventHandler that is called whenever the readyState attribute changes
-                                        if (xhr.readyState === 4) { // checks the request state (more info: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState)
-                                            // return xhr.status; // return the status code 
-                                            callback(xhr.status < 400);
-                                        }
-                                    };
+                if (xhr.readyState === 4) { // checks the request state (more info: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState)
+                    // return xhr.status; // return the status code 
+                    callback(xhr.status < 400);
+                }
+            };
             xhr.open('HEAD', url);
             xhr.send();
         }
