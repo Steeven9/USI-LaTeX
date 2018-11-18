@@ -45,35 +45,50 @@
     </div>
   <main>
   <div class="title">Basic paragraphs and comments</div>
-
-          <div class="indexgeneral"><ul>
-            <li><div class="index"><a href="#create_para_comm">Creating paragraphs and new lines</a></div></li>
-            <li><div class="index"><a href="#comments">Comments</a></div></li>
-            
-        </ul>
-        <hr>
-  <div class="subtitle" id="create_para_comm">Creating paragraphs and new lines</div>
+  <div class="indexgeneral"><ul>
+    <li><div class="index"><a href="syntax_basic_paragraphs_and_comments.html#first">Creating paragraphs and new lines</a></div></li>
+    <li><div class="index"><a href="syntax_basic_paragraphs_and_comments.html#second">Comments</a></div></li>
+</ul>
+<hr>
+</div>
+  <div class="subtitle" id="first">Creating paragraphs and new lines</div>
    <div class="text">In very important documents, such as scientific ones, you do not
     want to keep a simple, basic format. In Latex, for example,
     if you want to start a new paragraph, you have to click the
     "Enter" key twice, and if you write on a new line and not
     start a new paragraph, you can write a backslash two times (\\),
-    after the line previous to the new line. For example: </div><br><br>
+    after the line previous to the new line. For example: </div>
+    <br>
+    <br>
       <div class="latex">
                                 <div class="paragraph"><b>CODE</b><hr>
                                     <code>
-                                        <code><p>\documentclass{article}</p>
-                                          <p><p>\title{My first Latex Document!}</p>
-                                          <p>\author{Bob Malcom}</p>
-                                          <p>\date{November 2, 2018}</p>
+                                        \documentclass{article}
+                                        <br>
+                                        <br>
+                                          \title{My first Latex Document!}
                                           <br>
-                                          <p>\begin{document}</p>
-                                          <p>\maketitle</p>
-                                          <p>Hello World! This is a very simple, Latex document. \\</p>
-                                          <p>This is a new line \\</p>
-                                          <p>This is another line.</p>
+                                          \author{Bob Malcom}
                                           <br>
-                                          <p>This is a new paragraph.</p></code>
+                                          \date{November 2, 2018}
+                                          <br>
+                                          <br>
+                                          \begin{document}
+                                          <br>
+                                          <br>
+                                          \maketitle
+                                          <br>
+                                          <br>
+                                          Hello World! This is a very simple, Latex document. \\
+                                          <br>
+                                          <br>
+                                          This is a new line \\
+                                          <br>
+                                          <br>
+                                          This is another line.
+                                          <br>
+                                          <br>
+                                          This is a new paragraph.
                                     </code>
                                 </div>
                                 <div class="object">
@@ -81,7 +96,7 @@
                                 </div>
                         </div>
                         <br><br>  
-<div class="subtitle" id="comments">Comments</div>
+<div class="subtitle" id="second">Comments</div>
   <div class="text">We saw from the code and the  picture of the document, that a new line
     goes simply down a line, while a paragraph does the same, but gets indented.</div>
 
@@ -92,22 +107,40 @@
     <br><br>
       <div class="latex">
                                 <div class="paragraph"><b>CODE</b><hr>
-                                    <code><p>\documentclass{article}</p>
-                                    <p>\title{My first Latex Document!}</p>
-                                    <p>\author{Bob Malcom}</p>
-                                    <p>\date{November 2, 2018}</p>
-                                    <br>
-                                    <p>\begin{document}</p>
-                                    <p>\maketitle %Title inserted</p>
-                                    Hello World! This is a very simple
-                                    Latex document. \\ %This is a text, containing the command that lets the following text go down the next line</p>
-                                    <p>This is a new line \\ %This is a text, containing the command
-                                      that lets the following text go down the next line</p>
-                                    <p>This is another new line. %This is a text, containing the command
-                                      that creates a new paragraph (double "Enter" key)</p>
-                                    <br>
-                                    <p>This is a new paragraph. %Final text (in new paragraph)</p>
-                                    <p>\end{document}</p></code>
+                                    <code>
+                                        \documentclass{article}
+                                        <br>
+                                        <br>
+                                      \title{My first Latex Document!}
+                                      <br>
+                                      \author{Bob Malcom}
+                                      <br>
+                                      \date{November 2, 2018}
+                                      <br>
+                                      <br>
+                                      \begin{document}
+                                      <br>
+                                      <br>
+                                      \maketitle %Title inserted
+                                      <br>
+                                      <br>
+                                      Hello World! This is a very simple
+                                      Latex document. \\ %This is a text, containing the command that lets the following text go down the next line.
+                                      <br>
+                                      <br>
+                                      This is a new line \\ %This is a text, containing the command
+                                        that lets the following text go down the next line
+                                        <br>
+                                        <br>
+                                      This is another new line. %This is a text, containing the command
+                                        that creates a new paragraph (double "Enter" key)
+                                      <br>
+                                      <br>
+                                      This is a new paragraph. %Final text (in new paragraph)
+                                      <br>
+                                      <br>
+                                      \end{document}
+                                  </code>
                                 </div>
                                 <div class="object">
                                     <object type="application/pdf" data="../docs/syntax_basic_para_comment2.pdf" height="100%" width="100%"></object>

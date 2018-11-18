@@ -45,25 +45,25 @@
     </div>
     <main>
     <div class="title">Fonts and text processing</div>
-    <div class="indexgeneral"><ul> 
-        <li><div class="index"><a href="#bold_italic_underlining">
-            Bold, Italics and Underlining</a></div></li>
-            <li><div class="index"><a href="#emphasizing">Emphasizing text </a></div></li>
-        </ul></div>
-        <hr>
-    <div class="subtitle" id="bold_italic_underlining">Bold, Italics and Underlining</div>
+    <div class="indexgeneral"><ul>
+        <li><div class="index"><a href="syntax_fonts_and_text_processing.html#first">Bold, Italics and Underlining</a></div></li>
+        <li><div class="index"><a href="syntax_fonts_and_text_processing.html#second">Emphasizing text</a></div></li>
+    </ul>
+    <hr>
+    </div>
+    <div class="subtitle" id="first">Bold, Italics and Underlining</div>
     <div class="text">The concept of the bold, italics and underlining features are
       basic, but useful at the same time. These features will make
     parts of your code stand out and highlight important concepts.
     To write a bold word/sentence, you must insert your text between
-    the parenthesis of the command \textbf{text}, to write an italic word/sentence,
+    the parenthesis of the command <code>\textbf{text}</code>, to write an italic word/sentence,
     you must insert your text between the parenthesis of the
-    command \textit{text}, and finally, to write an underlining word/sentence,
+    command <code>\textit{text}</code>, and finally, to write an underlining word/sentence,
     you must insert your text between the parentheses of the
-    command \underline{text}. Fairly easy, right?</div>
-    <div class="subtitle" id="emphasizing">Emphasizing text</div>
+    command <code>\underline{text}</code>. Fairly easy, right?</div>
+    <div class="subtitle" id="second">Emphasizing text</div>
     <div class="text">We are not done yet, because there is an extra important feature, that may even help some people.
-      There is the command \emph{text}, which, at first sight,
+      There is the command <code>\emph{text}</code>, which, at first sight,
       has the same behaviour of the underlining feature, but not fully.
       This command emphasizes the interested text. For example,
       if you start the audio version of your text, the computer
@@ -72,25 +72,36 @@
       <br>
     <div class="text">Let's look at an example below of the code and the document,
       including the two topics discussed above:</div>
-    
-
+    <br>
+    <br>
       <div class="latex">
           <div class="paragraph"><b>CODE</b><hr>
-            <code><p>\documentclass{article}</p>
-              <p>\title{My first Latex Document!}</p>
-              <p>\author{Bob Malcom}</p>
-              <p>\date{November 2, 2018}</p>
+            <code>\documentclass{article}
               <br>
-              <p>\begin{document}</p>
-              <p>This is a really simple example of how the text
-                features will look in Latex.</p>
-              <p>This is a \textbf{bold} word, this is a \textit{sentence in Italics},
+              <br>
+              \title{My first Latex Document!}
+              <br>
+              \author{Bob Malcom}
+              <br>
+              \date{November 2, 2018}
+              <br>
+              <br>
+              \begin{document}
+              <br>
+              <br>
+              This is a really simple example of how the text
+                features will look in Latex.
+                <br>
+                <br>
+              This is a \textbf{bold} word, this is a \textit{sentence in Italics},
                 this is an \underline{underlined} word, and this
                 is an \emph{emphasized} word. This last is, at first
                 sight, the same as the sentence in italics, but has the
                 job to emphasize the text, most of all during the audio
-                reading.</p>
-                <p>\end{document}</p>
+                reading.
+                <br>
+                <br>
+                \end{document}
             </code>
           </div>
           <div class="object">
