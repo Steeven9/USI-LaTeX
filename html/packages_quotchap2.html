@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+      <head>
+
+            <link rel="stylesheet" href="../css/style.css">
+
+      </head>
+
+    <body>
+
+     <meta name="author" content="Andrea di Micco">
+
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
+
+    <nav>
+
+                <a href="general_index.html">Getting Started</a>
+
+                <a href="syntax_index.html" >Basic Syntax</a>
+
+                <a href="graphics_index.html">Graphics</a>
+
+                <a href="equations_index.html">Equations</a>
+
+                <a href="packages_index.html"class="active">Packages</a>
+
+                <a href="quiz.html">Quiz</a>
+
+            </nav>
+
+            <div class="sidenav">
+                <a href="packages_index.html" id="firstsubpage"class="sidenavlink">Packages</a>
+                 <a href="packages_IntroNewcommands.html" class="sidenavlink">Packages Introduction
+                <a href="packages_newcommands.html"class="sidenavlink">New Commands</a>
+                <a href="packages_fancyhdr.HTML"class="sidenavlink">Fancyhdr</a>
+                <div class="subpage"><div class="subpagepadding">Quotchap</div>
+                  <a href="packages_quotchap.html"class="sidenavlink">Page 1</a>
+                  <a href="packages_quotchap2.html"class="sidenavlinkactive">Page 2</a></div>
+                <a href="packages_todonotes.html"class="sidenavlink">Todonotes</a>
+                <div class="subpage"><div class="subpagepadding">Geometry</div>
+                <a href="packages_geometry2.html"class="subpagelink">Page 1</a>
+                <a href="packages_geometry.html"class="subpagelink">Page 2</a></div>
+                <a href="packages_hyperref_babel_xcolor.html"class="sidenavlink">Hyperref</a>
+                <a href="packages_hyperref_babel_xcolor2.html"class="sidenavlink">Babel</a>
+                <a href="packages_hyperref_babel_xcolor3.html" class="sidenavlink">Xcolor</a>
+                <div class="subpage"><div class="subpagepadding">Beamer</div>
+                <a href="packages_Beamer1.html"class="subpagelink">Page 1</a>
+                <a href="packages_Beamer2.html"class="subpagelink">Page 2</a>
+                <a href="packages_Beamer3.html"class="subpagelink">Page 3</a> </div>
+                <a href="packages_TOP5.html"class="sidenavlink">"Top 5" useful packages</a>
+                <a href="packages_TOP3.html"class="sidenavlink">"Top 3" styling packages</a>
+            </div>
+
+
+
+
+
+<main>
+
+  <div class="title">Quotchap</div>
+
+  <div class="indexgeneral">
+
+     <ul>
+
+        <div class="index"><a href="#firstpart"><li>Option parsing</li></a></div>
+
+        <br>
+
+        <div class="index"><a href="#secondpart"><li>User Level Commands</li></a></div>
+
+        <br>
+
+        <div class="index"><a href="#thirdpart"><li>Making up the chapter heading</li></a></div>
+
+      </ul>
+
+  </div>
+
+  <hr>
+
+
+
+
+
+  <div class="title" >Implementation</div>
+  <div class="subtitle"id="firstpart">Option parsing</div>
+
+    <div class="text">The first part is about parsing the options. We may not <code> \RequirePackages</code> in here
+and thus define a flag: @usecolor is true whenever the grey option is specified
+<div class="codebox" style="width: 458px;"><div class="paragraph"><b>CODE</b><hr>
+  <code>\newif\if@usecolor\@usecolortrue<br>
+        \DeclareOption{grey}{\@usecolortrue}<br>
+        \DeclareOption{nogrey}{\@usecolorfalse}<br>
+  </code></div></div>
+<br>
+  For the fonts, there follows a bunch of options that are all meant to be specified
+exclusively. It would have been possible to use <code>\newcommand</code> to ensure this, but it
+gives cryptic errors. Rather check this first.
+<br>
+<div class="codebox" style="width: 830px;"><div class="paragraph"><b>CODE</b><hr>
+  <code>
+        \newcommand*{\@newfontcmd}{\@ifundefined{@defaultcnfont}{\newcommand*}{%<br>
+         \PackageWarning{quotchap}{%<br>
+        You have tried to specify more than one font to be\MessageBreak<br>
+        used for the chapter numbers. I ignore the font\MessageBreak<br>
+        ‘\CurrentOption’}<br>
+        \providecommand*}}<br>
+  </code></div></div>
+<br>
+Next is defining the font options. We set <code>\@defaultcnfont</code> according to Karl
+Berry’s font name scheme. Providing more than one font gives an error (due to
+defining an already defined command); the options exclude each other.
+
+<div class="codebox" style="width: 900px;"><div class="paragraph"><b>CODE</b><hr>
+  <code>
+     \DeclareOption{avantgarde}{\@newfontcmd{\@defaultcnfont}{pag}}<br>
+ \DeclareOption{beramono}{\@newfontcmd{\@defaultcnfont}{fvm}}<br>
+\DeclareOption{berasans}{\@newfontcmd{\@defaultcnfont}{fvs}}<br>
+\DeclareOption{beraserif}{\@newfontcmd{\@defaultcnfont}{fve}}<br>
+\DeclareOption{biolinum}{\@newfontcmd{\@defaultcnfont}{LinuxBiolinumO-LF}}<br>
+ \DeclareOption{bookman}{\@newfontcmd{\@defaultcnfont}{pbk}}<br>
+\DeclareOption{charter}{\@newfontcmd{\@defaultcnfont}{bch}}<br>
+\DeclareOption{courier}{\@newfontcmd{\@defaultcnfont}{pcr}}<br>
+ \DeclareOption{helvetica}{\@newfontcmd{\@defaultcnfont}{phv}}<br>
+\DeclareOption{kpfonts}{\@newfontcmd{\@defaultcnfont}{jkp}}<br>
+ \DeclareOption{libertine}{\@newfontcmd{\@defaultcnfont}{LinuxLibertineO-LF}}<br>
+\DeclareOption{lmodern}{\@newfontcmd{\@defaultcnfont}{lmr}}<br>
+\DeclareOption{newcentury}{\@newfontcmd{\@defaultcnfont}{pnc}}<br>
+\DeclareOption{palatino}{\@newfontcmd{\@defaultcnfont}{ppl}}<br>
+\DeclareOption{times}{\@newfontcmd{\@defaultcnfont}{ptm}}<br>
+ \DeclareOption{utopia}{\@newfontcmd{\@defaultcnfont}{put}}<br>
+  </code></div></div>
+<br>
+We can now let the options be processed. If no postscript font has been specified,
+the default is Adobe’s Bookman.
+<div class="codebox" style="width: 500px;"><div class="paragraph"><b>CODE</b><hr>
+  <code>
+     \ProcessOptions\relax<br>
+     \providecommand*{\@defaultcnfont}{pbk}
+  </code></div></div>
+<br>
+
+If nobody said nogrey, we fetch the <code>color</code> package and define our colour.
+If the color package is not included until now, we define <code>\color</code> to do nothing
+but gobble up its argument. An error is issued when grey is turned on and the
+color package is nonexistent. When you read the documentation because of this:
+<code>color.sty</code> is included in the graphics bundle to be found at ctan.
+<br>
+<div class="codebox" style="width: 750px;"><div class="paragraph"><b>CODE</b><hr>
+  <code>
+   \if@usecolor<br>
+\IfFileExists{color.sty}{%<br>
+ \RequirePackage{color}<br>
+ \definecolor{chaptergrey}{rgb}{0.6,0.6,0.6}}{%<br>
+ \PackageError{quotchap}{%<br></code>
+ The color package is apparently unavailable.\MessageBreak<br>
+ Turn off the ‘grey’ option and come back again}{%<br>
+ Since you did not say ‘nogrey’, quotchap defined chapter<br>
+ numbers to appear\MessageBreak grey. You do not need a color<br>
+ printer, since most printing devices can cope\MessageBreak with<br>
+ grey scales<br>
+ <code>\else<br>
+ \providecommand*{\color}[1]{}<br>
+ \fi<br>
+  </code></div></div>
+<br>
+Now we are ready to give the final font declarations. The commands <code>\sectfont</code>
+and <code>\chapterhead{start|end}vskip</code> are defined in the <code>KOMA-Script</code> classes the
+chapter is based on, they are provided in case quotchap is used with other,
+e.g. the default classes. If we are building a report, there is no <code>\frontmatter</code>,
+<code>\mainmatter</code> and <code>\backmatter</code> resp. everything is <code>\mainmatter</code>, thus we have to
+provide the corresponding switch used in the <code>\chapter</code> command.
+
+<br>
+<div class="codebox" style="width: 800px;"><div class="paragraph"><b>CODE</b><hr>
+  <code>
+ \AtEndOfPackage{%<br>
+\newcommand*{\chapnumfont}{%<br>
+ \usefont{T1}{\@defaultcnfont}{b}{n}\fontsize{100}{130}\selectfont%<br>
+ \color{chaptergrey}}<br>
+ \let\size@chapter\huge<br>
+\providecommand*{\chapterheadstartvskip}{\vspace*{2.3\baselineskip}}<br>
+ \providecommand*{\chapterheadendvskip}{\vspace{1.7\baselineskip}}<br>
+ \providecommand*{\sectfont}{\relax}<br>
+\@ifundefined{@mainmattertrue}{\newif\if@mainmatter\@mainmattertrue}{}}<br>
+  </code></div></div>
+  </div>
+  <br>
+  <br>
+
+
+  <div class="subtitle" id="secondpart">User Level Commands</div>
+
+  <div class="text">
+<h4>Savequote</h4>
+Here go the top level command declarations (and definitions, too). We use the
+lrbox environment to save the contents of the whole environment in a horizontal
+box. The quotes are effectively a paragraph box typeset in footnote size and
+oblique style, to the width given as a parameter, while any spacing at the beginning
+and the end of the environment is ignored. Since \newenvironment implies a
+group, we have to make the box \@quotebox global explicitly.
+Finally, we enable the box insertion command that is disabled initially and
+after each chapter heading. (Possibly it is faster to delete the save box contents
+and insert a nearly-empty vertical box at each chapter—profilers to the front.)
+<br>
+<div class="codebox" style="width: 550px;"><div class="paragraph"><b>CODE</b><hr>
+  <code>
+   \newenvironment{savequote}[1][10cm]{%<br>
+\begin{lrbox}{\@quotebox}<br>
+ \begin{minipage}[t]{#1}\footnotesize\slshape<br>
+ \ignorespaces}{%<br>
+\unskip\end{minipage}\end{lrbox}<br>
+ \global\setbox\@quotebox\copy\@quotebox<br>
+ \global\let\@printcites\@iprintcites<br>
+ \ignorespacesafterend}<br>
+  </code></div></div>
+<br>
+<h4>\qauthor</h4>
+The <code>\qauthor</code> command simply selects some font and skip—lets the name be set
+in roman letters and flush right at two ems distance from the margin.
+
+<br>
+<div class="codebox" style="width: 600px;"><div class="paragraph"><b>CODE</b><hr>
+  <code>
+    \newcommand{\qauthor}[1]{%<br>
+ \par\smallskip<br>
+ {\raggedleft\upshape #1\qquad\hbox{}\par}\bigskip}<br>
+  </code></div></div>
+<br>
+
+<h4>\qsetcnfont</h4>
+
+The user can set any font for the chapter number by providing its family name to
+this command.
+<br>
+<div class="codebox" style="width: 450px;"><div class="paragraph"><b>CODE</b><hr>
+  <code>
+     \newcommand{\qsetcnfont}[1]{%<br>
+       \renewcommand*{\@defaultcnfont}{#1}}
+  </code></div></div>
+</div>
+
+<br><br>
+
+
+
+
+<div class="subtitle" id="thirdpart">Making up the chapter heading</div>
+
+  <div class="text">Here are the modification to the chapter command definitions of the KOMA-Script
+document classes. This package was originally designed to co-operate only with
+them; therefore we have to provide some measurement defined only there. We
+insert the citations (if available) by calling the insert box or do nothing wrapper.
+The second modification is the formatting of the heading. If there is a chapter
+number to be printed, our really huge font is selected and the number is typeset
+to the right margin, followed by the title, as usual.
+
+
+
+
+
+<br>
+<div class="codebox" style="width: 750px;"><div class="paragraph"><b>CODE</b><hr>
+  <code>
+  \newsavebox{\@quotebox}<br>
+ \let\@printcites\relax<br>
+  \renewcommand\chapter{%<br>
+ \if@openright\cleardoublepage\else\clearpage\fi<br>
+ \thispagestyle{plain}%<br>
+ \global\@topnum\z@<br>
+  \@printcites<br>
+ \@afterindentfalse<br>
+ \secdef\@chapter\@schapter}<br>
+ \renewcommand{\@makechapterhead}[1]{\chapterheadstartvskip%<br>
+ {\size@chapter{\sectfont\raggedleft<br>
+ {\chapnumfont<br>
+ \ifnum \c@secnumdepth >\m@ne%<br>
+ \if@mainmatter\thechapter%<br>
+ \fi\fi<br>
+ \par\nobreak}%<br>
+ {\raggedleft\advance\leftmargin10em\interlinepenalty\@M #1\par}}<br>
+ \nobreak\chapterheadendvskip}}<br>
+ \renewcommand{\@makeschapterhead}[1]{%<br>
+ {\let\c@secnumdepth\m@ne\@makechapterhead{#1}}}<br>
+ \newcommand*{\@iprintcites}{%<br>
+ \vbox to\z@{\copy\@quotebox\vss}<br>
+ \global\let\@printcites\relax}<br>
+  </code></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <br>
+
+
+  <footer>
+
+      <address>Page written by Andrea Di Micco</address>
+
+  </footer>
+
+</main>
+
+   </body>
+
+
+
+  </html>

@@ -23,11 +23,13 @@
                <a href="packages_IntroNewcommands.html" class="sidenavlink">Packages Introduction
               <a href="packages_newcommands.html"class="sidenavlink">New Commands</a>
               <a href="packages_fancyhdr.HTML"class="sidenavlink">Fancyhdr</a>
-              <a href="packages_quotchap.html"class="sidenavlink">Quotchap</a>
+              <div class="subpage"><div class="subpagepadding">Quotchap</div>
+                <a href="packages_quotchap.html"class="subpagelink">Page 1</a>
+                <a href="packages_quotchap2.html"class="subpagelink">Page 2</a></div>
               <a href="packages_todonotes.html"class="sidenavlink">Todonotes</a>
               <div class="subpage"><div class="subpagepadding">Geometry</div>
               <a href="packages_geometry2.html"class="subpagelink">Page 1</a>
-              <a href="packages_geometry.html"class="subpagelink">Page 2</a></div>
+              <a href="packages_geometry.html"class="subpagelinkactive">Page 2</a></div>
               <a href="packages_hyperref_babel_xcolor.html"class="sidenavlink">Hyperref</a>
               <a href="packages_hyperref_babel_xcolor2.html"class="sidenavlink">Babel</a>
               <a href="packages_hyperref_babel_xcolor3.html" class="sidenavlink">Xcolor</a>
@@ -39,170 +41,123 @@
               <a href="packages_TOP3.html"class="sidenavlink">"Top 3" styling packages</a>
           </div>
  </body>
-<main>
-<div class="title">GEOMETRY</div>
-<div class="indexgeneral">
-   <ol>
-      <div class="index"><a href="#firstpart"><li>What is Geometry?</li></a></div>
-      <br>
-      <div class="index"><a href="#secondpart"><li>Page Geometry</li></a></div>
-      <br>
-      <div class="index"><a href="#thirdpart"><li>Useful Parametres</li></a></div>
-      <br>
-   </ol>
-</div>
-<hr>
 
+ <main>
+ <div class="title">GEOMETRY</div>
+ <div class="indexgeneral">
+    <ul>
+     <div class="index"><a href="#firstpart"><li>User Interface</li></a></div>
+       <br>
+       <div class="index"><a href="#secondpart"><li>Options Details</li></a></div>
 
-<div class="title" id="firstpart">What is Geometry?</div>
-<div class="subtitle">\usepackage{geometry} </div>
-<div class="text">The page dimensions in a LATEX document are highly configurable and the geometry package offers a simple way
-  to change the length and layout of different elements such as the paper size, margins, footnote, header, orientation.
-  <br>
-    Geometry package has an auto-completion mechanism, in which unspecified dimensions are automatically determined.
-    The geometry package will be also useful when you have to set page layout obeying strict instructions: for example,
-<br>
-<br>
-    <i>The total allowable width of the text area is 6.5 inches wide by 8.75 inches high.
-      The top margin on each page should be 1.2 inches from the top edge of the page.
-       The left margin should be 0.9 inch from the left edge.
-       The footer with page number should be at the bottom of the text area.
- </i></div>
-<br>
-<br><div class="codebox"style="Width: 700px;">
-<div class="paragraph"><b>CODE</b><hr>
-  <code>\usepackage[total={6.5in,8.75in}, <br>
-top=1.2in, left=0.9in, includefoot]{geometry}. </code></div></div>
-<br>
-<br>
+    </ul>
+ </div>
+ <hr>
 
-<div class="title" id="secondpart">Page geometry</div>
-<div class="text">The page layout contains a total body (printable area) and margins. The total body consists of a body (text area) with an optional header, footer and marginal notes (marginpar).
-   There are four margins: left, right, top and bottom. For twosided documents, horizontal margins should be called inner and outer
- <br>
-<br>
-Each margin is measured from the corresponding edge of a paper. For example, left margin (inner margin)
-means a horizontal distance between the left (inner) edge of the paper and that of the total body.
- Therefore the left and top margins defined in geometry are di↵erent from the native dimensions \leftmargin and \topmargin.
- The size of a body (text area) can be modified by \textwidth and \textheight.
- The dimensions for paper, total body and margins have the following relations.
-<br>
-<br>
-<code>paperwidth = left+width+right</code> <br>
-<code>paperheight = top+height+bottom</code>
-
-
-</div>
-
-
-<div class="subtitle" >Manipulate page geometry</div>
-<div class="text"> Paper size, orientation and margins are the most common page elements that must be changed depending on the type of document.
-   To set the desired values there are two ways, either you pass them as parameters to the \includepackage statement:</div>
-<br>
-<br><div class="codebox" style="Width: 700px;">
-<div class="paragraph"><b>CODE</b><hr>
-<code>\usepackage[legalpaper, landscape, margin=2in]{geometry} </code></div></div>
-<br>
-<br>
-<div class="text">
-or use a \geometry command in the preamble. In fact you can achieve the same thing in a slightly different way:</div>
-<br>
-<br><div class="codebox"style="Width: 700px;">
-<div class="paragraph"><b>CODE</b><hr>
-<code>\usepackage{geometry} <br>
-\geometry{legalpaper, landscape, margin=2in}</code></div></div>
-
-<br>
-
-  <br><br>
-
-
-  <div class="title" id="thirdpart" >Useful parametres</div>
-  <div class="text"> The geometry package provides a flexible and easy interface to change page dimensions.
-    You can change the page layout with intuitive parameters.
-The parameters have to be written in the form parameter=value, use standard LATEX units. (mm, cm, pt, in).
-<br>
-<br>
-<img src="../media/img/packages_geometry1.png" alt="geometryimg" width="500" height="300"></div>
-<br>
-<br>
-<div class="text">
-<code><b>textwidth</b></code><br>
-Corresponds to element 8 in the figure.
-<br>
-<br>
-<code><b>textheight</b></code> <br>
-Element 7 in the figure.
-<br>
-<br>
-<code><b>total</b></code> <br>
-Depends on other parameters, by default defines the dimensions of the Body, but can be combined with the includehead, includefoot,
- includeheadfoot and includemp commands to change the dimensions of Header, the Body, the Footer and the Margin Notes altogether.
-<br>
-<br>
-<code><b>left, lmargin, inner</b></code> <br>
-These three parameters change the length of the left margin. Elements 1 and 3 in the figure, combined.
-<br>
-<br>
-<code><b>right, rmargin, outer</b></code> <br>
-These three parameters change the length of the right margin. Elements 9 and 10 in the figure, combined.
-<br>
-<br>
-<code><b>top, tmargin</b></code> <br>
-These two parameters represent elements 2 and 6 in the figure, combined.
-<br>
-<br>
-<code><b>bottom, bmargin</b></code> <br>
-These two parameters set the distance from the bottom edge of the document to its baseline.
-<br>
-<br>
-<code><b>headheight</b></code><br>
-Height of the header
-<br>
-<br>
-<code><b>footsep</b></code><br>
-Separation between the bottom of the text (baseline) and the top of the footnote. Element 11 in the figure.
-<br>
-<br>
-<code><b>footskip</b></code><br>
-Distance between the baseline of the text and the baseline of the footnote.
-<br>
-<br>
-<code><b>marginparwidth, marginpar</b></code><br>
-Width of the margin notes. Element 10 in the figure.
-<br>
-<br>
-The paper size can be set to any size you need by means of the command papersize={⟨width⟩,⟨height⟩}. <br>
-Let's see an example: <br><br></div>
-<div class="codebox"style="Width: 700px;">
-<div class="paragraph"><b>CODE</b><hr>
-<code>
-\usepackage{geometry} <br>
- \geometry{           <br>
- a4paper,             <br>
- total={170mm,257mm}, <br>
- left=20mm,           <br>
- top=20mm,            <br>
-} </code></div>
+ <div class="title" id="firstpart" >User interface</div>
+ <div class="text"> The geometry package provides the following commands:
+ <ul>
+<div class="codebox">
+   <div class="paragraph"><b>CODE</b><hr>
+   <li><code>\geometry{options}</code></li>
+   <li><code>\newgeometry{options} and \restoregeometry</code> </li>
+   <li><code>\savegeometry{name} and \loadgeometry{name}</code> </li></div></div>
+ </ul>
+ <code>\geometry{options} </code>changes the page layout according
+  to the options specified in the argument.
+   This command, if any, should be placed only in the preamble (before <code> \begin{document}).</code>
+   The geometry package may be used as part of a class or another package you use in your document.
+   The command <code> \geometry </code> can overwrite some of the settings in the preamble. Multiple use of <code>\geometry</code> is allowed and then processed with the options concatenated.
+   If geometry is not yet loaded, you can use only <code> \usepackage[options]{geometry}</code> instead of <code> \geometry. </code>
+   <br><br>
+   <code>\newgeometry{options}</code> changes the page layout mid-document. <code>\newgeometry</code> is almost similar to <code>\geometry</code> except that <code>\newgeometry</code> disables all the options specified by <code>\usepackage and \geometry</code> in the preamble and skips papersize-related options.
+    <code>\restoregeometry</code> restores the page layout specified in the preamble. This command has no arguments.
  <br><br>
-Here the text area, the left margin and the top margin are set. The right and bottom margins are automatically computed to fit the page.
-</div>
+ <code>\savegeometry{name}</code> saves the page dimensions as
+  {name} where you put this command. <code> \loadgeometry{name}</code> loads the page dimensions saved as {name}.
+
+
+
+
+  </div>
+
+
+  <div class="title" id="secondpart" >Option details</div>
+  <div class="text">This section describes all options available in geometry. Options with a star * are not available as arguments of <code>\newgeometry.</code>
+  All the option are in key-value order <code> optionName={value}. </code></div>
+
+  <div class="subtitle">Paper size</div>
+  <div class="text">
+The options below set paper/media size and orientation.<br><br>
+<b><code>*paper | papername</code></b> <br><br>
+specifies the paper size by name. paper=hpaper-namei.
+ For convenience, you can specify the paper name without paper=. For example, a4paper is equivalent to paper=a4paper. <br><br>
+
+<code> * a0paper, a1paper, a2paper, a3paper, a4paper, a5paper, a6paper, b0paper, b1paper, b2paper, b3paper, b4paper, b5paper, b6paper, c0paper, c1paper, c2paper, c3paper, c4paper, c5paper, c6paper, b0j, b1j, b2j, b3j, b4j, b5j, b6j,
+  ansiapaper, ansibpaper, ansicpaper, ansidpaper, ansiepaper,
+  letterpaper, executivepaper, legalpaper </code><br><br>
+  specifies paper name.<br><br>
+  <b><code>*screen</code></b>
+  is special paper size with (W,H) = (225mm,180mm).
+  For presentation with PC and video projector, “screen,centering” with ‘slide’ documentclass would be useful.
+  <br>
+  <br>
+    <b><code>*paperwidth | *paperheight</code></b> set width and height of the paper.
 <br>
+<br>
+      <b><code>*landscape | *potrait</code></b> switches the paper orientation to landscape mode or portrait mode. <br>
+      The options for paper names (e.g., a4paper) and orientation (portrait and landscape) can be set as document class options. For example, you can set \documentclass[a4paper,landscape]{article}, then a4paper and landscape are processed in geometry as well. This is also the case for twoside and twocolumn .
 
+   </div>
 
-
+<div class="subtitle">Layout size </div>
+<div class="text">
+  You can specify the layout area with options described in this section regardless of the paper size. The options would help to print the specified layout to a different sized paper. For example, with a4paper and layout=a5paper, the package uses ‘A5’ layout to calculate margins on ’A4’ paper. The layout size defaults to the same as the paper. The options for the layout size are available in \newgeometry, so that you can change the layout size in the middle of the document. The paper size itself can’t be changed though.
+  <br>
+  <br>
+<b><code>layout</code></b> specifies the layout size by paper name. layout=hpaper-namei. All the paper names defined above are available.
+<br>
+<br>
+<b><code>layoutwidth | layoutheight</code></b> set width and height of the layout.
+<br>
+<br>
+<b><code>layouthoffset | layoutvoffset</code></b> specifies the horizontal offset from the left edge of the paper or specifies the vertical offset from the top edge of the paper.
+The same thing can be achived using <b><code>layoutoffset</code></b> that specifies both horizontal and vertical offsets.
+<br>
+<br>
+<img src="../media/img/packages_geometry2.png" width="1000" height="550">
 
 
 </div>
 
 
+<div class="subtitle">Margin size</div>
+<div class="text"> Learn how to manipulate the margins.
+  <br>
+  <br>
+   <b><code>left | lmargin | inner</code></b> left margin (for oneside) or inner margin (for twoside) of total body. In other words, the distance between the left (inner) edge of the paper and that of total body.
+   <code>left={length}.</code> inner has no special meaning, just an alias of left and lmargin.
+  <br>
+  <br>
+    <b><code>right | rmargin | outer</code></b> right or outer margin of total body.
+  <br>
+  <br>
+    <b><code>top | bottom</code></b> top and bottom margin of the page.
+  <br>
+  <br>
+   <b><code>hmargin</code></b> left and right margin.
+  <br>
+  <br>
+   <b><code>vmargin</code></b> top and bottom margin.
 
 
-
-<footer>
-    <address>Page written by Stucchi Jacopo</address>
-</footer>
-</main>
+</div>
 
 
-</html>
+  <footer>
+      <address>Page written by Stucchi Jacopo</address>
+  </footer>
+  </main>
+
+
+  </html>
