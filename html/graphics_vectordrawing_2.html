@@ -60,55 +60,62 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
 </ul>
         <hr>
         </div>
-        <div class="subtitle" id="first">Inserting Ti<i>k</i>Z diagrams in a table</div>
-        <div class="text">The biggest problem here is to make the diagram fit inside the table. To do so,
-        </div>
+        <div class="subtitle" id="first">Including an image in a SmartDiagram</div>
 
-        <br><br>
-        <div class="latex">
-            <div class="paragraph"><b>CODE</b><hr>
-              <code>\documentclass{article}<br>
-                \begin{document}<br>
-                \begin{table}<br>
-                \begin{tabular}{lcr}<br>
-                table & long table & not so long table \\<br>
-                1 & 123456789000 & 3.14 \\<br>
-                \end{tabular}<br>
-                \end{table}<br>
-                \end{document}
-              </code>
-            </div>
-            <div class="object">
-              <object type="application/pdf" data="../docs/graphics_experiment.pdf"  height="100%" width="100%"></object>
-            </div>
-        </div><br><br>
+        <div class="text">You can include an image inside most of the SmartDiagrams:</div><br><br>
 
-        <div class="subtitle" id="second">Inserting an image in a Ti<i>k</i>Z diagram</div>
-        <div class="text">If you try including an image inside a Ti<i>k</i>Z diagram, you're probably going to meet the following problem.
-          The program does not recognize the inputs as commands and confuses them for items. So what you get is a mess.</div><br><br>
+          <div class="latex">
+              <div class="paragraph"><b>CODE</b><hr>
+                <code>\begin{center}<br>
+                  \usetikzlibrary{shapes.geometric} % required in the preamble<br>
+                  \smartdiagramset{module shape=diamond,<br>
+                    font=\scriptsize,<br>
+                    module minimum width=1cm,<br>
+                    module minimum height=1cm,<br>
+                    text width=1cm,<br>
+                    circular distance=2cm,<br>
+                    circular final arrow disabled=true,<br>
+                  }<br>
+                  \smartdiagram[circular diagram:clockwise]<br>
+                  {<br>
+                    {image1},<br>
+                    {image2}<br>
+                    {image3},<br>
+                    {image4},<br>
+                  }<br>
+                    \end{center}<br>
+                </code>
+              </div>
+              <div class="object">
+                <object type="application/pdf" data="../docs/graphics_invasion_of_leslie_lamport.pdf"  height="100%" width="100%"></object>
+              </div>
+          </div><br><br>
+
+          <div class="text"><code>\includegraphics</code> might seem the best option to include an image in your LaTeX document.
+            But the resulting image you obtain is moved on the right and it is rather small.
+            On an attempt to scale it, I discovered that the image is not bounded. That means the program applies a default node to the picture.
+            So what you get is a mess.
+            The procedure for creating a bound for the picture is pretty complicated, so we'll skip it.</div>
 
           <br><br>
           <div class="latex">
               <div class="paragraph"><b>CODE</b><hr>
-                <code>\documentclass{article}<br>
-                  \begin{document}<br>
-                  \begin{table}<br>
-                  \begin{tabular}{lcr}<br>
-                  table & long table & not so long table \\<br>
-                  1 & 123456789000 & 3.14 \\<br>
-                  \end{tabular}<br>
-                  \end{table}<br>
-                  \end{document}
+                <code>\smartdiagram[constellation diagram]<br>
+	                 {\textbackslash<br>
+                     {includegraphics\{\}},<br>
+	                    \includegraphics[width=3cm]{leslie.png}<br>
+                    }<br>
                 </code>
               </div>
               <div class="object">
-                <object type="application/pdf" data="../docs/graphics_experiment.pdf"  height="100%" width="100%"></object>
+                <object type="application/pdf" data="../docs/graphics_image_error_upload.pdf" height="100%" width="100%"></object>
               </div>
           </div><br><br>
 
-           <div class="text">The first thing I tried was using pgfplots package. In the result the image was moved on the right and it was rather small.
-             On an attempt to scale it, I discovered that the image is bounded to the Item, so it is not possible to scale it independently from the diagram.
-             So I tried using the package <code>\usepackage{overpic}</code>.
+           <div class="text">
+             To solve the bounding problem, use <code>\usepackage{PGFPlots}</code> and <code>\usepackage{overpic}</code>. This allows you to center the image.
+             If you're looking to export a dvi file, be aware that the dvi producing LaTeX doesn't recognize the png, jpeg, and  pdf extensions.
+             You have to convert your image in an eps file and then include it in the .tex file. Good luck with managing transparent backgrounds.
         </div>
 
         <br><br>
@@ -125,62 +132,212 @@ AND YOU WILL BE REQUIRED TO ADD THEM TO THE PAGES YOU WILL HAVE ALREADY WRITTEN 
         </div><br><br>
         </div>
 
-        <div class="subtitle" id="third">fig2dev</div>
-        <div class="text"><div class="text margin50 line1-5">
-           <div>Question 1: How to color a row?</div>
-           <div id="answQuestion1" class="margin20 red"></div>
-           <label><input type="radio" name="question1"><span class="vMid"> <code>\rowcolor{red} coloring & content & content & content \\</code> </span></label><br> <!-- right answer  -->
-           <label><input type="radio" name="question1"><span class="vMid"> <code> coloring & content & content & content \\ \rowcolor{red}</code> </span></label><br>
-           <label><input type="radio" name="question1"><span class="vMid"> <code>\begin{tabular}{c \rowcolor{red}{c} c c}</code></span></label><br>
-           <label><input type="radio" name="question1"><span class="vMid"> All the options above are false</span></label>
-       </div>
+        <div class="subtitle" id="second">Including a SmartDiagram in a table</div>
+        <div class="text">Include the code of your favourite SmartDiagram after <code>\begin{tabular}{}</code>
+        </div>
+        <br><br>
+        <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+              <code>\begin{center}<br>
+\smartdiagramset{<br>
+module minimum width= 5cm,<br>
+module minimum height= 1cm,<br>
+text width= 3.5cm,<br>
+module y sep= 2.4,<br>
+text color= black,<br>
+font= \normalsize,<br>
+border color= red,<br>
+back arrow disabled= true}<br>
+\smartdiagram[flow diagram]<br>
+{Obtained graduation at the Bronx High School of Science (1960),<br>
+Worked for Massachusetts Computer Associates (1970-1977),<br>
+Worked for SRI International (1977 - 1985),<br>
+Worked for Digital Equipment Corporation (1985 - 2001),<br>
+Worked for Microsoft Research (2001 - 2014)}<br>
+\end{center}<br>
+              </code>
+            </div>
+            <div class="object">
+              <object type="application/pdf" data="../docs/graphics_SmartDiagram_inside_table.pdf"  height="100%" width="100%"></object>
+            </div>
+        </div><br><br>
+        </div>
+
+        <div class="text">
+          If you wish to include your SmartDiagram inside a multirow, add it inside the parenthesis <code>\multirow{number of rows}{*}{your SmartDiagram}</code>.
+          Because of the nature of the structure, you can't use the tabular definitions <code>c</code>, <code>l</code>, <code>r</code>, but you rather have to use the following types:
+            <ul>
+              <li><code>p{0.5\linewidth}</code></li>
+              <li><code>m{0.3\linewidth}</code></li>
+              <li><code>b{0.3\linewidth}</code></li>
+            </ul>
         </div>
 
         <br><br>
         <div class="latex">
             <div class="paragraph"><b>CODE</b><hr>
-              <code>\documentclass{article}<br>
-                \begin{document}<br>
-                \begin{table}<br>
-                \begin{tabular}{lcr}<br>
-                table & long table & not so long table \\<br>
-                1 & 123456789000 & 3.14 \\<br>
-                \end{tabular}<br>
-                \end{table}<br>
-                \end{document}
+              <code>\begin{tabular}{|p{0.45\linewidth}|p{0.5\linewidth}|} \hline<br>
+\multirow{3}{0.6cm}{<br>
+\begin{center}<br>
+\smartdiagramset{<br>
+module minimum width= 5cm,<br>
+module minimum height= 1cm, <br>
+text width= 3.5cm,<br>
+module y sep= 2.4, <br>
+text color= black, <br>
+font= \normalsize, <br>
+border color= red, <br>
+back arrow disabled= true} <br>
+\smartdiagram[flow diagram]<br>
+{Obtained graduation at the Bronx High School of Science (1960), <br>
+Worked for Massachusetts Computer Associates (1970-1977), <br>
+Worked for SRI International (1977 - 1985), <br>
+Worked for Digital Equipment Corporation (1985 - 2001),<br>
+Worked for Microsoft Research (2001 - 2014)}<br>
+\end{center}<br>
+}<br>
+& This is an example\\ \cline{2-2}<br>
+& This is an example\\ \cline{2-2}<br>
+& This is a long example \\ [11.9cm] \hline<br>
+\end{tabular}<br>
               </code>
             </div>
             <div class="object">
-              <object type="application/pdf" data="../docs/graphics_experiment.pdf"  height="100%" width="100%"></object>
+              <object type="application/pdf" data="../docs/graphics_SmarDiagram_multirow.pdf"  height="100%" width="100%"></object>
             </div>
         </div><br><br>
         </div>
 
-        <div class="subtitle" id="fourth">Export your draw</div>
-        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dolor eros, elementum et mattis vel,
-              ornare id est. Nulla facilisi. Etiam pretium aliquet est in iaculis. Vestibulum euismod dictum molestie.
-              In varius tortor faucibus finibus eleifend. Duis eu rhoncus lorem,
-              sit amet vulputate elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        <div class="subtitle" id="third">Adding draws to your table</div>
+        <div class="text">This is probably the easiest passage. Copy&Paste the code you get from latexdraw inside your LaTeX document and run it on the shell
+          like we saw in the previous chapter.
+          if you're working with other types of graphics, make sure you have everything set up correctly before moving on.
         </div>
 
         <br><br>
         <div class="latex">
             <div class="paragraph"><b>CODE</b><hr>
-              <code>\documentclass{article}<br>
-                \begin{document}<br>
-                \begin{table}<br>
-                \begin{tabular}{lcr}<br>
-                table & long table & not so long table \\<br>
-                1 & 123456789000 & 3.14 \\<br>
-                \end{tabular}<br>
-                \end{table}<br>
-                \end{document}
+              <code>
+                lebox{1} % Change this value to rescale the drawing.<br>
+  {<br>
+  \begin{pspicture}(0,-1.24)(6.71,1.24)<br>
+  \pscustom[linewidth=0.04]<br>
+  \textbf{code from here}<br>
+
+}<br>
+  \end{pspicture} <br>
+}<br>
+   \\ \hline<br>
+  \end{tabular}<br>
+  \end{table}<br>
               </code>
             </div>
             <div class="object">
-              <object type="application/pdf" data="../docs/graphics_experiment.pdf"  height="100%" width="100%"></object>
+              <object type="application/pdf" data="../docs/graphics_signature_example.pdf"  height="100%" width="100%"></object>
             </div>
         </div><br><br>
+        </div>
+  <div class="subtitle" id="fourth">Last steps</div>
+        <div class="text">Now it's very easy to put everything together.
+        </div>
+
+        <br><br>
+        <div class="latex">
+            <div class="paragraph"><b>CODE</b><hr>
+              <code>\documentclass}<br><br>
+                %%Vector Drawing%%<br>
+                \usepackage[usenames,dvipsnames]{pstricks}<br>
+                \usepackage{epsfig}<br>
+                %%<br>
+                %%Overpic%%<br>
+                \usepackage[percent]{overpic}<br>
+\begin{table}<br>
+\begin{tabular}{|c|} \hline<br>
+{<br>
+}<br>
+\end{pspicture}<br>
+}<br>
+ \\ \hline<br>
+\end{tabular}<br>
+\end{table}<br>
+\end{document}<br>
+                %%<br>
+                %%Borders%%<br>
+                \usepackage{array,booktabs,arydshln,xcolor}<br>
+                %%<br>
+                %%Smart Diagram%%<br>
+                \usepackage{smartdiagram}<br>
+                \usepackage{tikz}<br>
+                %%<br>
+                %%Include Image%%<br>
+                \usepackage{pgfplots,siunitx}<br>
+                \pgfplotsset{compat=1.16}<br>
+                \usepackage[percent]{overpic}<br>
+                %%<br>
+                %%Table%%<br>
+                \usepackage{multirow}<br>
+                %%<br>
+                \begin{document}<br>
+                %%BEGIN TABLE%%<br>
+                \begin{table}<br>
+                \centering<br>
+                \begin{tabular}{c}<br>
+                \textbf{\Large {LESLIE LAMPORT}}\\ %!-- Title<br>
+                \textbf{\normalsize {creator of \LaTeX}}\\ [-5 cm]<br>
+                \end{tabular}<br>
+                \end{table}<br>
+                \begin{table} %!-- Table<br>
+                %%BORDERS%%<br>
+                \newcommand\VRule[1][\arrayrulewidth]{\vrule width #1}<br>
+                \centering<br>
+                %%TABULAR%%<br>
+                \begin{tabular}{<br>
+                  !{\VRule[2pt]}m{0.5\textwidth}<br>
+                  !{\VRule}p{0.5\textwidth}<br>
+                  !{\VRule[2pt]}}<br>
+                  %%Here goes the title%%<br>
+                  \specialrule{2pt}{0pt}{0pt}<br>
+                  %%First row%<br>
+                  \textbf{BIOGRAPHY} &<br>
+                  \textbf{ARTICLES}\\ \hline<br>
+                  %%Second row%%<br>
+                  \centering<br>
+                  \multirow{11}{5.8cm}{%!-- BIOGRAPHY<br>
+                    %!-- INSERT SMART DIAGRAM HERE<br>
+                  }<br>
+                  &%!-- ARTICLES<br>
+                  %!-- INSERT PGFPlots<br>
+                  \\<br>
+                  %%Third row%%<br>
+                  &\\<br>
+                  &\\ \cline{2-2}<br>
+                  %%Fourth row%%<br>
+                  &<br>
+                  \textbf{PHOTO}\\ \cline{2-2}<br>
+                  %%Fifth row%%<br>
+                  &<%!--IMAGE --><br>
+                  %%!--INSERT PICTURE HERE<br>
+                  \\ [0.1cm] \cline {2-2}<br>
+                  %%Sixth Row%%<br>
+                  &<br>
+                  \textbf{SIGNATURE}\\ \cline{2-2}<br>
+                  &%!--INSERT LATEXDRAW.FILE HERE<br>
+                  \\<br>
+                  %%Last Row%<br>
+                  \specialrule{2pt}{0pt}{0pt}<br>
+                  \end{tabular}<br>
+                  \end{table}<br>
+                  \end{document}<br>
+                </code>
+            </div>
+            <div class="object">
+              <object type="application/pdf" data="../docs/graphics_CV_Leslie_Lamport.pdf"  height="100%" width="100%"></object>
+            </div>
+        </div><br><br>
+
+        <div class="text">Congratulation, you passed the course of Graphics!
+          Now go and try compiling the quiz.
+        </div>
 
         <footer>
             <address>Page written by Carlo Bettelini</address>
