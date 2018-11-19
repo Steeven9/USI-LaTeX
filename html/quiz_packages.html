@@ -72,14 +72,14 @@
 </head>
 
 <body>
-    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></div></a>
+    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png" alt="logo"></a></div>
     <nav>
         <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group -->
         <a href="syntax_index.html">Basic Syntax</a>
         <a href="graphics_index.html">Graphics</a>
         <a href="math_index.html">Equations</a>
         <a href="packages_index.html">Packages</a>
-        <a href="quiz.html" class="active">Quiz</a>
+        <a href="quiz_index.html" class="active">Quiz</a>
     </nav>
     <div class="sidenav">
             
@@ -165,26 +165,30 @@
 
                             document.getElementById('score').classList.remove("hide");
 
-                            var totalGrade = ((parseInt(localStorage.currentPoints)+points)*100/(parseInt(localStorage.currentTotal)+total)).toFixed(2);
-                            var totalScore = (parseInt(localStorage.currentPoints)+points)+"/"+(parseInt(localStorage.currentTotal)+total)+" ("+totalGrade+"%). ";
+                            try {
+                                var totalGrade = ((parseInt(localStorage.currentPoints)+points)*100/(parseInt(localStorage.currentTotal)+total)).toFixed(2);
+                                var totalScore = (parseInt(localStorage.currentPoints)+points)+"/"+(parseInt(localStorage.currentTotal)+total)+" ("+totalGrade+"%). ";
 
-                            localStorage.currentPoints = 0;
-                            localStorage.currentTotal = 0;
-                            localStorage.lastAttempt = totalScore;
+                                localStorage.currentPoints = 0;
+                                localStorage.currentTotal = 0;
+                                localStorage.lastAttempt = totalScore;
 
-                            document.getElementById('totalScore').innerHTML = "Your total score: "+totalScore;
+                                document.getElementById('totalScore').innerHTML = "Your total score: "+totalScore;
 
-                            if (grade==100) {
-                                document.getElementById('totalScore').innerHTML += "Wow, great job!";
-                            } else if (grade>=80) {
-                                document.getElementById('totalScore').innerHTML += "You're close, keep fighting!";
-                            } else if (grade>=60) {
-                                document.getElementById('totalScore').innerHTML += "Not bad, but you can do better.";
-                            } else {
-                                document.getElementById('totalScore').innerHTML += "Meh. Try harder!";
+                                if (grade==100) {
+                                    document.getElementById('totalScore').innerHTML += "Wow, great job!";
+                                } else if (grade>=80) {
+                                    document.getElementById('totalScore').innerHTML += "You're close, keep fighting!";
+                                } else if (grade>=60) {
+                                    document.getElementById('totalScore').innerHTML += "Not bad, but you can do better.";
+                                } else {
+                                    document.getElementById('totalScore').innerHTML += "Meh. Try harder!";
+                                }
+
+                                document.getElementById('totalScore').classList.remove("hide");
+                            } catch (err) {
+                                
                             }
-
-                            document.getElementById('totalScore').classList.remove("hide");
 
                             document.getElementById('subButton').innerHTML = "Start over";
 
