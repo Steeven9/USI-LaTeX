@@ -53,7 +53,10 @@
         <hr>
         </div>
         <div class="firstsubtitle" id="Introduction">Introduction</div>
-        <div class="text">There are different types of diagrams that can be done with LaTeX, for example there is the Venn's diagram, a descriptive diagram and much more. There are some that are not that complicated to do, they only need much time to be done, and there are others that are much more complicated like this one:
+        <div class="text">There are different types of diagrams that can be made using  LaTeX,
+          for example there is the Venn's diagram, a descriptive diagram and much more.
+          Some diagrams are not complicated to make, but they may also take a lot of time to be made,
+           and there are others that are much more complicated like this one:
 <br/>
 <br/>
           <div class="latex">
@@ -184,16 +187,21 @@
           </div>
 <br/>
 <br/>
-This is obviously only an example of what can be done with LaTeX and the <i>Tikz</i> package, we are not going to learn how to do complicated stuff like the previous one.
+This is obviously only an example of what can be done with LaTeX and the <i>Tikz</i> package,
+we are not going to learn how to do complicated stuff like the previous one.
 <br/>
 <br/>
 
 
           </div>
         <div class="subtitle" id="Venn">I. Venn's Diagram</div>
-        <div class="text">In this subsection we are only going to present you how a Venn's diagram is done in  LaTeX.<br/>The Venn's diagram is one of the most known diagram, it is used in Mathematic, Physics and also Chemistry.<br/>
-          A Venn diagram consists of multiple overlapping closed curves, usually circles, each representing a set. The points inside a curve labelled S represent elements of the set S, while points outside the boundary represent elements not in the set S. With this type of diagram it is easy to see which element of 2 different set are in common with the sets, like for example, having two sets, <code>S</code> and <code>T</code>, it will be very easy to find <code>S ∩ T</code>, you need only to watch the area where the two circles overlap themself.<br/>
-          This is an example of a Venn's diagram using LaTeX to draw:
+        <div class="text">In this subsection we are only going to present you how a Venn's diagram is done in  LaTeX.<br/>
+          The Venn's diagram is one of the most known diagrams  used in Mathematic, Physics and also Chemistry.<br/>
+          A Venn diagram consists of multiple overlapping closed curves, usually circles, each representing a set.
+          The points inside a curve labelled S represent elements of the set S, while points outside the boundary represent elements not in the set S.
+           With this type of diagram it is easy to see if 2 sets have elements in common. For example, having two sets,
+            <code>S</code> and <code>T</code>, it will be very easy to find <code>S ∩ T</code>, it is enough to check where the 2 sets overlap.<br/>
+          This is an example of a Venn's diagram drawn with Latex:
 <br/>
 <br/>
 
@@ -222,7 +230,8 @@ This is obviously only an example of what can be done with LaTeX and the <i>Tikz
 
 <br/>
 <br/>
-In this example we see that the blue area correspond to the area which <code>c</code> has in common with <code>a</code> and <code>b</code>, in math we can write: <code>c ∩ (a ∪ b)</code>.<br/>
+In this example we see that the blue area correspond to the area which <code>c</code> has in common with <code>a</code>
+and <code>b</code>, in math we can write: <code>c ∩ (a ∪ b)</code>.<br/>
 This is how the content is created:<br/>
 At the beginning we use a scope environment to apply a style to a part of the drawing. Here, we apply color blending:
 <br/>
@@ -242,7 +251,8 @@ We draw the diagram parts, which in our case are simply filled circles:
 </div>
 <br/>
 <br/>
-Then we end the scope environment. At the end of the environment, the blending effect will end, because environments keep the settings local.
+Then we end the scope environment. At the end of the environment, the blending effect will end,
+ because environments keep the settings local.
 <br/>
 Afterwards we add nodes with text for the descriptions:
 <br/>
@@ -255,7 +265,7 @@ Afterwards we add nodes with text for the descriptions:
 </div>
 <br/>
 <br/>
-At the end we only need to end the TikZ picture and the document.
+We then need to close the  TikZ picture.
 <br/>
 <br/>
 

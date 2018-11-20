@@ -71,7 +71,7 @@
         transformation and the matrix above.<br>
         For starting i will assume that the basics of latex mathematical
         enviroment are known (if this isn't the case, the reader is invited to
-        read <a href="basics.html"> this </a>first), and therefore they won't
+        read <a href="math_basics.html"> this </a>first), and therefore they won't
         be re-explained here.<br>
         <div class="subtitles" id="linear">Let's start with the linear transformation:</div>
         If the page about the basics has been read it should be clear how to write
@@ -80,7 +80,7 @@
         3 expressions. Both problems are solved with the align enviroment given by
           amsmath. This enviroment is somewhat similar to a table, therefore
           I also invite the reader to read the table section of this page before
-          reading this section. 
+          reading this section.
           The symbol \\ indicates that the current row ended and the & symbol indicates the
           point of alignment in each row. That means to take the carachter just
           after as beginning of the alignment. They might also be multiples point of
@@ -116,7 +116,7 @@
               \end{align*}<br>
             </p>
           </div>
-          This last one will have 2 alignment, the first will be the same as for
+          This last one will have 2 alignments, the first will be the same as for
           above, and the second alignment will be for a_1 in the first row, b_1
           in the second and m,n in the third.
           <img src="../media/img/math_dalign.png" class="centerimagesbig">
@@ -124,7 +124,7 @@
           after align both in the \begin and \end.
           \begin{align*}<br>
           \end{align*}<br>
-          The reader should now notice clearly the similarity between this enviroment
+          The reader should now notice clearly the similarities between this enviroment
           and a table.<br>
           <h3 id="linsum">To sum up the important concepts:</h3>
           To align multiple expressions to 1 or multiple points the following
@@ -146,8 +146,8 @@
              is needed to remove the number that count
           the corrent expression.
           <div class="subtitles" id="matrix">Matrix</div>
-          Let's discuss now how to make a matrix just like the one in the beginning.
-          example:<br>
+          Let's discuss now how to make a matrix just like the one in the example in the beginning:
+          <br>
           We saw that the align enviroment share some similarities with the tables,
           this said matrices are almost identical to tables. In fact the \\
           indicates the end of a row and the & symbols indicates that end of the
@@ -256,6 +256,7 @@
           <img src="../media/img/math_matrixexercise.png" class="centerimagesbig">
         </p>
             <div class="blackbox">
+              <code>
               \begin{align*}<br>
         &\begin{vmatrix}<br>
         a_{11}&a_{12}\\<br>
@@ -263,6 +264,7 @@
         \end{vmatrix} \vec{v}=x\vec{v}\\<br>
         &x\in\mathbb{R}\\<br>
         \end{align*}
+      </code>
             </div>
         </div>
 
