@@ -13,7 +13,7 @@
 <body>
     <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png" alt="logo"></a></div>
     <nav>
-        <a href="general_index.html" >Getting Started</a>  
+        <a href="general_index.html" >Getting Started</a>
         <a href="syntax_index.html">Basic Syntax</a>
         <a href="graphics_index.html">Graphics</a>
         <a href="math_index.html" class="active">Equations</a>
@@ -36,7 +36,7 @@
             <a href="math_writing_notes.html" class="sidenavlink">Writing notes</a>
             <a href="math_symbols.html" class="sidenavlink">Symbols</a>
             <a href="math_induction.html" class="sidenavlink">Induction</a>
-            <a href="math_basics.html" class="sidenavlink" class="active">Basics</a>
+            <a href="math_basics.html" class="sidenavlink">Basics</a>
             <a href="math_equations_system.html" class="sidenavlink">Equations system</a>
             <a href="math_environment.html" class="sidenavlink">Math environment</a>
             <a href="math_accents.html" class="sidenavlink">Accents</a>
@@ -116,7 +116,7 @@
                 \node at(0,-2)   {\particle[gray!20!white]
                                  {$e$}        {electron}       {$511$ keV}{1/2}{$-1$}{}};
                 \node at(0,-3)   {\particle[gray!20!white]
-                                 {$\nu_e$}    {$e$ neutrino}         {$<2$ eV}{1/2}{}{}};
+                                 {$\nu_e$}    {$e$ neutrino}         {$&lt;2$ eV}{1/2}{}{}};
                 \node at(1, 0)   {\particle
                                  {$c$}        {charm}   {$1.28$ GeV}{1/2}{$2/3$}{R/G/B}};
                 \node at(1,-1)   {\particle
@@ -124,7 +124,7 @@
                 \node at(1,-2)   {\particle
                                  {$\mu$}      {muon}         {$105.7$ MeV}{1/2}{$-1$}{}};
                 \node at(1,-3)   {\particle
-                                 {$\nu_\mu$}  {$\mu$ neutrino}    {$<190$ keV}{1/2}{}{}};
+                                 {$\nu_\mu$}  {$\mu$ neutrino}    {$&lt;190$ keV}{1/2}{}{}};
                 \node at(2, 0)   {\particle
                                  {$t$}        {top}    {$173.2$ GeV}{1/2}{$2/3$}{R/G/B}};
                 \node at(2,-1)   {\particle
@@ -132,7 +132,7 @@
                 \node at(2,-2)   {\particle
                                  {$\tau$}     {tau}          {$1.777$ GeV}{1/2}{$-1$}{}};
                 \node at(2,-3)   {\particle
-                                 {$\nu_\tau$} {$\tau$ neutrino}  {$<18.2$ MeV}{1/2}{}{}};
+                                 {$\nu_\tau$} {$\tau$ neutrino}  {$&lt;18.2$ MeV}{1/2}{}{}};
                 \node at(3,-3)   {\particle[orange!20!white]
                                  {$W^{\hspace{-.3ex}\scalebox{.5}{$\pm$}}$}
                                               {}              {$80.4$ GeV}{1}{$\pm1$}{}};
@@ -152,10 +152,10 @@
                 \node at(5.45,-2.4) [force] {weak nuclear force (weak isospin)};
                 \node at(6.75,-2.5) [force]        {gravitational force (mass)};
 
-                \draw [<-] (2.5,0.3)   -- (2.7,0.3)          node [legend] {charge};
-                \draw [<-] (2.5,0.15)  -- (2.7,0.15)         node [legend] {colors};
-                \draw [<-] (2.05,0.25) -- (2.3,0) -- (2.7,0) node [legend]   {mass};
-                \draw [<-] (2.5,-0.3)  -- (2.7,-0.3)         node [legend]   {spin};
+                \draw [&lt;-] (2.5,0.3)   -- (2.7,0.3)          node [legend] {charge};
+                \draw [&lt;-] (2.5,0.15)  -- (2.7,0.15)         node [legend] {colors};
+                \draw [&lt;-] (2.05,0.25) -- (2.3,0) -- (2.7,0) node [legend]   {mass};
+                \draw [&lt;-] (2.5,-0.3)  -- (2.7,-0.3)         node [legend]   {spin};
 
                 \draw [mbrace] (-0.8,0.5)  -- (-0.8,-1.5)
                                node[leftlabel] {6 quarks\\(+6 anti-quarks)};
