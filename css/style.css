@@ -593,7 +593,7 @@ div.mttfirstbox img {
   justify-content: space-between;
   width: 10%;
   height: 10%;
-  max-width: 20%;
+  max-width: 15%;
   border-radius: 100px;
 }
 
@@ -625,6 +625,60 @@ div.mttfirstboxsub img {
   width: 43%;
   height: 100%;
   max-width: 43%;
+}
+
+div.specialbox, div.specialboxbottom {
+  margin-left: 5%;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+div.specialbox p, div.specialboxbottom p, div.specialbox div.specialtextleft, div.specialbox div.specialtextright{
+  flex-basis: 15%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+div.specialbox div.specialtextleft{
+  flex-basis: 20%;
+  text-align: right;
+  margin-right: -5%;
+}
+
+div.specialbox div.specialtextright{
+  flex-basis: 20%;
+  text-align: left;
+  margin-left: -5%;
+}
+
+div.specialbox img {
+  flex-basis: 15%;
+  display: flex;
+  align-items: center;
+  width: 10%;
+  height: 10%;
+  max-width: 15%;
+  border-radius: 100px;
+}
+
+div.specialbox p{
+  font-size: 1.2em;
+}
+
+div.specialboxbottom p, div.specialbox div.specialtextleft, div.specialbox div.specialtextright{
+  font-weight: normal;
+  align-items: center;
+  justify-content: center;
+}
+
+div.specialboxbottom{
+  margin-bottom: 3%;
 }
 /* END OF MEET THE TEAM */
 
