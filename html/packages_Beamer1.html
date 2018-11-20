@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-      <head>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+<meta name="author" content="Davide Trupia">
             <link rel="stylesheet" href="../css/style.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           <link rel="icon" href="../media/img/favicon.ico">
-      </head>
+          <title>Beamer Introduction</title>
+</head>
     <body>
-     <meta name="author" content="Davide Trupia">
+
     <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>
     <nav>
                 <a href="general_index.html">Getting Started</a>
@@ -18,8 +22,10 @@
             </nav>
             <div class="sidenav">
                 <a href="packages_index.html" id="firstsubpage"class="sidenavlink">Packages</a>
-                 <a href="packages_IntroNewcommands.html" class="sidenavlink">Packages Introduction
-                <a href="packages_newcommands.html"class="sidenavlink">New Commands</a>
+                 <a href="packages_IntroNewcommands.html" class="sidenavlink">Packages Introduction</a>
+                <div class="subpage"><div class="subpagepadding">New Commands</div>
+                <a href="packages_newcommands.html"class="subpagelink">Page 1</a>
+                <a href="packages_newcommand2.html"class="subpagelink">Page 2</a></div>
                 <a href="packages_fancyhdr.html"class="sidenavlink">Fancyhdr</a>
                 <div class="subpage"><div class="subpagepadding">Quotchap</div>
                   <a href="packages_quotchap.html"class="subpagelink">Page 1</a>
@@ -38,7 +44,7 @@
                 <a href="packages_TOP5.html"class="sidenavlink">"Top 5" useful packages</a>
                 <a href="packages_TOP3.html"class="sidenavlink">"Top 3" styling packages</a>
             </div>
-</body>
+
 
 <main>
   <div class="title">BEAMER</div>
@@ -62,11 +68,8 @@
   <div class="text">Beamer is a LaTeX class to create powerful, flexible and nice-looking <strong>presentations</strong> and slides.
     This article explains the most common features to create a presentation: make the title page, add a logo, highlight important points,
     make a table of contents and add effects to the presentation.</div>
-
-<div class="codebox" style="width: 250px;">
-  <div class="paragraph"><b>CODE</b><hr>
-  <code>\documentclass{beamer} </code>
-</div></div>
+<div class="codebox" style="width: 250px;"><div class="paragraph"><b>CODE</b><hr>
+  <code>\documentclass{beamer} </code></div></div>
   <br>
   <br>
 
@@ -75,18 +78,8 @@
   <div class="text"> You can set the title of your presentation by putting the code below(Must be in brackets!).
     Of course the subtitle is not required to have a title so you can omit it if not necessary:</div>
     <br><br>
-
-    <div class="latex">
-      <div class="paragraph"><b>CODE</b><hr>
     <div class="latex"><div class="codebox" style="width: 350px;"><div class="paragraph"><b>CODE</b><hr>
   <code> \title[Your title] {About your title} <br>
-         \subtitle{Subtitle optional}</code>
-       </div>
-       <div class="object">
-         <object type="application/pdf" data="../docs/packages_beamer_title_subtitle.pdf"  height="100%" width="100%"></object>
-       </div>
-     </div><br><br>
-
          \subtitle{Subtitle optional}</code></div></div>
   <div class="object">
       <object type="application/pdf" data="../docs/packages_beamer_title_subtitle.pdf" height="100%" width="100%"></object>
@@ -96,22 +89,11 @@
   <br><br>
   <div class="text">
     You can of course add the authors/author names and surnames or even the initials.
-    There is also an option to reference where each of the person works for/studies.</div><br><br>
-
-    <div class="latex">
-      <div class="paragraph"><b>CODE</b><hr>
     There is also an option to reference where each of the person works for/studies.</div>
   <br><br>
 <div class="latex">
   <div class="codebox" style="width: 350px;"><div class="paragraph"><b>CODE</b><hr>
   <code>\author {C.D.Spiace\inst{1}}<br>
-    \institute{\inst{1}Faculty name\\Uni}
-  </code>
-  </div>
-    <div class="object">
-      <object type="application/pdf" data="../docs/packages_beamer_author.pdf"  height="100%" width="100%"></object>
-    </div>
-  </div><br><br>
     \institute{\inst{1}Faculty name\\Uni}</code></div></div>
       <br><br>
       <div class="object">
@@ -124,18 +106,12 @@
   <div class="text">
     The date is always displayed in default when you set the document as Beamer but you can display it also like this:</div><br><br>
 
-    <div class="latex">
-      <div class="paragraph"><b>CODE</b><hr>
 <div class="latex">
   <div class="codebox" style="width: 350px;">
     <div class="paragraph"><b>CODE</b><hr>
       <code>\date{Rome, 2018}</code>
+    </div>
   </div>
-  <div class="object">
-    <object type="application/pdf" data="../docs/packages_beamer_date.pdf"  height="100%" width="100%"></object>
-  </div>
-</div><br><br>
-
       <div class="object">
           <object type="application/pdf" data="../docs/packages_beamer_date.pdf" height="100%" width="100%"></object>
       </div>
@@ -146,10 +122,6 @@
   <div class="subtitle">Table of contents</div>
   <div class="text">
   It's always better to divide your presentation into parts (sections) if the presentation is too long. Therefore you can create sections,subsections or subsubsections
-  the style used in this slide can be set like this: <code> \usetheme{Warsaw} </code> and the package <code> \usepackage{graphicx} </code> is required.
-</div><br><br>
-
-<div class="latex">
   the style used in this slide can be set like this: <code> \usetheme{Warsaw} <code> and the package <code> \usepackage{graphicx} </code> is required.
 </div>
 <br>
@@ -185,12 +157,7 @@
   \frametitle{ff}<br>
 <br>
 \end{frame}</code>
-</code>
 </div>
-<div class="object">
-  <object type="application/pdf" data="../docs/packages_beamer_table_of_content.pdf"  height="100%" width="100%"></object>
-</div>
-</div><br><br>
 </div>
 
  <div class="object">
@@ -209,6 +176,7 @@
       <address>Page written by Davide Trupia |
       </address>
   </footer>
-</main>
 
+</main>
+</body>
   </html>
