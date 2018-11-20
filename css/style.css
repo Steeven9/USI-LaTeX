@@ -655,12 +655,14 @@ div.specialbox p, div.specialboxbottom p, div.specialbox div.specialtextleft, di
 div.specialbox div.specialtextleft{
   flex-basis: 20%;
   text-align: right;
+  font-size: 1em;
   margin-right: -5%;
 }
 
 div.specialbox div.specialtextright{
   flex-basis: 20%;
   text-align: left;
+  font-size: 1em;
   margin-left: -5%;
 }
 
