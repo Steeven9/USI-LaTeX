@@ -9,15 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../media/img/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
-    <link rel="icon" href="../media/img/favicon.ico">
 </head>
 
-<body
+<body>
     <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png" alt="logo"></a></div>
     <nav>
         <a href="general_index.html">Getting Started</a>  <!-- Move the class="active" to your group-->
         <a href="syntax_index.html">Basic Syntax</a>
-        <a href="graphics_index.html"class="active">Graphics</a>
+        <a href="graphics_index.html" class="active">Graphics</a>
         <a href="math_index.html">Equations</a>
         <a href="packages_index.html">Packages</a>
         <a href="quiz_index.html">Quiz</a>
@@ -124,7 +123,6 @@
               <object type="application/pdf" data="../docs/graphics_not_working_pic.pdf"  height="100%" width="100%"></object>
             </div>
         </div><br><br>
-        </div>
 
         <div class="subtitle" id="second">Including a SmartDiagram in a table</div>
         <div class="text">Include the code of your favourite SmartDiagram after <code>\begin{tabular}{}</code>
@@ -155,7 +153,6 @@ Worked for Microsoft Research (2001 - 2014)}<br>
               <object type="application/pdf" data="../docs/graphics_SmartDiagram_inside_table.pdf"  height="100%" width="100%"></object>
             </div>
         </div><br><br>
-        </div>
 
         <div class="text">
           If you wish to include your SmartDiagram inside a multirow, add it inside the parenthesis <code>\multirow{number of rows}{*}{your SmartDiagram}</code>.
@@ -200,7 +197,6 @@ Worked for Microsoft Research (2001 - 2014)}<br>
               <object type="application/pdf" data="../docs/graphics_SmartDiagram_multirow.pdf"  height="100%" width="100%"></object>
             </div>
         </div><br><br>
-        </div>
 
         <div class="subtitle" id="third">Adding draws to your table</div>
         <div class="text">This is probably the easiest passage. Copy&Paste the code you get from latexdraw inside your LaTeX document and run it on the shell
@@ -230,7 +226,7 @@ Worked for Microsoft Research (2001 - 2014)}<br>
               <object type="application/pdf" data="../docs/graphics_signature_example.pdf"  height="100%" width="100%"></object>
             </div>
         </div><br><br>
-        </div>
+
   <div class="subtitle" id="fourth">Last steps</div>
         <div class="text">Now it's very easy to put everything together.
         </div>
@@ -280,7 +276,7 @@ Worked for Microsoft Research (2001 - 2014)}<br>
                 \textbf{\normalsize {creator of \LaTeX}}\\ [-5 cm]<br>
                 \end{tabular}<br>
                 \end{table}<br>
-                \begin{table} %!-- Table<br>
+                \begin{table} !-- Table<br>
                 %%BORDERS%%<br>
                 \newcommand\VRule[1][\arrayrulewidth]{\vrule width #1}<br>
                 \centering<br>
@@ -309,7 +305,7 @@ Worked for Microsoft Research (2001 - 2014)}<br>
                   &<br>
                   \textbf{PHOTO}\\ \cline{2-2}<br>
                   %%Fifth row%%<br>
-                  &<%!--IMAGE --><br>
+                  &%!--IMAGE --><br>
                   %%!--INSERT PICTURE HERE<br>
                   \\ [0.1cm] \cline {2-2}<br>
                   %%Sixth Row%%<br>
