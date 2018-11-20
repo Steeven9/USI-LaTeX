@@ -1,1 +1,129 @@
-<!DOCTYPE html><html>      <head>            <link rel="stylesheet" href="../css/style.css">            <link rel="icon" href="../media/img/favicon.ico">      </head>    <body>     <meta name="author" content="Andrea di Micco">    <div class="logolink"><a href="../index.html"><img src="../media/img/logo.png"></a></div>    <nav>                <a href="general_index.html">Getting Started</a>                <a href="syntax_index.html" >Basic Syntax</a>                <a href="graphics_index.html">Graphics</a>                <a href="math_index.html">Equations</a>                <a href="packages_index.html"class="active">Packages</a>                <a href="quiz_index.html">Quiz</a>            </nav>            <div class="sidenav">                <a href="packages_index.html" id="firstsubpage"class="sidenavlink">Packages</a>                 <a href="packages_IntroNewcommands.html" class="sidenavlink">Packages Introduction                <a href="packages_newcommands.html"class="sidenavlink">New Commands</a>                <a href="packages_fancyhdr.HTML"class="sidenavlink">Fancyhdr</a>                <div class="subpage"><div class="subpagepadding">Quotchap</div>                  <a href="packages_quotchap.html"class="subpagelinkactive">Page 1</a>                  <a href="packages_quotchap2.html"class="subpagelink">Page 2</a></div>                <a href="packages_todonotes.html"class="sidenavlink">Todonotes</a>                <div class="subpage"><div class="subpagepadding">Geometry</div>                <a href="packages_geometry2.html"class="subpagelink">Page 1</a>                <a href="packages_geometry.html"class="subpagelink">Page 2</a></div>                <a href="packages_hyperref_babel_xcolor.html"class="sidenavlink">Hyperref</a>                <a href="packages_hyperref_babel_xcolor2.html"class="sidenavlink">Babel</a>                <a href="packages_hyperref_babel_xcolor3.html" class="sidenavlink">Xcolor</a>                <div class="subpage"><div class="subpagepadding">Beamer</div>                <a href="packages_Beamer1.html"class="subpagelink">Page 1</a>                <a href="packages_Beamer2.html"class="subpagelink">Page 2</a>                <a href="packages_Beamer3.html"class="subpagelink">Page 3</a> </div>                <a href="packages_TOP5.html"class="sidenavlink">"Top 5" useful packages</a>                <a href="packages_TOP3.html"class="sidenavlink">"Top 3" styling packages</a>            </div><main>  <div class="title">Quotchap</div>  <div class="indexgeneral">     <ul>        <div class="index"><a href="#firstpart"><li>Introduction</li></a></div>        <br>        <div class="index"><a href="#secondpart"><li>Quotations</li></a></div>        <br>        <div class="index"><a href="#thirdpart"><li>Examples</li></a></div>        <br>        <div class="index"><a href="#fourthpart"><li>Document Options</li></a></div>      </ul>  </div>  <hr>  <div class="title" id="Firstpart">Introduction</div>    <div class="text">This package redefines the <code>\chapter</code> commands to create fancy chapter head pages      with huge chapter numbers and provides commands for adding quotations in the upper left corner of these pages.      It was written by Karsten Tinnefeld, who abandoned to work on it. This package is now      maintained by Jan Klever.      quotchap is designed to do visual formatting and build some fancy and attractive chapter headings for documents.      It buries the original <code>\chapter[*]</code> commands to provide a new style: Chapter number and title are set flush right, on separate lines,      and much huger as normal: The title is to be <code>\Huge</code>, the number is set in 100pt size, and possibly in 60% grey.      This means, of course, that some scalable font had to be chosen. We offer package      options for all the postscript fonts in the <code>psnfss</code> package and some other common      fonts, defaulting to Adobe’s Bookman for matters of personal taste.      You can choose any font for the chapter number by using the command <code>\qsetcnfont</code>.  </div>  <br>  <br>  <div class="title" id="secondpart">Quotations</div>  <div class="text">    This package provides the feature to include some quotations right before the beginning of the chapter.    An environment is given to save quotes to be used at the beginning of the next chapter,    and an additional command gives an easy way to provide author information to the quotes.</div>    <div class="subtitle">Savequote</div>    <div class="text">    The <code>savequote</code> environment should appear at the top level, not in the docu    ment's preamble (i.e., after <code>\begin{document}</code>) and before the start of the chapter    you want to decorate. It has one optional argument that provides the width of the quotation paragraph.    The default is 10cm. Possibly you may want to set your quote in "quotation marks", as these marks differ from country to country, it is left to you.</div>  <div class="subtitle">Qauthor</div>    <div class="text">Each quotation can consist of several paragraphs, but must end with a <code>\qauthor{A. U. Thor}</code> command.    This is not only provided to uphold the principles of “honour whom honour is due” but to provide the right author name    formatting and inter quotation spacing. The quotes can follow each other immediately.    The whole bunch of quotation is deleted after it has been printed once, so you    have to rewrite them when you find no way past repeating them. When you give    no quotations for some chapter, the upper left area of the corresponding page will be simply void.</div>  <div class="subtitle">qsetcnfont</div>    <div class="text">     If you want to use a font for the chapter number, that is not available as    package optionen, you can set it with <code>\qsetcnfont{<family>}</code>. For example: <code>\qsetcnfont{pzc}</code> to use Zapf Chancery.</div><br><br><div class="title" id="thirdpart">Example</div>  <div class="text">Let's take a look at an example:</div>  <br>  <div class="codebox" style="width: 350px;"><div class="paragraph"><b>CODE</b><hr>    <code>\begin{savequote}[45mm]<br>    ---When shall we three meet again<br>    in thunder, lightning, or in rain?<br>    ---When the hurlyburly’s done,<br>    when the battle’s lost and won.<br>    \qauthor{Shakespeare, Macbeth}<br>    Cookies! Give me some cookies!<br>    \qauthor{Cookie Monster}<br>    \end{savequote}<br>    \chapter{Classic Sesame Street}<br></code></div></div>  <br><br>  <br><br>      <img src="../media/img/img1_quotchap.png" alt="Quotchap screenshot" width="400" height="300">  <br><br>    <div class="title" id="fourthpart">Document Options</div>      <div class="text"> Printing the chapter number in bold and that big a font uses quite some ink on        the paper. Thus it is strongly recommended to use the grey option (which is        enabled by default and disabled by specifying nogrey) that improves the quality        by printing the number in 60% grey. The <code>color</code> package is used to set the colour        <code>chaptergrey</code>, redefining this colour may produce even more colourful effects.        The <code>color</code> package is \Required without any option, if you want to specify        some, include the color package before the quotchap package.        The other options are used to select a title font, they are all self-explaining        and thus simply listed here:        <ul>          <li><b>avantgarde</b> Adobe’s Avantgarde</li>          <li><b>beramono</b> Bera Mono</li>          <li><b>berasans</b> Bera Sans</li>          <li><b>beraserif</b> Bera Serif</li>          <li><b>biolinum</b> Biolinum</li>          <li><b>bookman</b> Adobe’s Bookman (default)</li>          <li><b>charter</b> Bitstream’s Charter BT</li>          <li><b>courier</b> Adobe’s Courier</li>          <li><b>helvetica</b> Adobe’s Helvetica</li>          <li><b>kpfonts</b> Kp-Fonts</li>          <li><b>libertine</b> Libertine</li>          <li><b>lmodern</b> Latin Modern</li>          <li><b>newcentury</b> Adobe’s New Century Schoolbook</li>          <li><b>palatino</b> Adobe’s Palatino</li>          <li><b>times</b> Adobe’s Times</li>          <li><b>utopia</b> Adobe’s Utopia</li>        </ul>      </div>  <footer>      <address>Page written by Andrea Di Micco</address>  </footer></main>   </body>  </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../media/img/favicon.ico">
+<meta name="author" content="Andrea di Micco">
+
+
+</head>
+<body>
+
+   <div class="logolink">
+     <a href="../index.html">
+       <img src="../media/img/logo.png"></a>
+     </div>
+     <nav>
+       <a href="general_index.html">Getting Started</a>
+        <a href="syntax_index.html" >Basic Syntax</a>
+        <a href="graphics_index.html">Graphics</a>
+        <a href="math_index.html">Equations</a>
+        <a href="packages_index.html"class="active">Packages</a>
+         <a href="quiz_index.html">Quiz</a>
+       </nav>
+         <div class="sidenav">
+            <a href="packages_index.html" id="firstsubpage"class="sidenavlink">Packages</a>
+            <a href="packages_IntroNewcommands.html" class="sidenavlink">Packages Introduction
+              <a href="packages_newcommands.html"class="sidenavlink">New Commands</a>
+              <a href="packages_fancyhdr.HTML"class="sidenavlink">Fancyhdr</a>
+              <div class="subpage"><div class="subpagepadding">Quotchap</div>
+              <a href="packages_quotchap.html"class="subpagelinkactive">Page 1</a>
+              <a href="packages_quotchap2.html"class="subpagelink">Page 2</a></div>
+              <a href="packages_todonotes.html"class="sidenavlink">Todonotes</a>
+              <div class="subpage"><div class="subpagepadding">Geometry</div>
+              <a href="packages_geometry2.html"class="subpagelink">Page 1</a>
+               <a href="packages_geometry.html"class="subpagelink">Page 2</a></div>
+                <a href="packages_hyperref_babel_xcolor.html"class="sidenavlink">Hyperref</a>
+                 <a href="packages_hyperref_babel_xcolor2.html"class="sidenavlink">Babel</a>
+                  <a href="packages_hyperref_babel_xcolor3.html" class="sidenavlink">Xcolor</a>
+                  <div class="subpage"><div class="subpagepadding">Beamer</div>
+                  <a href="packages_Beamer1.html"class="subpagelink">Page 1</a>
+                   <a href="packages_Beamer2.html"class="subpagelink">Page 2</a>
+                   <a href="packages_Beamer3.html"class="subpagelink">Page 3</a> </div>
+                   <a href="packages_TOP5.html"class="sidenavlink">"Top 5" useful packages</a>
+                   <a href="packages_TOP3.html"class="sidenavlink">"Top 3" styling packages</a>
+                 </div>
+
+                 <main>
+                   <div class="title">Quotchap</div>
+                   <div class="indexgeneral">
+                     <ul>
+                       <div class="index"><a href="#firstpart"><li>Introduction</li></a></div>        <br>
+                       <div class="index"><a href="#secondpart"><li>Quotations</li></a></div>        <br>
+                       <div class="index"><a href="#thirdpart"><li>Examples</li></a></div>        <br>
+                       <div class="index"><a href="#fourthpart"><li>Document Options</li></a></div>      </ul>
+                     </div>  <hr>  <div class="title" id="Firstpart">Introduction</div>
+                      <div class="text">This package redefines the <code>\chapter</code> commands to create fancy chapter head pages
+                         with huge chapter numbers and provides commands for adding quotations in the upper left corner of these pages.
+                         It was written by Karsten Tinnefeld, who abandoned to work on it. This package is now      maintained by Jan Klever.
+                         quotchap is designed to do visual formatting and build some fancy and attractive chapter headings for documents.
+                         It buries the original <code>\chapter[*]</code> commands to provide a new style: Chapter number and title are set flush right, on separate lines,
+                         and much huger as normal: The title is to be <code>\Huge</code>, the number is set in 100pt size, and possibly in 60% grey.
+                         This means, of course, that some scalable font had to be chosen. We offer package
+                         options for all the postscript fonts in the <code>psnfss</code> package and some other common
+                         fonts, defaulting to Adobe’s Bookman for matters of personal taste.
+                         You can choose any font for the chapter number by using the command <code>\qsetcnfont</code>.
+                       </div>
+                       <br>  <br>
+                       <div class="title" id="secondpart">Quotations</div>
+                       <div class="text">    This package provides the feature to include some quotations right before the beginning of the chapter.
+                         An environment is given to save quotes to be used at the beginning of the next chapter,
+                         and an additional command gives an easy way to provide author information to the quotes.</div>
+
+                         <div class="subtitle">Savequote</div>
+                         <div class="text">    The <code>savequote</code> environment should appear at the top level, not in the docu
+                            ment's preamble (i.e., after <code>\begin{document}</code>) and before the start of the chapter    you want to decorate.
+                            It has one optional argument that provides the width of the quotation paragraph.
+                            The default is 10cm. Possibly you may want to set your quote in "quotation marks", as these marks differ from country to country, it is left to you.
+
+                          </div>
+                            <div class="subtitle">Qauthor</div>
+                            <div class="text">Each quotation can consist of several paragraphs, but must end with a <code>\qauthor{A. U. Thor}</code> command.
+                              This is not only provided to uphold the principles of “honour whom honour is due” but to provide the right author name    formatting and inter quotation spacing. The quotes can follow each other immediately.    The whole bunch of quotation is deleted after it has been printed once, so you    have to rewrite them when you find no way past repeating them. When you give    no quotations for some chapter, the upper left area of the corresponding page will be simply void.</div>
+                              <div class="subtitle">qsetcnfont</div>
+                              <div class="text">
+                                If you want to use a font for the chapter number, that is not available as
+                                package optionen, you can set it with <code>\qsetcnfont{<family>}</code>. For example: <code>\qsetcnfont{pzc}</code> to use Zapf Chancery.
+</div><br><br>
+
+<div class="title" id="thirdpart">Example</div>
+                              <div class="text">Let's take a look at an example:</div>  <br>
+
+                              <div class="codebox" style="width: 350px;">
+
+                                <div class="paragraph"><b>CODE</b><hr>
+                                  <code>\begin{savequote}[45mm]<br>
+                                    ---When shall we three meet again<br>
+                                    in thunder, lightning, or in rain?<br>    ---When the hurlyburly’s done,<br>
+                                    when the battle’s lost and won.<br>
+                                   \qauthor{Shakespeare, Macbeth}<br>    Cookies! Give me some cookies!<br>
+                                   \qauthor{Cookie Monster}<br>    \end{savequote}<br>    \chapter{Classic Sesame Street}<br></code></div></div>  <br><br>  <br><br>
+                                   <img src="../media/img/img1_quotchap.png" alt="Quotchap screenshot" width="400" height="300">  <br><br>
+                                   <div class="title" id="fourthpart">Document Options</div>
+                                   <div class="text"> Printing the chapter number in bold and that big a font uses quite some ink on
+                                     the paper. Thus it is strongly recommended to use the grey option (which is
+                                     enabled by default and disabled by specifying nogrey) that improves the quality
+                                     by printing the number in 60% grey. The <code>color</code> package is used to set the colour
+                                     <code>chaptergrey</code>, redefining this colour may produce even more colourful effects.
+                                     The <code>color</code> package is \Required without any option, if you want to specify
+                                     some, include the color package before the quotchap package.
+                                      The other options are used to select a title font, they are all self-explaining
+                                       and thus simply listed here:        <ul>          <li><b>avantgarde</b> Adobe’s Avantgarde</li>
+                                           <li><b>beramono</b> Bera Mono</li>          <li><b>berasans</b> Bera Sans</li>
+                                           <li><b>beraserif</b> Bera Serif</li>          <li><b>biolinum</b> Biolinum</li>
+                                             <li><b>bookman</b> Adobe’s Bookman (default)</li>          <li><b>charter</b> Bitstream’s Charter BT</li>
+                                                   <li><b>courier</b> Adobe’s Courier</li>          <li><b>helvetica</b> Adobe’s Helvetica</li>
+                                                    <li><b>kpfonts</b> Kp-Fonts</li>          <li><b>libertine</b> Libertine</li>
+                                                      <li><b>lmodern</b> Latin Modern</li>          <li><b>newcentury</b> Adobe’s New Century Schoolbook</li>
+                                                           <li><b>palatino</b> Adobe’s Palatino</li>          <li><b>times</b> Adobe’s Times</li>
+                                                             <li><b>utopia</b> Adobe’s Utopia</li>        </ul>
+                                    </div>
+
+                                  <footer>
+
+                                     <address>Page written by Andrea Di Micco</address>
+                                   </footer>
+
+                                 </main>
+                               </body>
+                               </html>

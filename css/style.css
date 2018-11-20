@@ -344,6 +344,13 @@ div.indexgeneral li a:hover, div.quotebox div.quote a:hover {
   margin-right: 15%;
   border-radius: 25px;
 }
+.centerimages {display: block;
+margin: 1%;
+margin-left: auto;
+margin-right: auto;
+border: 2px solid black;
+}
+
 /* END IMAGES STRUCTURE */
 
 
