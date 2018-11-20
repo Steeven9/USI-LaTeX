@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -124,7 +125,7 @@ th, td {
             <div class="subpage"><div class="subpagepadding">Document type in Latex↓</div>
             <a href="syntax_classes.HTML" class="subpagelink">Document Class</a>
             <a href="syntax_classes_comparison.HTML" class="subpagelink">Document Classes Comparison</a>
-            <a href="syntax_classes_option.HTML" class="subpagelink">Document Classes Options</a>   
+            <a href="syntax_classes_option.HTML" class="subpagelink">Document Classes Options</a>
             </div>
             <a href="syntax_command.HTML" class="sidenavlink">Command</a>
             <a href="syntax_TableOfContents.HTML" class="sidenavlink">Table of Contents</a>
@@ -133,7 +134,7 @@ th, td {
             <a href="syntax_language_support.HTML" class="sidenavlink">Language Support</a>
             <div class="subpage"><div class="subpagepadding">Bibliography ↓</div>
             <a href="syntax_bibManagement.HTML" class="subpagelink">Bibliography Management With Biblatex</a>
-            <a href="syntax_BibManagementNatbib.HTML" class="subpagelink">Bibliography Management With Natbib</a>  
+            <a href="syntax_BibManagementNatbib.HTML" class="subpagelink">Bibliography Management With Natbib</a>
             </div>
     </div>
   <main>
@@ -161,7 +162,7 @@ th, td {
 
     <div class="subtitle" id="first">Formatting & advantages of a proper typesetting</div>
     <div class="text">
-      In general it is reffered as format of a document the layout of its pages and more generally the overall style of its text. Behind the scenes numerous typesetting standards operate to ensure readability, and arguably beauty, of a single page.<br/>
+      In general it is reffered as format of a document the layout of its pages and more generally the overall style of its text. Behind the scenes numerous typesetting standards operate to ensure readability, and arguably beauty, of a single page.<br />
       If the importance of formatting wasn't clear yet, we have some examples below:
     </div>
 <br/>
@@ -193,9 +194,9 @@ th, td {
 
 <div class="subtitle" id="second">Geometry of page</div>
 <div class="text">
- Writing a page doesn't simply mean filling it with text to the brim: each object needs take its own space following determinate criterias, in general each page will have lateral margins and a footer/header space.</br>
+ Writing a page doesn't simply mean filling it with text to the brim: each object needs take its own space following determinate criterias, in general each page will have lateral margins and a footer/header space.<br/>
 
- The <code>geometry</code> package allows you to alter the layout of certain elements of the page: you can learn more about it in the <a href="./packages_geometry2.html">relative section</a> </br>
+ The <code>geometry</code> package allows you to alter the layout of certain elements of the page: you can learn more about it in the <a href="./packages_geometry2.html">relative section</a> <br/>
 
  There are many pre-made layouts in LaTeX called document classes : you can learn more about document classes in the <a href="./syntax_classes.html">relative section </a>
 </div>
@@ -327,7 +328,7 @@ D I'm here!
 
 <div class="subtitle" id="sixth">The minipage environment</div>
 <div class="text">
-The minipage environment is part of the standard distribution and comes very handy when you need to allign two or more objects: when called it starts a new column of width equal to a fraction of the original page. The syntax is as follows: <code>\begin{minipage}{width}</code>. </br>
+The minipage environment is part of the standard distribution and comes very handy when you need to allign two or more objects: when called it starts a new column of width equal to a fraction of the original page. The syntax is as follows: <code>\begin{minipage}{width}</code>. <br/>
  To be properly alligned the spacing between minipages must be 0 (you can simply comment it out with <code>%</code>), the first minipage should also be preceeded by a <code>\noindent</code>.
 </div>
  <div class="latex">
@@ -383,11 +384,11 @@ The minipage environment is part of the standard distribution and comes very han
  </div>
 
 
-</div>
+
 
 <div class="subtitle" id="seventh">Float environment</div>
 <div class="text">
-Floats is a generic term used to indicate unbreakeable entities separated from the standard stream of text. When dealing with a float LaTeX will attempt to position it where most conforming with the typesetting standards, while this most often retains good results in some cases it won't be the desidered output. </br>
+Floats is a generic term used to indicate unbreakeable entities separated from the standard stream of text. When dealing with a float LaTeX will attempt to position it where most conforming with the typesetting standards, while this most often retains good results in some cases it won't be the desidered output. <br />
 The following tags can be used to "suggest" where a float should be positioned:
 
 <table>
@@ -444,7 +445,7 @@ The following tags can be used to "suggest" where a float should be positioned:
       Alone will allow LaTeX to ignore some paramethers, such as the total number of floats allowed on a page, in placing the float. When combined with the other tags (ex:<code>h!</code>) it will essentially strengthen them
     </td>
   </tr>
-</table> </br>
+</table> <br/>
 
 If the tags are still not enough it's possible to set the absolute position of a flot with the <code>textpos</code> package using the following syntax:<code>\begin{textblock}{blockwidth}[x_block_shift, y_block_shift](x_pos, y_pos)</code> where:
 <ul>
@@ -572,7 +573,7 @@ You can also add images such as this one:
 <div class="subtitle" id="eight">Wrapping floats</div>
 <div class="text">
 It's possible to wrap floats with text by using the package <code>wrapfig</code>,  the syntax is as follows: <br/>
- <code>\begin{wrapfigure}{position_tag}{width} \includegraphics[]{your_figure} \end{wrapfigure}</code> </br>
+ <code>\begin{wrapfigure}{position_tag}{width} \includegraphics[]{your_figure} \end{wrapfigure}</code> <br/>
 the vertical spaces can simply be reduced (or added) by using <code>\vspace{space}</code>.
 </div>
 

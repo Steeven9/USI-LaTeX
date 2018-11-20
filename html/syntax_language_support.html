@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -64,7 +65,7 @@ white-space: pre;
             <div class="subpage"><div class="subpagepadding">Document type in Latex↓</div>
             <a href="syntax_classes.HTML" class="subpagelink">Document Class</a>
             <a href="syntax_classes_comparison.HTML" class="subpagelink">Document Classes Comparison</a>
-            <a href="syntax_classes_option.HTML" class="subpagelink">Document Classes Options</a>   
+            <a href="syntax_classes_option.HTML" class="subpagelink">Document Classes Options</a>
             </div>
             <a href="syntax_command.HTML" class="sidenavlink">Command</a>
             <a href="syntax_TableOfContents.HTML" class="sidenavlink">Table of Contents</a>
@@ -73,7 +74,7 @@ white-space: pre;
             <a href="syntax_language_support.HTML" class="sidenavlinkactive">Language Support</a>
             <div class="subpage"><div class="subpagepadding">Bibliography ↓</div>
             <a href="syntax_bibManagement.HTML" class="subpagelink">Bibliography Management With Biblatex</a>
-            <a href="syntax_BibManagementNatbib.HTML" class="subpagelink">Bibliography Management With Natbib</a>  
+            <a href="syntax_BibManagementNatbib.HTML" class="subpagelink">Bibliography Management With Natbib</a>
             </div>
     </div>
   <main>
@@ -96,16 +97,16 @@ white-space: pre;
 
 
 <div class="text">
-By default LaTeX is set to support the english language meaning that the document will be rearranged on compile to conform to its typesettings standards. Different languages have different typessetting convenctions and most definitely use more characters the 128 available in <code>ASCII</code> (which is the native encoding for TeX).</br>
+By default LaTeX is set to support the english language meaning that the document will be rearranged on compile to conform to its typesettings standards. Different languages have different typessetting convenctions and most definitely use more characters the 128 available in <code>ASCII</code> (which is the native encoding for TeX).<br/>
  The following packages are commonly employed for language support:
  <hr>
 </div>
 
 <div class="subtitle" id="first">Inputenc</div>
 <div class="text">
-The package <code>inputenc</code> tranlates inputs into TeX language, generally composing them with <code>ASCII</code> and control sequences: for istance â wold be internally represented as \^a  with the ISO latin-1 encoding . With UTF-8 the representation gets more convoluted since complex characters such as the japanese kanji <ruby>東</ruby> need to be accomodated.</br>
+The package <code>inputenc</code> tranlates inputs into TeX language, generally composing them with <code>ASCII</code> and control sequences: for istance â wold be internally represented as \^a  with the ISO latin-1 encoding . With UTF-8 the representation gets more convoluted since complex characters such as the japanese kanji <ruby><rt>東</rt></ruby> need to be accomodated.<br/>
 
-The syntax is <code>\usepackage[encoding]{inputenc}</code>: in pretty much all cases UTF-8 should be used (<code>\usepackage[utf8]{inputenc}</code>), the current distributions of LaTeX actually uses UTF-8 by default but is still good practice to specify it in case your <code>.tex</code> file were to run on a machine with an older distribution. </br>
+The syntax is <code>\usepackage[encoding]{inputenc}</code>: in pretty much all cases UTF-8 should be used (<code>\usepackage[utf8]{inputenc}</code>), the current distributions of LaTeX actually uses UTF-8 by default but is still good practice to specify it in case your <code>.tex</code> file were to run on a machine with an older distribution. <br/>
 
 Encodings other than UTF-8 can still be used but are there mostly for backwards compatibility, a few will be mentioned for historical reasons:
 
@@ -116,7 +117,7 @@ Encodings other than UTF-8 can still be used but are there mostly for backwards 
     </td>
 
   <td>
-  The American Standard Code for Information Interchange is the first character encoding ever used, pubblished in 1963 it encoded each character in 7 bits + 1 parity bit for a total of 128 characters. </br/>The option for ASCII is (unsurprisingly) <code>[ascii]</code>
+  The American Standard Code for Information Interchange is the first character encoding ever used, pubblished in 1963 it encoded each character in 7 bits + 1 parity bit for a total of 128 characters. <br/>The option for ASCII is (unsurprisingly) <code>[ascii]</code>
   </td>
   </tr>
 
@@ -146,9 +147,9 @@ Encodings other than UTF-8 can still be used but are there mostly for backwards 
 
     <div class="subtitle" id="second">Fontenc</div>
     <div class="text">
-      The <code>fontenc</code> package takes the interpretations produced by <code>inputenc</code> and converts them in actual characters by using command sequences on an estamblished table of 128, 256 glyphs based on the chosen encoding. For istance â (if not already present in the current <code>fontenc</code> encoding) would be converted by inputenc into \^a, then fontenc would read it and place the accent on the "a" glyph. </br>
-      The first encoding, written by Donald Knuth was <code>OT1</code> and used a table of 128 glyphs (as all encoding preceeded by O do): up until 2015 it was the default encoding. The latest LaTeX distributions employs T1 which, with 256 glyphs, covers most latin languages. </br>
-      Three encodings are dedicated to cyrillic languages due to the vast amount  of characters: <code>T2A</code>,<code>T2B</code>,<code>T2C</code> but they are all contained in the <code>X2</code> encoding.</br>
+      The <code>fontenc</code> package takes the interpretations produced by <code>inputenc</code> and converts them in actual characters by using command sequences on an estamblished table of 128, 256 glyphs based on the chosen encoding. For istance â (if not already present in the current <code>fontenc</code> encoding) would be converted by inputenc into \^a, then fontenc would read it and place the accent on the "a" glyph. <br/>
+      The first encoding, written by Donald Knuth was <code>OT1</code> and used a table of 128 glyphs (as all encoding preceeded by O do): up until 2015 it was the default encoding. The latest LaTeX distributions employs T1 which, with 256 glyphs, covers most latin languages. <br/>
+      Three encodings are dedicated to cyrillic languages due to the vast amount  of characters: <code>T2A</code>,<code>T2B</code>,<code>T2C</code> but they are all contained in the <code>X2</code> encoding.<br/>
       The package is called with the following syntax <code>\usepackage[encoding]{fontenc}</code>.
     </div>
 
@@ -210,8 +211,8 @@ Directly from the <a target="_blank" href="http://tug.ctan.org/macros/latex/doc/
 \textemdash OT1,T1 —
 \textendash OT1,T1 –
 \textexclamdown OT1,T1 ¡
-\textgreater OT1,T1 >
-\textless OT1,T1 <
+\textgreater OT1,T1 &gt
+\textless OT1,T1 &lt
 \textquestiondown OT1,T1 ¿
 \textquotedbl T1 "
 \textquotedblleft OT1,T1 “
@@ -238,7 +239,7 @@ Directly from the <a target="_blank" href="http://tug.ctan.org/macros/latex/doc/
 
 <div class="subtitle" id="fifth">Language Specific Solution</div>
 <div class="text">
-Some languages, like the japanese, use over 50,000 different characters: <code>fontenc</code> with its tables can't really deal with this without external support: language specific solutions have to be found. </br>
+Some languages, like the japanese, use over 50,000 different characters: <code>fontenc</code> with its tables can't really deal with this without external support: language specific solutions have to be found. <br/>
 The package <code>CJK</code> can output chinese, japanese and korean:
 </div>
 
