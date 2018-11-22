@@ -19,16 +19,16 @@
 
                     error: function()
                     {
-                        document.getElementById('result').inne.html = "Doesn't exist";
+                        document.getElementById('result').innerHTML = "Doesn't exist";
                     },
 
                     success: function()
                     {
-                        document.getElementById('result').inne.html = "Exists!";
+                        document.getElementById('result').innerHTML = "Exists!";
                     }
                 });
             } catch (err) {
-                document.getElementById('result').inne.html = "Error.";
+                document.getElementById('result').innerHTML = "Error.";
             }
         }
     </script>

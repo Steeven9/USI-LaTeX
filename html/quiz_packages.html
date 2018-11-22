@@ -128,7 +128,7 @@
 
         <script>
             function submit() {
-                if (document.getElementById('subButton').inne.html=="Start over") {
+                if (document.getElementById('subButton').innerHTML=="Start over") {
                     location.href = "quiz_general.html";   
                 } else {
                     $.ajax({
@@ -150,11 +150,11 @@
 
                             for (var i=0; i<msg.length; i++) {
                                 if (msg[i]) {
-                                    document.getElementsByClassName("answer")[i].inne.html = "Correct!";
+                                    document.getElementsByClassName("answer")[i].innerHTML = "Correct!";
                                     document.getElementById("answQuestion"+i).classList.add('green');
                                     points++;
                                 } else {
-                                    document.getElementsByClassName("answer")[i].inne.html = "Wrong";
+                                    document.getElementsByClassName("answer")[i].innerHTML = "Wrong";
                                     document.getElementById("answQuestion"+i).classList.add('red');
                                 }
                             }
@@ -163,7 +163,7 @@
                             var grade = (points*100/total).toFixed(2);
                             var score = points+"/"+total+" ("+grade+"%). ";
 
-                            document.getElementById('score').inne.html = "Your score: "+score;
+                            document.getElementById('score').innerHTML = "Your score: "+score;
 
                             document.getElementById('score').classList.remove("hide");
 
@@ -175,16 +175,16 @@
                                 localStorage.currentTotal = 0;
                                 localStorage.lastAttempt = totalScore;
 
-                                document.getElementById('totalScore').inne.html = "Your total score: "+totalScore;
+                                document.getElementById('totalScore').innerHTML = "Your total score: "+totalScore;
 
                                 if (grade==100) {
-                                    document.getElementById('totalScore').inne.html += "Wow, great job!";
+                                    document.getElementById('totalScore').innerHTML += "Wow, great job!";
                                 } else if (grade>=80) {
-                                    document.getElementById('totalScore').inne.html += "You're close, keep fighting!";
+                                    document.getElementById('totalScore').innerHTML += "You're close, keep fighting!";
                                 } else if (grade>=60) {
-                                    document.getElementById('totalScore').inne.html += "Not bad, but you can do better.";
+                                    document.getElementById('totalScore').innerHTML += "Not bad, but you can do better.";
                                 } else {
-                                    document.getElementById('totalScore').inne.html += "Meh. Try harder!";
+                                    document.getElementById('totalScore').innerHTML += "Meh. Try harder!";
                                 }
 
                                 document.getElementById('totalScore').classList.remove("hide");
@@ -192,7 +192,7 @@
                                 
                             }
 
-                            document.getElementById('subButton').inne.html = "Start over";
+                            document.getElementById('subButton').innerHTML = "Start over";
 
                             for (var i=0; i<document.getElementsByTagName('input').length; i++) {
                                 if (document.getElementsByTagName('input')[i].type=="radio") {

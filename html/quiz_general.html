@@ -135,7 +135,7 @@
 
         <script>
             function submit() {
-                if (document.getElementById('subButton').inne.html=="Next") {
+                if (document.getElementById('subButton').innerHTML=="Next") {
                     location.href = "quiz_syntax.html";   
                 } else {
                     $.ajax({
@@ -158,11 +158,11 @@
 
                             for (var i=0; i<msg.length; i++) {
                                 if (msg[i]) {
-                                    document.getElementsByClassName("answer")[i].inne.html = "Correct!";
+                                    document.getElementsByClassName("answer")[i].innerHTML = "Correct!";
                                     document.getElementById("answQuestion"+i).classList.add('green');
                                     points++;
                                 } else {
-                                    document.getElementsByClassName("answer")[i].inne.html = "Wrong";
+                                    document.getElementsByClassName("answer")[i].innerHTML = "Wrong";
                                     document.getElementById("answQuestion"+i).classList.add('red');
                                 }
                             }
@@ -171,16 +171,16 @@
                             var grade = (points*100/total).toFixed(2);
                             var score = points+"/"+total+" ("+grade+"%). ";
 
-                            document.getElementById('score').inne.html = "Your score: "+score;
+                            document.getElementById('score').innerHTML = "Your score: "+score;
 
                             if (grade==100) {
-                                document.getElementById('score').inne.html += "Wow, great job!";
+                                document.getElementById('score').innerHTML += "Wow, great job!";
                             } else if (grade>=80) {
-                                document.getElementById('score').inne.html += "You're close, keep fighting!";
+                                document.getElementById('score').innerHTML += "You're close, keep fighting!";
                             } else if (grade>=60) {
-                                document.getElementById('score').inne.html += "Not bad, but you can do better.";
+                                document.getElementById('score').innerHTML += "Not bad, but you can do better.";
                             } else {
-                                document.getElementById('score').inne.html += "Meh. Try harder!";
+                                document.getElementById('score').innerHTML += "Meh. Try harder!";
                             }
 
                             document.getElementById('score').classList.remove("hide");
@@ -193,7 +193,7 @@
                             }
                             
 
-                            document.getElementById('subButton').inne.html = "Next";
+                            document.getElementById('subButton').innerHTML = "Next";
 
                             for (var i=0; i<document.getElementsByTagName('input').length; i++) {
                                 if (document.getElementsByTagName('input')[i].type=="radio") {
